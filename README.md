@@ -50,14 +50,23 @@ digitech-pm-brain/
 │   └── client-state-template.md
 │
 ├── 06-agents/                  ← Agent system prompts
-│   ├── pm-command-center.md
+│   ├── pm-command-center.md        ✅ full command logic + SEO/Social coordination
 │   ├── account-agent.md
-│   └── reviewer-agent.md
+│   ├── reviewer-agent.md           ✅ quality gate — PASS/FLAG/FAIL per output
+│   └── audit-agent.md              ✅ live data — Windsor, Meta MCP, SEO script, rank tracker
 │
-├── 07-routines/                ← Claude routine prompts
-│   ├── monday-morning-brief.md
-│   ├── saturday-weekly-wrap.md
-│   └── sunday-weekly-updates.md
+├── 07-routines/                ← Claude routine prompts (all 3 written and active)
+│   ├── monday-morning-brief.md     ✅ portfolio brief + week plan + coordination
+│   ├── saturday-weekly-wrap.md     ✅ week reflection + Monday setup
+│   └── sunday-weekly-updates.md    ✅ state freshness check
+│
+├── 08-pms/                     ← Role playbooks (daily operating rhythms)
+│   ├── pm-daily-playbook.md        ✅ PM hour-by-hour daily routine + coordination logic
+│   ├── seo-manager-daily-playbook.md ✅ SEO manager daily + weekly cadences (corrected)
+│   └── smm-daily-playbook.md       ✅ Social manager daily + weekly cadences
+│
+├── 09-ops/                     ← Operational SOPs
+│   └── client-onboarding-sop.md   ✅ 8-step MVP onboarding — contract to system live
 │
 └── 99-archive/                 ← Deprecated / old versions
 ```
@@ -121,14 +130,39 @@ When this repo updates, these places consume the change:
 | Frameworks (05) | Account Agents that reference them |
 | Agents (06) | Used as system prompts when creating new Claude Projects |
 | Routines (07) | Claude Routines (set up directly in Claude) |
+| Role Playbooks (08) | Attached to PM Command Center + relevant specialist agent |
+| Ops SOPs (09) | Attached to PM Command Center + Account Agent |
 
 ---
 
 ## Status
 
-- v0.1 — Foundation Plan v4 + Chapters 2–5 drafted
-- Next: master prompt chain assembly, healthcare niche overlay, first 3 foundation skills
+- v0.2 — Foundation Plan v5 + full agent suite written + all 3 routines complete + role playbooks + onboarding SOP
+- Chapters 1–5 exist. Prompt chain: 00–03 written, 04–10 pending.
+- Next: prompt-04-seo-foundation, prompt-05-gmb-foundation, healthcare niche overlay, first 3 foundation skills, account-agent.md system prompt
+
+## What's written vs pending
+
+| File | Status |
+|---|---|
+| `01-chapters/01-foundation-plan.md` | ✅ v5 |
+| `01-chapters/02-personality-voice.md` | ✅ drafted |
+| `01-chapters/03-priority-task-engine.md` | ✅ drafted |
+| `01-chapters/04-reporting-tracking.md` | ✅ drafted |
+| `01-chapters/05-pm-education-adoption.md` | ✅ drafted |
+| `02-prompts/prompt-00 to 03` | ✅ written |
+| `02-prompts/prompt-04 to 10` | ⏳ pending |
+| `06-agents/pm-command-center.md` | ✅ v1.0 |
+| `06-agents/reviewer-agent.md` | ✅ v1.0 |
+| `06-agents/audit-agent.md` | ✅ v1.0 |
+| `06-agents/account-agent.md` | ⏳ pending |
+| `07-routines/` (all 3) | ✅ written |
+| `08-pms/` (all 3 playbooks) | ✅ written |
+| `09-ops/client-onboarding-sop.md` | ✅ v1.0 MVP |
+| `03-skills/` | ⏳ pending |
+| `04-niches/healthcare/` | ⏳ pending (priority) |
+| `05-frameworks/` | ⏳ pending |
 
 ---
 
-*Last updated: 2026-05-15*
+*Last updated: 2026-05-17*

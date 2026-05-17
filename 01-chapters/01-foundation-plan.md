@@ -1,9 +1,11 @@
-# FOUNDATION PLAN v4
+# FOUNDATION PLAN v5
 ### The Digitech Solutions — AI-Native Client Delivery System
 
 🔵 ATTACH-TO-CLAUDE — Chapter 1 of the PM Knowledge Library.
 
-> A single source of truth for how the system is structured, who does what, and how the PM operates. Everything else (prompts, SOPs, skills) is downstream of this document.
+> A single source of truth for how the system is structured, who does what, and how the PM operates. Everything else (prompts, SOPs, skills, agents, playbooks) is downstream of this document.
+
+**v5 changes from v4:** Added 3-Layer Review Loop (Section 2a), resolved open decisions on Reviewer Agent, added 08-pms and 09-ops folders, updated Section 19 open decisions, added daily role playbooks to sync targets.
 
 ---
 
@@ -80,6 +82,56 @@ Claude Projects                      ← where work happens
 - **Weeks**: `2026-W20` (ISO week).
 - **Months**: `2026-05`.
 - **Versions**: `-v1`, `-v2` only when a client-facing iteration exists.
+
+---
+
+## 2a. The 3-Layer Review Loop (v5 addition)
+
+Every output produced by an execution agent passes through a mandatory review loop before the PM sees it. This is non-negotiable — no AI output goes to a client without passing through all three layers.
+
+```
+Layer 1 — EXECUTION
+AI execution agent produces output
+→ written to Notion task (Status: Output Ready)
+
+Layer 2 — REVIEW (runs in parallel)
+Reviewer Agent reads the task → checks quality vs brief, brand voice, do-not list, skill SOP → writes Quality Report to the task (PASS / FLAG / FAIL)
+Audit Agent reads the task → pulls live external data (Meta Ads MCP / Windsor / SEO audit script / Rank tracker) → writes Audit Report to the task
+
+Layer 3 — PM DECISION
+PM receives both reports → reads in under 60 seconds → decides: Approve / Revise / Escalate
+Every decision is logged in Notion
+```
+
+### The four agent types in this system
+
+| Agent | Scope | Lives in | Triggers |
+|---|---|---|---|
+| **PM Command Center** | Across all PM's clients | Claude Project (per PM) | PM opens it daily; routines fire on schedule |
+| **Account Agent** | Single client | Claude Project (per client) | PM invokes it for that client's work |
+| **Reviewer Agent** | All clients | Claude Project (shared) | Auto-triggered when Notion task → Output Ready |
+| **Audit Agent** | All clients | Claude Project (shared) | Auto-triggered when Notion task → Output Ready; also scheduled weekly |
+
+### What the PM approves vs what auto-proceeds
+
+| Output | Requires PM approval |
+|---|---|
+| SEO blog / article | Yes |
+| Social caption (organic) | Yes |
+| Ad copy (any platform) | Yes — plus human review gate |
+| GMB post | Yes |
+| Review reply (routine) | No — Reviewer PASS only; PM spot-checks weekly |
+| Minor technical SEO fix | No — SEO Manager executes; PM notified |
+| Internal link additions | No — SEO Manager executes; PM notified |
+| Client report | Yes — always, no exceptions |
+
+### Notion task status flow
+
+```
+Brief → In Progress → Output Ready → Under Review → Awaiting PM Approval → Approved → Live
+                                          ↕
+                               Revision Required → [agent re-runs] → Output Ready (again)
+```
 
 ---
 
@@ -663,14 +715,16 @@ Revisit at client #6.
 - [x] ~~GitHub or not?~~ **Yes, as the engineering layer. PMs don't touch it.**
 - [x] ~~PM-to-client scoping?~~ **Notion tag-based, hardcoded in Command Center prompt.**
 - [x] ~~How many Claude routines?~~ **Three: Mon 7 AM, Sat 5 PM, Sun 7 PM.**
+- [x] ~~Reviewer Agent: separate project or mode?~~ **Separate Claude Project (shared across all clients). System prompt in `06-agents/reviewer-agent.md`. Triggered when Notion task → Output Ready.**
+- [x] ~~Compliance lint: in every skill or separate Reviewer pass?~~ **Separate Reviewer pass. Compliance is one dimension of the Reviewer Agent's review. Niche-specific auto-escalation rules built in.**
+- [x] ~~Command Center personality lean — coach vs chief of staff?~~ **Chief of staff. Directive, not coaching. Tells the PM what to do — doesn't ask what they want to do.**
 - [ ] Sprint-to-retainer conversion target?
-- [ ] Reviewer Agent: separate project or mode?
 - [ ] Weekly reporting format: written, video, both?
-- [ ] Compliance lint: in every skill or separate Reviewer pass?
 - [ ] First 3 clients: locked in?
 - [ ] Niches 2 and 3?
-- [ ] Command Center name?
-- [ ] Command Center personality lean — coach vs chief of staff?
+- [ ] Auto-posting integration: Buffer vs Publer vs n8n native? (Build after 3rd client)
+- [ ] Client portal: Notion shared view or dedicated page? (Build after 5th client)
+- [ ] Performance feedback loop: how does Audit data feed back into Brand Brain? (Design in v6)
 
 ---
 

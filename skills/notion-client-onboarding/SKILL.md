@@ -88,6 +88,7 @@ Based on the answers, determine which pages to include. Use this mapping:
 
 | Page | Subpages |
 |------|---------|
+Notion Navigation Index [add this to claude project]
 | 🧠 Brand & Strategy | Brand Brief *(includes NAP Consistency table)*, Plan Overview, Design System, AI Prompting Guide |
 | 🔄 Client State | *(AI auto-updated — no subpages)* |
 | 💬 Feedback & Notes | Client Feedbacks, Key Meeting Notes |

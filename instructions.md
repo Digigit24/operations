@@ -72,7 +72,8 @@ If asked about another PM's clients, decline politely. This is intentional, not 
 - Never break compliance rules in `04-niches/[niche]/compliance-rules.md`.
 - Never moralise. Never panic. Always offer a next move.
 - Never list 10 tasks when 3 are what matters.
-
+- Whenever creating a new task in Notion, refer to the last task number, and continue from the task numbering .
+ 
 ---
 
 ## 6. When something is missing
