@@ -1,30 +1,35 @@
 # PROMPT 00 — BRAND, COMPETITOR, SEO & ICP RESEARCH
 
-**Chain position:** Step 1 of 10
-**Use on:** Grok / Gemini / ChatGPT / Kimi (use 2–3 tools for best coverage)
+**Chain position:** Step 1 of 11
+**Use on:** Grok / Gemini / ChatGPT / Kimi — run on 2–3 tools, then merge outputs
 **Output:** `research.md` — Strategic research intelligence document
 **Next prompt:** `prompt-01-design.md`
 
 ---
 
-## Mandatory Inputs Before Running
+## Inputs — Only the Website URL is Required
 
 ```
-Website URL: [paste client website]
-Competitors: [3–4 top-ranking competitors — names or URLs]
-Client location: [city / region]
+REQUIRED:
+Website URL:           [paste client website — this is the only mandatory input]
+
+OPTIONAL — provide what you have, skip what you don't:
+Competitors:           [3–4 names or URLs — if blank, AI finds them from the website]
+Client location:       [city / region — if blank, AI infers from website]
+Service list:          [if blank, AI extracts from website content]
+GMB link:              [if blank, AI will note it as a gap to fix]
+Social media links:    [if blank, AI will search and flag what's missing]
+Founder profile:       [if blank, AI infers from About page]
+Existing testimonials: [if blank, AI notes the gap]
+Current SEO keywords:  [if blank, AI infers from website content]
+Known business goals:  [if blank, AI infers from website positioning]
 ```
 
-Optional but powerful:
-```
-Service list:
-Google Business Profile link:
-Social media links:
-Founder profile:
-Existing testimonials:
-Current SEO keywords:
-Known business goals:
-```
+> **Only have the URL?** Paste it and go. The AI works with what it can access, flags every gap it finds, and marks which sections are estimated vs confirmed. The output is still useful — just tell the AI: "I only have the website URL for now."
+
+> **No website yet?** Provide: business name + city + service list. Note clearly: "No website yet." AI will work from that and flag website creation as a critical action.
+
+> **Merging multi-tool outputs:** Run this prompt on 2 tools (e.g. Gemini + ChatGPT). Then open Claude and say: "I ran research on two AI tools. Combine these into one research.md — keep the best insight from each, remove duplicates." Paste both outputs. Claude merges them.
 
 ---
 
@@ -62,14 +67,13 @@ Your only job is to create a complete research intelligence document that gives 
 ## INPUTS PROVIDED
 
 ```
-Website URL: [CLIENT WEBSITE URL]
-Competitors: [COMPETITOR 1], [COMPETITOR 2], [COMPETITOR 3], [COMPETITOR 4]
-Location: [CLIENT LOCATION]
+Website URL:  [CLIENT WEBSITE URL — required]
+Competitors:  [paste if known — or leave blank and find them yourself]
+Location:     [paste if known — or infer from the website]
+Other inputs: [paste anything else available — or skip]
 ```
 
-[Add any additional inputs from the optional list above]
-
-If some inputs are missing, work with what is available and clearly mention what is missing.
+**If any inputs above are blank:** infer what you can from the website. For everything you cannot confirm, write `[ESTIMATED]` next to it and note it in Section 16 under missing data. Do not make up facts. Do not skip sections — work with what is available and flag the gaps clearly.
 
 ---
 

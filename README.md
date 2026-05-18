@@ -137,9 +137,8 @@ When this repo updates, these places consume the change:
 
 ## Status
 
-- v0.2 — Foundation Plan v5 + full agent suite written + all 3 routines complete + role playbooks + onboarding SOP
-- Chapters 1–5 exist. Prompt chain: 00–03 written, 04–10 pending.
-- Next: prompt-04-seo-foundation, prompt-05-gmb-foundation, healthcare niche overlay, first 3 foundation skills, account-agent.md system prompt
+- v0.3 — Full prompt chain 00–09 written. Strategy Builder + Task Creator added. Onboarding skill built. NAP system integrated. Instructions.md updated with operational layer.
+- Next priorities: `04-niches/healthcare/` overlay, `account-agent.md`, first 3 foundation skills, `05-frameworks/client-intake-template.md`
 
 ## What's written vs pending
 
@@ -150,8 +149,20 @@ When this repo updates, these places consume the change:
 | `01-chapters/03-priority-task-engine.md` | ✅ drafted |
 | `01-chapters/04-reporting-tracking.md` | ✅ drafted |
 | `01-chapters/05-pm-education-adoption.md` | ✅ drafted |
-| `02-prompts/prompt-00 to 03` | ✅ written |
-| `02-prompts/prompt-04 to 10` | ⏳ pending |
+| `02-prompts/master-chain.md` | ✅ v0.3 — 11-step chain |
+| `02-prompts/prompt-00-research.md` | ✅ v2 — URL-only start, optional inputs |
+| `02-prompts/prompt-01-design.md` | ✅ 3-stage feedback loop |
+| `02-prompts/prompt-02-brand-brain.md` | ✅ full |
+| `02-prompts/prompt-03-design-system.md` | ✅ full HTML output |
+| `02-prompts/prompt-04-seo-foundation.md` | ✅ full — 13 sections |
+| `02-prompts/prompt-05-gmb-foundation.md` | ✅ full — 13 sections |
+| `02-prompts/prompt-06-website-brief.md` | ✅ full — 12 sections |
+| `02-prompts/prompt-07-audit.md` | ✅ full — Windsor MCP |
+| `02-prompts/prompt-08-strategy-builder.md` | ✅ full — cross-channel strategy |
+| `02-prompts/prompt-09-task-creator.md` | ✅ full — Notion task creation |
+| `02-prompts/prompt-10-content-calendar.md` | ⏳ pending |
+| `02-prompts/prompt-11-client-report.md` | ⏳ pending |
+| `skills/notion-client-onboarding/SKILL.md` | ✅ v2 — NAP integrated |
 | `06-agents/pm-command-center.md` | ✅ v1.0 |
 | `06-agents/reviewer-agent.md` | ✅ v1.0 |
 | `06-agents/audit-agent.md` | ✅ v1.0 |
@@ -160,9 +171,10 @@ When this repo updates, these places consume the change:
 | `08-pms/` (all 3 playbooks) | ✅ written |
 | `09-ops/client-onboarding-sop.md` | ✅ v1.0 MVP |
 | `03-skills/` | ⏳ pending |
-| `04-niches/healthcare/` | ⏳ pending (priority) |
-| `05-frameworks/` | ⏳ pending |
+| `04-niches/healthcare/` | ⏳ pending — priority |
+| `05-frameworks/client-intake-template.md` | ⏳ pending — priority |
+| `instructions.md` | ✅ v2 — operational layer added |
 
 ---
 
-*Last updated: 2026-05-17*
+*Last updated: 2026-05-18*
