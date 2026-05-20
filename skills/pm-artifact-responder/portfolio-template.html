@@ -1,0 +1,233 @@
+<h2 class="sr-only">PM Portfolio Dashboard — all active clients and open tasks</h2>
+
+<style>
+.pf { font-family: var(--font-sans); max-width: 880px; }
+.tag { display:inline-block; font-size:11px; color:var(--color-text-secondary); background:var(--color-background-secondary); border-radius:var(--border-radius-md); padding:2px 8px; }
+.pill { display:inline-block; font-size:11px; font-weight:500; border-radius:100px; padding:2px 10px; white-space:nowrap; }
+.p-blue  { background:var(--color-background-info);    color:var(--color-text-info); }
+.p-gray  { background:var(--color-background-secondary); color:var(--color-text-secondary); }
+.p-red   { background:var(--color-background-danger);  color:var(--color-text-danger); }
+.t-bar { display:flex; border-bottom:0.5px solid var(--color-border-tertiary); margin-bottom:1rem; overflow-x:auto; scrollbar-width:none; }
+.t-bar::-webkit-scrollbar { display:none; }
+.t-btn { flex-shrink:0; padding:9px 14px; font-size:12px; font-weight:500; color:var(--color-text-secondary); border:none; border-bottom:2px solid transparent; background:none; cursor:pointer; font-family:var(--font-sans); white-space:nowrap; }
+.t-btn:hover { color:var(--color-text-primary); }
+.t-btn.on { color:var(--color-text-info); border-bottom-color:var(--color-text-info); }
+.t-cnt { display:inline-block; font-size:10px; font-weight:500; background:var(--color-background-secondary); border-radius:100px; padding:1px 6px; margin-left:4px; color:var(--color-text-secondary); }
+.t-btn.on .t-cnt { background:var(--color-background-info); color:var(--color-text-info); }
+.panel-hdr { display:flex; align-items:baseline; gap:10px; margin-bottom:12px; padding-bottom:10px; border-bottom:0.5px solid var(--color-border-tertiary); }
+.panel-title { font-size:16px; font-weight:500; color:var(--color-text-primary); }
+.panel-sub { font-size:12px; color:var(--color-text-secondary); }
+.all-hdr { display:flex; align-items:baseline; gap:10px; margin-bottom:12px; padding-bottom:10px; border-bottom:0.5px solid var(--color-border-tertiary); }
+.task-tbl { width:100%; border-collapse:collapse; font-size:13px; }
+.task-tbl th { font-size:11px; font-weight:500; color:var(--color-text-secondary); text-transform:uppercase; letter-spacing:0.5px; padding:6px 10px; text-align:left; border-bottom:0.5px solid var(--color-border-tertiary); white-space:nowrap; }
+.task-tbl td { padding:9px 10px; border-bottom:0.5px solid var(--color-border-tertiary); vertical-align:middle; }
+.task-tbl tr:last-child td { border-bottom:none; }
+.task-tbl tr:hover td { background:var(--color-background-secondary); }
+.task-name { font-size:13px; color:var(--color-text-primary); line-height:1.35; }
+.task-due { font-size:12px; white-space:nowrap; color:var(--color-text-secondary); }
+.task-due.ov { color:var(--color-text-danger); font-weight:500; }
+.client-chip { font-size:11px; font-weight:500; background:var(--color-background-info); color:var(--color-text-info); border-radius:var(--border-radius-md); padding:2px 8px; white-space:nowrap; }
+.cbtn { font-size:11px; padding:4px 10px; border-radius:var(--border-radius-md); border:0.5px solid var(--color-border-info); background:var(--color-background-info); color:var(--color-text-info); cursor:pointer; font-family:var(--font-sans); font-weight:500; white-space:nowrap; }
+.cbtn:hover { opacity:.8; }
+.cbtn:disabled { opacity:.4; cursor:default; border-color:var(--color-border-tertiary); background:var(--color-background-secondary); color:var(--color-text-secondary); }
+.stats-bar { display:flex; gap:10px; padding:10px 0 14px; flex-wrap:wrap; }
+.stat-card { background:var(--color-background-secondary); border-radius:var(--border-radius-lg); padding:10px 16px; display:flex; flex-direction:column; min-width:76px; }
+.stat-n { font-size:22px; font-weight:500; color:var(--color-text-primary); line-height:1; }
+.stat-l { font-size:11px; color:var(--color-text-secondary); margin-top:4px; }
+.stat-n.red { color:var(--color-text-danger); }
+.qabtn { display:inline-flex; align-items:center; gap:7px; padding:8px 13px; border:0.5px solid var(--color-border-secondary); border-radius:var(--border-radius-lg); background:var(--color-background-primary); cursor:pointer; font-family:var(--font-sans); margin:0 8px 8px 0; }
+.qabtn:hover { background:var(--color-background-secondary); }
+.qabtn.bl { border-color:var(--color-border-info); background:var(--color-background-info); }
+.qabtn.pu { border-color:var(--color-border-tertiary); background:var(--color-background-secondary); }
+.qabtn-t { font-size:13px; font-weight:500; color:var(--color-text-primary); }
+.qabtn.bl .qabtn-t { color:var(--color-text-info); }
+.qabtn.pu .qabtn-t { color:var(--color-text-secondary); }
+.slabel { font-size:11px; font-weight:500; color:var(--color-text-secondary); text-transform:uppercase; letter-spacing:0.6px; margin:1rem 0 0.5rem; }
+.empty { text-align:center; padding:24px; color:var(--color-text-secondary); font-size:13px; }
+.tbl-wrap { overflow-x:auto; }
+</style>
+
+<div class="pf">
+  <div style="padding:0.5rem 0 1rem; border-bottom:0.5px solid var(--color-border-tertiary); margin-bottom:12px;">
+    <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:8px;">
+      <span style="font-size:20px; font-weight:500; color:var(--color-text-primary);">PM Portfolio</span>
+      <span class="tag" style="font-size:11px;">May 19, 2026</span>
+      <span class="pill p-blue" style="margin-left:auto;">4 in progress</span>
+      <span class="pill p-red">36 overdue</span>
+    </div>
+    <div class="stats-bar">
+      <div class="stat-card"><span class="stat-n">49</span><span class="stat-l">Open tasks</span></div>
+      <div class="stat-card"><span class="stat-n">4</span><span class="stat-l">Active clients</span></div>
+      <div class="stat-card"><span class="stat-n">4</span><span class="stat-l">In progress</span></div>
+      <div class="stat-card"><span class="stat-n red">36</span><span class="stat-l">Overdue</span></div>
+    </div>
+  </div>
+
+  <div class="t-bar"><button class="t-btn on" data-tab="all" onclick="go('all',this)">All Tasks<span class="t-cnt">49</span></button><button class="t-btn" data-tab="Dev-Mantra" onclick="go('Dev-Mantra',this)">Dev Mantra<span class="t-cnt">41</span></button><button class="t-btn" data-tab="Jeevisha" onclick="go('Jeevisha',this)">Jeevisha<span class="t-cnt">4</span></button><button class="t-btn" data-tab="Nakshatra" onclick="go('Nakshatra',this)">Nakshatra<span class="t-cnt">3</span></button><button class="t-btn" data-tab="Prime-Hospital" onclick="go('Prime-Hospital',this)">Prime Hospital<span class="t-cnt">1</span></button></div>
+
+  <div id="p-all">
+    <div class="all-hdr">
+      <span class="panel-title">All Tasks</span>
+      <span class="panel-sub">49 open across 4 clients</span>
+    </div>
+    <div class="tbl-wrap">
+      <table class="task-tbl">
+        <thead><tr>
+          <th style="width:36%">Task</th>
+          <th>Client</th>
+          <th>Status</th>
+          <th>Due</th>
+          <th>Tags</th>
+          <th>Action</th>
+        </tr></thead>
+        <tbody id="all-body"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div id="p-Dev-Mantra"><div class="panel-hdr"><span class="panel-title">Dev Mantra</span><span class="panel-sub">41 open tasks</span></div><div class="tbl-wrap"><table class="task-tbl"><thead><tr><th style="width:45%">Task</th><th>Status</th><th>Due</th><th>Tags</th><th>Action</th></tr></thead><tbody id="Dev-Mantra-body"></tbody></table></div><div style="margin-top:1rem;" id="Dev-Mantra-actions"></div></div><div id="p-Jeevisha"><div class="panel-hdr"><span class="panel-title">Jeevisha</span><span class="panel-sub">4 open tasks</span></div><div class="tbl-wrap"><table class="task-tbl"><thead><tr><th style="width:45%">Task</th><th>Status</th><th>Due</th><th>Tags</th><th>Action</th></tr></thead><tbody id="Jeevisha-body"></tbody></table></div><div style="margin-top:1rem;" id="Jeevisha-actions"></div></div><div id="p-Nakshatra"><div class="panel-hdr"><span class="panel-title">Nakshatra</span><span class="panel-sub">3 open tasks</span></div><div class="tbl-wrap"><table class="task-tbl"><thead><tr><th style="width:45%">Task</th><th>Status</th><th>Due</th><th>Tags</th><th>Action</th></tr></thead><tbody id="Nakshatra-body"></tbody></table></div><div style="margin-top:1rem;" id="Nakshatra-actions"></div></div><div id="p-Prime-Hospital"><div class="panel-hdr"><span class="panel-title">Prime Hospital</span><span class="panel-sub">1 open task</span></div><div class="tbl-wrap"><table class="task-tbl"><thead><tr><th style="width:45%">Task</th><th>Status</th><th>Due</th><th>Tags</th><th>Action</th></tr></thead><tbody id="Prime-Hospital-body"></tbody></table></div><div style="margin-top:1rem;" id="Prime-Hospital-actions"></div></div>
+</div>
+
+<script>
+(function() {
+  var TODAY = "2026-05-19";
+  var TASKS = [{"id": "3620a406-5846-80ad-829e-c9b56d4acdb4", "name": "Assigned task to Parth - Jeevisha Video", "status": "In Progress", "due": "2026-05-16", "tags": [], "client": "Jeevisha", "url": "https://www.notion.so/3620a406584680ad829ec9b56d4acdb4"}, {"id": "35caa43f-4fba-4958-a0d5-646b0732081c", "name": "Social bookmarking (weekly report on Friday)", "status": "In Progress", "due": "2026-05-16", "tags": ["gmboptimisation"], "client": "Dev Mantra", "url": "https://www.notion.so/35caa43f4fba4958a0d5646b0732081c"}, {"id": "739c14c2-7bce-44ac-bbc4-c6739c69a024", "name": "Directory submission (weekly report on Friday)", "status": "In Progress", "due": "2026-05-16", "tags": ["gmboptimisation"], "client": "Dev Mantra", "url": "https://www.notion.so/739c14c27bce44acbbc4c6739c69a024"}, {"id": "3620a406-5846-8079-a2c3-d63cc0b93806", "name": "Assigned task to Parth - Prime video", "status": "In Progress", "due": "2026-05-18", "tags": [], "client": "Prime Hospital", "url": "https://www.notion.so/3620a40658468079a2c3d63cc0b93806"}, {"id": "5b3882a3-3388-4ba5-9c79-9831b94dbcfd", "name": "Keyword focus report (28 Apr \u2013 24 May)", "status": "Not Started", "due": "2026-04-28", "tags": ["gmboptimisation"], "client": "Dev Mantra", "url": "https://www.notion.so/5b3882a333884ba59c799831b94dbcfd"}, {"id": "6f9e3382-a8c9-4ae6-af24-10c1603b4cfd", "name": "Vikas Sir post: caption, visual & hashtag for Abhinaya by 3 PM", "status": "Not Started", "due": "2026-04-28", "tags": ["Social media posting"], "client": "Dev Mantra", "url": "https://www.notion.so/6f9e3382a8c94ae6af2410c1603b4cfd"}, {"id": "139f8213-6269-45b5-993d-89ef7d2c59da", "name": "Virtual CFO post (Kamal Sir): caption, visual & hashtag", "status": "Not Started", "due": "2026-04-30", "tags": ["Social media posting"], "client": "Dev Mantra", "url": "https://www.notion.so/139f8213626945b5993d89ef7d2c59da"}, {"id": "e283d499-588f-4c78-b6d8-0ca46d3c7626", "name": "Put ISO certification on GCC page", "status": "Not Started", "due": "2026-04-30", "tags": [], "client": "Dev Mantra", "url": "https://www.notion.so/e283d499588f4c78b6d80ca46d3c7626"}, {"id": "f41fc3f1-8742-464f-9d45-7f4bfe4983cd", "name": "Mention services stack on GCC page", "status": "Not Started", "due": "2026-04-30", "tags": [], "client": "Dev Mantra", "url": "https://www.notion.so/f41fc3f18742464f9d457f4bfe4983cd"}, {"id": "300c879f-eb99-4a65-8fbf-5bc51341c1db", "name": "Transfer all datasets from previous emailing tool to Brevo", "status": "Not Started", "due": "2026-05-02", "tags": [], "client": "Dev Mantra", "url": "https://www.notion.so/300c879feb994a658fbf5bc51341c1db"}, {"id": "3590a406-5846-8144-965e-c35f75a28301", "name": "TASK 11 \u2014 Write & Publish 10 Priority SEO Blog Posts", "status": "Not Started", "due": "2026-05-13", "tags": ["on-page", "meta-tags"], "client": "Dev Mantra", "url": "https://www.notion.so/3590a40658468144965ec35f75a28301"}, {"id": "35f0a406-5846-80ab-a2a3-dc803d6006b3", "name": "Jeevisha Ad banners content", "status": "Not Started", "due": "2026-05-14", "tags": [], "client": "Jeevisha", "url": "https://www.notion.so/35f0a406584680aba2a3dc803d6006b3"}, {"id": "3590a406-5846-8124-a00a-deccca30a96f", "name": "TASK 23 \u2014 Social Profiles Setup (X, YouTube, Facebook Pixel)", "status": "Not Started", "due": "2026-05-15", "tags": ["social", "off-page", "audit"], "client": "Dev Mantra", "url": "https://www.notion.so/3590a40658468124a00adeccca30a96f"}, {"id": "3590a406-5846-81d7-948b-f11da014daa4", "name": "TASK 21 \u2014 Improve LLM Rendered Content Ratio (GEO Optimization)", "status": "Not Started", "due": "2026-05-15", "tags": ["geo-llm", "on-page", "audit"], "client": "Dev Mantra", "url": "https://www.notion.so/3590a406584681d7948bf11da014daa4"}, {"id": "3590a406-5846-81d7-a0d5-ef3e043e813e", "name": "TASK 22 \u2014 Add Twitter (X) Cards + Open Graph Meta Tags", "status": "Not Started", "due": "2026-05-15", "tags": ["social", "on-page", "meta-tags", "audit"], "client": "Dev Mantra", "url": "https://www.notion.so/3590a406584681d7a0d5ef3e043e813e"}, {"id": "3590a406-5846-8118-a741-e4ca502114b5", "name": "TASK 18 \u2014 Site Performance Optimization (Page Size, Minify, HTTP/2)", "status": "Not Started", "due": "2026-05-15", "tags": ["performance", "technical-seo", "audit"], "client": "Dev Mantra", "url": "https://www.notion.so/3590a40658468118a741e4ca502114b5"}, {"id": "3590a406-5846-8153-95a7-e32e76ca5644", "name": "TASK 15 \u2014 Fix Missing H1 + Extend Meta Description on Homepage", "status": "Not Started", "due": "2026-05-15", "tags": ["urgent", "on-page", "meta-tags", "audit"], "client": "Dev Mantra", "url": "https://www.notion.so/3590a4065846815395a7e32e76ca5644"}, {"id": "3590a406-5846-8133-a56c-ed366916f5eb", "name": "TASK 14 \u2014 Monthly SEO Review & Reporting SOP", "status": "Not Started", "due": "2026-05-15", "tags": ["on-page"], "client": "Dev Mantra", "url": "https://www.notion.so/3590a40658468133a56ced366916f5eb"}, {"id": "35e0a406-5846-8168-959e-d1400a0bcb87", "name": "TASK 26 \u2014 Add 23 Blog\u2192Service In-Content Links", "status": "Not Started", "due": "2026-05-16", "tags": [], "client": "Dev Mantra", "url": "https://www.notion.so/35e0a40658468168959ed1400a0bcb87"}, {"id": "3590a406-5846-8037-a9df-cb0bd27429fd", "name": "Task ", "status": "Not Started", "due": "2026-05-16", "tags": [], "client": "Dev Mantra", "url": "https://www.notion.so/3590a40658468037a9dfcb0bd27429fd"}, {"id": "3590a406-5846-811f-bd46-ccd39d5279c5", "name": "TASK 25 \u2014 Backlink Building Strategy (130 \u2192 250 Referring Domains)", "status": "Not Started", "due": "2026-05-16", "tags": ["backlinks", "off-page", "audit"], "client": "Dev Mantra", "url": "https://www.notion.so/3590a4065846811fbd46ccd39d5279c5"}, {"id": "3590a406-5846-81ff-ba09-c74ef839427c", "name": "TASK 24 \u2014 Friendly URL Audit & Cleanup", "status": "Not Started", "due": "2026-05-16", "tags": ["on-page", "database", "audit"], "client": "Dev Mantra", "url": "https://www.notion.so/3590a406584681ffba09c74ef839427c"}, {"id": "3590a406-5846-8159-bc55-ca2d2d9a57e7", "name": "TASK 19 \u2014 PageSpeed Insights Optimization (Mobile + Desktop)", "status": "Not Started", "due": "2026-05-16", "tags": ["performance", "technical-seo", "audit"], "client": "Dev Mantra", "url": "https://www.notion.so/3590a40658468159bc55ca2d2d9a57e7"}, {"id": "3590a406-5846-81b8-97fd-d9d377b364d1", "name": "TASK 20 \u2014 Email Privacy + DMARC Mail Record", "status": "Not Started", "due": "2026-05-16", "tags": ["technical-seo", "audit"], "client": "Dev Mantra", "url": "https://www.notion.so/3590a406584681b897fdd9d377b364d1"}, {"id": "3590a406-5846-8107-9577-dcf85658050d", "name": "TASK 16 \u2014 Force HTTP \u2192 HTTPS Redirect (Site-wide)", "status": "Not Started", "due": "2026-05-16", "tags": ["urgent", "technical-seo", "audit"], "client": "Dev Mantra", "url": "https://www.notion.so/3590a406584681079577dcf85658050d"}, {"id": "3590a406-5846-813e-a320-e38e70c27579", "name": "TASK 17 \u2014 NAP Consistency + LocalBusiness Schema (Local SEO)", "status": "Not Started", "due": "2026-05-16", "tags": ["local-seo", "schema-markup", "on-page", "audit", "geo-llm"], "client": "Dev Mantra", "url": "https://www.notion.so/3590a4065846813ea320e38e70c27579"}, {"id": "3590a406-5846-8114-9b94-e5ff8523ba6b", "name": "TASK 10 \u2014 Build Internal Linking Structure Across All Pages", "status": "Not Started", "due": "2026-05-16", "tags": ["on-page"], "client": "Dev Mantra", "url": "https://www.notion.so/3590a406584681149b94e5ff8523ba6b"}, {"id": "3590a406-5846-8113-9b5b-e250410216f0", "name": "TASK 05 \u2014 Build Dynamic Sitemap with spatie/laravel-sitemap", "status": "Not Started", "due": "2026-05-16", "tags": ["technical-seo", "laravel"], "client": "Dev Mantra", "url": "https://www.notion.so/3590a406584681139b5be250410216f0"}, {"id": "d46bd19d-34b6-4452-bc3d-0bb0397edec0", "name": "QA exercise + correction (weekly report every Monday)", "status": "Not Started", "due": "2026-05-16", "tags": [], "client": "Dev Mantra", "url": "https://www.notion.so/d46bd19d34b64452bc3d0bb0397edec0"}, {"id": "3530a406-5846-80c6-a165-f291fc5514e5", "name": "Nidhi Mam Linkedin cover Image", "status": "Not Started", "due": "2026-05-16", "tags": [], "client": "Dev Mantra", "url": "https://www.notion.so/3530a406584680c6a165f291fc5514e5"}, {"id": "35e0a406-5846-810a-a766-ea39c8d737b8", "name": "TASK 27 \u2014 Fix Homepage Service Anchor Text", "status": "Not Started", "due": "2026-05-17", "tags": [], "client": "Dev Mantra", "url": "https://www.notion.so/35e0a4065846810aa766ea39c8d737b8"}, {"id": "3640a406-5846-809a-926f-c4086727a545", "name": "Task nakshatra content ideas", "status": "Not Started", "due": "2026-05-18", "tags": [], "client": "Nakshatra", "url": "https://www.notion.so/3640a4065846809a926fc4086727a545"}, {"id": "3640a406-5846-80a7-a7ac-e90ca3110efc", "name": "Task devmantra website new page", "status": "Not Started", "due": "2026-05-18", "tags": [], "client": "Dev Mantra", "url": "https://www.notion.so/3640a406584680a7a7ace90ca3110efc"}, {"id": "3640a406-5846-8020-93d0-fd979abeb8d5", "name": "Task vikas sir News list", "status": "Not Started", "due": "2026-05-18", "tags": [], "client": "Dev Mantra", "url": "https://www.notion.so/3640a4065846802093d0fd979abeb8d5"}, {"id": "3640a406-5846-8016-b2d0-fcf3d174c7ce", "name": "Task nakshatra razorpay website integration on amh landing page ", "status": "Not Started", "due": "2026-05-18", "tags": [], "client": "Nakshatra", "url": "https://www.notion.so/3640a40658468016b2d0fcf3d174c7ce"}, {"id": "3630a406-5846-80e6-b9a5-f4eb68b10e51", "name": "Nakshatra task : fb verification", "status": "Not Started", "due": "2026-05-18", "tags": [], "client": "Nakshatra", "url": "https://www.notion.so/3630a406584680e6b9a5f4eb68b10e51"}, {"id": "35e0a406-5846-8132-895d-d8848f3d6b04", "name": "TASK 28 \u2014 Emergency Index Recovery (5 Links Per Unindexed Page)", "status": "Not Started", "due": "2026-05-19", "tags": [], "client": "Dev Mantra", "url": "https://www.notion.so/35e0a40658468132895dd8848f3d6b04"}, {"id": "35e0a406-5846-81ff-b720-c0d6decf8df4", "name": "TASK 29 \u2014 Implement Keyword-Rich Breadcrumbs", "status": "Not Started", "due": "2026-05-20", "tags": [], "client": "Dev Mantra", "url": "https://www.notion.so/35e0a406584681ffb720c0d6decf8df4"}, {"id": "3640a406-5846-8123-a28a-d59dae6ef7fa", "name": "sample demo task two", "status": "Not Started", "due": "2026-05-21", "tags": [], "client": "Jeevisha", "url": "https://www.notion.so/3640a40658468123a28ad59dae6ef7fa"}, {"id": "35e0a406-5846-81f6-af81-de2d0a4506c0", "name": "TASK 30 \u2014 Service\u2192Content In-Body Links (Not Footer)", "status": "Not Started", "due": "2026-05-23", "tags": [], "client": "Dev Mantra", "url": "https://www.notion.so/35e0a406584681f6af81de2d0a4506c0"}, {"id": "35e0a406-5846-81c9-bb99-ce259ee570d6", "name": "TASK 31 \u2014 Cross-Service Intelligent Linking (18 Links)", "status": "Not Started", "due": "2026-05-26", "tags": [], "client": "Dev Mantra", "url": "https://www.notion.so/35e0a406584681c9bb99ce259ee570d6"}, {"id": "35e0a406-5846-819e-8604-f4346d5c786e", "name": "TASK 32 \u2014 Add \"How DevMantra Can Help\" to Reports/Case Studies", "status": "Not Started", "due": "2026-05-28", "tags": [], "client": "Dev Mantra", "url": "https://www.notion.so/35e0a4065846819e8604f4346d5c786e"}, {"id": "35e0a406-5846-81d6-a489-d6f720d24475", "name": "TASK 33 \u2014 Expand Calculator\u2192Service Links (3\u219212)", "status": "Not Started", "due": "2026-05-30", "tags": [], "client": "Dev Mantra", "url": "https://www.notion.so/35e0a406584681d6a489d6f720d24475"}, {"id": "35e0a406-5846-8126-9354-c5a88cafa91a", "name": "TASK 34 \u2014 Newsletter Archive Activation (64 Editions + Hub)", "status": "Not Started", "due": "2026-06-02", "tags": [], "client": "Dev Mantra", "url": "https://www.notion.so/35e0a406584681269354c5a88cafa91a"}, {"id": "35e0a406-5846-8158-b642-df4e5b800e90", "name": "TASK 35 \u2014 Complete Topic Cluster Linking (5 Clusters)", "status": "Not Started", "due": "2026-06-09", "tags": [], "client": "Dev Mantra", "url": "https://www.notion.so/35e0a40658468158b642df4e5b800e90"}, {"id": "35e0a406-5846-81f4-8ff4-f1a03954107e", "name": "TASK 36 \u2014 Author Bio Service Links (If Bios Exist)", "status": "Not Started", "due": "2026-06-16", "tags": [], "client": "Dev Mantra", "url": "https://www.notion.so/35e0a406584681f48ff4f1a03954107e"}, {"id": "35e0a406-5846-812b-8785-d1d811c74816", "name": "TASK 37 \u2014 Implement Anchor Text Variation System", "status": "Not Started", "due": "2026-06-23", "tags": [], "client": "Dev Mantra", "url": "https://www.notion.so/35e0a4065846812b8785d1d811c74816"}, {"id": "3640a406-5846-8047-9e76-fcafe850b720", "name": "Task new content ideas ", "status": "Not Started", "due": null, "tags": [], "client": "Jeevisha", "url": "https://www.notion.so/3640a406584680479e76fcafe850b720"}, {"id": "3640a406-5846-80cc-8e57-fea92ebd871c", "name": "Task vikas sir posting approval ", "status": "Not Started", "due": null, "tags": [], "client": "Dev Mantra", "url": "https://www.notion.so/3640a406584680cc8e57fea92ebd871c"}];
+  var CLIENTS = ["Dev Mantra", "Jeevisha", "Nakshatra", "Prime Hospital"];
+  var NOTION_URLS = {"Dev Mantra": "https://www.notion.so/a560a40658468270bc20819706c52a40", "Jeevisha": "https://www.notion.so/4be0a4065846826cae4b0154c5cebc8c", "Nakshatra": "https://www.notion.so/2370a40658468230bc8f013b258c5e6f", "Prime Hospital": "https://www.notion.so/f540a406584682159a0381b60a761148"};
+
+  function statusPill(s) {
+    if (s === 'In Progress') return '<span class="pill p-blue">In Progress</span>';
+    if (s === 'Not Started') return '<span class="pill p-gray">Not Started</span>';
+    if (s === 'blocked')     return '<span class="pill p-red">Blocked</span>';
+    if (s === 'backlog')     return '<span class="pill p-gray">Backlog</span>';
+    return '<span class="pill p-gray">' + s + '</span>';
+  }
+
+  function dueHtml(due) {
+    if (!due) return '<span class="task-due">—</span>';
+    var ov = due < TODAY;
+    var parts = due.split('-');
+    var d = new Date(+parts[0], +parts[1]-1, +parts[2]);
+    var label = d.toLocaleDateString('en-GB', {day:'numeric', month:'short'});
+    return ov ? '<span class="task-due ov">⚠ ' + label + '</span>' : '<span class="task-due">' + label + '</span>';
+  }
+
+  function tagsHtml(tags) {
+    if (!tags || !tags.length) return '<span style="color:var(--color-text-secondary);font-size:12px">—</span>';
+    return tags.slice(0,2).map(function(t){ return '<span class="tag" style="margin:1px 2px">' + t + '</span>'; }).join('');
+  }
+
+  function markPrompt(t) {
+    return 'Mark task as Completed in Notion for ' + t.client + '. Task name: "' + t.name + '". Task Notion page ID: ' + t.id + '. Use notion-update-page to set the Status field to "Completed". Confirm once done.';
+  }
+
+  function briefPrompt(c) {
+    var tasks = TASKS.filter(function(t){ return t.client === c; });
+    var ip = tasks.filter(function(t){ return t.status === 'In Progress'; }).map(function(t){ return t.name; }).slice(0,3).join(', ') || 'none';
+    var ov = tasks.filter(function(t){ return t.due && t.due < TODAY; }).map(function(t){ return t.name; }).slice(0,3).join(', ') || 'none';
+    return 'Morning brief for ' + c + ': ' + tasks.length + ' open tasks. In progress: ' + ip + '. Overdue: ' + ov + '. Top 3 priorities today? Short actionable brief.';
+  }
+
+  function dashPrompt(c) {
+    return 'Dashboard for ' + c;
+  }
+
+  function buildAll() {
+    var tb = document.getElementById('all-body');
+    if (!tb) return;
+    var html = '';
+    TASKS.forEach(function(t, i) {
+      html += '<tr>' +
+        '<td><span class="task-name">' + t.name + '</span></td>' +
+        '<td><span class="client-chip">' + t.client + '</span></td>' +
+        '<td>' + statusPill(t.status) + '</td>' +
+        '<td>' + dueHtml(t.due) + '</td>' +
+        '<td>' + tagsHtml(t.tags) + '</td>' +
+        '<td><button class="cbtn" data-ti="' + i + '">Mark ✓</button></td>' +
+        '</tr>';
+    });
+    tb.innerHTML = html || '<tr><td colspan="6" class="empty">All caught up!</td></tr>';
+  }
+
+  function buildClient(c) {
+    var slug = c.replace(/ /g, '-');
+    var tb = document.getElementById(slug + '-body');
+    if (!tb) return;
+    var tasks = TASKS.filter(function(t){ return t.client === c; });
+    var html = '';
+    tasks.forEach(function(t) {
+      var gi = TASKS.indexOf(t);
+      html += '<tr>' +
+        '<td><span class="task-name">' + t.name + '</span></td>' +
+        '<td>' + statusPill(t.status) + '</td>' +
+        '<td>' + dueHtml(t.due) + '</td>' +
+        '<td>' + tagsHtml(t.tags) + '</td>' +
+        '<td><button class="cbtn" data-ti="' + gi + '">Mark ✓</button></td>' +
+        '</tr>';
+    });
+    tb.innerHTML = html || '<tr><td colspan="5" class="empty">No open tasks!</td></tr>';
+
+    var actEl = document.getElementById(slug + '-actions');
+    if (actEl) {
+      var ci = CLIENTS.indexOf(c);
+      actEl.innerHTML =
+        '<div class="slabel">Quick actions</div>' +
+        '<button class="qabtn bl" data-ci="' + ci + '" data-act="brief"><span class="qabtn-t">☀ Morning Brief</span></button>' +
+        '<button class="qabtn" data-ci="' + ci + '" data-act="dash"><span class="qabtn-t">◈ Client Dashboard</span></button>' +
+        '<button class="qabtn pu" data-ci="' + ci + '" data-act="notion"><span class="qabtn-t">↗ Open in Notion</span></button>';
+    }
+  }
+
+  document.addEventListener('click', function(e) {
+    var markBtn = e.target.closest('[data-ti]');
+    if (markBtn && markBtn.classList.contains('cbtn')) {
+      var idx = +markBtn.dataset.ti;
+      var t = TASKS[idx];
+      if (t && typeof sendPrompt === 'function') {
+        markBtn.textContent = '✓';
+        markBtn.disabled = true;
+        sendPrompt(markPrompt(t));
+      }
+      return;
+    }
+    var actBtn = e.target.closest('[data-act]');
+    if (actBtn) {
+      var ci = +actBtn.dataset.ci;
+      var act = actBtn.dataset.act;
+      var c = CLIENTS[ci];
+      if (act === 'brief' && typeof sendPrompt === 'function') {
+        sendPrompt(briefPrompt(c));
+      } else if (act === 'dash' && typeof sendPrompt === 'function') {
+        sendPrompt(dashPrompt(c));
+      } else if (act === 'notion') {
+        var url = NOTION_URLS[c];
+        if (url) window.open(url, '_blank');
+      }
+      return;
+    }
+  });
+
+  var PANELS = ['all'].concat(CLIENTS.map(function(c){ return c.replace(/ /g,'-'); }));
+
+  window.go = function(name, btn) {
+    PANELS.forEach(function(p) {
+      var el = document.getElementById('p-' + p);
+      if (el) el.style.display = 'none';
+    });
+    var show = document.getElementById('p-' + name);
+    if (show) show.style.display = 'block';
+    document.querySelectorAll('.t-btn').forEach(function(b){ b.classList.remove('on'); });
+    if (btn) btn.classList.add('on');
+  };
+
+  buildAll();
+  CLIENTS.forEach(function(c){ buildClient(c); });
+
+  PANELS.forEach(function(p) {
+    var el = document.getElementById('p-' + p);
+    if (el) el.style.display = 'none';
+  });
+  document.getElementById('p-all').style.display = 'block';
+
+})();
+</script>

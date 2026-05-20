@@ -1,9 +1,9 @@
 # PROMPT 03 — DESIGN SYSTEM + HTML EXPORT
 
-**Chain position:** Step 4 of 10
+**Chain position:** Step 6 of 10
 **Use on:** Claude / ChatGPT (Claude preferred for HTML generation quality)
 **Output:** `design-system.html` — Standalone visual system file
-**Next prompt:** `prompt-04-seo-foundation.md` (parallel with 05, 06, 07, 08)
+**Next prompt:** `prompt-06-website-brief.md`
 
 ---
 
@@ -341,7 +341,7 @@ Prompts **04–08** can now run in parallel.
 Update `client-state.md`:
 ```
 Current Prompt Step: 04-08 (parallel)
-Last completed: prompt-03-design-system
+Last completed: prompt-05-design-system
 Last completed date: [date]
 Outputs saved: research.md, design_instructions.md, prompting_style_guideline.md, brand-brain.md, design-system.html
 ```

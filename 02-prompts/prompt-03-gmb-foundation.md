@@ -1,9 +1,9 @@
 # PROMPT 05 — GMB FOUNDATION
 
-**Chain position:** Step 6 of 10 (runs in parallel with 04, 06, 07, 08)
+**Chain position:** Step 4 of 10
 **Use on:** ChatGPT / Gemini (Gemini preferred — better Google ecosystem awareness)
 **Output:** `gmb-foundation.md` — Complete GMB optimisation playbook
-**Next prompt:** `prompt-09-content-calendar.md` (recurring)
+**Next prompt:** `prompt-04-brand-brain.md`
 
 ---
 
@@ -542,13 +542,15 @@ Also update client's Notion → GMB page with:
 
 1. Save output as `gmb-foundation.md`
 2. Upload to client's Notion → GMB → GMB Foundation
-3. Convert 90-Day Action Plan into Notion tasks
-4. Immediately action Week 1 tasks — these have the most impact
+3. Attach `gmb-foundation.md` to the Claude Project as a source
+4. Week 1 GMB tasks will be created via Prompt 09 (Task Creator) — note them for now
+
+Next step: **`prompt-04-brand-brain.md`** (attach research.md + seo-foundation.md + gmb-foundation.md)
 
 Update `client-state.md`:
 ```
-Current Prompt Step: 04-08 (parallel)
-Last completed: prompt-05-gmb-foundation
+Current Prompt Step: 04
+Last completed: prompt-03-gmb-foundation
 Last completed date: [date]
-Outputs saved: research.md, design_instructions.md, prompting_style_guideline.md, brand-brain.md, design-system.html, seo-foundation.md, gmb-foundation.md
+Outputs saved: research.md, design_instructions.md, prompting_style_guideline.md, seo-foundation.md, gmb-foundation.md
 ```

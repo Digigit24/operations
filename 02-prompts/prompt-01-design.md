@@ -3,7 +3,7 @@
 **Chain position:** Step 2 of 10
 **Use on:** ChatGPT (Project) — this prompt has a feedback loop, run it iteratively
 **Output:** `design_instructions.md` + `prompting_style_guideline.md`
-**Next prompt:** `prompt-02-brand-brain.md`
+**Next prompt:** `prompt-02-seo-foundation.md`
 
 ---
 
@@ -380,7 +380,7 @@ Provide both files as downloadable artifacts.
 4. Regenerate final files after training (Stage 3)
 5. Save final files as sources in client's Notion → Brand & Strategy
 
-Next step: **`prompt-02-brand-brain.md`** (attach both output files + research.md from Prompt 00)
+Next step: **`prompt-02-seo-foundation.md`** (attach research.md + website URL)
 
 Update `client-state.md`:
 ```

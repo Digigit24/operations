@@ -1,9 +1,9 @@
 # PROMPT 04 — SEO FOUNDATION
 
-**Chain position:** Step 5 of 10 (runs in parallel with 05, 06, 07, 08)
+**Chain position:** Step 3 of 10
 **Use on:** ChatGPT / Gemini (Gemini preferred for real-time search data)
 **Output:** `seo-foundation.md` — Full SEO strategy + keyword map
-**Next prompt:** `prompt-09-content-calendar.md` (recurring) or `prompt-06-website-brief.md`
+**Next prompt:** `prompt-03-gmb-foundation.md`
 
 ---
 
@@ -403,13 +403,15 @@ Also update the client's Notion → SEO page with:
 
 1. Save output as `seo-foundation.md`
 2. Upload to client's Notion → SEO → SEO Foundation
-3. Convert 90-Day Action Plan into Notion tasks (assigned to SEO team)
-4. Set up Search Console + GA4 baseline tracking
+3. Attach `seo-foundation.md` to the Claude Project as a source
+4. Set up Search Console + GA4 baseline tracking (90-day action plan tasks created after Prompt 09)
+
+Next step: **`prompt-03-gmb-foundation.md`** (attach research.md + seo-foundation.md)
 
 Update `client-state.md`:
 ```
-Current Prompt Step: 04-08 (parallel)
-Last completed: prompt-04-seo-foundation
+Current Prompt Step: 03
+Last completed: prompt-02-seo-foundation
 Last completed date: [date]
-Outputs saved: research.md, design_instructions.md, prompting_style_guideline.md, brand-brain.md, design-system.html, seo-foundation.md
+Outputs saved: research.md, design_instructions.md, prompting_style_guideline.md, seo-foundation.md
 ```

@@ -1,9 +1,9 @@
 # PROMPT 02 — MASTER BRAND BRAIN
 
-**Chain position:** Step 3 of 10
+**Chain position:** Step 5 of 10
 **Use on:** ChatGPT / Claude (recommended: Claude for depth)
 **Output:** `brand-brain.md` — Master brand intelligence document
-**Next prompt:** `prompt-03-design-system.md`
+**Next prompt:** `prompt-05-design-system.md`
 
 ---
 
@@ -11,15 +11,16 @@
 
 Attach ALL of the following:
 ```
-1. research.md          ← output from Prompt 00 (run on 2–3 AI tools for best coverage)
-2. design_instructions.md    ← output from Prompt 01
-3. prompting_style_guideline.md  ← output from Prompt 01
+1. research.md              ← output from Prompt 00 (run on 2–3 AI tools for best coverage)
+2. seo-foundation.md        ← output from Prompt 04
+3. gmb-foundation.md        ← output from Prompt 05
 4. Client website URL
 5. Social media links (if available)
 6. Any existing creatives, ads, or brand materials
 ```
 
 > **Important:** Use Prompt 00 on 2–3 different AI tools (Grok + Gemini + ChatGPT) and combine all research into the context before running this prompt. More research inputs = stronger brand brain.
+> SEO foundation and GMB foundation must be complete before running this prompt — they feed the positioning, local intelligence, and audience psychology sections directly.
 
 ---
 
@@ -35,7 +36,6 @@ Ask about:
 - Audience sophistication level
 - Desired perception
 - Brands they admire
-- Visuals they hate
 - Industries to avoid resembling
 - Pricing perception
 - Trust style
@@ -51,34 +51,30 @@ Brainstorm together. Ask for reference items or manual client context if needed.
 
 You are a world-class:
 - Brand strategist
-- Creative director
-- Luxury editorial designer
 - Conversion-focused marketing strategist
-- AI-native design systems architect
+- Audience psychology expert
+- Local market intelligence analyst
+- AI-native brand systems architect
 
 I am attaching:
 - Deep market + SEO + competitor research (from Prompt 00)
-- Visual design instructions for this brand
-- Prompting style guidelines
+- SEO foundation document (keyword map, search intent framework, competitor SEO gaps)
+- GMB foundation document (local positioning, review strategy, local intelligence)
 - Website URL and any existing creatives
 
-**Your task:** Reverse engineer the uploaded brand and create a MASTER BRAND BRAIN markdown document.
+**Your task:** Reverse engineer the uploaded brand and create a MASTER BRAND BRAIN markdown document — covering brand strategy, positioning, voice, and audience psychology.
 
 Analyze deeply:
 - Website structure
 - Messaging
-- Layout hierarchy
-- Typography feel
 - CTA strategy
-- Visual restraint
 - Conversion psychology
 - Emotional signaling
-- Premium cues
 - Audience sophistication
 - Founder energy
 - Authority style
-- SEO focus
-- Keyword intent
+- SEO keyword intent (from seo-foundation.md)
+- Local market signals (from gmb-foundation.md)
 - Offer positioning
 
 You must infer the REAL brand beneath the surface.
@@ -164,59 +160,36 @@ Give 3+ example caption openings in this brand's voice.
 
 ---
 
-### 5. Visual Psychology
+### 5. SEO & Local Intelligence
 
-Infer and define:
-- Emotional color behavior
-- Visual restraint level
-- Composition philosophy
-- Whitespace philosophy
-- Typography personality
-- Layout rhythm
-- Visual hierarchy style
-- Premium visual signals
-- Trust-building design patterns
-- What the visuals must make the audience feel
-- What the visuals must never make the audience feel
+Pull the most strategically important signals from the SEO and GMB foundation docs and embed them into the brand system:
 
----
+**Keyword Positioning:**
+- Top 3–5 keywords this brand must own (from seo-foundation.md)
+- Search intent summary — what customers are really looking for
+- Content angles that align with both brand voice and keyword intent
+- Keywords that should shape the brand's language and messaging
 
-### 6. AI Image Direction DNA
+**Local Authority Strategy:**
+- Key local positioning signals (from gmb-foundation.md)
+- Geographic identity — how the brand anchors itself locally
+- Local trust triggers that must be woven into brand messaging
+- Review positioning strategy and the brand tone for review responses
 
-Create a reusable image generation DNA block for this brand:
-
-```
-Lighting: [direction]
-Composition: [direction]
-Realism level: [direction]
-Camera feel: [direction]
-Background style: [direction]
-Human presence: [direction]
-Emotional framing: [direction]
-Color restraint: [rules]
-Texture: [direction]
-Premium cues: [list]
-Infographic style: [direction]
-AI clichés to avoid: [list]
-```
-
-This block is directly usable in any image generation prompt.
+**Content Positioning:**
+- Top blog/content angles that align with brand voice AND search intent
+- What topics the brand should be known for educationally
+- Content pillars that serve both SEO and brand authority simultaneously
 
 ---
 
-### 7. Brand Rules
+### 6. Brand Rules
 
 **Messaging Rules:**
 - What every piece of content must communicate
 - What every CTA must do
 - How trust is built through copy
 - How authority is communicated
-
-**Visual Rules:**
-- Non-negotiable visual standards
-- Color usage rules
-- Typography hierarchy rules
-- Spacing and density rules
 
 **CTA Rules:**
 - Tone and style
@@ -227,41 +200,34 @@ This block is directly usable in any image generation prompt.
 - What emotional state the brand must always create
 - What emotional states to never trigger
 
-**AI Generation Rules:**
-- What to specify in every AI prompt for this brand
-- What to never specify
-- Common AI output mistakes to catch and correct
-
 ---
 
-### 8. Brand Anti-Patterns
+### 7. Brand Anti-Patterns
 
 Define clearly:
-- What this brand must NEVER look like
 - What this brand must NEVER sound like
-- Visual clichés to avoid
-- Overused startup/industry aesthetics to avoid
-- Low-trust patterns to avoid
 - Messaging patterns that undermine the brand
-- Design patterns that reduce perceived premium level
+- Overused industry claims to avoid
+- Low-trust copy patterns to avoid
+- Positioning traps that reduce authority
+- What kinds of offers or language cheapen the brand
 
 ---
 
-### 9. AI System Instructions *(200 words max)*
+### 8. AI System Instructions *(200 words max)*
 
 Write concise instructions optimized for:
 - Claude
 - GPT
-- Image generators
-- Design systems
 - Automation workflows
 - Future AI agents
+- Content generation systems
 
-This section should allow any AI to pick up the brand system and produce consistent, on-brand output without needing additional context.
+This section should allow any AI to pick up the brand's strategy and voice and produce consistent, on-brand content output without needing additional context.
 
 ---
 
-### 10. Quick Reference Card
+### 9. Quick Reference Card
 
 A single summary section for fast team use:
 
@@ -269,12 +235,8 @@ A single summary section for fast team use:
 Brand in one line:
 Positioning in one line:
 Tone in three words:
-Visual feel in three words:
-Primary color: [hex]
-Secondary color: [hex]
-Accent color: [hex]
-Primary font: [name]
-Body font: [name]
+Top 3 owned keywords:
+Local authority anchor:
 Hero CTA:
 Anti-patterns (top 3):
 Must-haves (top 3):
@@ -286,8 +248,8 @@ Must-haves (top 3):
 
 The final markdown should feel like:
 - A premium agency strategy document
-- A luxury creative direction system
-- An AI-native branding operating system
+- A conversion-focused brand operating system
+- An AI-native messaging and positioning guide
 
 Do NOT stay surface level. Infer deeply from all attached materials.
 
@@ -299,14 +261,14 @@ Be specific. Be strategic. No generic brand language.
 
 1. Save output as `brand-brain.md`
 2. Upload to client's Notion → Brand & Strategy
-3. Attach to the ChatGPT Project as a source
+3. Attach to the Claude Project as a source
 
-Next step: **`prompt-03-design-system.md`** (attach brand-brain.md + design_instructions.md + logo + references)
+Next step: **`prompt-05-design-system.md`** (attach brand-brain.md + design_instructions.md + logo + references)
 
 Update `client-state.md`:
 ```
-Current Prompt Step: 03
-Last completed: prompt-02-brand-brain
+Current Prompt Step: 05
+Last completed: prompt-04-brand-brain
 Last completed date: [date]
-Outputs saved: research.md, design_instructions.md, prompting_style_guideline.md, brand-brain.md
+Outputs saved: research.md, design_instructions.md, prompting_style_guideline.md, seo-foundation.md, gmb-foundation.md, brand-brain.md
 ```

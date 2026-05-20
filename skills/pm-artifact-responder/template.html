@@ -1,0 +1,296 @@
+<h2 class="sr-only">PM Command Center — client tasks, context, and quick actions</h2>
+
+<style>
+.pm { font-family: var(--font-sans); max-width: 680px; }
+.tag { display:inline-block; font-size:12px; color:var(--color-text-secondary); background:var(--color-background-secondary); border-radius:var(--border-radius-md); padding:2px 9px; }
+.pill { display:inline-block; font-size:11px; font-weight:500; border-radius:100px; padding:2px 10px; }
+.p-green { background:var(--color-background-success); color:var(--color-text-success); }
+.p-blue  { background:var(--color-background-info);    color:var(--color-text-info); }
+.p-gray  { background:var(--color-background-secondary); color:var(--color-text-secondary); }
+.p-red   { background:var(--color-background-danger);  color:var(--color-text-danger); }
+.p-warn  { background:var(--color-background-warning); color:var(--color-text-warning); }
+.t-bar { display:flex; border-bottom:0.5px solid var(--color-border-tertiary); margin-bottom:1rem; }
+.t-btn { flex:1; padding:9px 4px; font-size:12px; font-weight:500; color:var(--color-text-secondary); border:none; border-bottom:2px solid transparent; background:none; cursor:pointer; font-family:var(--font-sans); transition:color 0.12s; }
+.t-btn:hover { color:var(--color-text-primary); }
+.t-btn.on { color:var(--color-text-info); border-bottom-color:var(--color-text-info); }
+.card { background:var(--color-background-primary); border:0.5px solid var(--color-border-tertiary); border-radius:var(--border-radius-lg); padding:1rem 1.25rem; margin-bottom:10px; }
+.muted { background:var(--color-background-secondary); border:0.5px solid var(--color-border-tertiary); border-radius:var(--border-radius-lg); padding:1rem 1.25rem; margin-bottom:10px; }
+.slabel { font-size:11px; font-weight:500; color:var(--color-text-secondary); text-transform:uppercase; letter-spacing:0.6px; margin:1rem 0 0.5rem; }
+.row { display:flex; justify-content:space-between; align-items:center; gap:8px; margin-bottom:5px; }
+.k { font-size:13px; color:var(--color-text-secondary); }
+.v { font-size:13px; font-weight:500; color:var(--color-text-primary); text-align:right; }
+.abtn { width:100%; display:flex; align-items:center; gap:12px; padding:11px 14px; border:0.5px solid var(--color-border-secondary); border-radius:var(--border-radius-lg); background:var(--color-background-primary); cursor:pointer; text-align:left; margin-bottom:8px; font-family:var(--font-sans); }
+.abtn:hover { background:var(--color-background-secondary); }
+.abtn.bl { border-color:var(--color-border-info); background:var(--color-background-info); }
+.abtn.yl { border-color:var(--color-border-warning); background:var(--color-background-warning); }
+.abtn-ico { font-size:17px; color:var(--color-text-secondary); flex-shrink:0; }
+.abtn.bl .abtn-ico { color:var(--color-text-info); }
+.abtn.yl .abtn-ico { color:var(--color-text-warning); }
+.abtn-t { font-size:13px; font-weight:500; color:var(--color-text-primary); }
+.abtn.bl .abtn-t { color:var(--color-text-info); }
+.abtn.yl .abtn-t { color:var(--color-text-warning); }
+.abtn-s { font-size:12px; color:var(--color-text-secondary); margin-top:1px; }
+.step { display:flex; align-items:center; gap:9px; padding:5px 8px; border-radius:var(--border-radius-md); margin-bottom:2px; }
+.step.cur { background:var(--color-background-info); }
+.snum { width:22px; height:22px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:500; flex-shrink:0; }
+.sn-d { background:var(--color-background-success); color:var(--color-text-success); }
+.sn-c { background:var(--color-text-info); color:#fff; }
+.sn-t { background:var(--color-background-secondary); color:var(--color-text-secondary); opacity:.6; }
+.sname { font-size:13px; }
+.sl-d { color:var(--color-text-secondary); }
+.sl-c { color:var(--color-text-info); font-weight:500; }
+.sl-t { color:var(--color-text-secondary); opacity:.4; }
+.svc { display:inline-block; font-size:11px; font-weight:500; background:var(--color-background-info); color:var(--color-text-info); border-radius:var(--border-radius-md); padding:2px 8px; margin:2px; }
+.cbtn { font-size:11px; padding:5px 11px; border-radius:var(--border-radius-md); border:0.5px solid var(--color-border-info); background:var(--color-background-info); color:var(--color-text-info); cursor:pointer; font-family:var(--font-sans); font-weight:500; }
+.cbtn:hover { opacity:.8; }
+</style>
+
+<div class="pm">
+
+  <!-- HEADER — always visible -->
+  <div style="padding:0.5rem 0 1rem; border-bottom:0.5px solid var(--color-border-tertiary); margin-bottom:12px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:7px; flex-wrap:wrap;">
+      <span id="h-name" style="font-size:20px; font-weight:500; color:var(--color-text-primary);"></span>
+      <span id="h-health" class="pill"></span>
+      <span id="h-step" class="tag" style="margin-left:auto;"></span>
+    </div>
+    <div style="display:flex; gap:5px; flex-wrap:wrap;">
+      <span id="h-niche" class="tag"></span>
+      <span id="h-pm" class="tag"></span>
+      <span id="h-since" class="tag"></span>
+    </div>
+  </div>
+
+  <!-- TAB BAR -->
+  <div class="t-bar">
+    <button class="t-btn on" onclick="go('tasks',this)">Tasks</button>
+    <button class="t-btn"    onclick="go('context',this)">Context</button>
+    <button class="t-btn"    onclick="go('actions',this)">Actions</button>
+  </div>
+
+  <!-- TASKS PANEL -->
+  <div id="p-tasks">
+    <div id="compliance"></div>
+    <div id="tasks-label" class="slabel"></div>
+    <div id="tasks-body"></div>
+  </div>
+
+  <!-- CONTEXT PANEL -->
+  <div id="p-context">
+    <div class="slabel">Prompt chain</div>
+    <div class="muted" id="chain"></div>
+    <div class="slabel">Client state</div>
+    <div class="muted" id="state-body"></div>
+    <div id="brand-section"></div>
+    <div class="slabel">NAP reference</div>
+    <div class="muted" id="nap-body"></div>
+  </div>
+
+  <!-- ACTIONS PANEL -->
+  <div id="p-actions">
+    <div class="slabel" style="margin-bottom:12px;">Quick actions</div>
+    <div id="actions-body"></div>
+  </div>
+
+</div>
+
+<script>
+// ═══════════════════════════════════════════════════════
+// DATA — Claude replaces this entire block with real values
+// ═══════════════════════════════════════════════════════
+const D = {
+  client: {
+    name:      "__CLIENT_NAME__",
+    niche:     "__CLIENT_NICHE__",
+    pm:        "__CLIENT_PM__",
+    phone:     "__CLIENT_PHONE__",
+    website:   "__CLIENT_WEBSITE__",
+    notionUrl: "__CLIENT_NOTION_URL__",
+    status:    "__CLIENT_STATUS__"
+  },
+  state: {
+    health:        "__HEALTH__",
+    promptStep:    "__PROMPT_STEP__",
+    lastCompleted: "__LAST_COMPLETED__",
+    nextStep:      "__NEXT_STEP__",
+    activeSince:   "__ACTIVE_SINCE__",
+    services:      __SERVICES_JSON__,
+    clientStateUrl:"__CLIENT_STATE_URL__"
+  },
+  compliance: __COMPLIANCE_JSON__,
+  brand: {
+    exists:    __BRAND_EXISTS__,
+    tone:      "__BRAND_TONE__",
+    avoid:     "__BRAND_AVOID__",
+    statement: "__BRAND_STATEMENT__"
+  },
+  tasks: __TASKS_JSON__
+};
+
+// ── Constants ────────────────────────────────────────
+const CHAIN = [
+  "Research","Design instructions","Brand brain","Design system",
+  "SEO foundation","GMB foundation","Website brief",
+  "Audit","Strategy builder","Task creator","Content calendar","Client report"
+];
+
+const STATUS_PILL = {
+  "In Progress": "p-blue", "Not Started": "p-gray",
+  "blocked": "p-red", "backlog": "p-warn",
+  "Completed": "p-green", "unblocked": "p-green"
+};
+
+// ── Context string — used in all prompts ─────────────
+function ctx() {
+  return `Client: ${D.client.name} | Niche: ${D.client.niche} | PM: ${D.client.pm} | Step: ${D.state.promptStep} | Services: ${(D.state.services||[]).join(', ')}`;
+}
+
+// ── Prompts — stored as JS strings, never in onclick attrs
+// Task briefs built dynamically per task
+function taskPrompt(t) {
+  const comp = (D.compliance||[]).slice(0,2).join('; ');
+  return `Execution brief for task: ${t.name} — ${ctx()}. Status: ${t.status}${t.due ? ', due '+t.due : ''}. Compliance: ${comp||'none'}. Brand tone: ${D.brand&&D.brand.exists ? D.brand.tone : 'check Brand Brief'}. Output: what to do, what to watch out for — ready to act.`;
+}
+
+// Action prompts array
+const step = parseInt(D.state.promptStep) || 0;
+const stepName = CHAIN[step] || 'next step';
+const A = [
+  `Run Prompt ${step} — ${stepName} for ${D.client.name}. ${ctx()}. Output the full prompt pre-filled with this client's details, ready to execute.`,
+  `Morning brief for ${D.client.name}: open tasks, what's due or overdue, health=${D.state.health}, 3 priorities for ${D.client.pm} today. Next step = ${stepName} (prompt ${step}). Format as a short actionable brief.`,
+  `Run Audit for ${D.client.name} (${D.client.niche}). Services: ${(D.state.services||[]).join(', ')}. Check GMB completeness, social engagement, website speed, SEO basics. Format: Data Snapshot → Flags → Recommended Actions for PM.`,
+  `Sync Client State in Notion for ${D.client.name}. Pull open tasks, check completed vs pending this month. Update: Current Status, What is Working, What Needs Attention, Next 2 Weeks Focus. Client State URL: ${D.state.clientStateUrl}.`,
+  `Draft content for ${D.client.name} (${D.client.niche}). Tone: ${D.brand&&D.brand.exists ? D.brand.tone : 'professional, approachable'}. Avoid: ${D.brand&&D.brand.exists ? D.brand.avoid : 'check Brand Brief'}. Compliance: ${(D.compliance||[]).slice(0,2).join('; ')||'none'}. What content do you need — Instagram captions, GMB post, reel script, or blog outline?`,
+  `Full portfolio morning brief across all active clients. For each: health status, tasks due today or overdue, current prompt step, one key flag. Sort by risk. Format as a clean table.`
+];
+
+// ── Render: Header ───────────────────────────────────
+function renderHeader() {
+  document.getElementById('h-name').textContent = D.client.name || '—';
+  document.getElementById('h-step').textContent = `step ${step} / ${CHAIN.length-1}`;
+  document.getElementById('h-niche').textContent = D.client.niche || '—';
+  document.getElementById('h-pm').textContent = D.client.pm ? `PM · ${D.client.pm}` : '—';
+  document.getElementById('h-since').textContent = D.state.activeSince ? `Active since ${D.state.activeSince}` : '—';
+  const hel = document.getElementById('h-health');
+  const h = (D.state.health||'').toLowerCase();
+  if (h.includes('track') || h.includes('🟢'))        { hel.textContent='● on track';   hel.className='pill p-green'; }
+  else if (h.includes('setup') || h.includes('🟡'))   { hel.textContent='● setting up'; hel.className='pill p-warn'; }
+  else if (h.includes('risk') || h.includes('🔴'))    { hel.textContent='● at risk';    hel.className='pill p-red'; }
+  else                                                 { hel.textContent='● new';        hel.className='pill p-gray'; }
+}
+
+// ── Render: Compliance ───────────────────────────────
+function renderCompliance() {
+  if (!D.compliance || !D.compliance.length) return;
+  const rules = D.compliance.map(r => `<div style="font-size:12px; color:var(--color-text-warning); margin-bottom:2px;">— ${r}</div>`).join('');
+  document.getElementById('compliance').innerHTML = `
+    <div style="background:var(--color-background-warning); border:0.5px solid var(--color-border-warning); border-radius:var(--border-radius-lg); padding:10px 14px; margin-bottom:12px;">
+      <div style="font-size:11px; font-weight:500; color:var(--color-text-warning); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:5px;"><i class="ti ti-alert-triangle" aria-hidden="true"></i> Do not forget — ${D.client.name}</div>
+      ${rules}
+    </div>`;
+}
+
+// ── Render: Tasks ────────────────────────────────────
+function renderTasks() {
+  const open = (D.tasks||[]).filter(t => t.status !== 'Completed');
+  document.getElementById('tasks-label').textContent = `Open tasks · ${open.length}`;
+  if (!open.length) {
+    document.getElementById('tasks-body').innerHTML = `<div style="text-align:center; padding:2rem; color:var(--color-text-secondary); font-size:13px;"><i class="ti ti-circle-check" style="font-size:28px; display:block; margin-bottom:8px;" aria-hidden="true"></i>All tasks done for ${D.client.name}.</div>`;
+    return;
+  }
+  document.getElementById('tasks-body').innerHTML = open.map((t, i) => {
+    const pillCls = STATUS_PILL[t.status] || 'p-gray';
+    const isOv = t.due && new Date(t.due) < new Date();
+    return `<div class="card">
+      <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:8px;">
+        <div style="flex:1; min-width:0;">
+          <div style="font-size:13px; font-weight:500; color:var(--color-text-primary); margin-bottom:6px;">${t.name}</div>
+          <div style="display:flex; gap:5px; flex-wrap:wrap; margin-bottom:8px;">
+            <span class="pill ${pillCls}">${t.status}</span>
+            ${(t.tags||[]).map(g=>`<span class="pill p-blue" style="font-size:10px;">${g}</span>`).join('')}
+          </div>
+          <button class="cbtn" data-ti="${i}">✦ AI brief ↗</button>
+        </div>
+        ${t.due ? `<div style="font-size:11px; color:${isOv?'var(--color-text-danger)':'var(--color-text-secondary)'}; font-weight:${isOv?500:400}; white-space:nowrap; flex-shrink:0; margin-top:2px;">${isOv?'⚠ ':''}${t.due}</div>` : ''}
+      </div>
+    </div>`;
+  }).join('');
+  // Wire brief buttons via event delegation (no inline onclick strings)
+  document.getElementById('tasks-body').addEventListener('click', e => {
+    const btn = e.target.closest('[data-ti]');
+    if (btn) sendPrompt(taskPrompt(open[+btn.dataset.ti]));
+  });
+}
+
+// ── Render: Context ──────────────────────────────────
+function renderContext() {
+  // Chain
+  document.getElementById('chain').innerHTML = CHAIN.map((n,i) => {
+    const s = i < step ? 'd' : i === step ? 'c' : 't';
+    return `<div class="step${s==='c'?' cur':''}"><div class="snum sn-${s}">${i<step?'✓':i}</div><div class="sname sl-${s}">${n}${i===step?' ← now':''}</div></div>`;
+  }).join('');
+  // State
+  const svcs = (D.state.services||[]).map(s=>`<span class="svc">${s}</span>`).join('');
+  document.getElementById('state-body').innerHTML = `
+    <div class="row"><span class="k">Next step</span><span class="v" style="color:var(--color-text-info);">${D.state.nextStep||'—'}</span></div>
+    <div class="row"><span class="k">Last completed</span><span class="v">${D.state.lastCompleted||'—'}</span></div>
+    <div class="row"><span class="k">Active since</span><span class="v">${D.state.activeSince||'—'}</span></div>
+    <div class="row"><span class="k">Health</span><span class="v">${D.state.health||'—'}</span></div>
+    ${svcs ? `<div style="margin-top:8px;">${svcs}</div>` : ''}`;
+  // Brand
+  if (D.brand && D.brand.exists) {
+    document.getElementById('brand-section').innerHTML = `
+      <div class="slabel">Brand voice</div>
+      <div class="muted">
+        <div class="row"><span class="k">Statement</span><span class="v" style="font-style:italic; font-size:12px;">${D.brand.statement}</span></div>
+        <div class="row"><span class="k">Tone</span><span class="v">${D.brand.tone}</span></div>
+        <div class="row"><span class="k">Avoid</span><span class="v" style="color:var(--color-text-danger);">${D.brand.avoid}</span></div>
+      </div>`;
+  }
+  // NAP
+  document.getElementById('nap-body').innerHTML = `
+    <div class="row"><span class="k">Name</span><span class="v">${D.client.name||'—'}</span></div>
+    <div class="row"><span class="k">Phone</span><span class="v">${D.client.phone||'—'}</span></div>
+    <div class="row"><span class="k">Website</span><span class="v">${D.client.website||'—'}</span></div>
+    <div class="row"><span class="k">Status</span><span class="v">${D.client.status||'—'}</span></div>`;
+}
+
+// ── Render: Actions ──────────────────────────────────
+function renderActions() {
+  const actions = [
+    { cls:'bl', icon:'ti-player-play', title:`Run prompt ${step} — ${stepName} ↗`,  sub:'Pre-filled with '+D.client.name+' context', i:0 },
+    { cls:'',   icon:'ti-sun',         title:'Morning brief ↗',                      sub:'Tasks due · priorities · health',          i:1 },
+    { cls:'yl', icon:'ti-zoom-check',  title:'Run audit ↗',                          sub:'GMB · social · SEO · website',             i:2 },
+    { cls:'',   icon:'ti-refresh',     title:'Sync client state ↗',                  sub:'Update Notion with current progress',       i:3 },
+    { cls:'',   icon:'ti-pencil',      title:'Draft content ↗',                      sub:'Brand voice + compliance pre-loaded',       i:4 },
+    { cls:'',   icon:'ti-layout-grid', title:'Full portfolio brief ↗',               sub:'All clients · health · risk priority',      i:5 },
+  ];
+  document.getElementById('actions-body').innerHTML = actions.map(a => `
+    <button class="abtn ${a.cls}" data-ai="${a.i}">
+      <i class="ti ${a.icon} abtn-ico" aria-hidden="true"></i>
+      <div><div class="abtn-t">${a.title}</div><div class="abtn-s">${a.sub}</div></div>
+    </button>`).join('');
+  document.getElementById('actions-body').addEventListener('click', e => {
+    const btn = e.target.closest('[data-ai]');
+    if (btn) sendPrompt(A[+btn.dataset.ai]);
+  });
+}
+
+// ── Tab system ───────────────────────────────────────
+const PANELS = ['tasks','context','actions'];
+function go(name, btn) {
+  PANELS.forEach(p => document.getElementById('p-'+p).style.display = 'none');
+  document.getElementById('p-'+name).style.display = 'block';
+  document.querySelectorAll('.t-btn').forEach(b => b.classList.remove('on'));
+  btn.classList.add('on');
+}
+
+// ── Boot ─────────────────────────────────────────────
+renderHeader();
+renderCompliance();
+renderTasks();
+renderContext();
+renderActions();
+PANELS.forEach(p => document.getElementById('p-'+p).style.display = 'none');
+document.getElementById('p-tasks').style.display = 'block';
+</script>
