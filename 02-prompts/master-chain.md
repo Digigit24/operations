@@ -63,6 +63,69 @@ This chain builds a complete brand intelligence, visual system, strategy layer, 
 
 ---
 
+---
+
+## SEO & Research Tools — Connected MCPs
+
+Claude uses live MCP tools for all SEO, keyword, competitor, and web research tasks. Never rely on training data alone for keyword volumes, rankings, or competitor data — always pull live data first.
+
+### Tool Priority Order
+
+Use whichever tools are connected, in this order of preference:
+
+| Priority | Tool | Best For |
+|---|---|---|
+| 1 | **Ahrefs MCP** | Keyword volumes, difficulty scores, competitor organic keywords, backlink profiles, SERP overview, domain rating, ranking history |
+| 2 | **Semrush MCP** | Keyword research, organic traffic estimates, competitor analysis, trend data, site audit |
+| 3 | **Tavily MCP** | Web search, site crawl, content extraction, industry research, authority sources, topical gaps |
+| 4 | **Serper** | Google SERP results, local pack data, related searches *(if configured as custom MCP)* |
+| 5 | **Firecrawl** | Deep website crawl, blog extraction, JS-heavy pages *(if configured as custom MCP)* |
+
+> **Use multiple tools together when possible.** Example: Ahrefs for keyword data + Tavily to crawl and extract competitor page content = richer output than either alone.
+
+### Which Tool Does What
+
+**For competitor discovery and SERP data:**
+→ Ahrefs `site-explorer-organic-competitors` + `serp-overview`
+→ Semrush `organic_research` + `overview_research`
+→ Tavily `tavily_search` + `tavily_map`
+
+**For keyword research and volumes:**
+→ Ahrefs `keywords-explorer-overview` + `keywords-explorer-matching-terms`
+→ Semrush `keyword_research` + `execute_report`
+
+**For crawling competitor websites and extracting content:**
+→ Tavily `tavily_crawl` + `tavily_extract`
+→ Firecrawl *(if connected)*
+
+**For industry trends and authority sources:**
+→ Tavily `tavily_research`
+→ Semrush `trends_research`
+
+**For backlinks and domain authority:**
+→ Ahrefs `site-explorer-domain-rating` + `site-explorer-referring-domains`
+→ Semrush `backlink_research`
+
+**For local SEO and GMB competitor data:**
+→ Ahrefs `keywords-explorer-overview` with location filter
+→ Semrush `keyword_research` with local modifiers
+→ Tavily `tavily_search` for local SERP results
+
+---
+
+### If No MCP Tool Is Connected or Working
+
+If Claude cannot reach any of the above tools, it must stop and say:
+
+> "To pull live keyword, competitor, and SERP data for this prompt, I need at least one SEO research tool connected. Please connect one of the following:
+>
+> - **Tavily** (free tier available) → [tavily.com](https://tavily.com) → connect via Cowork → Settings → Integrations
+> - **Ahrefs** (free trial available) → [ahrefs.com](https://ahrefs.com) → connect via Cowork → Settings → Integrations
+> - **Semrush** (free tier available) → [semrush.com](https://semrush.com) → connect via Cowork → Settings → Integrations
+>
+> Once connected, restart this prompt. Alternatively, you can paste keyword data, competitor URLs, or SERP screenshots manually and I will work from that."
+
+---
 ## Prompt Run Rules
 
 | Phase | Prompts | Rule |

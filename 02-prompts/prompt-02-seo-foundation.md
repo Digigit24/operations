@@ -69,6 +69,36 @@ Before generating the final document, the AI **must ask clarifying questions**:
 
 ---
 
+---
+
+## CONNECTED TOOLS — USE BEFORE RELYING ON TRAINING DATA
+
+All keyword volumes, difficulty scores, competitor rankings, and SERP data must come from live tools. Do not estimate these from training data.
+
+**Use in this priority order — stop at whichever is connected:**
+
+```
+1. Ahrefs MCP       → keyword explorer, SERP overview, competitor organic keywords, domain rating
+2. Semrush MCP      → keyword research, organic research, site audit, backlink data
+3. Tavily MCP       → SERP research, competitor content extraction, industry trend data
+4. Serper           → Google SERP results, local pack, related searches (if configured)
+5. Firecrawl        → competitor page content extraction (if configured)
+```
+
+**For this prompt specifically, use tools to:**
+- Build the keyword map with real volumes and difficulty (Ahrefs: `keywords-explorer-overview` + `keywords-explorer-matching-terms` / Semrush: `keyword_research`)
+- Find what competitors rank for that this client doesn't (Ahrefs: `site-explorer-organic-competitors` + `site-explorer-organic-keywords`)
+- Identify top competitor pages by traffic (Ahrefs: `site-explorer-top-pages` / Semrush: `organic_research`)
+- Pull SERP results for primary keywords (Ahrefs: `serp-overview` / Semrush: `execute_report`)
+- Check domain rating and backlink profile of client + competitors (Ahrefs: `site-explorer-domain-rating`)
+- Extract competitor blog and service page content (Tavily: `tavily_crawl` + `tavily_extract`)
+
+**If NO tool is connected or responding:**
+Stop immediately and say:
+> "I need a live SEO tool to build an accurate keyword map and competitor analysis. Please connect Ahrefs, Semrush, or Tavily via Cowork → Settings → Integrations (all have free tiers at ahrefs.com, semrush.com, tavily.com). Once connected, restart this prompt. Or share a Search Console export and I'll start from that."
+
+---
+
 ## THE PROMPT
 
 ---

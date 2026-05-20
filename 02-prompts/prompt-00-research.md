@@ -33,6 +33,35 @@ Known business goals:  [if blank, AI infers from website positioning]
 
 ---
 
+---
+
+## CONNECTED TOOLS — USE BEFORE RELYING ON TRAINING DATA
+
+Before writing anything, check which MCP tools are available and use them to pull live data. Do not estimate keyword volumes, competitor traffic, or SERP positions from memory.
+
+**Use in this priority order — stop at whichever is connected:**
+
+```
+1. Ahrefs MCP       → competitor organic keywords, domain ratings, SERP overview
+2. Semrush MCP      → organic research, competitor traffic estimates, keyword data
+3. Tavily MCP       → web search, competitor site crawl, industry trend research
+4. Serper           → Google SERP results (if configured)
+5. Firecrawl        → deep competitor site crawl (if configured)
+```
+
+**For this prompt specifically, use tools to:**
+- Discover top competitors (Ahrefs: `site-explorer-organic-competitors` / Semrush: `organic_research`)
+- Pull their top ranking pages and keywords (Ahrefs: `site-explorer-top-pages` + `site-explorer-organic-keywords`)
+- Crawl and extract competitor website content (Tavily: `tavily_crawl` + `tavily_extract`)
+- Research industry trends and authority sources (Tavily: `tavily_research`)
+- Get SERP landscape for primary keywords (Ahrefs: `serp-overview` / Semrush: `keyword_research`)
+
+**If NO tool is connected or responding:**
+Stop immediately and say:
+> "I need a live research tool to pull accurate competitor and keyword data. Please connect Tavily, Ahrefs, or Semrush via Cowork → Settings → Integrations (all have free tiers). Once connected, restart this prompt. Or paste competitor URLs and I'll work from those."
+
+---
+
 ## THE PROMPT
 
 ---

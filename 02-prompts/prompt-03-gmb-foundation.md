@@ -78,6 +78,33 @@ Before generating the final document, the AI **must ask clarifying questions**:
 
 ---
 
+---
+
+## CONNECTED TOOLS — USE FOR LOCAL SERP & COMPETITOR DATA
+
+Use live tools to pull local keyword data and benchmark competitor GMB profiles. Do not estimate local search volumes or map pack positions from memory.
+
+**Use in this priority order — stop at whichever is connected:**
+
+```
+1. Ahrefs MCP       → local keyword volumes, SERP overview for "near me" and city-level queries
+2. Semrush MCP      → local keyword research, competitor organic presence in the area
+3. Tavily MCP       → search local SERP results, crawl competitor GMB landing pages
+4. Serper           → Google local pack results, map pack competitors (if configured)
+```
+
+**For this prompt specifically, use tools to:**
+- Find top local keywords with volumes (Ahrefs: `keywords-explorer-overview` with city modifier / Semrush: `keyword_research`)
+- Check what local competitors rank for (Ahrefs: `site-explorer-organic-keywords` on competitor domains)
+- Search and screenshot local map pack results (Tavily: `tavily_search` with "[service] near [city]" queries)
+- Crawl competitor GMB landing pages or websites for positioning intel (Tavily: `tavily_crawl`)
+
+**If NO tool is connected or responding:**
+Stop immediately and say:
+> "I need a live search tool to pull local keyword and competitor GMB data. Please connect Ahrefs, Semrush, or Tavily via Cowork → Settings → Integrations. Or paste the GMB profile URLs of 2–3 competitors and I'll work from those."
+
+---
+
 ## THE PROMPT
 
 ---
