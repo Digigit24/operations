@@ -1,5 +1,16 @@
 # PROMPT 05 — GMB FOUNDATION
 
+> ⚠️ **Before running this prompt — complete Step 3 of the Onboarding SOP first.**
+> `09-ops/client-onboarding-sop.md` → **Step 3: Client Access Setup & Tool Integration**
+>
+> Required from that step before this prompt is useful:
+> - GMB profile exists and `digitech.solutions0007@gmail.com` has **Manager** access (Step 3B)
+> - Google Search Console property is live and accessible to Digitech G07 (Step 3C)
+> - Google Analytics GA4 property is created and linked to Search Console (Step 3D)
+> - Make.com account is created on the client's brand Google ID (Step 3E)
+>
+> If any of these are not done, pause and complete the access setup before continuing.
+
 **Chain position:** Step 4 of 10
 **Use on:** ChatGPT / Gemini (Gemini preferred — better Google ecosystem awareness)
 **Output:** `gmb-foundation.md` — Complete GMB optimisation playbook

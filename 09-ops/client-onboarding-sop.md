@@ -1,7 +1,7 @@
 # CLIENT ONBOARDING SOP — MVP
 🔵 ATTACH-TO-CLAUDE — Standard Operating Procedure for onboarding a new client from signed contract to system live. Used by the PM and the Account Agent on Day 1.
 
-> This SOP covers the 8 steps from intake form to first agents activated. It is intentionally minimal — do not add steps until the 3rd client has completed onboarding and you have learned what's missing.
+> This SOP covers the 9 steps from intake form to first agents activated. It is intentionally minimal — do not add steps until the 3rd client has completed onboarding and you have learned what's missing.
 
 ---
 
@@ -79,7 +79,156 @@ On form submit → Notion creates client workspace with folder structure from te
 
 ---
 
-## Step 3 — Audit Agent Runs Full External Audit (Day 2–3)
+## Step 3 — Client Access Setup & Tool Integration (Day 2–4)
+
+**Owner:** PM
+**Tool:** Client's Facebook account, Google account, Make.com, Windsor, Meta MCP
+**Time:** 60–90 minutes (spread across 2–3 working sessions with client)
+
+This step covers all platform access and tool connections required before any agent or prompt can run. Complete this before the Audit Agent runs (Step 4) and before the GMB Foundation prompt is executed.
+
+---
+
+### 3A — Meta Access (Facebook & Instagram)
+
+**Process (done from the client's account):**
+
+1. Log in to the client's Facebook account
+2. Go to [business.facebook.com](https://business.facebook.com) → Create a **Business Portfolio** (if one doesn't exist yet)
+3. Add the client's **Facebook Page** to the Business Portfolio
+4. Add the client's **Instagram account** to the Business Portfolio
+5. From the client's Business Portfolio → Settings → Partners → **Add Partner Business Manager** → enter Digitech's BM ID
+6. Grant Digitech's BM: **Admin access** to the Business Portfolio (or at minimum: Ad Account, Page, and Instagram asset access)
+
+> If a Business Portfolio already exists with the Facebook Page and Instagram already linked, skip directly to step 5 — just add Digitech's BM as a Partner.
+
+**Verify done:** Digitech's Business Manager shows the client's ad account and pages under "Partner Assets."
+
+---
+
+### 3B — GMB (Google Business Profile) Access
+
+**Google account rule:** Use only a **brand Google account** created for the business (e.g. clinicname@gmail.com). Never use the client's personal Gmail. If no brand account exists, create one now.
+
+**If GMB profile already exists:**
+- Ask client to log in to [business.google.com](https://business.google.com)
+- Go to the profile → **Users** → **Add User**
+- Add `digitech.solutions0007@gmail.com` with **Manager** role
+
+**If GMB profile does not exist yet:**
+- Create it from the brand Google account
+- Complete verification (video or postcard)
+- Once verified, add `digitech.solutions0007@gmail.com` as Manager
+
+**Verify done:** `digitech.solutions0007@gmail.com` can access and edit the GMB profile.
+
+---
+
+### 3C — Google Search Console
+
+**If a Search Console property already exists for the website:**
+- Go to [search.google.com/search-console](https://search.google.com/search-console) → Settings → Users and Permissions
+- Add `digitech.solutions0007@gmail.com` as **Full User**
+
+**If no Search Console property exists:**
+- Create a new property using the **Domain** type (covers all subdomains and http/https)
+- Verify via DNS TXT record (or HTML file if DNS access is unavailable)
+- Add `digitech.solutions0007@gmail.com` as **Full User** after verification
+
+> Skip this section if the website is not yet live. Return to it when the site goes live.
+
+**Verify done:** `digitech.solutions0007@gmail.com` can see the Search Console property and performance data.
+
+---
+
+### 3D — Google Analytics
+
+1. From the brand Google account, go to [analytics.google.com](https://analytics.google.com)
+2. Create a new **GA4 property** for the client's website
+3. Set up a **Web data stream** — note the Measurement ID (G-XXXXXXX)
+4. Install the GTM tag on the website (if GTM is in use) or add the GA4 snippet directly
+5. Link the **Google Search Console property** to this GA4 property (Admin → Search Console Links)
+6. Add `digitech.solutions0007@gmail.com` as an **Editor** on the GA4 property
+
+**Verify done:** GA4 is receiving live data (check Realtime report). Search Console is linked. Digitech G07 can access the property.
+
+---
+
+### 3E — Make.com Automation Account
+
+1. Go to [make.com](https://make.com) and **create a new account using the client's brand Google ID**
+2. Once logged in, create the following two scenarios:
+
+**Scenario 1 — GMB Posting Automation**
+- Trigger: Schedule (e.g. weekly on set day/time)
+- Action: Pull approved post from content calendar (Notion or Google Sheet) → publish to GMB via Google Business Profile module
+
+**Scenario 2 — GMB Review Update / Notification**
+- Trigger: New review posted on GMB (via Google Business Profile webhook or polling)
+- Action: Send notification to PM via WhatsApp / Telegram / email with review details and a prompt to respond
+
+> Scenario templates and step-by-step setup guides are in `09-ops/make-scenarios/`.
+
+**Verify done:** Both scenarios are created and set to Active. Test run completes without errors.
+
+---
+
+### 3F — Windsor & MCP Platform Connections (Digitech Side)
+
+Once the above access is granted, connect all platforms to Digitech's tools from `digitech.solutions0007@gmail.com` / Windsor:
+
+| Platform | Connection Method | Account Used |
+|---|---|---|
+| Google Analytics | Windsor → Connect GA4 property | digitech.solutions0007@gmail.com |
+| Google Search Console | Windsor → Connect GSC property | digitech.solutions0007@gmail.com |
+| Instagram | Windsor → Instagram direct login | Client's Instagram credentials |
+| Meta Ads | MetaMCP (NOT Windsor) — connected directly to Digitech's own Business Manager | Digitech BM → client ad account via Partner access |
+| LinkedIn (if in scope) | LinkedIn MCP or direct login | Client's LinkedIn account or Page access |
+
+> **Meta Ads note:** Do not connect Meta Ads via Windsor. Use the MetaMCP which is connected directly to Digitech's Business Manager. Once Digitech's BM has Partner access to the client's ad account (set up in Step 3A), the MetaMCP will surface the client's ad account automatically.
+
+---
+
+### Access Setup Checklist
+
+| Item | Done | Notes |
+|---|---|---|
+| Business Portfolio created on client FB | ☐ | |
+| FB Page added to Business Portfolio | ☐ | |
+| Instagram added to Business Portfolio | ☐ | |
+| Digitech BM added as Partner | ☐ | |
+| Brand Google account confirmed/created | ☐ | |
+| GMB Manager access → Digitech G07 | ☐ | |
+| Search Console property created/accessible | ☐ | |
+| Search Console access → Digitech G07 | ☐ | |
+| GA4 property created | ☐ | |
+| GTM/GA4 tag live on website | ☐ | |
+| Search Console linked to GA4 | ☐ | |
+| GA4 access → Digitech G07 | ☐ | |
+| Make.com account created on brand Google ID | ☐ | |
+| GMB Posting automation scenario created | ☐ | |
+| GMB Review update scenario created | ☐ | |
+| Windsor: GA4 connected | ☐ | |
+| Windsor: GSC connected | ☐ | |
+| Windsor: Instagram connected | ☐ | |
+| MetaMCP: client ad account visible | ☐ | |
+| LinkedIn connected (if in scope) | ☐ | |
+
+**Done when:** All applicable checklist items are ticked. Log completion in `client-state.md`:
+```
+Access setup: ✅ Complete — [date]
+Meta BM Partner: ✅
+GMB Manager (G07): ✅
+GSC (G07): ✅
+GA4 (G07): ✅
+Make.com: ✅
+Windsor connected: GA4, GSC, Instagram
+MetaMCP: Client ad account visible
+```
+
+---
+
+## Step 4 — Audit Agent Runs Full External Audit (Day 3–5)
 
 **Owner:** Audit Agent (automated) + PM reviews output
 **Tool:** Windsor / Meta Ads MCP / SEO audit script / Rank tracker / Google Search Console API
@@ -106,7 +255,7 @@ The PM triggers the Audit Agent in the Account Agent with:
 
 ---
 
-## Step 4 — Brand Brain Seeded (Day 3–5)
+## Step 5 — Brand Brain Seeded (Day 4–6)
 
 **Owner:** Account Agent (runs prompt-02-brand-brain.md) + PM review
 **Tool:** Account Agent + prompt chain
@@ -137,7 +286,7 @@ Account Agent produces a draft `brand-brain.md` covering:
 
 ---
 
-## Step 5 — Client-Specific Skills Created (Day 4–6)
+## Step 6 — Client-Specific Skills Created (Day 5–7)
 
 **Owner:** Skills Creator Agent + PM approval
 **Tool:** Account Agent invoking the skills creator
@@ -169,7 +318,7 @@ Run each skill once with a test input. Review the sample output. If the tone is 
 
 ---
 
-## Step 6 — Notion Workspace Fully Configured (Day 5–6)
+## Step 7 — Notion Workspace Fully Configured (Day 6–7)
 
 **Owner:** PM (or ops support)
 **Tool:** Notion
@@ -200,7 +349,7 @@ If the client wants visibility: share a read-only view of `reports/` and `kpi-da
 
 ---
 
-## Step 7 — 30-Day Plan Built (Day 6–7)
+## Step 8 — 30-Day Plan Built (Day 7–8)
 
 **Owner:** PM + Account Agent
 **Tool:** Account Agent + Planning Panel (Notion)
@@ -235,7 +384,7 @@ Set baseline targets based on audit data. These go into the Notion `kpi-dashboar
 
 ---
 
-## Step 8 — Kickoff Call → System Live (Day 7–10)
+## Step 9 — Kickoff Call → System Live (Day 9–12)
 
 **Owner:** PM
 **Tool:** Zoom / Google Meet
@@ -268,12 +417,13 @@ Set baseline targets based on audit data. These go into the Notion `kpi-dashboar
 | 0 | Contract signed → intake form sent | PM |
 | 0–1 | Intake form submitted → Notion workspace created | Client + Auto |
 | 1–2 | Discovery call completed | PM + Client |
-| 2–3 | External audit completed | Audit Agent |
-| 3–5 | Brand Brain approved | Account Agent + PM |
-| 4–6 | Client-specific skills created and approved | Skills Agent + PM |
-| 5–6 | Notion workspace fully configured | PM |
-| 6–7 | 30-day plan built | Account Agent + PM |
-| 7–10 | Kickoff call → system live | PM + Client |
+| 2–4 | Client access setup & tool integration completed | PM + Client |
+| 3–5 | External audit completed | Audit Agent |
+| 4–6 | Brand Brain approved | Account Agent + PM |
+| 5–7 | Client-specific skills created and approved | Skills Agent + PM |
+| 6–7 | Notion workspace fully configured | PM |
+| 7–8 | 30-day plan built | Account Agent + PM |
+| 9–12 | Kickoff call → system live | PM + Client |
 
 ---
 
@@ -308,5 +458,5 @@ Set baseline targets based on audit data. These go into the Notion `kpi-dashboar
 ---
 
 *File location: 09-ops/client-onboarding-sop.md*
-*Last updated: 2026-05-17*
-*Status: v1.0 MVP — do not add steps until 3 clients have completed onboarding*
+*Last updated: 2026-05-22*
+*Status: v1.1 — Step 3 (Access Setup) added. Do not add further steps until 3 clients have completed onboarding.*
