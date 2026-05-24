@@ -119,9 +119,18 @@ Extract the following fields:
 
 Create the following pages in the client's Notion workspace:
 
+**Notion page icon rule:** The emoji (🌐, 📂, etc.) goes in the Notion page **icon field only** — do NOT include it in the page title text. A page titled `🌐 Website` renders as "🌐 🌐 Website" because Notion displays the icon and the title separately.
+
+| Page | Title text (no emoji) | Icon |
+|---|---|---|
+| Parent website section | `Website` | 🌐 |
+| Archive subfolder | `Current Site Content` | 📂 |
+| Index page | `[Client Name] Site Extraction — [Date]` | 📄 |
+| Per-page sub-pages | `[slug]` (e.g. `homepage`, `about`) | 📝 |
+
 ### 3A — Summary Index Page
 
-Create one master index page at: `🌐 Website → Current Site Content → [Client Name] Site Extraction — [Date]`
+Create one master index page under: `🌐 Website → Current Site Content` → title: `[Client Name] Site Extraction — [Date]`
 
 **Index page content:**
 
