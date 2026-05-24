@@ -30,10 +30,10 @@ Do **not** include `:read+write` in the header — it will cause a `401 Invalid 
 ## Base URL
 
 ```
-https://<your-zata-domain>/api
+https://video.celiyo.com/api
 ```
 
-Replace `<your-zata-domain>` with the live Zata backend domain (e.g. `api.yourdomain.com`).
+
 
 ---
 
