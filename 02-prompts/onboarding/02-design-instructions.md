@@ -1,9 +1,9 @@
-# PROMPT 01 — DESIGN INSTRUCTIONS + PROMPTING STYLE GUIDE
+# ONBOARDING STEP 02 — DESIGN INSTRUCTIONS + PROMPTING STYLE GUIDE
 
-**Chain position:** Step 2 of 10
+**Chain position:** Onboarding Step 2 of 7
 **Use on:** ChatGPT (Project) — this prompt has a feedback loop, run it iteratively
 **Output:** `design_instructions.md` + `prompting_style_guideline.md`
-**Next prompt:** `prompt-02-seo-foundation.md`
+**Next prompt:** `03-site-extraction.md`
 
 ---
 
@@ -37,12 +37,12 @@ Let's go.
 Once the design direction is locked:
 ```
 Now that you know my brand's taste from our thread history,
-create two updated MD files using the original Prompt 01 format.
-[Paste Prompt 01 again]
+create two updated MD files using the original Step 02 format.
+[Paste this prompt again]
 ```
 Download the new MD files. Update the sources in the ChatGPT Project.
 
-> **PRO TIP:** If you have strong existing design samples for a client, skip Stage 1 and go straight to Stage 2 using only the reference designs. Lock the design direction first, THEN run Prompt 01 to generate the trained MD files.
+> **PRO TIP:** If you have strong existing design samples for a client, skip Stage 1 and go straight to Stage 2 using only the reference designs. Lock the design direction first, THEN run Step 02 to generate the trained MD files.
 
 ---
 
@@ -380,12 +380,12 @@ Provide both files as downloadable artifacts.
 4. Regenerate final files after training (Stage 3)
 5. Save final files as sources in client's Notion → Brand & Strategy
 
-Next step: **`prompt-02-seo-foundation.md`** (attach research.md + website URL)
+Next step: **`03-site-extraction.md`** (just needs the website URL — can run in parallel with Steps 04 and 05)
 
 Update `client-state.md`:
 ```
 Current Prompt Step: 02
-Last completed: prompt-01-design
+Last completed: onboarding-02-design-instructions
 Last completed date: [date]
 Outputs saved: research.md, design_instructions.md, prompting_style_guideline.md
 ```

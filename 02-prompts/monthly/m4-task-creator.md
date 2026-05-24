@@ -1,9 +1,9 @@
-# PROMPT 09 — TASK CREATOR
+# MONTHLY STEP M4 — TASK CREATOR
 
-**Chain position:** Step 10 of 11 (runs immediately after Prompt 08 — Strategy Builder)
+**Chain position:** Monthly Step M4 of M6 (runs immediately after M3 — Website Rewrite Plan)
 **Use on:** Claude (with Notion MCP connected)
 **Output:** Tasks created directly in Notion — linked to client, with deadlines and assignees
-**Next prompt:** `prompt-10-content-calendar.md` (recurring monthly)
+**Next prompt:** `m5-content-calendar.md` (recurring monthly)
 
 ---
 
@@ -15,15 +15,15 @@ CLIENT NAME:              [e.g. Jeevisha Spine Pain & Regenerative Hospital]
 CLIENT SLUG:              [e.g. jeevisha]
 CLIENT NOTION PAGE URL:   [e.g. https://notion.so/4be0a406...]
 ASSIGNED PM:              [e.g. Harshit]
-STRATEGY FILE:            [Attach {client_slug}_strategy_{YYYY-MM-DD}.md from Prompt 08 — REQUIRED]
-AUDIT FILE:               [Attach audit from Prompt 07 — if available]
+STRATEGY FILE:            [Attach {client_slug}_strategy_{YYYY-MM-DD}.md from M2 — REQUIRED]
+AUDIT FILE:               [Attach audit from M1 — if available]
 TODAY'S DATE:             [YYYY-MM-DD — for deadline calculation]
 ACTIVE SERVICES:          [e.g. Social Media, SEO, GMB, Paid Ads, Website]
 TEAM:                     [e.g. Harshit (PM), Ritik (SEO), [Designer], [Writer]]
 ```
 
 **Before running:**
-- Strategy doc from Prompt 08 is mandatory. Do not run without it.
+- Strategy doc from M2 is mandatory. Do not run without it.
 - Fetch the Notion tasks database schema first — use notion-fetch on the client page to get exact property names and allowed values before creating any tasks.
 - Confirm team member names match exactly what is used in the Notion database (Assigned To field).
 
@@ -33,15 +33,16 @@ TEAM:                     [e.g. Harshit (PM), Ritik (SEO), [Designer], [Writer]]
 
 ```
 REQUIRED:
-1. {client_slug}_strategy_{YYYY-MM-DD}.md   ← output from Prompt 08
+1. {client_slug}_strategy_{YYYY-MM-DD}.md   ← output from M2
 2. Client Notion page URL
 3. Today's date (for deadline calculation)
 4. Active services confirmed
 
 HELPFUL:
-5. Audit from Prompt 07 (for additional task context from §7 Action Plan)
-6. Foundation docs (seo-foundation, gmb-foundation, website-brief) — for task detail
-7. client-state.md — to avoid duplicating tasks already in Notion
+5. Audit from M1 (for additional task context from §7 Action Plan)
+6. Foundation docs (seo-foundation, gmb-foundation) — for task detail
+7. m3-website-rewrite-plan.md — for website tasks
+8. client-state.md — to avoid duplicating tasks already in Notion
 ```
 
 ---
@@ -68,8 +69,9 @@ You are a world-class:
 - Notion workflow builder
 
 I am attaching:
-- Master Strategy document from Prompt 08 (primary input)
-- Audit from Prompt 07 (supplementary — §7 Action Plan)
+- Master Strategy document from M2 (primary input)
+- Audit from M1 (supplementary — §7 Action Plan)
+- Website Rewrite Plan from M3 (website tasks)
 - Client Notion page URL
 
 **Your task:**
@@ -105,6 +107,11 @@ Go through the strategy document section by section and extract every executable
 
 **From Audit §7 (Action Plan) — if attached:**
 - Any 🔴 Critical or 🟡 High items not already captured above
+
+**From M3 Website Rewrite Plan — if attached:**
+- All page rewrite tasks by phase
+- Developer implementation tasks
+- Schema and tracking tasks from the website plan
 
 ---
 
@@ -154,7 +161,7 @@ Group all extracted tasks into these categories (only include active services):
 
 #### Category 6 — Website
 *(Only if website is active)*
-- Copy tasks (per page)
+- Copy tasks (per page — from M3 Website Rewrite Plan)
 - Developer tasks
 - Schema implementation
 - Speed / performance fixes
@@ -205,6 +212,7 @@ Examples:
 - `Social — Produce 8 Instagram posts for Week 1–2`
 - `Setup — Fix WhatsApp click tracking in GA4`
 - `Paid — Launch awareness campaign on Meta (₹5K budget)`
+- `Website — Rewrite services/back-pain page (Phase 1 — M3 priority)`
 
 ---
 
@@ -292,7 +300,7 @@ Properties (matched to actual Notion database schema):
 - Channel:      [Category from task list]
 - Deadline:     [YYYY-MM-DD]
 - Effort:       [S / M / L / P]
-- Source:       [Strategy §X / Audit §7 / PM added]
+- Source:       [Strategy §X / Audit §7 / M3 §X / PM added]
 ```
 
 Page content inside each task (body of the Notion page):
@@ -313,7 +321,7 @@ e.g. "All 4 GMB posts scheduled and live in GBP. Screenshots saved to Notion →
 
 ## Resources
 [Links to relevant Notion pages, brand brain sections, strategy sections, or prompt outputs]
-e.g. "Brand voice: brand-brain.md §4 | Design specs: design-system.html | Strategy ref: §3.4 GMB"
+e.g. "Brand voice: brand-brain.md §4 | Design specs: design-system.html | Strategy ref: §3.4 GMB | Website spec: M3 §Page-slug"
 ```
 
 ### Step 3: Confirm to PM
@@ -333,7 +341,7 @@ After all tasks are created:
 Suggested next steps:
 1. Open Notion → filter by 🔴 Critical → assign today's work
 2. Share the strategy Quick Reference Card (§10) with the team
-3. Run prompt-10-content-calendar.md to build this month's content calendar
+3. Run m5-content-calendar.md to build this month's content calendar
 ```
 
 ---
@@ -372,13 +380,13 @@ Save to: `C:\ritik\operations\clients\{client-name}\`
 1. PM opens Notion → client task view → filters by 🔴 Critical
 2. Assigns today's work to team
 3. Team uses task body notes to self-brief on context + resources
-4. Run `prompt-10-content-calendar.md` for this month's content plan
+4. Run `m5-content-calendar.md` for this month's content plan
 5. Set a 7-day check-in to review Critical task progress
 
 Update `client-state.md`:
 ```
-Current Prompt Step: 10 (recurring)
-Last completed: prompt-09-task-creator
+Current Prompt Step: M4
+Last completed: monthly-m4-task-creator
 Last completed date: [date]
 Tasks created: [X] tasks — [Notion link]
 Next check-in: [today + 7 days]

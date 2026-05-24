@@ -1,9 +1,9 @@
-# PROMPT 03 — DESIGN SYSTEM + HTML EXPORT
+# ONBOARDING STEP 07 — DESIGN SYSTEM + HTML EXPORT
 
-**Chain position:** Step 6 of 10
+**Chain position:** Onboarding Step 7 of 7 — final onboarding step
 **Use on:** Claude / ChatGPT (Claude preferred for HTML generation quality)
 **Output:** `design-system.html` — Standalone visual system file
-**Next prompt:** `prompt-06-website-brief.md`
+**Next prompt:** Onboarding complete → client enters the Monthly Flow (start with `monthly/m1-audit.md`)
 
 ---
 
@@ -13,9 +13,9 @@ Attach ALL of the following:
 
 ```
 REQUIRED:
-1. brand-brain.md              ← output from Prompt 02
-2. design_instructions.md      ← output from Prompt 01
-3. prompting_style_guideline.md ← output from Prompt 01
+1. brand-brain.md              ← output from Step 06
+2. design_instructions.md      ← output from Step 02
+3. prompting_style_guideline.md ← output from Step 02
 4. Logo file (PNG / SVG)
 5. Favicon (if available)
 
@@ -336,12 +336,16 @@ Also update the client's Notion Brand & Strategy with:
 3. Upload to client's Google Drive → link in Notion Assets
 4. Share with design team
 
-Prompts **04–08** can now run in parallel.
+**Onboarding is complete.** The client now moves into the Monthly Flow.
+
+**First monthly step:** `monthly/m1-audit.md` — run the first full audit.
 
 Update `client-state.md`:
 ```
-Current Prompt Step: 04-08 (parallel)
-Last completed: prompt-05-design-system
+Current Prompt Step: 07
+Last completed: onboarding-07-design-system
 Last completed date: [date]
-Outputs saved: research.md, design_instructions.md, prompting_style_guideline.md, brand-brain.md, design-system.html
+Onboarding complete: YES
+Next step: monthly/m1-audit.md
+Outputs saved: research.md, design_instructions.md, prompting_style_guideline.md, brand-brain.md, design-system.html, seo-foundation.md, gmb-foundation.md
 ```

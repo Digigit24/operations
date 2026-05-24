@@ -1,9 +1,9 @@
-# PROMPT 00 — BRAND, COMPETITOR, SEO & ICP RESEARCH
+# ONBOARDING STEP 01 — BRAND, COMPETITOR, SEO & ICP RESEARCH
 
-**Chain position:** Step 1 of 11
+**Chain position:** Onboarding Step 1 of 7
 **Use on:** Grok / Gemini / ChatGPT / Kimi — run on 2–3 tools, then merge outputs
 **Output:** `research.md` — Strategic research intelligence document
-**Next prompt:** `prompt-01-design.md`
+**Next prompt:** `02-design-instructions.md`
 
 ---
 
@@ -511,7 +511,7 @@ Identify:
 
 # SECTION 15 — INPUTS FOR MASTER BRAND BRAIN
 
-*(This section feeds directly into Prompt 02)*
+*(This section feeds directly into Step 06 — Brand Brain)*
 
 ## Recommended Positioning Direction
 - Primary positioning
@@ -604,12 +604,12 @@ The final output should be detailed enough that another AI can use it directly t
 
 Save output as `research.md` and attach it to the client's Notion → Brand & Strategy.
 
-Next step: **`prompt-01-design.md`**
+Next step: **`02-design-instructions.md`**
 
 Update `client-state.md`:
 ```
 Current Prompt Step: 01
-Last completed: prompt-00-research
+Last completed: onboarding-01-research
 Last completed date: [date]
 Outputs saved: research.md
 ```

@@ -1,9 +1,9 @@
-# PROMPT 08 — MASTER STRATEGY BUILDER
+# MONTHLY STEP M2 — MASTER STRATEGY BUILDER
 
-**Chain position:** Step 9 of 11 (runs after Prompt 07 — Audit)
+**Chain position:** Monthly Step M2 of M6 (runs after M1 — Audit)
 **Use on:** Claude (preferred — deep synthesis + strategic reasoning)
 **Output:** `{client_slug}_strategy_{YYYY-MM-DD}.md` — Master cross-channel strategy doc
-**Next prompt:** `prompt-09-task-creator.md` (attach strategy output)
+**Next prompt:** `m3-website-rewrite-plan.md` (attach strategy output)
 
 ---
 
@@ -18,11 +18,11 @@ BUSINESS GOAL THIS PERIOD:[e.g. 50 new patient inquiries / grow Instagram to 2K 
 ACTIVE SERVICES:          [e.g. Social Media, SEO, GMB, Website]
 TEAM SIZE:                [e.g. 1 PM + 1 SEO + 1 designer + 1 content writer]
 BUDGET AVAILABLE:         [e.g. ₹15,000/month for paid ads / organic only]
-AUDIT FILE:               [Attach {client_slug}_audit_{period}_{date}.md from Prompt 07]
-BRAND BRAIN FILE:         [Attach brand-brain.md from Prompt 02]
-SEO FOUNDATION:           [Attach seo-foundation.md from Prompt 04 — if available]
-GMB FOUNDATION:           [Attach gmb-foundation.md from Prompt 05 — if available]
-WEBSITE BRIEF:            [Attach website-brief.md from Prompt 06 — if available]
+AUDIT FILE:               [Attach {client_slug}_audit_{period}_{date}.md from M1]
+BRAND BRAIN FILE:         [Attach brand-brain.md from Onboarding Step 06]
+SEO FOUNDATION:           [Attach seo-foundation.md from Onboarding Step 04 — if available]
+GMB FOUNDATION:           [Attach gmb-foundation.md from Onboarding Step 05 — if available]
+WEBSITE REWRITE PLAN:     [Attach m3-website-rewrite-plan.md from previous period — if available]
 ```
 
 **Before running:**
@@ -46,14 +46,14 @@ Also upload to: Client's Notion → Brand & Strategy → Plan Overview
 ```
 REQUIRED (minimum to run):
 1. Client name + active services + strategy period
-2. At least ONE of: brand-brain.md OR audit output from Prompt 07
+2. At least ONE of: brand-brain.md OR audit output from M1
 
 STRONGLY RECOMMENDED:
-3. audit output from Prompt 07 (§6 Cross-Channel Insights + §7 Action Plan)
-4. brand-brain.md from Prompt 02
-5. seo-foundation.md from Prompt 04
-6. gmb-foundation.md from Prompt 05
-7. website-brief.md from Prompt 06
+3. audit output from M1 (§6 Cross-Channel Insights + §7 Action Plan)
+4. brand-brain.md from Onboarding Step 06
+5. seo-foundation.md from Onboarding Step 04
+6. gmb-foundation.md from Onboarding Step 05
+7. m3-website-rewrite-plan.md from previous period (if available)
 8. Business goals for this period (specific — not "grow the brand")
 9. Budget available (organic only vs paid budget)
 10. Team composition and bandwidth
@@ -89,7 +89,7 @@ I am attaching the following documents (attach all that are available):
 - Master Brand Brain: `brand-brain.md`
 - SEO Foundation: `seo-foundation.md`
 - GMB Foundation: `gmb-foundation.md`
-- Website Brief: `website-brief.md`
+- Website Rewrite Plan (previous period): `m3-website-rewrite-plan.md`
 
 **Your task:** Synthesise all inputs and build a MASTER CROSS-CHANNEL STRATEGY for this client for the defined period. This strategy becomes the single source of truth that drives all tasks, content, campaigns, and execution for the team.
 
@@ -325,7 +325,7 @@ RETENTION / REFERRAL
 
 ### 5. Content & Campaign Calendar — High Level
 
-A monthly arc — not a day-by-day calendar (that's Prompt 10). Just the key beats.
+A monthly arc — not a day-by-day calendar (that's M5). Just the key beats.
 
 | Week | Focus Theme | Key Deliverable | Channel(s) | Goal |
 |---|---|---|---|---|
@@ -441,21 +441,21 @@ SUCCESS LOOKS LIKE:   [one sentence]
 Save to: `C:\ritik\operations\clients\{client-name}\`
 Upload to: Notion → Brand & Strategy → Plan Overview
 
-Immediately pass this document to **`prompt-09-task-creator.md`**
+Immediately pass this document to **`m3-website-rewrite-plan.md`**
 
 ---
 
 ## AFTER THIS PROMPT
 
 1. Save strategy file with correct naming convention
-2. PM reviews strategy — make any adjustments before passing to Prompt 09
+2. PM reviews strategy — make any adjustments before passing to M3
 3. Share Quick Reference Card (Section 10) with the team immediately
-4. Run `prompt-09-task-creator.md` — attach this strategy doc as primary input
+4. Run `m3-website-rewrite-plan.md` — attach this strategy doc as primary input
 
 Update `client-state.md`:
 ```
-Current Prompt Step: 09
-Last completed: prompt-08-strategy-builder
+Current Prompt Step: M2
+Last completed: monthly-m2-strategy-builder
 Last completed date: [date]
 Strategy period: [period]
 Outputs saved: [...previous...], {client_slug}_strategy_{YYYY-MM-DD}.md

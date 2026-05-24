@@ -1,9 +1,9 @@
-# PROMPT 02 — MASTER BRAND BRAIN
+# ONBOARDING STEP 06 — MASTER BRAND BRAIN
 
-**Chain position:** Step 5 of 10
+**Chain position:** Onboarding Step 6 of 7
 **Use on:** ChatGPT / Claude (recommended: Claude for depth)
 **Output:** `brand-brain.md` — Master brand intelligence document
-**Next prompt:** `prompt-05-design-system.md`
+**Next prompt:** `07-design-system.md`
 
 ---
 
@@ -11,15 +11,15 @@
 
 Attach ALL of the following:
 ```
-1. research.md              ← output from Prompt 00 (run on 2–3 AI tools for best coverage)
-2. seo-foundation.md        ← output from Prompt 04
-3. gmb-foundation.md        ← output from Prompt 05
+1. research.md              ← output from Step 01 (run on 2–3 AI tools for best coverage)
+2. seo-foundation.md        ← output from Step 04
+3. gmb-foundation.md        ← output from Step 05
 4. Client website URL
 5. Social media links (if available)
 6. Any existing creatives, ads, or brand materials
 ```
 
-> **Important:** Use Prompt 00 on 2–3 different AI tools (Grok + Gemini + ChatGPT) and combine all research into the context before running this prompt. More research inputs = stronger brand brain.
+> **Important:** Use Step 01 on 2–3 different AI tools (Grok + Gemini + ChatGPT) and combine all research into the context before running this prompt. More research inputs = stronger brand brain.
 > SEO foundation and GMB foundation must be complete before running this prompt — they feed the positioning, local intelligence, and audience psychology sections directly.
 
 ---
@@ -57,7 +57,7 @@ You are a world-class:
 - AI-native brand systems architect
 
 I am attaching:
-- Deep market + SEO + competitor research (from Prompt 00)
+- Deep market + SEO + competitor research (from Step 01)
 - SEO foundation document (keyword map, search intent framework, competitor SEO gaps)
 - GMB foundation document (local positioning, review strategy, local intelligence)
 - Website URL and any existing creatives
@@ -263,12 +263,12 @@ Be specific. Be strategic. No generic brand language.
 2. Upload to client's Notion → Brand & Strategy
 3. Attach to the Claude Project as a source
 
-Next step: **`prompt-05-design-system.md`** (attach brand-brain.md + design_instructions.md + logo + references)
+Next step: **`07-design-system.md`** (attach brand-brain.md + design_instructions.md + logo + references)
 
 Update `client-state.md`:
 ```
-Current Prompt Step: 05
-Last completed: prompt-04-brand-brain
+Current Prompt Step: 06
+Last completed: onboarding-06-brand-brain
 Last completed date: [date]
 Outputs saved: research.md, design_instructions.md, prompting_style_guideline.md, seo-foundation.md, gmb-foundation.md, brand-brain.md
 ```

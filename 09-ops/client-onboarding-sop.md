@@ -263,7 +263,7 @@ The PM triggers the Audit Agent in the Account Agent with:
 **Time:** Agent: 30–60 min. PM review: 30–45 min.
 
 PM opens the client's Account Agent and runs:
-> `Next prompt` → Account Agent loads prompt-02-brand-brain.md with this client's context
+> `Next prompt` → Account Agent loads onboarding/06-brand-brain.md with this client's context
 
 Account Agent produces a draft `brand-brain.md` covering:
 - Brand personality (3–5 descriptors with examples of what they mean)

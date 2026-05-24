@@ -1,4 +1,4 @@
-# PROMPT 05 — GMB FOUNDATION
+# ONBOARDING STEP 05 — GMB FOUNDATION
 
 > ⚠️ **Before running this prompt — complete Step 3 of the Onboarding SOP first.**
 > `09-ops/client-onboarding-sop.md` → **Step 3: Client Access Setup & Tool Integration**
@@ -11,10 +11,10 @@
 >
 > If any of these are not done, pause and complete the access setup before continuing.
 
-**Chain position:** Step 4 of 10
+**Chain position:** Onboarding Step 5 of 7
 **Use on:** ChatGPT / Gemini (Gemini preferred — better Google ecosystem awareness)
 **Output:** `gmb-foundation.md` — Complete GMB optimisation playbook
-**Next prompt:** `prompt-04-brand-brain.md`
+**Next prompt:** `06-brand-brain.md`
 
 ---
 
@@ -32,7 +32,7 @@ PRIMARY SERVICES:         [e.g. Back pain, Sciatica, Regenerative therapy, Knee 
 PHONE NUMBER:             [e.g. +91 91191 11837]
 BUSINESS HOURS:           [e.g. Mon–Sat: 10am–7pm, Sun: Closed]
 SPECIAL FEATURES:         [e.g. Appointment required, Parking available, Wheelchair accessible]
-RESEARCH DOC:             [Attach research.md from Prompt 00]
+RESEARCH DOC:             [Attach research.md from Step 01]
 ```
 
 **Customise these sections for the client:**
@@ -56,7 +56,7 @@ For healthcare clients — never claim "best doctor", "guaranteed cure", "100% s
 
 ```
 REQUIRED:
-1. research.md              ← output from Prompt 00
+1. research.md              ← output from Step 01
 2. GMB profile URL (or confirm it doesn't exist yet)
 3. Client website URL
 4. Client address (exact — must match NAP)
@@ -128,7 +128,7 @@ You are a world-class:
 - Conversion-focused digital marketer
 
 I am attaching:
-- Deep market + competitor research (research.md from Prompt 00)
+- Deep market + competitor research (research.md from Step 01)
 - GMB profile URL (or confirmation it needs to be created)
 - Client business details: name, address, phone, hours, services
 
@@ -278,7 +278,7 @@ List all services to add to the GMB profile. For each:
 
 **Rules:**
 - Use patient/customer language — not medical jargon
-- Match service names to keyword research from Prompt 04
+- Match service names to keyword research from Step 04
 - Keep descriptions benefit-focused, not feature-focused
 - Include price ranges only if the client wants to display them
 
@@ -392,7 +392,6 @@ Pre-seed the Q&A section with the most common patient questions — before stran
 |---|---|---|
 | 1 | | |
 | 2 | | |
-| 3 | | |
 | ... | | |
 
 **Types to cover:**
@@ -581,14 +580,14 @@ Also update client's Notion → GMB page with:
 1. Save output as `gmb-foundation.md`
 2. Upload to client's Notion → GMB → GMB Foundation
 3. Attach `gmb-foundation.md` to the Claude Project as a source
-4. Week 1 GMB tasks will be created via Prompt 09 (Task Creator) — note them for now
+4. Week 1 GMB tasks will be created via M4 — Task Creator — note them for now
 
-Next step: **`prompt-04-brand-brain.md`** (attach research.md + seo-foundation.md + gmb-foundation.md)
+Next step: **`06-brand-brain.md`** (attach research.md + seo-foundation.md + gmb-foundation.md)
 
 Update `client-state.md`:
 ```
-Current Prompt Step: 04
-Last completed: prompt-03-gmb-foundation
+Current Prompt Step: 05
+Last completed: onboarding-05-gmb-foundation
 Last completed date: [date]
 Outputs saved: research.md, design_instructions.md, prompting_style_guideline.md, seo-foundation.md, gmb-foundation.md
 ```

@@ -9,59 +9,94 @@ This chain builds a complete brand intelligence, visual system, strategy layer, 
 
 ---
 
-## Chain Overview
+## Two-Chapter Structure
+
+| Chapter | Steps | Frequency | Purpose |
+|---|---|---|---|
+| **Chapter 1 — Onboarding Flow** | 01 → 07 | Once per new client | Build the complete brand intelligence and visual system |
+| **Chapter 2 — Monthly Flow** | M1 → M6 | Every month | Audit, strategise, plan, execute, and report |
+
+---
+
+## Chapter 1 — Onboarding Flow
+
+*Run once when a new client is signed. These steps are never re-run (only updated if the brand fundamentally changes).*
 
 | Step | File | What It Builds | Tool | Input Required | Output Stored In |
 |---|---|---|---|---|---|
-| 00 | `prompt-00-research.md` | Research intelligence doc | Grok / Gemini / ChatGPT / Kimi | Website URL, 3–4 competitors, location | Notion → Brand & Strategy |
-| 01 | `prompt-01-design.md` | `design_instructions.md` + `prompting_style_guideline.md` | ChatGPT / Claude | Website URL, 5 reference designs | Notion → Brand & Strategy → AI Prompting Guide |
-| 02 | `prompt-02-seo-foundation.md` | `seo-foundation.md` — SEO strategy + keyword map | ChatGPT / Gemini | Website URL + research from 00 | Notion → SEO → SEO Foundation |
-| 03 | `prompt-03-gmb-foundation.md` | `gmb-foundation.md` — GMB optimisation playbook | ChatGPT / Gemini | GMB URL + research from 00 + seo-foundation.md | Notion → GMB → GMB Foundation |
-| 04 | `prompt-04-brand-brain.md` | `brand-brain.md` — master brand intelligence | ChatGPT / Claude | Output from 00 + 02 + 03 | Notion → Brand & Strategy → Brand Brief |
-| 05 | `prompt-05-design-system.md` | `design-system.html` — full visual system | Claude / ChatGPT | Output from 01 + 04 + logo + references | Notion → Brand & Strategy → Design System |
-| 06 | `prompt-06-website-brief.md` | `website-brief.md` — full website content brief | Claude / ChatGPT | brand-brain.md + website URL | Notion → Website → Website Brief |
-| 07 | `prompt-07-audit.md` | `{client}_audit_{period}_{date}.md` — multi-channel audit + action plan | Claude + Windsor MCP | Windsor connected, output from 04–06 | Notion → Audits |
-| 08 | `prompt-08-strategy-builder.md` | `{client}_strategy_{date}.md` — master cross-channel strategy | Claude | Audit from 07 + all foundation docs | Notion → Brand & Strategy → Plan Overview |
-| 09 | `prompt-09-task-creator.md` | Tasks created in Notion — across all channels with deadlines | Claude + Notion MCP | Strategy from 08 + audit from 07 | Notion → Client Tasks |
-| 10 | `prompt-10-content-calendar.md` | Monthly content calendar *(recurring)* | Claude / ChatGPT | brand-brain.md + strategy from 08 | Notion → Social Media |
-| 11 | `prompt-11-client-report.md` | Client performance report *(recurring)* | Claude / ChatGPT | Client state + monthly audit data | Notion → Reports |
+| 01 | `onboarding/01-research.md` | `research.md` — market, ICP, competitor intelligence | Grok / Gemini / ChatGPT / Kimi | Website URL, 3–4 competitors, location | Notion → Brand & Strategy |
+| 02 | `onboarding/02-design-instructions.md` | `design_instructions.md` + `prompting_style_guideline.md` | ChatGPT / Claude | Website URL, 5 reference designs | Notion → Brand & Strategy → AI Prompting Guide |
+| 03 | `onboarding/03-site-extraction.md` | Site content archived in Notion — one page per crawled URL | Claude (Firecrawl / Tavily MCP required) | Website URL only | Notion → 🌐 Website → Current Site Content |
+| 04 | `onboarding/04-seo-foundation.md` | `seo-foundation.md` — SEO strategy + keyword map | ChatGPT / Gemini | Website URL + research from 01 | Notion → SEO → SEO Foundation |
+| 05 | `onboarding/05-gmb-foundation.md` | `gmb-foundation.md` — GMB optimisation playbook | ChatGPT / Gemini | GMB URL + research from 01 + seo-foundation.md | Notion → GMB → GMB Foundation |
+| 06 | `onboarding/06-brand-brain.md` | `brand-brain.md` — master brand intelligence | Claude (recommended) | research.md + seo-foundation.md + gmb-foundation.md | Notion → Brand & Strategy → Brand Brief |
+| 07 | `onboarding/07-design-system.md` | `design-system.html` — full visual system | Claude (recommended) | brand-brain.md + design_instructions.md + logo + refs | Notion → Brand & Strategy → Design System |
 
 ---
 
-## How the Chain Works
+## Chapter 2 — Monthly Flow
 
-```
-[Prompt 00] → research.md
-      ↓
-[Prompt 01] → design_instructions.md + prompting_style_guideline.md
-      ↓
-[Prompt 02] → seo-foundation.md   (uses research.md + website)
-      ↓
-[Prompt 03] → gmb-foundation.md   (uses research.md + seo-foundation.md)
-      ↓
-[Prompt 04] → brand-brain.md      (uses research.md + seo-foundation.md + gmb-foundation.md)
-      ↓
-[Prompt 05] → design-system.html  (uses design_instructions.md + brand-brain.md + logo + refs)
-      ↓
-[Prompt 06] → website-brief.md    (uses brand-brain.md + website URL)
-      ↓
-[Prompt 07] → Audit
-(Windsor MCP pulls live data across all channels)
-      ↓
-[Prompt 08] → Strategy Builder
-(Claude brainstorms with PM → master cross-channel strategy doc)
-      ↓
-[Prompt 09] → Task Creator
-(PM reviews task list → approves → Claude creates tasks in Notion)
-      ↓
-┌────────────────────────────────────┐
-│  RECURRING — run every month       │
-├── [Prompt 10] → Content Calendar   │
-└── [Prompt 11] → Client Report      │
-└────────────────────────────────────┘
-```
+*Run every month for every active client. Starts with the Audit and ends with the Client Report.*
+
+| Step | File | What It Builds | Tool | Input Required | Output Stored In |
+|---|---|---|---|---|---|
+| M1 | `monthly/m1-audit.md` | `{client}_audit_{period}_{date}.md` — multi-channel audit + website content audit + action plan | Claude + Windsor MCP | Windsor connected, all foundation docs | Notion → Audits |
+| M2 | `monthly/m2-strategy-builder.md` | `{client}_strategy_{date}.md` — master cross-channel strategy | Claude | Audit from M1 + all foundation docs | Notion → Brand & Strategy → Plan Overview |
+| M3 | `monthly/m3-website-rewrite-plan.md` | `{client}_website-rewrite-plan_{date}.md` — phased page-by-page rewrite plan | Claude | M1 audit + M2 strategy + Step 03 extraction + brand brain | Notion → Website → Rewrite Plan |
+| M4 | `monthly/m4-task-creator.md` | Tasks created in Notion — all channels, all phases, with deadlines | Claude + Notion MCP | M2 strategy + M3 rewrite plan + M1 audit | Notion → Client Tasks |
+| M5 | `monthly/m5-content-calendar.md` | Monthly content calendar — platform-specific, day-by-day | Claude + Notion MCP | M2 strategy + brand-brain.md | Notion → Social Media |
+| M6 | `monthly/m6-client-report.md` | Client performance report — ready to share | Claude + Windsor / Semrush MCP | Live channel data + M2 strategy KPI targets | Notion → Reports |
 
 ---
+
+## Flow Diagrams
+
+### Chapter 1 — Onboarding Flow
+
+```
+[01-research.md]
+      ↓
+[02-design-instructions.md] ──────────────────────────────┐
+      │                                                     │
+      │  (can run in parallel with 02 and each other)      │
+      ├── [03-site-extraction.md]                          │
+      ├── [04-seo-foundation.md]                           │
+      └── [05-gmb-foundation.md]                           │
+                    │                                       │
+                    ▼                                       │
+         [06-brand-brain.md]                               │
+         (uses 01 + 04 + 05)                               │
+                    │                                       │
+                    ▼                                       │
+         [07-design-system.md] ◄────────────────────────────┘
+         (uses 02 + 06 + logo)
+                    │
+                    ▼
+          ONBOARDING COMPLETE
+          → Enter Monthly Flow
+```
+
+**Parallel steps:**
+- Steps 03, 04, and 05 can all run in parallel after Step 01 is complete
+- Step 03 (Site Extraction) has no strategy dependency — it runs at any point after Step 01
+
+### Chapter 2 — Monthly Flow
+
+```
+[M1-audit.md]                     ← Windsor MCP required
+      ↓
+[M2-strategy-builder.md]          ← uses M1 audit + foundation docs
+      ↓
+[M3-website-rewrite-plan.md]      ← uses M1 + M2 + Step 03 Notion extraction
+      ↓
+[M4-task-creator.md]              ← uses M2 strategy + M3 rewrite plan + M1 audit
+      ↓                             PM must approve before tasks are created in Notion
+[M5-content-calendar.md]          ← uses M2 strategy + brand-brain.md
+      ↓
+[M6-client-report.md]             ← uses Windsor/Semrush data + M2 KPI scorecard
+      ↓
+  RESTART → M1 next month
+```
 
 ---
 
@@ -71,19 +106,16 @@ Claude uses live MCP tools for all SEO, keyword, competitor, and web research ta
 
 ### Tool Priority Order
 
-Use whichever tools are connected, in this order of preference:
-
 | Priority | Tool | Best For |
 |---|---|---|
 | 1 | **Ahrefs MCP** | Keyword volumes, difficulty scores, competitor organic keywords, backlink profiles, SERP overview, domain rating, ranking history |
 | 2 | **Semrush MCP** | Keyword research, organic traffic estimates, competitor analysis, trend data, site audit |
 | 3 | **Tavily MCP** | Web search, site crawl, content extraction, industry research, authority sources, topical gaps |
-| 4 | **Serper** | Google SERP results, local pack data, related searches *(if configured as custom MCP)* |
-| 5 | **Firecrawl** | Deep website crawl, blog extraction, JS-heavy pages *(if configured as custom MCP)* |
+| 4 | **Firecrawl MCP** | Deep website crawl, JS-heavy pages, content archival (Step 03 preferred tool) |
 
-> **Use multiple tools together when possible.** Example: Ahrefs for keyword data + Tavily to crawl and extract competitor page content = richer output than either alone.
+> **Use multiple tools together when possible.** Example: Ahrefs for keyword data + Tavily to crawl competitor content = richer output than either alone.
 
-### Which Tool Does What
+### Tool-Task Mapping
 
 **For competitor discovery and SERP data:**
 → Ahrefs `site-explorer-organic-competitors` + `serp-overview`
@@ -94,13 +126,12 @@ Use whichever tools are connected, in this order of preference:
 → Ahrefs `keywords-explorer-overview` + `keywords-explorer-matching-terms`
 → Semrush `keyword_research` + `execute_report`
 
-**For crawling competitor websites and extracting content:**
-→ Tavily `tavily_crawl` + `tavily_extract`
-→ Firecrawl *(if connected)*
+**For crawling and extracting website content (Step 03 and M1 §5.5):**
+→ Firecrawl `firecrawl_crawl` + `firecrawl_scrape` *(preferred)*
+→ Tavily `tavily_crawl` + `tavily_extract` *(fallback)*
 
-**For industry trends and authority sources:**
-→ Tavily `tavily_research`
-→ Semrush `trends_research`
+**For channel performance data (M1 Audit, M6 Report):**
+→ Windsor.ai MCP — GA4, Meta Ads, Google Ads, social channels
 
 **For backlinks and domain authority:**
 → Ahrefs `site-explorer-domain-rating` + `site-explorer-referring-domains`
@@ -109,33 +140,23 @@ Use whichever tools are connected, in this order of preference:
 **For local SEO and GMB competitor data:**
 → Ahrefs `keywords-explorer-overview` with location filter
 → Semrush `keyword_research` with local modifiers
-→ Tavily `tavily_search` for local SERP results
 
 ---
 
-### If No MCP Tool Is Connected or Working
+## Run Rules
 
-If Claude cannot reach any of the above tools, it must stop and say:
-
-> "To pull live keyword, competitor, and SERP data for this prompt, I need at least one SEO research tool connected. Please connect one of the following:
->
-> - **Tavily** (free tier available) → [tavily.com](https://tavily.com) → connect via Cowork → Settings → Integrations
-> - **Ahrefs** (free trial available) → [ahrefs.com](https://ahrefs.com) → connect via Cowork → Settings → Integrations
-> - **Semrush** (free tier available) → [semrush.com](https://semrush.com) → connect via Cowork → Settings → Integrations
->
-> Once connected, restart this prompt. Alternatively, you can paste keyword data, competitor URLs, or SERP screenshots manually and I will work from that."
-
----
-## Prompt Run Rules
-
-| Phase | Prompts | Rule |
-|---|---|---|
-| Foundation | 00 → 01 → 02 → 03 → 04 → 05 | Must run **in order** — each builds on the previous |
-| Website Brief | 06 | Run after Brand Brain (04) and Design System (05) |
-| Audit | 07 | Run after 06 is complete (Windsor MCP required) |
-| Strategy | 08 | Run **after Prompt 07** — synthesises audit + all foundation docs into master strategy |
-| Task Creation | 09 | Run **immediately after Prompt 08** — PM must approve before tasks are created in Notion |
-| Recurring | 10, 11 | Run **monthly** — attach latest strategy (08) and audit (07) |
+| Chapter | Rule |
+|---|---|
+| Onboarding 01 → 02 | Must run in order — each builds on the previous |
+| Onboarding 03, 04, 05 | Can run in parallel after Step 01 — no dependency on each other |
+| Onboarding 06 | Requires Steps 01 + 04 + 05 complete |
+| Onboarding 07 | Requires Steps 02 + 06 complete + logo files |
+| Monthly M1 | Windsor MCP required. Run Step 0 Discovery first — confirm account IDs before pulling data |
+| Monthly M2 | Run after M1. Has mandatory Discovery Phase — Claude asks for goals before building |
+| Monthly M3 | Run after M1 + M2. Requires Step 03 Notion extraction for §0 current site audit |
+| Monthly M4 | Run after M3. PM must approve task list before Claude creates tasks in Notion |
+| Monthly M5 | Run after M4. Requires M2 strategy + confirmed posting frequency |
+| Monthly M6 | Run at end of period. Requires Windsor/Semrush data pull |
 
 ---
 
@@ -147,43 +168,42 @@ Search Notion → Clients Database before creating anything.
 - If the page does not exist → run the `notion-client-onboarding` skill in Claude first
 - **Never create duplicate Notion pages.**
 
-### Check 2: Set up the Claude Project (do this before Prompt 2)
-From Prompt 4 (Brand Brain) onwards, all prompts run inside a dedicated Claude Project per client.
-1. Create a new Claude Project in Claude.ai → name it: `[Client Name] — Brand Intelligence`
-2. After Prompt 00: upload `research.md` as a Project source
-3. After Prompt 01: upload `design_instructions.md` + `prompting_style_guideline.md`
-4. After Prompt 02: upload `seo-foundation.md`
-5. After Prompt 03: upload `gmb-foundation.md`
-6. After Prompt 04: upload `brand-brain.md`
-7. Keep adding outputs as sources — the Project becomes the client's AI brain
-8. All prompts from 04–09 should be run inside this Project so Claude has full context
+### Check 2: Set up the Claude Project (do this before Step 06)
+From Step 06 (Brand Brain) onwards, all prompts run inside a dedicated Claude Project per client.
+1. Create a new Claude Project → name it: `[Client Name] — Brand Intelligence`
+2. After Step 01: upload `research.md` as a Project source
+3. After Step 02: upload `design_instructions.md` + `prompting_style_guideline.md`
+4. After Step 03: note the Notion URL of the site extraction index page in `client-state.md`
+5. After Step 04: upload `seo-foundation.md`
+6. After Step 05: upload `gmb-foundation.md`
+7. After Step 06: upload `brand-brain.md`
+8. After Step 07: upload `design-system.html`
+9. Keep adding outputs as sources — the Project becomes the client's AI brain
 
 ---
 
 ## Inputs Needed at Start
 
-**Only the website URL is required to begin. Everything else is optional.**
+**Only the website URL is required to begin.**
 
-Collect what you can — the AI fills gaps from the website and flags what's missing.
-
-**Minimum to start (Prompt 00):**
+**Minimum to start (Step 01):**
 - [ ] Client website URL ← the only hard requirement
 
-**Collect before Prompt 04 (Brand Brain):**
+**Collect before Step 06 (Brand Brain):**
 - [ ] Client full official name (exact — for NAP)
 - [ ] Full address with area, city, state, PIN
 - [ ] Primary phone number (+91 XXXXX XXXXX format)
 - [ ] Service list (confirmed — no assumptions)
 - [ ] Primary conversion goal (calls / WhatsApp / form fills / appointments)
-- [ ] SEO foundation complete — `seo-foundation.md` uploaded to Project ← from Prompt 02
-- [ ] GMB foundation complete — `gmb-foundation.md` uploaded to Project ← from Prompt 03
+- [ ] SEO foundation complete — `seo-foundation.md` uploaded to Project
+- [ ] GMB foundation complete — `gmb-foundation.md` uploaded to Project
 
-**Collect before Prompt 05 (Design System):**
+**Collect before Step 07 (Design System):**
 - [ ] Logo file (PNG + SVG)
 - [ ] Favicon (if available)
 - [ ] 5 reference designs (existing creatives or Pinterest)
 
-**Collect before Prompt 07 (Audit):**
+**Collect before M1 (Audit):**
 - [ ] Google Analytics 4 Property ID
 - [ ] Google Search Console access
 - [ ] Google Business Profile link
@@ -198,23 +218,55 @@ Collect what you can — the AI fills gaps from the website and flags what's mis
 
 ---
 
-## Final Outputs (End of Chain)
+## Notion Structure
+
+Each client's Notion workspace should have these pages:
+
+```
+[Client Name]
+├── Brand & Strategy
+│   ├── Brand Brief          ← brand-brain.md
+│   ├── Plan Overview        ← {client}_strategy_{date}.md
+│   ├── Design System        ← design-system.html
+│   └── AI Prompting Guide   ← design_instructions.md + prompting_style_guideline.md
+├── SEO
+│   └── SEO Foundation       ← seo-foundation.md
+├── GMB
+│   └── GMB Foundation       ← gmb-foundation.md
+├── 🌐 Website
+│   ├── Current Site Content ← Step 03 extraction (one sub-page per crawled page)
+│   └── Rewrite Plan         ← {client}_website-rewrite-plan_{date}.md
+├── Audits                   ← {client}_audit_{period}_{date}.md (one per month)
+├── Tasks                    ← created by M4 Task Creator
+├── Social Media             ← M5 content calendar
+└── Reports                  ← M6 client reports
+```
+
+---
+
+## Final Outputs (End of Onboarding)
 
 | File / Output | Description | Stored In |
 |---|---|---|
 | `research.md` | Full market + SEO + ICP intelligence | Notion → Brand & Strategy |
 | `design_instructions.md` | Visual brand system doc | Notion → Brand & Strategy → AI Prompting Guide |
 | `prompting_style_guideline.md` | AI image generation guide | Notion → Brand & Strategy → AI Prompting Guide |
+| Site content in Notion | Every page of the client's website extracted and archived | Notion → 🌐 Website → Current Site Content |
 | `seo-foundation.md` | Full SEO strategy, keyword map, 90-day plan | Notion → SEO → SEO Foundation |
 | `gmb-foundation.md` | GMB optimisation playbook, posts, Q&A, review templates | Notion → GMB → GMB Foundation |
 | `brand-brain.md` | Master brand intelligence — positioning, voice, SEO signals, local intelligence | Notion → Brand & Strategy → Brand Brief |
 | `design-system.html` | Standalone HTML visual OS — typography, colors, components, social formats, AI prompts | Notion → Brand & Strategy → Design System |
-| `website-brief.md` | Full website content and conversion brief | Notion → Website → Website Brief |
-| `{client}_audit_{period}_{date}.md` | Multi-channel performance audit + cross-channel action plan | Notion → Audits |
-| `{client}_strategy_{date}.md` | Master cross-channel strategy — goals, channel plans, creative requirements, risk map | Notion → Brand & Strategy → Plan Overview |
-| Tasks in Notion | Prioritised tasks with deadlines across all channels — created from strategy | Notion → Client Tasks |
-| Monthly content calendar | Platform-specific content plan *(recurring)* | Notion → Social Media |
-| Monthly client report | Performance report for client sharing *(recurring)* | Notion → Reports |
+
+## Final Outputs (End of Each Month)
+
+| File / Output | Description | Stored In |
+|---|---|---|
+| `{client}_audit_{period}_{date}.md` | Multi-channel + website content audit + action plan | Notion → Audits |
+| `{client}_strategy_{date}.md` | Master cross-channel strategy — goals, channel plans, creative requirements | Notion → Brand & Strategy → Plan Overview |
+| `{client}_website-rewrite-plan_{date}.md` | Phased page-by-page rewrite brief with keyword matrix + GA4 event mapping | Notion → Website → Rewrite Plan |
+| Tasks in Notion | Prioritised tasks with deadlines across all channels | Notion → Tasks |
+| Monthly content calendar | Platform-specific content plan | Notion → Social Media |
+| Monthly client report | Performance report for client sharing | Notion → Reports |
 
 ---
 
@@ -223,7 +275,7 @@ Collect what you can — the AI fills gaps from the website and flags what's mis
 Update `client-state.md` after each completed step:
 
 ```
-Current Prompt Step: 00 / 01 / 02 / 03 / 04 / 05 / 06 / 07 / 08 / 09 / 10 / 11
+Current Prompt Step: 01 / 02 / 03 / 04 / 05 / 06 / 07 / M1 / M2 / M3 / M4 / M5 / M6
 Last completed: [prompt name]
 Last completed date: [date]
 Next step: [prompt name]
@@ -237,19 +289,17 @@ Tasks created: [X tasks — link to Notion view]
 
 ## Notes
 
-- **Prompt 00 only needs a website URL.** All other inputs are optional — the AI infers what it can and flags gaps.
-- **Prompts 00 → 01 → 02 → 03 → 04 → 05** must run in order — each builds on the previous.
-- **Prompt 01** has a 3-stage feedback loop — run it, test designs, train the thread, then regenerate. Don't skip Stage 2.
-- **Prompts 02 (SEO) and 03 (GMB) run before Brand Brain (04)** — their outputs feed directly into brand positioning and intelligence.
-- **Prompt 04 (Brand Brain)** requires `seo-foundation.md` + `gmb-foundation.md` as inputs — do not run it before both are complete.
-- **Prompt 05 (Design System)** uses `design_instructions.md` (from 01) + `brand-brain.md` (from 04) — runs after Brand Brain.
-- **Prompt 06 (Website Brief)** runs after both Brand Brain (04) and Design System (05) are complete.
-- **Prompt 07 (Audit)** requires Windsor.ai MCP connected in Claude. Run Step 0 (Discovery) first — never pull data without confirming account IDs with the PM.
-- **Prompt 08 (Strategy Builder)** has a mandatory Discovery Phase — Claude asks for goals, constraints, and budget before building. Do not skip the question phase.
-- **Prompt 09 (Task Creator)** has a mandatory PM approval gate — task list is presented first, PM reviews and approves, then Claude creates in Notion. Never auto-creates.
-- **Prompts 10 and 11** are recurring — run monthly. Always attach the latest strategy (08) and audit (07).
-- **Claude Project is the brain.** From Prompt 04 onwards, all prompts run inside a Claude Project. Add each output as a source as you go.
+- **Step 01 only needs a website URL.** All other inputs are optional — the AI infers what it can and flags gaps.
+- **Steps 01 → 02** run in order. **Steps 03, 04, 05** can run in parallel after Step 01.
+- **Step 03 (Site Extraction)** requires Firecrawl or Tavily MCP connected. Output goes directly into Notion — not a local file.
+- **Step 06 (Brand Brain)** requires `seo-foundation.md` + `gmb-foundation.md` — do not run before both are complete.
+- **Step 07 (Design System)** uses `design_instructions.md` (Step 02) + `brand-brain.md` (Step 06) + logo files.
+- **M1 (Audit)** requires Windsor.ai MCP. Run Step 0 Discovery first — never pull data without confirming account IDs with PM.
+- **M1 §5.5 (Website Content Audit)** reads the Step 03 Notion extraction. If Step 03 was not run, §5.5 is skipped and flagged as a Critical action.
+- **M2 (Strategy Builder)** has a mandatory Discovery Phase — Claude asks for goals and constraints before building.
+- **M3 (Website Rewrite Plan)** reads M1 §5.5 findings + Step 03 extracted content. Do not run M3 before M1 and M2.
+- **M4 (Task Creator)** has a mandatory PM approval gate — task list is presented first, PM approves, then Claude creates in Notion.
+- **M5 and M6** are recurring — run monthly. Always attach the latest strategy (M2) output.
+- **Claude Project is the brain.** From Step 06 onwards, all prompts run inside a Claude Project. Add each output as a source.
 - **Check Notion before creating anything.** Client pages may already exist. Never create duplicates.
 - **NAP must be exact everywhere.** Name, Address, Phone collected at onboarding must match the website, GMB, and every directory — no variations.
-- **Uploading to Notion:** tell Claude in Cowork mode: "Upload this to [client] Notion → [page name]." Claude handles it via Notion MCP. Or paste manually.
-- **Picking up mid-chain:** check `client-state.md` in Notion for the last completed prompt step. Start from the next one — never re-run prompts whose outputs are already in Notion.

@@ -229,20 +229,28 @@ Then reply: "Done — **[task name]** marked as Completed in Notion."
 
 ## Prompt Chain Reference
 
+### Chapter 1 — Onboarding Flow (run once per new client)
+
 | Step | Name |
 |---|---|
-| 0 | Research |
-| 1 | Design Instructions |
-| 2 | Brand Brain |
-| 3 | Design System |
-| 4 | SEO Foundation |
-| 5 | GMB Foundation |
-| 6 | Website Brief |
-| 7 | Audit |
-| 8 | Strategy Builder |
-| 9 | Task Creator |
-| 10 | Content Calendar |
-| 11 | Client Report |
+| 01 | Research |
+| 02 | Design Instructions |
+| 03 | Site Extraction |
+| 04 | SEO Foundation |
+| 05 | GMB Foundation |
+| 06 | Brand Brain |
+| 07 | Design System |
+
+### Chapter 2 — Monthly Flow (recurring every month)
+
+| Step | Name |
+|---|---|
+| M1 | Audit |
+| M2 | Strategy Builder |
+| M3 | Website Rewrite Plan |
+| M4 | Task Creator |
+| M5 | Content Calendar |
+| M6 | Client Report |
 
 ---
 

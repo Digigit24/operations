@@ -1,9 +1,9 @@
-# PROMPT 04 — SEO FOUNDATION
+# ONBOARDING STEP 04 — SEO FOUNDATION
 
-**Chain position:** Step 3 of 10
+**Chain position:** Onboarding Step 4 of 7
 **Use on:** ChatGPT / Gemini (Gemini preferred for real-time search data)
 **Output:** `seo-foundation.md` — Full SEO strategy + keyword map
-**Next prompt:** `prompt-03-gmb-foundation.md`
+**Next prompt:** `05-gmb-foundation.md`
 
 ---
 
@@ -19,7 +19,7 @@ SERVICE AREAS:        [e.g. Wakad, Pimpri Chinchwad, Hinjewadi, Baner]
 PRIMARY SERVICES:     [e.g. Back pain treatment, Sciatica, Regenerative therapy]
 TARGET AUDIENCE:      [e.g. Middle-aged professionals, senior patients, family researchers]
 LANGUAGE:             [e.g. English / Hindi / Marathi — for keyword variants]
-RESEARCH DOC:         [Attach research.md from Prompt 00]
+RESEARCH DOC:         [Attach research.md from Step 01]
 ```
 
 **Customise these sections for the client:**
@@ -39,7 +39,7 @@ RESEARCH DOC:         [Attach research.md from Prompt 00]
 
 ```
 REQUIRED:
-1. research.md              ← output from Prompt 00
+1. research.md              ← output from Step 01
 2. Client website URL
 3. Client location / service cities
 4. Primary service list
@@ -111,7 +111,7 @@ You are a world-class:
 - Conversion-focused digital marketer
 
 I am attaching:
-- Deep market + competitor research (research.md from Prompt 00)
+- Deep market + competitor research (research.md from Step 01)
 - Client website URL
 - Client location, services, and target audience details
 
@@ -434,14 +434,14 @@ Also update the client's Notion → SEO page with:
 1. Save output as `seo-foundation.md`
 2. Upload to client's Notion → SEO → SEO Foundation
 3. Attach `seo-foundation.md` to the Claude Project as a source
-4. Set up Search Console + GA4 baseline tracking (90-day action plan tasks created after Prompt 09)
+4. Set up Search Console + GA4 baseline tracking (90-day action plan tasks created after M4 — Task Creator)
 
-Next step: **`prompt-03-gmb-foundation.md`** (attach research.md + seo-foundation.md)
+Next step: **`05-gmb-foundation.md`** (attach research.md + seo-foundation.md)
 
 Update `client-state.md`:
 ```
-Current Prompt Step: 03
-Last completed: prompt-02-seo-foundation
+Current Prompt Step: 04
+Last completed: onboarding-04-seo-foundation
 Last completed date: [date]
 Outputs saved: research.md, design_instructions.md, prompting_style_guideline.md, seo-foundation.md
 ```

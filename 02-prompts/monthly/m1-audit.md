@@ -1,9 +1,9 @@
-# PROMPT 07 — FIRST AUDIT + ACTION PLAN
+# MONTHLY STEP M1 — MULTI-CHANNEL AUDIT + ACTION PLAN
 
-**Chain position:** Step 8 of 10 (runs after 04–06 are complete; feeds directly into Prompt 08)
+**Chain position:** Monthly Step M1 of M6 — first step of every monthly cycle
 **Use on:** Claude (with Windsor.ai MCP connected)
 **Output:** `{client_slug}_audit_{period}_{YYYY-MM-DD}.md` — Full channel audit + action plan
-**Next prompt:** `prompt-08-task-creator.md` (use audit output as primary input)
+**Next prompt:** `m2-strategy-builder.md` (use audit output as primary input)
 
 ---
 
@@ -17,19 +17,22 @@ REPORTING PERIOD:         [7d / 30d / 90d — default: last_30d]
 BUSINESS GOAL:            [lead-gen / awareness / e-commerce / appointments / brand-building]
 CURRENCY SYMBOL:          [e.g. ₹ for India / $ / £]
 PRIMARY CONVERSION EVENT: [e.g. Phone call / WhatsApp click / Form submission / Purchase]
-NOTION CLIENT PAGE URL:   [Link to Jeevisha's Notion page — for task creation in Prompt 08]
+NOTION CLIENT PAGE URL:   [Link to client's Notion page — for task creation in M4]
+SITE EXTRACTION URL:      [Notion URL of the current site content — from Onboarding Step 03]
 ```
 
 **Before running:**
 - Confirm Windsor.ai MCP is connected in Claude
 - Confirm which channels are live for this client (social, paid, web, search)
 - Have the client's Google Analytics 4 property ID, Facebook Ad Account ID, and GMB URL ready (saves time in Step 0)
+- Have the Notion link to `🌐 Website → Current Site Content` from Onboarding Step 03 (for §5.5)
 
 **Customise depth per section:**
 - If client has NO paid ads running → skip Section 2 entirely, note in §8 as "not applicable"
 - If client has NO GA4 set up → flag as a Critical action item in Action Plan, skip Section 3
 - If only organic social is active → Section 4 becomes the primary section — expand it
 - If this is a first-ever audit (no prior period data) → remove all "vs prior period" comparisons, replace with "baseline established"
+- If site extraction has NOT been run yet → skip §5.5, add "Run Onboarding Step 03" as a 🔴 Critical action
 - For healthcare clients → in Section 4 (Organic Social), flag any posts that make health claims as a compliance note
 
 **Output file naming:**
@@ -59,6 +62,7 @@ HELPFUL TO HAVE READY:
 8. Instagram / Facebook Page handle
 9. Previous month's performance benchmarks (if any)
 10. Client's primary KPIs (what does success look like for them)
+11. Notion URL for site extraction pages (from Onboarding Step 03)
 ```
 
 ---
@@ -82,7 +86,7 @@ You are a world-class:
 - SEO and web analytics specialist
 - Conversion rate optimisation strategist
 
-You have Windsor.ai MCP connected. Your job is to pull real performance data across all connected channels for a specific client and produce a comprehensive first audit + prioritised action plan.
+You have Windsor.ai MCP connected. Your job is to pull real performance data across all connected channels for a specific client and produce a comprehensive audit + prioritised action plan.
 
 **IMPORTANT:** Do not pull any data until Step 0 is complete and the user has confirmed account IDs.
 
@@ -137,7 +141,11 @@ Before I pull any data, I need to confirm a few things:
    d) Brand awareness / reach
    e) Other — please describe
 
-5. Any channels or campaigns you want me to focus on or flag specifically?
+5. Has Onboarding Step 03 (Site Content Extraction) been completed?
+   If yes: please share the Notion URL for the extracted content.
+   If no: I will flag this in the audit action plan.
+
+6. Any channels or campaigns you want me to focus on or flag specifically?
 ```
 
 **Action 0.3:** Wait for user response. Do not proceed with any data pull until answers are received.
@@ -394,6 +402,78 @@ After table:
 
 ---
 
+### §5.5 WEBSITE CONTENT AUDIT
+*(New section — requires Onboarding Step 03 to have been completed. Skip if site extraction has not been run; add to action plan instead.)*
+
+**Source:** Read the extracted website content from Notion → `🌐 Website → Current Site Content → [Client Name] Site Extraction`.
+
+For each indexed page in the extraction, evaluate against the benchmarks below. Populate the status table:
+
+#### Page Status Table
+
+| Page | URL | Word Count | vs Competitor Benchmark | Target Keyword in Title | Target Keyword in H1 | Target Keyword in First 100 Words | Target Keyword in H2s | FAQ Section | FAQ Schema | Internal Links (count) | Last Updated | Brand Voice OK | CTA Present | Overall Status |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| [page name] | [url] | [words] | ✅/⚠️/🔴 | ✅/⚠️/🔴 | ✅/⚠️/🔴 | ✅/⚠️/🔴 | ✅/⚠️/🔴 | ✅/⚠️/🔴 | ✅/⚠️/🔴 | [count] | ✅/⚠️/🔴 | ✅/⚠️/🔴 | ✅/⚠️/🔴 | ✅/⚠️/🔴 |
+
+**Status key:**
+- ✅ Meets benchmark
+- ⚠️ Needs improvement
+- 🔴 Critical gap — rewrite priority
+
+#### Evaluation Criteria
+
+**Word count benchmark:**
+- Compare each page's word count against the top 3 competitor pages ranking for the same keyword (use SEO foundation data if available)
+- Under 400 words: 🔴 Thin content — critical rewrite
+- 400–800 words: ⚠️ Needs expansion for competitive niches
+- 800+ words: ✅ Sufficient (for most pages)
+
+**Keyword presence:**
+- Pull target keywords from `seo-foundation.md` (Onboarding Step 04)
+- Check each page against its assigned primary keyword from the Page-Level SEO Blueprint (Section 6 of seo-foundation.md)
+- Title tag missing keyword: ⚠️ or 🔴 depending on page priority
+- H1 missing keyword: 🔴 Critical for priority pages
+
+**FAQ section:**
+- Present and well-structured: ✅
+- Missing on high-priority service pages: ⚠️
+- Missing on homepage: ⚠️
+
+**Internal linking:**
+- 3+ internal links to/from page: ✅
+- 1–2 links: ⚠️
+- 0 links (orphan page): 🔴
+
+**Last updated:**
+- Updated within 6 months: ✅
+- Not updated in 6–12 months: ⚠️ Stale
+- Not updated in 12+ months or date unavailable: 🔴 Flag for refresh
+
+**Brand voice alignment:**
+- Check each page against the anti-patterns listed in `brand-brain.md` (Section 7 — Brand Anti-Patterns)
+- If any banned phrases or patterns are present: ⚠️
+- If overall tone is significantly off-brand: 🔴
+
+**CTA presence:**
+- Primary CTA visible above the fold: ✅
+- CTA present but below the fold only: ⚠️
+- No CTA on the page: 🔴
+
+#### Prioritised Rewrite List
+
+After the status table, rank all pages by rewrite priority:
+
+| Priority | Page | Reason | Estimated Impact |
+|---|---|---|---|
+| 🔴 Rewrite Now | [page] | [specific gap] | [e.g. Primary revenue page with no keyword in H1] |
+| 🟡 Rewrite Soon | [page] | [specific gap] | [e.g. Word count 300 words in competitive niche] |
+| 🟢 Optimise | [page] | [specific gap] | [e.g. Missing internal links] |
+| ✅ Good | [page] | Meets all benchmarks | Low priority |
+
+**This prioritised list feeds directly into M3 — Website Rewrite Plan.**
+
+---
+
 ### §6 CROSS-CHANNEL INSIGHTS
 
 *(This is the most important section. Be specific and blunt. Reference actual data.)*
@@ -472,6 +552,7 @@ Format as numbered observations, each with: **Finding → Evidence (with numbers
 - [Channel X: not connected — recommend connecting before next audit]
 - [Conversion events: not configured in GA4 — action required]
 - [Prior period: not available — baseline only for this audit]
+- [Site extraction: not completed — §5.5 skipped — recommend running Onboarding Step 03]
 
 **Audit prepared by:** Claude (Windsor.ai MCP)
 **Audit date:** [YYYY-MM-DD]
@@ -489,7 +570,7 @@ Save to:
 - Local: `C:\ritik\operations\clients\{client-name}\audits\`
 - Notion: Client → Audits → [this audit]
 
-Immediately pass the Action Plan (§7) to **`prompt-08-task-creator.md`**
+Immediately pass the Action Plan (§7) and Website Content Audit (§5.5) to **`m2-strategy-builder.md`**
 
 ---
 
@@ -498,12 +579,13 @@ Immediately pass the Action Plan (§7) to **`prompt-08-task-creator.md`**
 1. Save audit file with correct naming convention
 2. Upload to Notion → Client → Audits
 3. Share §1 (Executive Summary) + §7 (Action Plan) with PM immediately
-4. Run `prompt-08-task-creator.md` — use the Action Plan as primary input
+4. Run `m2-strategy-builder.md` — use the Action Plan as primary input
+5. Pass §5.5 (Website Content Audit) to `m3-website-rewrite-plan.md` when it runs
 
 Update `client-state.md`:
 ```
-Current Prompt Step: 08
-Last completed: prompt-07-audit
+Current Prompt Step: M1
+Last completed: monthly-m1-audit
 Last completed date: [date]
 Last audit period: [period]
 Outputs saved: [...previous...], {client_slug}_audit_{period}_{YYYY-MM-DD}.md
