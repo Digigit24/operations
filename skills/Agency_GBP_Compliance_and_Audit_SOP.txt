@@ -1,0 +1,160 @@
+AGENCY STANDARD OPERATING PROCEDURE (SOP): GOOGLE BUSINESS PROFILE COMPLIANCE
+================================================================================
+Document Type: Internal Skill-Set & Quality Assurance (QA) Framework
+Audience: GMB Executives, Account Managers, Content Copywriters, Graphic Designers
+Version: 2.0 (White-Label Agency Edition)
+
+PURPOSE:
+This guide serves as an internal agency blueprint to audit, cross-verify, and 
+troubleshoot Google Business Profile (GBP) update rejections before publishing. 
+Google's automated AI filters deploy strict algorithmic checks (OCR, YMYL, 
+anti-spam). This document provides the skills necessary to identify and fix 
+triggers across our core niches, with a primary focus on the Healthcare sector.
+
+================================================================================
+SECTION 1: THE FOUR PRIMARY REJECTION RADARS (WHY POSTS FAIL)
+================================================================================
+
+1. THE TELEMETRY FILTER (Direct Contact Data)
+   - Rule: Google strictly forbids phone numbers, email addresses, and raw URLs 
+     within the post body copy. 
+   - Intent: Google forces agencies to use native Call-To-Action (CTA) buttons 
+     so they can control click metrics and prevent direct lead scrapers.
+
+2. THE OCR RADAR (Optical Character Recognition on Graphics)
+   - Rule: Google's visual parser scans images for embedded alphabets. Graphics 
+     resembling traditional newspaper display ads, high-percentage text overlays, 
+     or images with phone numbers/footers embedded are auto-rejected.
+
+3. THE YMYL ALGORITHM (Your Money or Your Life)
+   - Rule: Content impacting a user's health, financial stability, or safety 
+     undergoes critical semantic scanning. Absolute medical claims, diagnostic 
+     jargon, or guarantees trigger hard rejections.
+
+4. SYSTEMIC KEYWORD STUFFING (Hashtag and Meta Manipulation)
+   - Rule: Piling repetitive localized keywords (e.g., #BestHospitalInCity 
+     #TopClinicCity) into a single block triggers spam filters.
+
+================================================================================
+SECTION 2: CORE NICHE CASE STUDIES & COMPLIANCE BLUEPRINTS
+================================================================================
+
+--------------------------------------------------------------------------------
+NICHE A: HEALTHCARE & HOSPITALS (CRITICAL FOCUS)
+--------------------------------------------------------------------------------
+* Policy Danger Zone: Direct disease management advice, diagnostic claims, 
+  and listing provider mobile numbers.
+
+❌ COMPONENT BREAKDOWN - REJECTED PATTERN:
+  - Image: Flyer containing cross-sections of a disease, doctor profile pic, 
+    with a thick footer band showing Phone, Email, and Website URL.
+  - Text: "Control your High Blood Sugar! Our expert Diabetologist cures 
+    chronic diabetes issues. Call +91 XXXXX XXXXX for a same-day appointment."
+  - Why it fails: OCR flags the footer text; Text body violates contact data 
+    policies; Medical algorithm flags the absolute claim ("cures chronic diabetes").
+
+Verified Compliant Strategy:
+  - Image: High-resolution, real-world photograph of a well-lit consultation 
+    room, or a doctor interacting naturally with a patient (Zero text overlay).
+  - Copywriting: Focus strictly on general wellness, everyday lifestyle adjustments, 
+    and educational awareness. Use soft verbs ("manage", "support", "explore").
+
+✅ AUDIT-READY TEXT TEMPLATE:
+  "Prioritizing daily physical wellness doesn't mean changing your entire 
+  routine overnight. Small, mindful adjustments to your everyday nutritional 
+  habits can significantly support long-term vitality and steady energy levels. 
+  
+  If you are looking to build a balanced lifestyle plan tailored to your personal 
+  routines, our specialty care team is here to guide you. Schedule an internal 
+  evaluation to evaluate your wellness goals."
+  [Action Button Configured: "Book Now" or "Call Now"]
+
+--------------------------------------------------------------------------------
+NICHE B: REAL ESTATE
+--------------------------------------------------------------------------------
+* Policy Danger Zone: Explicit pricing, aggressive financing jargon, repetitive 
+  links, and using stock renderings that look like computer-generated spam.
+
+❌ COMPONENT BREAKDOWN - REJECTED PATTERN:
+  - Image: Digital 3D rendering with a giant bright badge overlay: "STARTING AT 
+    ONLY $450k! 85% SOLD OUT!"
+  - Text: "Invest in the best 2BHK luxury apartments now. High ROI guaranteed. 
+    Click here to book: www.realestatestate-link.com/project."
+  - Why it fails: Price metrics mixed with urgency language ("85% Sold Out") 
+    triggers promotional spam filters. Raw URLs in text cause instant drops.
+
+Verified Compliant Strategy:
+  - Image: Real photographs of completed model apartments, structural progress 
+    images, or actual site architecture shots under clear daylight.
+  - Copywriting: Frame around architectural features, neighborhood dynamics, 
+    and lifestyle amenities.
+
+✅ AUDIT-READY TEXT TEMPLATE:
+  "Experience contemporary architectural design paired with seamless functional 
+  spaces. Our newest residential development focuses on maximizing natural light, 
+  open-concept floor plans, and close proximity to premium neighborhood spaces. 
+  
+  Explore the site layout and schedule an accompanied walk-through with our 
+  property consulting team."
+  [Action Button Configured: "Learn More" linking directly to the landing page]
+
+--------------------------------------------------------------------------------
+NICHE C: EDUCATION & INSTITUTES
+--------------------------------------------------------------------------------
+* Policy Danger Zone: Guaranteed job placement claims, specific pricing structures, 
+  unverified academic credentials, or using generic stock photos of students.
+
+❌ COMPONENT BREAKDOWN - REJECTED PATTERN:
+  - Image: Banner graphic with corporate logos and text: "100% Placement 
+    Guaranteed! Batch starts Monday!"
+  - Text: "Enroll in our Data Science program for just $999. Admissions closing 
+    soon. Contact admissions@edu-domain.com to lock in your seat."
+  - Why it fails: "100% Guaranteed" commercial claims trigger commercial fraud 
+    algorithms. Raw email address inside the body copy is an instant infraction.
+
+Verified Compliant Strategy:
+  - Image: Candid, authentic pictures of actual lecture halls, campus facilities, 
+    workshops, or interactive lab equipment.
+  - Copywriting: Center the narrative on curriculum modules, skill development, 
+    and academic environment.
+
+✅ AUDIT-READY TEXT TEMPLATE:
+  "Advancing your professional skill set requires a comprehensive, hands-on 
+  curriculum. Our technical educational pathways focus on deep-dive modules, 
+  practical project experience, and collaborative learning environments. 
+  
+  Review our upcoming course structures and curriculum timelines to find the 
+  right track for your career objectives."
+  [Action Button Configured: "Sign Up" or "Learn More"]
+
+================================================================================
+SECTION 3: THE INTERNAL 4-STEP CROSS-CHECK AUDIT PROCESS
+================================================================================
+Before publishing any client update on GBP, the Account Executive must check off 
+every step in this protocol:
+
+STEP 1: CAPTION CLEANSE (TEXT CHECK)
+  - Scan for symbols: 📞, ✉️, 🌐, 📍. Ensure no string resembling an email, 
+    phone number, or link exists behind these icons.
+  - Check adjectives: Remove absolute words like "Cure", "Guaranteed", "100%", 
+    "Cheapest", "Best".
+
+STEP 2: GRAPHIC DE-MARKETING (IMAGE CHECK)
+  - Run the "Thumb Test": If the image looks like a flyer you would hand out 
+    on a street corner, do not post it to GBP.
+  - Ensure any phone numbers or website URLs embedded in the image footer 
+    are cropped or removed entirely.
+  - Prioritize real photos over graphic designs.
+
+STEP 3: ACTION BUTTON INTEGRATION (CTA CHECK)
+  - Ensure the destination link attached to "Book", "Buy", or "Learn More" 
+    matches the exact domain verified on the core GBP listing profile. 
+    Cross-domain redirects can cause flags.
+
+STEP 4: REJECTION REMEDIATION LIFECYCLE
+  - If a post gets rejected: Do NOT keep trying to post variations of the same 
+    text immediately. This flags the profile for spam behavioral loops.
+  - Protocol: Delete the draft entirely, wait 15 minutes, switch the creative 
+    to a zero-text real photo, use heavily simplified, non-promotional text, 
+    and re-attempt.
+================================================================================
