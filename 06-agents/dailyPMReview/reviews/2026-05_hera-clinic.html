@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PM Review — Hera Clinic</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Inter', -apple-system, sans-serif; background: #f4f5f7; color: #111827; min-height: 100vh; padding: 32px 20px 48px; -webkit-font-smoothing: antialiased; }
+.wrap { max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
+.card { background: #ffffff; border-radius: 14px; border: 1px solid #e8eaed; box-shadow: 0 1px 4px rgba(0,0,0,0.06); padding: 24px; }
+.section-label { font-size: 11px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: #9ca3af; margin-bottom: 10px; padding-left: 2px; }
+.chip { display: inline-flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 99px; border: 1.5px solid; white-space: nowrap; }
+.chip-green  { background: #ecfdf5; color: #059669; border-color: #a7f3d0; }
+.chip-amber  { background: #fffbeb; color: #d97706; border-color: #fcd34d; }
+.chip-red    { background: #fef2f2; color: #dc2626; border-color: #fca5a5; }
+.chip-gray   { background: #f3f4f6; color: #6b7280; border-color: #e5e7eb; }
+.chip-tag    { background: #f0f0ff; color: #6366f1; border-color: #e0e0ff; font-size: 10px; font-weight: 700; }
+hr { border: none; border-top: 1px solid #f0f0f0; }
+.progress-track { height: 8px; background: #f0f0f0; border-radius: 99px; overflow: hidden; }
+.progress-fill  { height: 100%; border-radius: 99px; background: linear-gradient(90deg, #6366f1, #818cf8); }
+.dot-done    { background: #10b981; border: 2px solid #10b981; box-shadow: 0 0 0 3px #d1fae5; }
+.dot-next    { background: #f59e0b; border: 2px solid #f59e0b; box-shadow: 0 0 0 3px #fef3c7; }
+.dot-blocked { background: #ef4444; border: 2px solid #ef4444; box-shadow: 0 0 0 3px #fee2e2; }
+.dot-pending { background: #fff; border: 2px solid #d1d5db; }
+.blocker { display: flex; gap: 12px; align-items: flex-start; padding: 14px 16px; border-radius: 10px; border-left: 3.5px solid; }
+.blocker-red   { background: #fff5f5; border-color: #ef4444; }
+.blocker-amber { background: #fffdf0; border-color: #f59e0b; }
+.action-item { display: flex; gap: 12px; align-items: flex-start; padding: 14px 16px; background: #fafafa; border: 1px solid #f0f0f0; border-radius: 10px; }
+.action-num  { width: 24px; height: 24px; border-radius: 8px; background: #eef2ff; color: #4f46e5; font-size: 12px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.stat-card  { background: #fafafa; border: 1px solid #f0f0f0; border-radius: 12px; padding: 16px; }
+.stat-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; }
+.stat-value { font-size: 26px; font-weight: 800; color: #111827; line-height: 1.1; margin-top: 4px; }
+.stat-sub   { font-size: 11px; color: #9ca3af; margin-top: 2px; }
+.link-btn { display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; background: #fafafa; border: 1px solid #e5e7eb; border-radius: 8px; font-size: 12px; font-weight: 600; color: #374151; text-decoration: none; }
+@media (max-width: 560px) { body { padding: 16px 12px 32px; } .card { padding: 18px; } .stat-value { font-size: 22px; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- PAGE HEADER CARD -->
+  <div class="card">
+    <div style="display:flex; align-items:flex-start; justify-content:space-between; flex-wrap:wrap; gap:12px;">
+      <div>
+        <div class="section-label">PM Review · May 25, 2026</div>
+        <h1 style="font-size:24px; font-weight:800; color:#111827; margin-bottom:6px;">Hera Clinic</h1>
+        <p style="font-size:13px; color:#6b7280; margin-bottom:12px;">Dr. Sairandhri Kate &nbsp;·&nbsp; Healthcare — Clinic &nbsp;·&nbsp; Active Client</p>
+        <div style="display:flex; flex-wrap:wrap; gap:6px; align-items:center;">
+          <span class="chip chip-red">&#128272; On Hold &mdash; Blocked</span>
+          <span class="chip chip-green">Active Client</span>
+        </div>
+      </div>
+      <div style="text-align:right; font-size:11px; color:#9ca3af; line-height:1.8; flex-shrink:0;">
+        <div>Last Updated</div>
+        <div style="font-size:13px; font-weight:700; color:#374151;">May 25, 2026</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CRITICAL BLOCKER BANNER -->
+  <div style="background:#fff5f5; border:1.5px solid #fca5a5; border-radius:14px; padding:20px 24px;">
+    <div style="display:flex;gap:12px;align-items:flex-start;">
+      <div style="font-size:20px;flex-shrink:0;">&#128308;</div>
+      <div>
+        <div style="font-size:14px;font-weight:800;color:#dc2626;margin-bottom:4px;">Account On Hold — SEO Foundation Cannot Proceed</div>
+        <div style="font-size:13px;color:#374151;line-height:1.6;">SEO Foundation is blocked until Hera Clinic data is verified through Windsor. Required: GA4 organic traffic, GSC clicks, impressions, CTR, average position, top queries, top pages. <strong>Rule: Do not create SEO Foundation using assumed or generic data.</strong></div>
+        <div style="margin-top:10px;font-size:12px;font-weight:700;color:#dc2626;">Next step: Connect and verify Hera Clinic GA4 and GSC in Windsor.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOUNDATION CHAIN -->
+  <div class="card">
+    <div class="section-label">Foundation Chain &mdash; Prompt Progress</div>
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+      <span style="font-size:13px; font-weight:700; color:#111827;">4 / 5+ Prompts Complete (blocked at SEO Foundation)</span>
+      <span style="font-size:12px; font-weight:700; color:#dc2626;">Blocked</span>
+    </div>
+    <div class="progress-track" style="margin-bottom:20px;"><div class="progress-fill" style="width:44%; background:linear-gradient(90deg,#f59e0b,#fcd34d);"></div></div>
+    <div style="display:flex; flex-direction:column; gap:10px;">
+      <div style="display:flex; align-items:center; gap:12px;">
+        <div style="width:10px;height:10px;border-radius:50%;flex-shrink:0;" class="dot-done"></div>
+        <div style="flex:1;"><span style="font-size:12px;font-weight:700;color:#111827;">P01</span><span style="font-size:12px;color:#6b7280;margin-left:8px;">Strategic Research</span></div>
+        <span class="chip chip-green">Done</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:12px;">
+        <div style="width:10px;height:10px;border-radius:50%;flex-shrink:0;" class="dot-done"></div>
+        <div style="flex:1;"><span style="font-size:12px;font-weight:700;color:#111827;">P02</span><span style="font-size:12px;color:#6b7280;margin-left:8px;">Design Instructions</span></div>
+        <span class="chip chip-green">Done</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:12px;">
+        <div style="width:10px;height:10px;border-radius:50%;flex-shrink:0;" class="dot-done"></div>
+        <div style="flex:1;"><span style="font-size:12px;font-weight:700;color:#111827;">P02B</span><span style="font-size:12px;color:#6b7280;margin-left:8px;">AI Prompting Guide</span></div>
+        <span class="chip chip-green">Done</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:12px;">
+        <div style="width:10px;height:10px;border-radius:50%;flex-shrink:0;" class="dot-done"></div>
+        <div style="flex:1;"><span style="font-size:12px;font-weight:700;color:#111827;">P03</span><span style="font-size:12px;color:#6b7280;margin-left:8px;">Site Extraction</span></div>
+        <span class="chip chip-green">Done</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:12px;">
+        <div style="width:10px;height:10px;border-radius:50%;flex-shrink:0;" class="dot-blocked"></div>
+        <div style="flex:1;">
+          <span style="font-size:12px;font-weight:700;color:#111827;">SEO Foundation</span>
+          <span style="font-size:11px;color:#dc2626;margin-left:8px;">BLOCKED — Windsor / GA4 / GSC access missing</span>
+        </div>
+        <span class="chip chip-red">Blocked</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- STATS GRID -->
+  <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:12px;">
+    <div class="stat-card">
+      <div class="stat-label">Tasks in DB</div>
+      <div class="stat-value">5</div>
+      <div class="stat-sub">Active tasks</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Posts Published</div>
+      <div class="stat-value" style="color:#9ca3af;">0</div>
+      <div class="stat-sub">On hold</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Projects</div>
+      <div class="stat-value">2</div>
+      <div class="stat-sub">In workspace</div>
+    </div>
+  </div>
+
+  <!-- BLOCKER DETAIL -->
+  <div class="card">
+    <div class="section-label">Blocker Detail</div>
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <div class="blocker blocker-red">
+        <div style="font-size:15px;flex-shrink:0;margin-top:1px;">&#128308;</div>
+        <div>
+          <div style="font-size:13px;font-weight:700;color:#111827;margin-bottom:2px;">Windsor data access not verified for Hera Clinic</div>
+          <div style="font-size:12px;color:#6b7280;">SEO Foundation requires verified real data from GA4 and GSC via Windsor. Generic or assumed data must not be used. Missing fields: GA4 organic traffic, GSC clicks, impressions, CTR, average position, top queries, top pages, landing pages.</div>
+        </div>
+      </div>
+      <div class="blocker blocker-red">
+        <div style="font-size:15px;flex-shrink:0;margin-top:1px;">&#128308;</div>
+        <div>
+          <div style="font-size:13px;font-weight:700;color:#111827;margin-bottom:2px;">All downstream work is frozen</div>
+          <div style="font-size:12px;color:#6b7280;">Cannot run GMB Foundation, Brand Brain, Design System, or any execution work until SEO Foundation is unblocked.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTION ITEMS -->
+  <div class="card">
+    <div class="section-label">Action Items</div>
+    <div style="display:flex;flex-direction:column;gap:8px;">
+      <div class="action-item">
+        <div class="action-num">1</div>
+        <div>
+          <div style="font-size:13px;font-weight:700;color:#111827;">Connect Hera Clinic GA4 to Windsor MCP</div>
+          <div style="font-size:12px;color:#6b7280;margin-top:2px;">Log in to Windsor with the GA4 property owner account for Hera Clinic. Grant access. Verify data pulls correctly.</div>
+        </div>
+      </div>
+      <div class="action-item">
+        <div class="action-num">2</div>
+        <div>
+          <div style="font-size:13px;font-weight:700;color:#111827;">Connect Hera Clinic Google Search Console to Windsor MCP</div>
+          <div style="font-size:12px;color:#6b7280;margin-top:2px;">Verify GSC property for the clinic's domain. Confirm clicks, impressions, CTR, avg position, top queries are pulling.</div>
+        </div>
+      </div>
+      <div class="action-item">
+        <div class="action-num">3</div>
+        <div>
+          <div style="font-size:13px;font-weight:700;color:#111827;">Run SEO Foundation (Prompt) once Windsor verified</div>
+          <div style="font-size:12px;color:#6b7280;margin-top:2px;">Only proceed after real data is confirmed. Do not generate SEO Foundation from assumed or generic data under any circumstance.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LINKS -->
+  <div class="card">
+    <div class="section-label">Notion Links</div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;">
+      <a class="link-btn" href="https://www.notion.so/89d0a4065846832b8424011812a365d0" target="_blank">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        Notion Workspace
+      </a>
+      <a class="link-btn" href="https://www.notion.so/36b0a4065846804b911cd88c455eebc0" target="_blank">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        Client State
+      </a>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

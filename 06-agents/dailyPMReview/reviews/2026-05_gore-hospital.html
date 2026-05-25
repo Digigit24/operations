@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PM Review — Gore Multispeciality Hospital</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Inter', -apple-system, sans-serif; background: #f4f5f7; color: #111827; min-height: 100vh; padding: 32px 20px 48px; -webkit-font-smoothing: antialiased; }
+.wrap { max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
+.card { background: #ffffff; border-radius: 14px; border: 1px solid #e8eaed; box-shadow: 0 1px 4px rgba(0,0,0,0.06); padding: 24px; }
+.section-label { font-size: 11px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: #9ca3af; margin-bottom: 10px; padding-left: 2px; }
+.chip { display: inline-flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 99px; border: 1.5px solid; white-space: nowrap; }
+.chip-green  { background: #ecfdf5; color: #059669; border-color: #a7f3d0; }
+.chip-amber  { background: #fffbeb; color: #d97706; border-color: #fcd34d; }
+.chip-red    { background: #fef2f2; color: #dc2626; border-color: #fca5a5; }
+.chip-gray   { background: #f3f4f6; color: #6b7280; border-color: #e5e7eb; }
+.chip-tag    { background: #f0f0ff; color: #6366f1; border-color: #e0e0ff; font-size: 10px; font-weight: 700; }
+hr { border: none; border-top: 1px solid #f0f0f0; }
+.progress-track { height: 8px; background: #f0f0f0; border-radius: 99px; overflow: hidden; }
+.progress-fill  { height: 100%; border-radius: 99px; background: linear-gradient(90deg, #6366f1, #818cf8); }
+.dot-done    { background: #10b981; border: 2px solid #10b981; box-shadow: 0 0 0 3px #d1fae5; }
+.dot-next    { background: #f59e0b; border: 2px solid #f59e0b; box-shadow: 0 0 0 3px #fef3c7; }
+.dot-blocked { background: #ef4444; border: 2px solid #ef4444; box-shadow: 0 0 0 3px #fee2e2; }
+.dot-pending { background: #fff; border: 2px solid #d1d5db; }
+.blocker { display: flex; gap: 12px; align-items: flex-start; padding: 14px 16px; border-radius: 10px; border-left: 3.5px solid; }
+.blocker-red   { background: #fff5f5; border-color: #ef4444; }
+.blocker-amber { background: #fffdf0; border-color: #f59e0b; }
+.action-item { display: flex; gap: 12px; align-items: flex-start; padding: 14px 16px; background: #fafafa; border: 1px solid #f0f0f0; border-radius: 10px; }
+.action-num  { width: 24px; height: 24px; border-radius: 8px; background: #eef2ff; color: #4f46e5; font-size: 12px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.stat-card  { background: #fafafa; border: 1px solid #f0f0f0; border-radius: 12px; padding: 16px; }
+.stat-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; }
+.stat-value { font-size: 26px; font-weight: 800; color: #111827; line-height: 1.1; margin-top: 4px; }
+.stat-sub   { font-size: 11px; color: #9ca3af; margin-top: 2px; }
+.link-btn { display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; background: #fafafa; border: 1px solid #e5e7eb; border-radius: 8px; font-size: 12px; font-weight: 600; color: #374151; text-decoration: none; }
+@media (max-width: 560px) { body { padding: 16px 12px 32px; } .card { padding: 18px; } .stat-value { font-size: 22px; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- PAGE HEADER CARD -->
+  <div class="card">
+    <div style="display:flex; align-items:flex-start; justify-content:space-between; flex-wrap:wrap; gap:12px;">
+      <div>
+        <div class="section-label">PM Review · May 25, 2026</div>
+        <h1 style="font-size:24px; font-weight:800; color:#111827; margin-bottom:6px;">Gore Multispeciality Hospital</h1>
+        <p style="font-size:13px; color:#6b7280; margin-bottom:12px;">Dr. Dattesh Gore / Dr. Sayali Gore &nbsp;·&nbsp; Multispecialty Hospital &nbsp;·&nbsp; Active Client</p>
+        <div style="display:flex; flex-wrap:wrap; gap:6px; align-items:center;">
+          <span class="chip chip-red">&#128308; Blocked on Prompt 03</span>
+          <span class="chip chip-green">Active Client</span>
+          <span class="chip chip-tag">Healthcare</span>
+          <span class="chip chip-tag">Multispecialty</span>
+        </div>
+      </div>
+      <div style="text-align:right; font-size:11px; color:#9ca3af; line-height:1.8; flex-shrink:0;">
+        <div>Last Updated</div>
+        <div style="font-size:13px; font-weight:700; color:#374151;">May 25, 2026</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CRITICAL BLOCKER BANNER -->
+  <div style="background:#fff5f5; border:1.5px solid #fca5a5; border-radius:14px; padding:20px 24px;">
+    <div style="display:flex;gap:12px;align-items:flex-start;">
+      <div style="font-size:20px;flex-shrink:0;">&#128308;</div>
+      <div>
+        <div style="font-size:14px;font-weight:800;color:#dc2626;margin-bottom:4px;">GBP OAuth Revoked &mdash; Prompt 03 Blocked</div>
+        <div style="font-size:13px;color:#374151;line-height:1.6;">Google API returning <code style="background:#fef2f2;padding:1px 6px;border-radius:4px;font-size:12px;">403 PERMISSION_DENIED</code> on GBP location <code style="background:#fef2f2;padding:1px 6px;border-radius:4px;font-size:12px;">locations/11745653817576019909</code>. Windsor connector has stale OAuth. GBP location is visible but unusable. Cannot pull GMB data for Prompt 03.</div>
+        <div style="margin-top:12px;padding:10px 14px;background:#fef2f2;border:1px solid #fca5a5;border-radius:8px;">
+          <div style="font-size:11px;font-weight:800;color:#dc2626;text-transform:uppercase;letter-spacing:0.07em;margin-bottom:4px;">Required Fix</div>
+          <div style="font-size:12px;color:#374151;line-height:1.7;">Re-authorize Google Business Profile in Windsor:<br/>
+          <strong>1.</strong> Owner opens: <a href="https://onboard.windsor.ai?datasource=google_my_business" style="color:#4f46e5;font-weight:600;">https://onboard.windsor.ai?datasource=google_my_business</a><br/>
+          <strong>2.</strong> Sign in with the GBP-owning Google account<br/>
+          <strong>3.</strong> Grant Windsor access to GBP<br/>
+          <strong>4.</strong> Confirm location <code style="background:#fef2f2;padding:1px 6px;border-radius:4px;font-size:11px;">locations/11745653817576019909</code> is accessible<br/>
+          <strong>5.</strong> Re-run Windsor data pull</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOUNDATION CHAIN -->
+  <div class="card">
+    <div class="section-label">Foundation Chain &mdash; Prompt Progress</div>
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+      <span style="font-size:13px; font-weight:700; color:#111827;">2 / 5 Prompts Complete (blocked)</span>
+      <span style="font-size:12px; font-weight:700; color:#dc2626;">Blocked at P03</span>
+    </div>
+    <div class="progress-track" style="margin-bottom:20px;"><div class="progress-fill" style="width:40%;"></div></div>
+    <div style="display:flex; flex-direction:column; gap:10px;">
+      <div style="display:flex; align-items:center; gap:12px;">
+        <div style="width:10px;height:10px;border-radius:50%;flex-shrink:0;" class="dot-done"></div>
+        <div style="flex:1;">
+          <span style="font-size:12px;font-weight:700;color:#111827;">P00</span>
+          <span style="font-size:12px;color:#6b7280;margin-left:8px;">Strategic Research</span>
+          <span style="font-size:11px;color:#6b7280;margin-left:8px;">&rarr; Gore_Hospital_00_Strategic_Research.md uploaded</span>
+        </div>
+        <span class="chip chip-green">Done</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:12px;">
+        <div style="width:10px;height:10px;border-radius:50%;flex-shrink:0;" class="dot-done"></div>
+        <div style="flex:1;">
+          <span style="font-size:12px;font-weight:700;color:#111827;">P01</span>
+          <span style="font-size:12px;color:#6b7280;margin-left:8px;">Design Instructions + AI Prompting Guide</span>
+          <span style="font-size:11px;color:#6b7280;margin-left:8px;">&rarr; Uploaded</span>
+        </div>
+        <span class="chip chip-green">Done</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:12px;">
+        <div style="width:10px;height:10px;border-radius:50%;flex-shrink:0;" class="dot-done"></div>
+        <div style="flex:1;">
+          <span style="font-size:12px;font-weight:700;color:#111827;">P02</span>
+          <span style="font-size:12px;color:#6b7280;margin-left:8px;">SEO Foundation</span>
+          <span style="font-size:11px;color:#6b7280;margin-left:8px;">&rarr; Based on GA4 / GSC / Windsor data</span>
+        </div>
+        <span class="chip chip-green">Done</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:12px;">
+        <div style="width:10px;height:10px;border-radius:50%;flex-shrink:0;" class="dot-blocked"></div>
+        <div style="flex:1;">
+          <span style="font-size:12px;font-weight:700;color:#111827;">P03</span>
+          <span style="font-size:12px;color:#6b7280;margin-left:8px;">GMB Foundation</span>
+          <span style="font-size:11px;color:#dc2626;margin-left:8px;">BLOCKED &mdash; Google API 403 PERMISSION_DENIED. OAuth revoked.</span>
+        </div>
+        <span class="chip chip-red">Blocked</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:12px;">
+        <div style="width:10px;height:10px;border-radius:50%;flex-shrink:0;" class="dot-pending"></div>
+        <div style="flex:1;">
+          <span style="font-size:12px;font-weight:700;color:#9ca3af;">P04</span>
+          <span style="font-size:12px;color:#9ca3af;margin-left:8px;">Brand Brain</span>
+          <span style="font-size:11px;color:#9ca3af;margin-left:8px;">Cannot start until P03 done</span>
+        </div>
+        <span class="chip chip-gray">Pending</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:12px;">
+        <div style="width:10px;height:10px;border-radius:50%;flex-shrink:0;" class="dot-pending"></div>
+        <div style="flex:1;">
+          <span style="font-size:12px;font-weight:700;color:#9ca3af;">P05</span>
+          <span style="font-size:12px;color:#9ca3af;margin-left:8px;">Design System</span>
+          <span style="font-size:11px;color:#9ca3af;margin-left:8px;">Cannot start until P03 done</span>
+        </div>
+        <span class="chip chip-gray">Pending</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- WINDSOR STATUS -->
+  <div class="card">
+    <div class="section-label">Windsor Connector Status</div>
+    <div style="display:flex; flex-direction:column; gap:8px;">
+      <div style="display:flex; align-items:center; justify-content:space-between; padding:10px 14px; background:#f0fdf4; border:1px solid #bbf7d0; border-radius:8px;">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span style="color:#10b981;font-size:15px;font-weight:700;">&#10003;</span>
+          <span style="font-size:13px;font-weight:600;color:#111827;">Google Analytics 4 (GA4)</span>
+        </div>
+        <span class="chip chip-green">Connected</span>
+      </div>
+      <div style="display:flex; align-items:center; justify-content:space-between; padding:10px 14px; background:#f0fdf4; border:1px solid #bbf7d0; border-radius:8px;">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span style="color:#10b981;font-size:15px;font-weight:700;">&#10003;</span>
+          <span style="font-size:13px;font-weight:600;color:#111827;">Google Search Console (GSC)</span>
+        </div>
+        <span class="chip chip-green">Connected</span>
+      </div>
+      <div style="display:flex; align-items:center; justify-content:space-between; padding:10px 14px; background:#fff5f5; border:1px solid #fca5a5; border-radius:8px;">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span style="color:#dc2626;font-size:15px;font-weight:700;">&#10005;</span>
+          <span style="font-size:13px;font-weight:600;color:#111827;">Google Business Profile (GBP)</span>
+          <span style="font-size:11px;color:#dc2626;">403 error &mdash; stale connector cache</span>
+        </div>
+        <span class="chip chip-red">Blocked</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- STATS GRID -->
+  <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:12px;">
+    <div class="stat-card">
+      <div class="stat-label">Tasks in DB</div>
+      <div class="stat-value">2</div>
+      <div class="stat-sub">Active tasks</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Posts in DB</div>
+      <div class="stat-value">20</div>
+      <div class="stat-sub">Social content active</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">GBP Location ID</div>
+      <div class="stat-value" style="font-size:11px;font-weight:700;color:#6b7280;padding-top:8px;word-break:break-all;">11745653817576019909</div>
+      <div class="stat-sub">locations/...</div>
+    </div>
+  </div>
+
+  <!-- BLOCKERS -->
+  <div class="card">
+    <div class="section-label">Blockers</div>
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <div class="blocker blocker-red">
+        <div style="font-size:15px;flex-shrink:0;margin-top:1px;">&#128308;</div>
+        <div>
+          <div style="font-size:13px;font-weight:700;color:#111827;margin-bottom:2px;">Google API 403 PERMISSION_DENIED on GBP</div>
+          <div style="font-size:12px;color:#6b7280;">Windsor GBP connector returns 403 error. OAuth grant was revoked. Location <code style="font-size:11px;background:#f3f4f6;padding:1px 4px;border-radius:3px;">locations/11745653817576019909</code> is visible but no data can be pulled. Blocks Prompt 03 GMB Foundation entirely.</div>
+        </div>
+      </div>
+      <div class="blocker blocker-amber">
+        <div style="font-size:15px;flex-shrink:0;margin-top:1px;">&#9888;</div>
+        <div>
+          <div style="font-size:13px;font-weight:700;color:#111827;margin-bottom:2px;">Prompt 04 (Brand Brain) cannot start until P03 is done</div>
+          <div style="font-size:12px;color:#6b7280;">GMB Foundation data is a required input for Brand Brain. Cascade block on both P04 and P05.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TIMELINE -->
+  <div class="card">
+    <div class="section-label">Recovery Path</div>
+    <div style="display:flex;flex-direction:column;gap:0;">
+
+      <div style="display:flex;gap:16px;align-items:flex-start;">
+        <div style="display:flex;flex-direction:column;align-items:center;padding-top:2px;">
+          <div style="width:10px;height:10px;border-radius:50%;flex-shrink:0;" class="dot-next"></div>
+          <div style="width:2px;flex:1;background:#f0f0f0;min-height:32px;"></div>
+        </div>
+        <div style="flex:1;padding-bottom:16px;">
+          <div style="background:#fffdf0;border:1px solid #fcd34d;border-radius:10px;padding:14px 16px;">
+            <div style="font-size:11px;font-weight:800;color:#d97706;text-transform:uppercase;letter-spacing:0.07em;margin-bottom:4px;">Next Up &mdash; Unblocks Everything</div>
+            <div style="font-size:13px;font-weight:700;color:#111827;">Re-authorize GBP in Windsor</div>
+            <div style="font-size:12px;color:#6b7280;margin-top:4px;">Owner must open <a href="https://onboard.windsor.ai?datasource=google_my_business" style="color:#4f46e5;">onboard.windsor.ai</a>, sign in with GBP-owning Google account, and re-grant Windsor access. Then confirm the correct GBP location is accessible.</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:16px;align-items:flex-start;">
+        <div style="display:flex;flex-direction:column;align-items:center;padding-top:2px;">
+          <div style="width:10px;height:10px;border-radius:50%;flex-shrink:0;" class="dot-pending"></div>
+          <div style="width:2px;flex:1;background:#f0f0f0;min-height:32px;"></div>
+        </div>
+        <div style="flex:1;padding-bottom:16px;">
+          <div style="font-size:13px;font-weight:700;color:#9ca3af;margin-bottom:2px;">Re-run Windsor GBP data pull</div>
+          <div style="font-size:12px;color:#9ca3af;">After re-auth. Verify location data, impressions, calls, direction requests are pulling correctly.</div>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:16px;align-items:flex-start;">
+        <div style="display:flex;flex-direction:column;align-items:center;padding-top:2px;">
+          <div style="width:10px;height:10px;border-radius:50%;flex-shrink:0;" class="dot-pending"></div>
+          <div style="width:2px;flex:1;background:#f0f0f0;min-height:32px;"></div>
+        </div>
+        <div style="flex:1;padding-bottom:16px;">
+          <div style="font-size:13px;font-weight:700;color:#9ca3af;margin-bottom:2px;">Run Prompt 03 — GMB Foundation</div>
+          <div style="font-size:12px;color:#9ca3af;">Execute once Windsor GBP data is confirmed live and pulling. Use real Windsor data only.</div>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:16px;align-items:flex-start;">
+        <div style="display:flex;flex-direction:column;align-items:center;padding-top:2px;">
+          <div style="width:10px;height:10px;border-radius:50%;flex-shrink:0;" class="dot-pending"></div>
+          <div style="width:2px;flex:1;background:#f0f0f0;min-height:32px;"></div>
+        </div>
+        <div style="flex:1;padding-bottom:16px;">
+          <div style="font-size:13px;font-weight:700;color:#9ca3af;margin-bottom:2px;">Run Prompt 04 — Brand Brain</div>
+          <div style="font-size:12px;color:#9ca3af;">After P03 is complete. Inputs from SEO Foundation + GMB Foundation.</div>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:16px;align-items:flex-start;">
+        <div style="display:flex;flex-direction:column;align-items:center;padding-top:2px;">
+          <div style="width:10px;height:10px;border-radius:50%;flex-shrink:0;" class="dot-pending"></div>
+        </div>
+        <div style="flex:1;">
+          <div style="font-size:13px;font-weight:700;color:#9ca3af;margin-bottom:2px;">Run Prompt 05 — Design System</div>
+          <div style="font-size:12px;color:#9ca3af;">After Brand Brain. Final prompt in foundation chain.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ACTION ITEMS -->
+  <div class="card">
+    <div class="section-label">Action Items</div>
+    <div style="display:flex;flex-direction:column;gap:8px;">
+      <div class="action-item">
+        <div class="action-num">1</div>
+        <div>
+          <div style="font-size:13px;font-weight:700;color:#111827;">Send re-auth link to GBP owner — urgent</div>
+          <div style="font-size:12px;color:#6b7280;margin-top:2px;">Share URL <strong>https://onboard.windsor.ai?datasource=google_my_business</strong> with the Google account owner for Gore Hospital GBP. Walk them through the 5-step re-auth process. This single action unblocks everything.</div>
+        </div>
+      </div>
+      <div class="action-item">
+        <div class="action-num">2</div>
+        <div>
+          <div style="font-size:13px;font-weight:700;color:#111827;">Verify GBP location after re-auth</div>
+          <div style="font-size:12px;color:#6b7280;margin-top:2px;">Confirm location <code style="font-size:11px;background:#f3f4f6;padding:1px 4px;border-radius:3px;">locations/11745653817576019909</code> is accessible and data is pulling correctly in Windsor.</div>
+        </div>
+      </div>
+      <div class="action-item">
+        <div class="action-num">3</div>
+        <div>
+          <div style="font-size:13px;font-weight:700;color:#111827;">Re-run Windsor GBP data pull</div>
+          <div style="font-size:12px;color:#6b7280;margin-top:2px;">Once re-auth is confirmed, trigger a fresh data pull for GBP metrics. Verify impressions, calls, direction requests are loading.</div>
+        </div>
+      </div>
+      <div class="action-item">
+        <div class="action-num">4</div>
+        <div>
+          <div style="font-size:13px;font-weight:700;color:#111827;">Execute Prompt 03 — GMB Foundation</div>
+          <div style="font-size:12px;color:#6b7280;margin-top:2px;">Run GMB Foundation prompt immediately after Windsor data is confirmed. Use real Windsor data only. Unblocks P04 and P05.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LINKS -->
+  <div class="card">
+    <div class="section-label">Notion Links</div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;">
+      <a class="link-btn" href="https://www.notion.so/b3b0a406584682db94ae81e2421e9da4" target="_blank">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        Notion Workspace
+      </a>
+      <a class="link-btn" href="https://www.notion.so/36b0a40658468016a28eda64a830f15e" target="_blank">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        Client State
+      </a>
+      <a class="link-btn" href="https://onboard.windsor.ai?datasource=google_my_business" target="_blank">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        Windsor GBP Re-Auth URL
+      </a>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
