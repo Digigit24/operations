@@ -1,0 +1,1258 @@
+{
+  "_meta": {
+    "generated_at": "2026-06-04T18:44:01.924929Z",
+    "total_entries": 58,
+    "types": {
+      "action": 3,
+      "context": 5,
+      "decision": 5,
+      "situation": 9,
+      "skill": 13,
+      "sop": 13,
+      "worker": 10
+    },
+    "usage": "Read this manifest first. Match your situation/need to an entry. Fetch the exact file at 'path'. Execute in 2-3 tool calls."
+  },
+  "index": [
+    {
+      "id": "action_fetch_notion_client_state",
+      "type": "action",
+      "path": "brain/actions/action_fetch_notion_client_state.md",
+      "when_to_use": "When you need live client context from Notion before running any skill, SOP, or worker — always fetch this first",
+      "related": [
+        "worker_pm_command_center",
+        "worker_audit_agent",
+        "situation_morning_brief_requested",
+        "situation_new_client_onboarded"
+      ]
+    },
+    {
+      "id": "action_query_search_console",
+      "type": "action",
+      "path": "brain/actions/action_query_search_console.md",
+      "when_to_use": "When you need Google Search Console data for a client — clicks, impressions, keyword rankings, page performance",
+      "related": [
+        "worker_audit_agent",
+        "worker_seo_manager",
+        "skill_onboarding_04_seo_foundation",
+        "skill_seo_authority_architect"
+      ]
+    },
+    {
+      "id": "action_read_github_file",
+      "type": "action",
+      "path": "brain/actions/action_read_github_file.md",
+      "when_to_use": "When you need to read a file from the agentos-brain GitHub repo — useful for agents that don't have local repo access (e.g. Jarvis/VoxCode, Claude subscription)",
+      "related": [
+        "worker_pm_command_center",
+        "worker_audit_agent"
+      ]
+    },
+    {
+      "id": "context_dev_mantra",
+      "type": "context",
+      "path": "brain/contexts/dev-mantra-context.md",
+      "when_to_use": "Load before any work session for Dev Mantra — gives current state, active deliverables, risks",
+      "related": [
+        "action_fetch_notion_client_state",
+        "skill_context_generator"
+      ]
+    },
+    {
+      "id": "context_jeevisha",
+      "type": "context",
+      "path": "brain/contexts/jeevisha-context.md",
+      "when_to_use": "Load before any work session for Jeevisha — gives current state, active deliverables, risks",
+      "related": [
+        "action_fetch_notion_client_state",
+        "skill_context_generator"
+      ]
+    },
+    {
+      "id": "context_nakshatra",
+      "type": "context",
+      "path": "brain/contexts/nakshatra-context.md",
+      "when_to_use": "Load before any work session for Nakshatra — gives current state, active deliverables, risks",
+      "related": [
+        "action_fetch_notion_client_state",
+        "skill_context_generator"
+      ]
+    },
+    {
+      "id": "context_prime_speciality",
+      "type": "context",
+      "path": "brain/contexts/prime-speciality-context.md",
+      "when_to_use": "Load before any work session for Prime Speciality Hospital — gives current state, active deliverables, risks",
+      "related": [
+        "action_fetch_notion_client_state",
+        "skill_context_generator"
+      ]
+    },
+    {
+      "id": "context_suman_hospital",
+      "type": "context",
+      "path": "brain/contexts/suman-hospital-context.md",
+      "when_to_use": "Load before any work session for Suman Hospital — gives current state, active deliverables, risks",
+      "related": [
+        "action_fetch_notion_client_state",
+        "skill_context_generator"
+      ]
+    },
+    {
+      "id": "decision_9_step_onboarding_sop",
+      "type": "decision",
+      "path": "brain/decisions/decision_9_step_onboarding_sop.md",
+      "when_to_use": "Reference when PM asks why onboarding has 9 steps or proposes simplifying it",
+      "related": [
+        "sop_client_onboarding",
+        "situation_new_client_onboarded"
+      ]
+    },
+    {
+      "id": "decision_manifest_first_routing",
+      "type": "decision",
+      "path": "brain/decisions/decision_manifest_first_routing.md",
+      "when_to_use": "Reference when designing any new agent — why manifest-first matters and what the alternative costs are",
+      "related": [
+        "decision_operations_repo_as_brain"
+      ]
+    },
+    {
+      "id": "decision_notion_as_state_layer",
+      "type": "decision",
+      "path": "brain/decisions/decision_notion_as_state_layer.md",
+      "when_to_use": "Reference when deciding where live client data should live — always Notion, never the brain repo",
+      "related": [
+        "action_fetch_notion_client_state",
+        "skill_context_generator"
+      ]
+    },
+    {
+      "id": "decision_operations_repo_as_brain",
+      "type": "decision",
+      "path": "brain/decisions/decision_operations_repo_as_brain.md",
+      "when_to_use": "Reference when deciding which repo owns which content — operations/ is the brain, agencyOS/ is execution",
+      "related": [
+        "decision_notion_as_state_layer"
+      ]
+    },
+    {
+      "id": "decision_windsor_not_direct_api",
+      "type": "decision",
+      "path": "brain/decisions/decision_windsor_not_direct_api.md",
+      "when_to_use": "Reference when evaluating whether to connect a new data source directly via API or via Windsor",
+      "related": [
+        "action_query_search_console",
+        "worker_audit_agent"
+      ]
+    },
+    {
+      "id": "situation_audit_required",
+      "type": "situation",
+      "path": "brain/situations/situation_audit_required.md",
+      "when_to_use": "When a client needs a full external audit — at onboarding, monthly, or when health score drops to red",
+      "related": [
+        "worker_audit_agent",
+        "worker_pm_command_center",
+        "action_fetch_notion_client_state",
+        "sop_monthly_m1_audit"
+      ]
+    },
+    {
+      "id": "situation_client_at_risk",
+      "type": "situation",
+      "path": "brain/situations/situation_client_at_risk.md",
+      "when_to_use": "When a client health score drops to red — missed deliverables, client unhappy, KPIs declining, communication breakdown",
+      "related": [
+        "worker_pm_command_center",
+        "worker_audit_agent",
+        "action_fetch_notion_client_state",
+        "sop_chapter_03_priority"
+      ]
+    },
+    {
+      "id": "situation_content_approval_needed",
+      "type": "situation",
+      "path": "brain/situations/situation_content_approval_needed.md",
+      "when_to_use": "When task output is ready and needs PM review — captions, SEO content, ad copy, reports, designs",
+      "related": [
+        "worker_reviewer_agent",
+        "worker_pm_command_center",
+        "action_fetch_notion_client_state"
+      ]
+    },
+    {
+      "id": "situation_monday_morning_brief",
+      "type": "situation",
+      "path": "brain/situations/situation_monday_morning_brief.md",
+      "when_to_use": "Every Monday at 7 AM — or when PM asks for morning brief to start the week",
+      "related": [
+        "worker_pm_command_center",
+        "situation_weekly_planning"
+      ]
+    },
+    {
+      "id": "situation_morning_brief_requested",
+      "type": "situation",
+      "path": "brain/situations/situation_morning_brief_requested.md",
+      "when_to_use": "When PM starts their day and needs a prioritized brief — what to do, what's flagged, what to approve",
+      "related": [
+        "worker_pm_command_center",
+        "worker_audit_agent",
+        "worker_reviewer_agent",
+        "action_fetch_notion_client_state",
+        "situation_weekly_planning"
+      ]
+    },
+    {
+      "id": "situation_new_client_onboarded",
+      "type": "situation",
+      "path": "brain/situations/situation_new_client_onboarded.md",
+      "when_to_use": "When a new client contract is signed and the PM needs to kick off the full onboarding process",
+      "related": [
+        "sop_client_onboarding",
+        "skill_notion_client_onboarding",
+        "skill_onboarding_01_research",
+        "worker_audit_agent",
+        "worker_pm_command_center"
+      ]
+    },
+    {
+      "id": "situation_saturday_weekly_wrap",
+      "type": "situation",
+      "path": "brain/situations/situation_saturday_weekly_wrap.md",
+      "when_to_use": "Every Saturday — weekly wrap up, review completed tasks, prepare Sunday update",
+      "related": [
+        "worker_pm_command_center",
+        "situation_sunday_weekly_updates"
+      ]
+    },
+    {
+      "id": "situation_sunday_weekly_updates",
+      "type": "situation",
+      "path": "brain/situations/situation_sunday_weekly_updates.md",
+      "when_to_use": "Every Sunday — prepare weekly updates, seed next week's priorities, brief team",
+      "related": [
+        "worker_pm_command_center",
+        "situation_monday_morning_brief"
+      ]
+    },
+    {
+      "id": "situation_weekly_planning",
+      "type": "situation",
+      "path": "brain/situations/situation_weekly_planning.md",
+      "when_to_use": "Every Monday — when PM needs to plan the full week across all clients",
+      "related": [
+        "worker_pm_command_center",
+        "situation_monday_morning_brief",
+        "action_fetch_notion_client_state",
+        "sop_chapter_03_priority"
+      ]
+    },
+    {
+      "id": "skill_context_generator",
+      "type": "skill",
+      "path": "brain/skills/skill_context_generator.md",
+      "when_to_use": "When you need to generate or refresh a client context file from live Notion data — run before any deep client work session",
+      "related": [
+        "action_fetch_notion_client_state",
+        "worker_pm_command_center",
+        "situation_morning_brief_requested"
+      ]
+    },
+    {
+      "id": "skill_firecrawl",
+      "type": "skill",
+      "path": "brain/skills/skill_firecrawl.md",
+      "when_to_use": "When you need to scrape, crawl, or extract content from websites — competitor sites, client sites, research sources",
+      "related": [
+        "skill_onboarding_03_site_extraction",
+        "skill_seo_authority_architect"
+      ]
+    },
+    {
+      "id": "skill_notion_client_onboarding",
+      "type": "skill",
+      "path": "brain/skills/skill_notion_client_onboarding.md",
+      "when_to_use": "When onboarding a new client into Notion — guides PM through intake, recommends page structure, generates the creation prompt",
+      "related": [
+        "sop_client_onboarding",
+        "situation_new_client_onboarded"
+      ]
+    },
+    {
+      "id": "skill_onboarding_01_research",
+      "type": "skill",
+      "path": "brain/skills/skill_onboarding_01_research.md",
+      "when_to_use": "Onboarding Step 1 — run brand, competitor, SEO and ICP research for a new client. Use on Grok/Gemini/ChatGPT/Kimi.",
+      "related": [
+        "sop_client_onboarding",
+        "skill_onboarding_02_design"
+      ]
+    },
+    {
+      "id": "skill_onboarding_02_design",
+      "type": "skill",
+      "path": "brain/skills/skill_onboarding_02_design.md",
+      "when_to_use": "Onboarding Step 2 — generate design instructions and visual direction for the client",
+      "related": [
+        "skill_onboarding_01_research",
+        "skill_onboarding_03_site_extraction"
+      ]
+    },
+    {
+      "id": "skill_onboarding_03_site_extraction",
+      "type": "skill",
+      "path": "brain/skills/skill_onboarding_03_site_extraction.md",
+      "when_to_use": "Onboarding Step 3 — extract existing website content and structure for analysis and reuse",
+      "related": [
+        "skill_onboarding_02_design",
+        "skill_onboarding_04_seo_foundation",
+        "skill_firecrawl"
+      ]
+    },
+    {
+      "id": "skill_onboarding_04_seo_foundation",
+      "type": "skill",
+      "path": "brain/skills/skill_onboarding_04_seo_foundation.md",
+      "when_to_use": "Onboarding Step 4 — build SEO foundation document: keyword universe, on-page strategy, content gaps",
+      "related": [
+        "skill_onboarding_03_site_extraction",
+        "skill_onboarding_05_gmb",
+        "skill_seo_authority_architect"
+      ]
+    },
+    {
+      "id": "skill_onboarding_05_gmb",
+      "type": "skill",
+      "path": "brain/skills/skill_onboarding_05_gmb.md",
+      "when_to_use": "Onboarding Step 5 — build GMB foundation: profile optimization, category strategy, review reply templates",
+      "related": [
+        "skill_onboarding_04_seo_foundation",
+        "skill_onboarding_06_brand_brain"
+      ]
+    },
+    {
+      "id": "skill_onboarding_06_brand_brain",
+      "type": "skill",
+      "path": "brain/skills/skill_onboarding_06_brand_brain.md",
+      "when_to_use": "Onboarding Step 6 — generate the Master Brand Brain for this client: personality, voice, ICP, USPs, key messages",
+      "related": [
+        "skill_onboarding_05_gmb",
+        "skill_onboarding_07_design_system"
+      ]
+    },
+    {
+      "id": "skill_onboarding_07_design_system",
+      "type": "skill",
+      "path": "brain/skills/skill_onboarding_07_design_system.md",
+      "when_to_use": "Onboarding Step 7 — build the client design system: color palette, typography, visual style guide",
+      "related": [
+        "skill_onboarding_06_brand_brain",
+        "sop_client_onboarding"
+      ]
+    },
+    {
+      "id": "skill_pm_artifact_responder",
+      "type": "skill",
+      "path": "brain/skills/skill_pm_artifact_responder.md",
+      "when_to_use": "When generating HTML PM review artifacts and client-facing reports",
+      "related": [
+        "sop_monthly_m6_report",
+        "worker_pm_command_center"
+      ]
+    },
+    {
+      "id": "skill_seo_authority_architect",
+      "type": "skill",
+      "path": "brain/skills/skill_seo_authority_architect.md",
+      "when_to_use": "When building long-term SEO authority strategy for a client — link building, content clusters, topical authority",
+      "related": [
+        "skill_onboarding_04_seo_foundation",
+        "worker_seo_manager"
+      ]
+    },
+    {
+      "id": "skill_sync_posts_to_db",
+      "type": "skill",
+      "path": "brain/skills/skill_sync_posts_to_db.md",
+      "when_to_use": "When syncing published social posts back to the Notion posts database for tracking and reporting",
+      "related": [
+        "sop_monthly_m5_content",
+        "action_fetch_notion_client_state"
+      ]
+    },
+    {
+      "id": "sop_chapter_01_foundation",
+      "type": "sop",
+      "path": "brain/sops/sop_chapter_01_foundation.md",
+      "when_to_use": "Reference — Digitech agency operating system foundation principles and structure",
+      "related": [
+        "sop_chapter_02_voice",
+        "sop_chapter_03_priority",
+        "sop_chapter_04_reporting"
+      ]
+    },
+    {
+      "id": "sop_chapter_02_voice",
+      "type": "sop",
+      "path": "brain/sops/sop_chapter_02_voice.md",
+      "when_to_use": "Reference — agency brand personality, tone of voice, and communication standards",
+      "related": [
+        "sop_chapter_01_foundation"
+      ]
+    },
+    {
+      "id": "sop_chapter_03_priority",
+      "type": "sop",
+      "path": "brain/sops/sop_chapter_03_priority.md",
+      "when_to_use": "Reference — how to prioritize tasks across clients using the priority task engine",
+      "related": [
+        "worker_pm_command_center",
+        "sop_chapter_01_foundation"
+      ]
+    },
+    {
+      "id": "sop_chapter_04_reporting",
+      "type": "sop",
+      "path": "brain/sops/sop_chapter_04_reporting.md",
+      "when_to_use": "Reference — reporting cadence, KPI tracking standards, and client delivery formats",
+      "related": [
+        "sop_monthly_m6_report",
+        "skill_pm_artifact_responder"
+      ]
+    },
+    {
+      "id": "sop_chapter_05_pm_education",
+      "type": "sop",
+      "path": "brain/sops/sop_chapter_05_pm_education.md",
+      "when_to_use": "Reference — PM training, onboarding new PMs, and AI adoption framework for the team",
+      "related": [
+        "worker_pm_command_center",
+        "sop_chapter_01_foundation"
+      ]
+    },
+    {
+      "id": "sop_client_onboarding",
+      "type": "sop",
+      "path": "brain/sops/sop_client_onboarding.md",
+      "when_to_use": "When a new client contract is signed and you need to run the full 9-step onboarding process from intake to system live",
+      "related": [
+        "skill_notion_client_onboarding",
+        "worker_audit_agent",
+        "worker_pm_command_center",
+        "situation_new_client_onboarded"
+      ]
+    },
+    {
+      "id": "sop_master_prompt_chain",
+      "type": "sop",
+      "path": "brain/sops/sop_master_prompt_chain.md",
+      "when_to_use": "When running the full monthly prompt chain for a client — from audit through content calendar and report",
+      "related": [
+        "sop_monthly_m1_audit",
+        "sop_monthly_m2_strategy",
+        "sop_monthly_m5_content",
+        "sop_monthly_m6_report"
+      ]
+    },
+    {
+      "id": "sop_monthly_m1_audit",
+      "type": "sop",
+      "path": "brain/sops/sop_monthly_m1_audit.md",
+      "when_to_use": "Monthly audit step — run at start of each month to assess client performance across all channels",
+      "related": [
+        "sop_master_prompt_chain",
+        "worker_audit_agent"
+      ]
+    },
+    {
+      "id": "sop_monthly_m2_strategy",
+      "type": "sop",
+      "path": "brain/sops/sop_monthly_m2_strategy.md",
+      "when_to_use": "Monthly strategy step — build the month's content and growth strategy based on audit output",
+      "related": [
+        "sop_master_prompt_chain",
+        "sop_monthly_m1_audit"
+      ]
+    },
+    {
+      "id": "sop_monthly_m3_website",
+      "type": "sop",
+      "path": "brain/sops/sop_monthly_m3_website.md",
+      "when_to_use": "When a client needs a website rewrite plan — typically Month 1-2 or after major strategy shift",
+      "related": [
+        "sop_master_prompt_chain",
+        "sop_monthly_m2_strategy"
+      ]
+    },
+    {
+      "id": "sop_monthly_m4_tasks",
+      "type": "sop",
+      "path": "brain/sops/sop_monthly_m4_tasks.md",
+      "when_to_use": "Monthly task creation step — generate and assign all tasks for the month based on strategy",
+      "related": [
+        "sop_master_prompt_chain",
+        "sop_monthly_m2_strategy",
+        "action_fetch_notion_client_state"
+      ]
+    },
+    {
+      "id": "sop_monthly_m5_content",
+      "type": "sop",
+      "path": "brain/sops/sop_monthly_m5_content.md",
+      "when_to_use": "Monthly content calendar creation — build 30-day content calendar for all active platforms",
+      "related": [
+        "sop_master_prompt_chain",
+        "sop_monthly_m4_tasks"
+      ]
+    },
+    {
+      "id": "sop_monthly_m6_report",
+      "type": "sop",
+      "path": "brain/sops/sop_monthly_m6_report.md",
+      "when_to_use": "Monthly client report — generate end-of-month performance report for client delivery",
+      "related": [
+        "sop_master_prompt_chain",
+        "worker_audit_agent",
+        "skill_pm_artifact_responder"
+      ]
+    },
+    {
+      "id": "worker_audit_agent",
+      "type": "worker",
+      "path": "brain/workers/worker_audit_agent.md",
+      "when_to_use": "When you need live external performance data for a client — GMB, Meta Ads, SEO health, website speed, social metrics",
+      "related": [
+        "sop_client_onboarding",
+        "situation_audit_required",
+        "action_fetch_notion_client_state"
+      ]
+    },
+    {
+      "id": "worker_context_generator",
+      "type": "worker",
+      "path": "brain/workers/worker_context_generator.md",
+      "when_to_use": "When a client context file needs to be created or refreshed from live Notion data",
+      "related": [
+        "skill_context_generator",
+        "action_fetch_notion_client_state",
+        "worker_manifest_generator"
+      ]
+    },
+    {
+      "id": "worker_manifest_generator",
+      "type": "worker",
+      "path": "brain/workers/worker_manifest_generator.md",
+      "when_to_use": "Run after any new file is added to brain/ — keeps manifest.json current and accurate",
+      "related": [
+        "worker_repo_auditor",
+        "decision_manifest_first_routing"
+      ]
+    },
+    {
+      "id": "worker_notion_digest",
+      "type": "worker",
+      "path": "brain/workers/worker_notion_digest.md",
+      "when_to_use": "When an agent needs a compact 3-line digest of a client's Notion state — faster than reading full client state page",
+      "related": [
+        "action_fetch_notion_client_state",
+        "skill_context_generator",
+        "worker_pm_command_center"
+      ]
+    },
+    {
+      "id": "worker_pm_command_center",
+      "type": "worker",
+      "path": "brain/workers/worker_pm_command_center.md",
+      "when_to_use": "PM's daily cockpit — morning brief, weekly planning, approval queue, coordination with SEO and Social managers",
+      "related": [
+        "situation_morning_brief_requested",
+        "situation_weekly_planning",
+        "situation_content_approval_needed",
+        "worker_audit_agent",
+        "worker_reviewer_agent"
+      ]
+    },
+    {
+      "id": "worker_pm_daily_playbook",
+      "type": "worker",
+      "path": "brain/workers/worker_pm_daily_playbook.md",
+      "when_to_use": "Reference for PM daily operating rhythm — morning routine, task prioritization, end-of-day wrap",
+      "related": [
+        "worker_pm_command_center",
+        "situation_morning_brief_requested",
+        "sop_chapter_03_priority"
+      ]
+    },
+    {
+      "id": "worker_repo_auditor",
+      "type": "worker",
+      "path": "brain/workers/worker_repo_auditor.md",
+      "when_to_use": "Run weekly to catch missing frontmatter, broken references, duplicate IDs, and stale manifest entries",
+      "related": [
+        "worker_manifest_generator",
+        "decision_manifest_first_routing"
+      ]
+    },
+    {
+      "id": "worker_reviewer_agent",
+      "type": "worker",
+      "path": "brain/workers/worker_reviewer_agent.md",
+      "when_to_use": "When a task output is ready and needs quality review before PM approval — checks brand voice, accuracy, completeness",
+      "related": [
+        "situation_content_approval_needed",
+        "worker_pm_command_center"
+      ]
+    },
+    {
+      "id": "worker_seo_manager",
+      "type": "worker",
+      "path": "brain/workers/worker_seo_manager.md",
+      "when_to_use": "SEO Manager's daily and weekly operating rhythm — review AI SEO output, manage keyword strategy, update client SEO skills",
+      "related": [
+        "worker_pm_command_center",
+        "skill_seo_authority_architect",
+        "action_query_search_console"
+      ]
+    },
+    {
+      "id": "worker_smm",
+      "type": "worker",
+      "path": "brain/workers/worker_smm.md",
+      "when_to_use": "Social Media Manager's daily rhythm — content approval, caption review, calendar management, engagement monitoring",
+      "related": [
+        "worker_pm_command_center",
+        "sop_monthly_m5_content"
+      ]
+    }
+  ],
+  "by_type": {
+    "action": [
+      {
+        "id": "action_fetch_notion_client_state",
+        "type": "action",
+        "path": "brain/actions/action_fetch_notion_client_state.md",
+        "when_to_use": "When you need live client context from Notion before running any skill, SOP, or worker — always fetch this first",
+        "related": [
+          "worker_pm_command_center",
+          "worker_audit_agent",
+          "situation_morning_brief_requested",
+          "situation_new_client_onboarded"
+        ]
+      },
+      {
+        "id": "action_query_search_console",
+        "type": "action",
+        "path": "brain/actions/action_query_search_console.md",
+        "when_to_use": "When you need Google Search Console data for a client — clicks, impressions, keyword rankings, page performance",
+        "related": [
+          "worker_audit_agent",
+          "worker_seo_manager",
+          "skill_onboarding_04_seo_foundation",
+          "skill_seo_authority_architect"
+        ]
+      },
+      {
+        "id": "action_read_github_file",
+        "type": "action",
+        "path": "brain/actions/action_read_github_file.md",
+        "when_to_use": "When you need to read a file from the agentos-brain GitHub repo — useful for agents that don't have local repo access (e.g. Jarvis/VoxCode, Claude subscription)",
+        "related": [
+          "worker_pm_command_center",
+          "worker_audit_agent"
+        ]
+      }
+    ],
+    "context": [
+      {
+        "id": "context_dev_mantra",
+        "type": "context",
+        "path": "brain/contexts/dev-mantra-context.md",
+        "when_to_use": "Load before any work session for Dev Mantra — gives current state, active deliverables, risks",
+        "related": [
+          "action_fetch_notion_client_state",
+          "skill_context_generator"
+        ]
+      },
+      {
+        "id": "context_jeevisha",
+        "type": "context",
+        "path": "brain/contexts/jeevisha-context.md",
+        "when_to_use": "Load before any work session for Jeevisha — gives current state, active deliverables, risks",
+        "related": [
+          "action_fetch_notion_client_state",
+          "skill_context_generator"
+        ]
+      },
+      {
+        "id": "context_nakshatra",
+        "type": "context",
+        "path": "brain/contexts/nakshatra-context.md",
+        "when_to_use": "Load before any work session for Nakshatra — gives current state, active deliverables, risks",
+        "related": [
+          "action_fetch_notion_client_state",
+          "skill_context_generator"
+        ]
+      },
+      {
+        "id": "context_prime_speciality",
+        "type": "context",
+        "path": "brain/contexts/prime-speciality-context.md",
+        "when_to_use": "Load before any work session for Prime Speciality Hospital — gives current state, active deliverables, risks",
+        "related": [
+          "action_fetch_notion_client_state",
+          "skill_context_generator"
+        ]
+      },
+      {
+        "id": "context_suman_hospital",
+        "type": "context",
+        "path": "brain/contexts/suman-hospital-context.md",
+        "when_to_use": "Load before any work session for Suman Hospital — gives current state, active deliverables, risks",
+        "related": [
+          "action_fetch_notion_client_state",
+          "skill_context_generator"
+        ]
+      }
+    ],
+    "decision": [
+      {
+        "id": "decision_9_step_onboarding_sop",
+        "type": "decision",
+        "path": "brain/decisions/decision_9_step_onboarding_sop.md",
+        "when_to_use": "Reference when PM asks why onboarding has 9 steps or proposes simplifying it",
+        "related": [
+          "sop_client_onboarding",
+          "situation_new_client_onboarded"
+        ]
+      },
+      {
+        "id": "decision_manifest_first_routing",
+        "type": "decision",
+        "path": "brain/decisions/decision_manifest_first_routing.md",
+        "when_to_use": "Reference when designing any new agent — why manifest-first matters and what the alternative costs are",
+        "related": [
+          "decision_operations_repo_as_brain"
+        ]
+      },
+      {
+        "id": "decision_notion_as_state_layer",
+        "type": "decision",
+        "path": "brain/decisions/decision_notion_as_state_layer.md",
+        "when_to_use": "Reference when deciding where live client data should live — always Notion, never the brain repo",
+        "related": [
+          "action_fetch_notion_client_state",
+          "skill_context_generator"
+        ]
+      },
+      {
+        "id": "decision_operations_repo_as_brain",
+        "type": "decision",
+        "path": "brain/decisions/decision_operations_repo_as_brain.md",
+        "when_to_use": "Reference when deciding which repo owns which content — operations/ is the brain, agencyOS/ is execution",
+        "related": [
+          "decision_notion_as_state_layer"
+        ]
+      },
+      {
+        "id": "decision_windsor_not_direct_api",
+        "type": "decision",
+        "path": "brain/decisions/decision_windsor_not_direct_api.md",
+        "when_to_use": "Reference when evaluating whether to connect a new data source directly via API or via Windsor",
+        "related": [
+          "action_query_search_console",
+          "worker_audit_agent"
+        ]
+      }
+    ],
+    "situation": [
+      {
+        "id": "situation_audit_required",
+        "type": "situation",
+        "path": "brain/situations/situation_audit_required.md",
+        "when_to_use": "When a client needs a full external audit — at onboarding, monthly, or when health score drops to red",
+        "related": [
+          "worker_audit_agent",
+          "worker_pm_command_center",
+          "action_fetch_notion_client_state",
+          "sop_monthly_m1_audit"
+        ]
+      },
+      {
+        "id": "situation_client_at_risk",
+        "type": "situation",
+        "path": "brain/situations/situation_client_at_risk.md",
+        "when_to_use": "When a client health score drops to red — missed deliverables, client unhappy, KPIs declining, communication breakdown",
+        "related": [
+          "worker_pm_command_center",
+          "worker_audit_agent",
+          "action_fetch_notion_client_state",
+          "sop_chapter_03_priority"
+        ]
+      },
+      {
+        "id": "situation_content_approval_needed",
+        "type": "situation",
+        "path": "brain/situations/situation_content_approval_needed.md",
+        "when_to_use": "When task output is ready and needs PM review — captions, SEO content, ad copy, reports, designs",
+        "related": [
+          "worker_reviewer_agent",
+          "worker_pm_command_center",
+          "action_fetch_notion_client_state"
+        ]
+      },
+      {
+        "id": "situation_monday_morning_brief",
+        "type": "situation",
+        "path": "brain/situations/situation_monday_morning_brief.md",
+        "when_to_use": "Every Monday at 7 AM — or when PM asks for morning brief to start the week",
+        "related": [
+          "worker_pm_command_center",
+          "situation_weekly_planning"
+        ]
+      },
+      {
+        "id": "situation_morning_brief_requested",
+        "type": "situation",
+        "path": "brain/situations/situation_morning_brief_requested.md",
+        "when_to_use": "When PM starts their day and needs a prioritized brief — what to do, what's flagged, what to approve",
+        "related": [
+          "worker_pm_command_center",
+          "worker_audit_agent",
+          "worker_reviewer_agent",
+          "action_fetch_notion_client_state",
+          "situation_weekly_planning"
+        ]
+      },
+      {
+        "id": "situation_new_client_onboarded",
+        "type": "situation",
+        "path": "brain/situations/situation_new_client_onboarded.md",
+        "when_to_use": "When a new client contract is signed and the PM needs to kick off the full onboarding process",
+        "related": [
+          "sop_client_onboarding",
+          "skill_notion_client_onboarding",
+          "skill_onboarding_01_research",
+          "worker_audit_agent",
+          "worker_pm_command_center"
+        ]
+      },
+      {
+        "id": "situation_saturday_weekly_wrap",
+        "type": "situation",
+        "path": "brain/situations/situation_saturday_weekly_wrap.md",
+        "when_to_use": "Every Saturday — weekly wrap up, review completed tasks, prepare Sunday update",
+        "related": [
+          "worker_pm_command_center",
+          "situation_sunday_weekly_updates"
+        ]
+      },
+      {
+        "id": "situation_sunday_weekly_updates",
+        "type": "situation",
+        "path": "brain/situations/situation_sunday_weekly_updates.md",
+        "when_to_use": "Every Sunday — prepare weekly updates, seed next week's priorities, brief team",
+        "related": [
+          "worker_pm_command_center",
+          "situation_monday_morning_brief"
+        ]
+      },
+      {
+        "id": "situation_weekly_planning",
+        "type": "situation",
+        "path": "brain/situations/situation_weekly_planning.md",
+        "when_to_use": "Every Monday — when PM needs to plan the full week across all clients",
+        "related": [
+          "worker_pm_command_center",
+          "situation_monday_morning_brief",
+          "action_fetch_notion_client_state",
+          "sop_chapter_03_priority"
+        ]
+      }
+    ],
+    "skill": [
+      {
+        "id": "skill_context_generator",
+        "type": "skill",
+        "path": "brain/skills/skill_context_generator.md",
+        "when_to_use": "When you need to generate or refresh a client context file from live Notion data — run before any deep client work session",
+        "related": [
+          "action_fetch_notion_client_state",
+          "worker_pm_command_center",
+          "situation_morning_brief_requested"
+        ]
+      },
+      {
+        "id": "skill_firecrawl",
+        "type": "skill",
+        "path": "brain/skills/skill_firecrawl.md",
+        "when_to_use": "When you need to scrape, crawl, or extract content from websites — competitor sites, client sites, research sources",
+        "related": [
+          "skill_onboarding_03_site_extraction",
+          "skill_seo_authority_architect"
+        ]
+      },
+      {
+        "id": "skill_notion_client_onboarding",
+        "type": "skill",
+        "path": "brain/skills/skill_notion_client_onboarding.md",
+        "when_to_use": "When onboarding a new client into Notion — guides PM through intake, recommends page structure, generates the creation prompt",
+        "related": [
+          "sop_client_onboarding",
+          "situation_new_client_onboarded"
+        ]
+      },
+      {
+        "id": "skill_onboarding_01_research",
+        "type": "skill",
+        "path": "brain/skills/skill_onboarding_01_research.md",
+        "when_to_use": "Onboarding Step 1 — run brand, competitor, SEO and ICP research for a new client. Use on Grok/Gemini/ChatGPT/Kimi.",
+        "related": [
+          "sop_client_onboarding",
+          "skill_onboarding_02_design"
+        ]
+      },
+      {
+        "id": "skill_onboarding_02_design",
+        "type": "skill",
+        "path": "brain/skills/skill_onboarding_02_design.md",
+        "when_to_use": "Onboarding Step 2 — generate design instructions and visual direction for the client",
+        "related": [
+          "skill_onboarding_01_research",
+          "skill_onboarding_03_site_extraction"
+        ]
+      },
+      {
+        "id": "skill_onboarding_03_site_extraction",
+        "type": "skill",
+        "path": "brain/skills/skill_onboarding_03_site_extraction.md",
+        "when_to_use": "Onboarding Step 3 — extract existing website content and structure for analysis and reuse",
+        "related": [
+          "skill_onboarding_02_design",
+          "skill_onboarding_04_seo_foundation",
+          "skill_firecrawl"
+        ]
+      },
+      {
+        "id": "skill_onboarding_04_seo_foundation",
+        "type": "skill",
+        "path": "brain/skills/skill_onboarding_04_seo_foundation.md",
+        "when_to_use": "Onboarding Step 4 — build SEO foundation document: keyword universe, on-page strategy, content gaps",
+        "related": [
+          "skill_onboarding_03_site_extraction",
+          "skill_onboarding_05_gmb",
+          "skill_seo_authority_architect"
+        ]
+      },
+      {
+        "id": "skill_onboarding_05_gmb",
+        "type": "skill",
+        "path": "brain/skills/skill_onboarding_05_gmb.md",
+        "when_to_use": "Onboarding Step 5 — build GMB foundation: profile optimization, category strategy, review reply templates",
+        "related": [
+          "skill_onboarding_04_seo_foundation",
+          "skill_onboarding_06_brand_brain"
+        ]
+      },
+      {
+        "id": "skill_onboarding_06_brand_brain",
+        "type": "skill",
+        "path": "brain/skills/skill_onboarding_06_brand_brain.md",
+        "when_to_use": "Onboarding Step 6 — generate the Master Brand Brain for this client: personality, voice, ICP, USPs, key messages",
+        "related": [
+          "skill_onboarding_05_gmb",
+          "skill_onboarding_07_design_system"
+        ]
+      },
+      {
+        "id": "skill_onboarding_07_design_system",
+        "type": "skill",
+        "path": "brain/skills/skill_onboarding_07_design_system.md",
+        "when_to_use": "Onboarding Step 7 — build the client design system: color palette, typography, visual style guide",
+        "related": [
+          "skill_onboarding_06_brand_brain",
+          "sop_client_onboarding"
+        ]
+      },
+      {
+        "id": "skill_pm_artifact_responder",
+        "type": "skill",
+        "path": "brain/skills/skill_pm_artifact_responder.md",
+        "when_to_use": "When generating HTML PM review artifacts and client-facing reports",
+        "related": [
+          "sop_monthly_m6_report",
+          "worker_pm_command_center"
+        ]
+      },
+      {
+        "id": "skill_seo_authority_architect",
+        "type": "skill",
+        "path": "brain/skills/skill_seo_authority_architect.md",
+        "when_to_use": "When building long-term SEO authority strategy for a client — link building, content clusters, topical authority",
+        "related": [
+          "skill_onboarding_04_seo_foundation",
+          "worker_seo_manager"
+        ]
+      },
+      {
+        "id": "skill_sync_posts_to_db",
+        "type": "skill",
+        "path": "brain/skills/skill_sync_posts_to_db.md",
+        "when_to_use": "When syncing published social posts back to the Notion posts database for tracking and reporting",
+        "related": [
+          "sop_monthly_m5_content",
+          "action_fetch_notion_client_state"
+        ]
+      }
+    ],
+    "sop": [
+      {
+        "id": "sop_chapter_01_foundation",
+        "type": "sop",
+        "path": "brain/sops/sop_chapter_01_foundation.md",
+        "when_to_use": "Reference — Digitech agency operating system foundation principles and structure",
+        "related": [
+          "sop_chapter_02_voice",
+          "sop_chapter_03_priority",
+          "sop_chapter_04_reporting"
+        ]
+      },
+      {
+        "id": "sop_chapter_02_voice",
+        "type": "sop",
+        "path": "brain/sops/sop_chapter_02_voice.md",
+        "when_to_use": "Reference — agency brand personality, tone of voice, and communication standards",
+        "related": [
+          "sop_chapter_01_foundation"
+        ]
+      },
+      {
+        "id": "sop_chapter_03_priority",
+        "type": "sop",
+        "path": "brain/sops/sop_chapter_03_priority.md",
+        "when_to_use": "Reference — how to prioritize tasks across clients using the priority task engine",
+        "related": [
+          "worker_pm_command_center",
+          "sop_chapter_01_foundation"
+        ]
+      },
+      {
+        "id": "sop_chapter_04_reporting",
+        "type": "sop",
+        "path": "brain/sops/sop_chapter_04_reporting.md",
+        "when_to_use": "Reference — reporting cadence, KPI tracking standards, and client delivery formats",
+        "related": [
+          "sop_monthly_m6_report",
+          "skill_pm_artifact_responder"
+        ]
+      },
+      {
+        "id": "sop_chapter_05_pm_education",
+        "type": "sop",
+        "path": "brain/sops/sop_chapter_05_pm_education.md",
+        "when_to_use": "Reference — PM training, onboarding new PMs, and AI adoption framework for the team",
+        "related": [
+          "worker_pm_command_center",
+          "sop_chapter_01_foundation"
+        ]
+      },
+      {
+        "id": "sop_client_onboarding",
+        "type": "sop",
+        "path": "brain/sops/sop_client_onboarding.md",
+        "when_to_use": "When a new client contract is signed and you need to run the full 9-step onboarding process from intake to system live",
+        "related": [
+          "skill_notion_client_onboarding",
+          "worker_audit_agent",
+          "worker_pm_command_center",
+          "situation_new_client_onboarded"
+        ]
+      },
+      {
+        "id": "sop_master_prompt_chain",
+        "type": "sop",
+        "path": "brain/sops/sop_master_prompt_chain.md",
+        "when_to_use": "When running the full monthly prompt chain for a client — from audit through content calendar and report",
+        "related": [
+          "sop_monthly_m1_audit",
+          "sop_monthly_m2_strategy",
+          "sop_monthly_m5_content",
+          "sop_monthly_m6_report"
+        ]
+      },
+      {
+        "id": "sop_monthly_m1_audit",
+        "type": "sop",
+        "path": "brain/sops/sop_monthly_m1_audit.md",
+        "when_to_use": "Monthly audit step — run at start of each month to assess client performance across all channels",
+        "related": [
+          "sop_master_prompt_chain",
+          "worker_audit_agent"
+        ]
+      },
+      {
+        "id": "sop_monthly_m2_strategy",
+        "type": "sop",
+        "path": "brain/sops/sop_monthly_m2_strategy.md",
+        "when_to_use": "Monthly strategy step — build the month's content and growth strategy based on audit output",
+        "related": [
+          "sop_master_prompt_chain",
+          "sop_monthly_m1_audit"
+        ]
+      },
+      {
+        "id": "sop_monthly_m3_website",
+        "type": "sop",
+        "path": "brain/sops/sop_monthly_m3_website.md",
+        "when_to_use": "When a client needs a website rewrite plan — typically Month 1-2 or after major strategy shift",
+        "related": [
+          "sop_master_prompt_chain",
+          "sop_monthly_m2_strategy"
+        ]
+      },
+      {
+        "id": "sop_monthly_m4_tasks",
+        "type": "sop",
+        "path": "brain/sops/sop_monthly_m4_tasks.md",
+        "when_to_use": "Monthly task creation step — generate and assign all tasks for the month based on strategy",
+        "related": [
+          "sop_master_prompt_chain",
+          "sop_monthly_m2_strategy",
+          "action_fetch_notion_client_state"
+        ]
+      },
+      {
+        "id": "sop_monthly_m5_content",
+        "type": "sop",
+        "path": "brain/sops/sop_monthly_m5_content.md",
+        "when_to_use": "Monthly content calendar creation — build 30-day content calendar for all active platforms",
+        "related": [
+          "sop_master_prompt_chain",
+          "sop_monthly_m4_tasks"
+        ]
+      },
+      {
+        "id": "sop_monthly_m6_report",
+        "type": "sop",
+        "path": "brain/sops/sop_monthly_m6_report.md",
+        "when_to_use": "Monthly client report — generate end-of-month performance report for client delivery",
+        "related": [
+          "sop_master_prompt_chain",
+          "worker_audit_agent",
+          "skill_pm_artifact_responder"
+        ]
+      }
+    ],
+    "worker": [
+      {
+        "id": "worker_audit_agent",
+        "type": "worker",
+        "path": "brain/workers/worker_audit_agent.md",
+        "when_to_use": "When you need live external performance data for a client — GMB, Meta Ads, SEO health, website speed, social metrics",
+        "related": [
+          "sop_client_onboarding",
+          "situation_audit_required",
+          "action_fetch_notion_client_state"
+        ]
+      },
+      {
+        "id": "worker_context_generator",
+        "type": "worker",
+        "path": "brain/workers/worker_context_generator.md",
+        "when_to_use": "When a client context file needs to be created or refreshed from live Notion data",
+        "related": [
+          "skill_context_generator",
+          "action_fetch_notion_client_state",
+          "worker_manifest_generator"
+        ]
+      },
+      {
+        "id": "worker_manifest_generator",
+        "type": "worker",
+        "path": "brain/workers/worker_manifest_generator.md",
+        "when_to_use": "Run after any new file is added to brain/ — keeps manifest.json current and accurate",
+        "related": [
+          "worker_repo_auditor",
+          "decision_manifest_first_routing"
+        ]
+      },
+      {
+        "id": "worker_notion_digest",
+        "type": "worker",
+        "path": "brain/workers/worker_notion_digest.md",
+        "when_to_use": "When an agent needs a compact 3-line digest of a client's Notion state — faster than reading full client state page",
+        "related": [
+          "action_fetch_notion_client_state",
+          "skill_context_generator",
+          "worker_pm_command_center"
+        ]
+      },
+      {
+        "id": "worker_pm_command_center",
+        "type": "worker",
+        "path": "brain/workers/worker_pm_command_center.md",
+        "when_to_use": "PM's daily cockpit — morning brief, weekly planning, approval queue, coordination with SEO and Social managers",
+        "related": [
+          "situation_morning_brief_requested",
+          "situation_weekly_planning",
+          "situation_content_approval_needed",
+          "worker_audit_agent",
+          "worker_reviewer_agent"
+        ]
+      },
+      {
+        "id": "worker_pm_daily_playbook",
+        "type": "worker",
+        "path": "brain/workers/worker_pm_daily_playbook.md",
+        "when_to_use": "Reference for PM daily operating rhythm — morning routine, task prioritization, end-of-day wrap",
+        "related": [
+          "worker_pm_command_center",
+          "situation_morning_brief_requested",
+          "sop_chapter_03_priority"
+        ]
+      },
+      {
+        "id": "worker_repo_auditor",
+        "type": "worker",
+        "path": "brain/workers/worker_repo_auditor.md",
+        "when_to_use": "Run weekly to catch missing frontmatter, broken references, duplicate IDs, and stale manifest entries",
+        "related": [
+          "worker_manifest_generator",
+          "decision_manifest_first_routing"
+        ]
+      },
+      {
+        "id": "worker_reviewer_agent",
+        "type": "worker",
+        "path": "brain/workers/worker_reviewer_agent.md",
+        "when_to_use": "When a task output is ready and needs quality review before PM approval — checks brand voice, accuracy, completeness",
+        "related": [
+          "situation_content_approval_needed",
+          "worker_pm_command_center"
+        ]
+      },
+      {
+        "id": "worker_seo_manager",
+        "type": "worker",
+        "path": "brain/workers/worker_seo_manager.md",
+        "when_to_use": "SEO Manager's daily and weekly operating rhythm — review AI SEO output, manage keyword strategy, update client SEO skills",
+        "related": [
+          "worker_pm_command_center",
+          "skill_seo_authority_architect",
+          "action_query_search_console"
+        ]
+      },
+      {
+        "id": "worker_smm",
+        "type": "worker",
+        "path": "brain/workers/worker_smm.md",
+        "when_to_use": "Social Media Manager's daily rhythm — content approval, caption review, calendar management, engagement monitoring",
+        "related": [
+          "worker_pm_command_center",
+          "sop_monthly_m5_content"
+        ]
+      }
+    ]
+  }
+}

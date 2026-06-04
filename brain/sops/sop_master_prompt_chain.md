@@ -1,3 +1,13 @@
+---
+id: "sop_master_prompt_chain"
+type: "sop"
+when_to_use: "When running the full monthly prompt chain for a client — from audit through content calendar and report"
+related:
+  - sop_monthly_m1_audit
+  - sop_monthly_m2_strategy
+  - sop_monthly_m5_content
+  - sop_monthly_m6_report
+---
 # Master Prompt Chain
 ## Digitech — AI-Native Client Brand System
 

@@ -1,3 +1,11 @@
+---
+id: "skill_sync_posts_to_db"
+type: "skill"
+when_to_use: "When syncing published social posts back to the Notion posts database for tracking and reporting"
+related:
+  - sop_monthly_m5_content
+  - action_fetch_notion_client_state
+---
 # SKILL: Sync Platform Posts → Notion Posts DB
 ## Purpose
 Whenever post-level performance data is pulled from any social platform (Instagram, Facebook, LinkedIn, YouTube) — via Windsor.ai or otherwise — log every post into the central Notion Posts database, tagged to the correct client and channel. **No standalone report pages.** The Posts DB is the single source of truth for post performance.
