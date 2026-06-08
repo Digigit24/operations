@@ -1,3 +1,12 @@
+---
+id: client_pparam
+type: client
+when_to_use: "Pparam Architect (Mr. Aditya Uttekar) — client strategy, brand brain, SEO, GMB"
+related:
+  - sop_client_onboarding
+  - skill_onboarding_04_seo_foundation
+---
+
 # Client Strategy — Pparam Architect & Interior
 
 **Last updated:** 2026-06-08

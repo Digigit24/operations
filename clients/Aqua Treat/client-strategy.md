@@ -1,3 +1,12 @@
+---
+id: client_aqua_treat
+type: client
+when_to_use: "Aqua Treat — water treatment client strategy, brand, research"
+related:
+  - sop_client_onboarding
+  - skill_onboarding_01_research
+---
+
 # Client Strategy — AquaTreat / Aquatech Engineering Solutions
 
 **Last updated:** 2026-06-08

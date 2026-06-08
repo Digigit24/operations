@@ -1,3 +1,12 @@
+---
+id: client_prime_hospital
+type: client
+when_to_use: "Prime Speciality Hospital — client strategy, brand brain, SEO, GMB foundation"
+related:
+  - sop_client_onboarding
+  - skill_onboarding_06_brand_brain
+---
+
 # Prime Speciality Hospital — Client Strategy
 **Last updated:** June 2026
 **Prepared by:** Digitech Solutions

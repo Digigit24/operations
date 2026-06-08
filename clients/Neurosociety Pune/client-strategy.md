@@ -1,3 +1,12 @@
+---
+id: client_neurosociety_pune
+type: client
+when_to_use: "Pune Neuro Society (Dr. Dhairyasheel Saste) — client strategy, brand, research"
+related:
+  - sop_client_onboarding
+  - skill_onboarding_01_research
+---
+
 # Client Strategy — Neurological Society of Pune (NSP)
 **Last updated:** 2026-06-08
 **Prepared by:** PM Command Center

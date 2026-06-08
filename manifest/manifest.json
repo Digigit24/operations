@@ -1,17 +1,18 @@
 {
   "_meta": {
-    "generated_at": "2026-06-04T18:44:01.924929Z",
-    "total_entries": 58,
+    "generated_at": "2026-06-08T17:33:21.430288Z",
+    "total_entries": 73,
     "types": {
-      "action": 3,
+      "action": 4,
       "context": 5,
       "decision": 5,
       "situation": 9,
       "skill": 13,
       "sop": 13,
-      "worker": 10
+      "worker": 10,
+      "client": 14
     },
-    "usage": "Read this manifest first. Match your situation/need to an entry. Fetch the exact file at 'path'. Execute in 2-3 tool calls."
+    "usage": "Read this manifest first. Find the entry. Fetch the file at path. Execute in 2-3 tool calls."
   },
   "index": [
     {
@@ -24,6 +25,16 @@
         "worker_audit_agent",
         "situation_morning_brief_requested",
         "situation_new_client_onboarded"
+      ]
+    },
+    {
+      "id": "action_notion_databases",
+      "type": "action",
+      "path": "brain/actions/action_notion_databases.md",
+      "when_to_use": "Use before any Notion read/write to get exact DB IDs, property names, and status values — avoids discovery calls",
+      "related": [
+        "sop_client_onboarding",
+        "skill_sync_posts_to_db"
       ]
     },
     {
@@ -625,6 +636,146 @@
         "worker_pm_command_center",
         "sop_monthly_m5_content"
       ]
+    },
+    {
+      "id": "client_aqua_treat",
+      "type": "client",
+      "path": "clients/Aqua Treat/client-strategy.md",
+      "when_to_use": "Aqua Treat — water treatment client strategy, brand, research",
+      "related": [
+        "sop_client_onboarding",
+        "skill_onboarding_01_research"
+      ]
+    },
+    {
+      "id": "client_gore_hospital",
+      "type": "client",
+      "path": "clients/Gore Hospital/client-strategy.md",
+      "when_to_use": "Gore Multispeciality Hospital — client strategy, brand, SEO, prompting guide",
+      "related": [
+        "sop_client_onboarding",
+        "skill_onboarding_01_research"
+      ]
+    },
+    {
+      "id": "client_hera_clinic",
+      "type": "client",
+      "path": "clients/Hera Clinic/client-strategy.md",
+      "when_to_use": "Hera Clinic (Dr. Sairandhri Kate) — client strategy, brand, design instructions",
+      "related": [
+        "sop_client_onboarding",
+        "skill_onboarding_01_research"
+      ]
+    },
+    {
+      "id": "client_jeevisha",
+      "type": "client",
+      "path": "clients/Jeevisha Pain Center/client-strategy.md",
+      "when_to_use": "Jeevisha Pain Center (Dr. Sanjog Mekewar) — client strategy, brand brain, SEO, GMB",
+      "related": [
+        "sop_client_onboarding",
+        "skill_onboarding_06_brand_brain"
+      ]
+    },
+    {
+      "id": "client_kumss",
+      "type": "client",
+      "path": "clients/KUMSS/client-strategy.md",
+      "when_to_use": "KUMSS (Mr. Vilas Nirmal) — client strategy, brand brain, design system",
+      "related": [
+        "sop_client_onboarding",
+        "skill_onboarding_06_brand_brain"
+      ]
+    },
+    {
+      "id": "client_millennium_school",
+      "type": "client",
+      "path": "clients/Millennium School/client-strategy.md",
+      "when_to_use": "Millennium Woods School — client strategy, brand, research, prompting guide",
+      "related": [
+        "sop_client_onboarding",
+        "skill_onboarding_01_research"
+      ]
+    },
+    {
+      "id": "client_nrs_hospital",
+      "type": "client",
+      "path": "clients/NRS/client-strategy.md",
+      "when_to_use": "NRS Hospital (Dr. Narayan Survase) — client strategy, brand, design instructions",
+      "related": [
+        "sop_client_onboarding",
+        "skill_onboarding_01_research"
+      ]
+    },
+    {
+      "id": "client_nakshatra",
+      "type": "client",
+      "path": "clients/Nakshatra/client-strategy.md",
+      "when_to_use": "Nakshatra (Dr. Ramit Kamate) — client strategy, brand, design, site extraction",
+      "related": [
+        "sop_client_onboarding",
+        "skill_onboarding_01_research"
+      ]
+    },
+    {
+      "id": "client_neurosociety_pune",
+      "type": "client",
+      "path": "clients/Neurosociety Pune/client-strategy.md",
+      "when_to_use": "Pune Neuro Society (Dr. Dhairyasheel Saste) — client strategy, brand, research",
+      "related": [
+        "sop_client_onboarding",
+        "skill_onboarding_01_research"
+      ]
+    },
+    {
+      "id": "client_pinnacle_science_academy",
+      "type": "client",
+      "path": "clients/Pinnacle Science Academy/client-strategy.md",
+      "when_to_use": "Pinnacle Science Academy — client strategy, brand, research, prompting guide",
+      "related": [
+        "sop_client_onboarding",
+        "skill_onboarding_01_research"
+      ]
+    },
+    {
+      "id": "client_pparam",
+      "type": "client",
+      "path": "clients/Pparam/client-strategy.md",
+      "when_to_use": "Pparam Architect (Mr. Aditya Uttekar) — client strategy, brand brain, SEO, GMB",
+      "related": [
+        "sop_client_onboarding",
+        "skill_onboarding_04_seo_foundation"
+      ]
+    },
+    {
+      "id": "client_prime_hospital",
+      "type": "client",
+      "path": "clients/Prime Hospital/client-strategy.md",
+      "when_to_use": "Prime Speciality Hospital — client strategy, brand brain, SEO, GMB foundation",
+      "related": [
+        "sop_client_onboarding",
+        "skill_onboarding_06_brand_brain"
+      ]
+    },
+    {
+      "id": "client_suman_hospital",
+      "type": "client",
+      "path": "clients/Suman Hospital/client-strategy.md",
+      "when_to_use": "Suman Multispecialty Hospital (Dr. Rahul Gaikwad) — client strategy, brand brain, SEO, GMB",
+      "related": [
+        "sop_client_onboarding",
+        "skill_onboarding_06_brand_brain"
+      ]
+    },
+    {
+      "id": "client_digitech_solutions",
+      "type": "client",
+      "path": "clients/The Digitech Solutions/client-strategy.md",
+      "when_to_use": "The Digitech Solutions — agency own brand strategy, brand brain, SEO, design system",
+      "related": [
+        "sop_client_onboarding",
+        "skill_onboarding_04_seo_foundation"
+      ]
     }
   ],
   "by_type": {
@@ -639,6 +790,16 @@
           "worker_audit_agent",
           "situation_morning_brief_requested",
           "situation_new_client_onboarded"
+        ]
+      },
+      {
+        "id": "action_notion_databases",
+        "type": "action",
+        "path": "brain/actions/action_notion_databases.md",
+        "when_to_use": "Use before any Notion read/write to get exact DB IDs, property names, and status values — avoids discovery calls",
+        "related": [
+          "sop_client_onboarding",
+          "skill_sync_posts_to_db"
         ]
       },
       {
@@ -1251,6 +1412,148 @@
         "related": [
           "worker_pm_command_center",
           "sop_monthly_m5_content"
+        ]
+      }
+    ],
+    "client": [
+      {
+        "id": "client_aqua_treat",
+        "type": "client",
+        "path": "clients/Aqua Treat/client-strategy.md",
+        "when_to_use": "Aqua Treat — water treatment client strategy, brand, research",
+        "related": [
+          "sop_client_onboarding",
+          "skill_onboarding_01_research"
+        ]
+      },
+      {
+        "id": "client_gore_hospital",
+        "type": "client",
+        "path": "clients/Gore Hospital/client-strategy.md",
+        "when_to_use": "Gore Multispeciality Hospital — client strategy, brand, SEO, prompting guide",
+        "related": [
+          "sop_client_onboarding",
+          "skill_onboarding_01_research"
+        ]
+      },
+      {
+        "id": "client_hera_clinic",
+        "type": "client",
+        "path": "clients/Hera Clinic/client-strategy.md",
+        "when_to_use": "Hera Clinic (Dr. Sairandhri Kate) — client strategy, brand, design instructions",
+        "related": [
+          "sop_client_onboarding",
+          "skill_onboarding_01_research"
+        ]
+      },
+      {
+        "id": "client_jeevisha",
+        "type": "client",
+        "path": "clients/Jeevisha Pain Center/client-strategy.md",
+        "when_to_use": "Jeevisha Pain Center (Dr. Sanjog Mekewar) — client strategy, brand brain, SEO, GMB",
+        "related": [
+          "sop_client_onboarding",
+          "skill_onboarding_06_brand_brain"
+        ]
+      },
+      {
+        "id": "client_kumss",
+        "type": "client",
+        "path": "clients/KUMSS/client-strategy.md",
+        "when_to_use": "KUMSS (Mr. Vilas Nirmal) — client strategy, brand brain, design system",
+        "related": [
+          "sop_client_onboarding",
+          "skill_onboarding_06_brand_brain"
+        ]
+      },
+      {
+        "id": "client_millennium_school",
+        "type": "client",
+        "path": "clients/Millennium School/client-strategy.md",
+        "when_to_use": "Millennium Woods School — client strategy, brand, research, prompting guide",
+        "related": [
+          "sop_client_onboarding",
+          "skill_onboarding_01_research"
+        ]
+      },
+      {
+        "id": "client_nrs_hospital",
+        "type": "client",
+        "path": "clients/NRS/client-strategy.md",
+        "when_to_use": "NRS Hospital (Dr. Narayan Survase) — client strategy, brand, design instructions",
+        "related": [
+          "sop_client_onboarding",
+          "skill_onboarding_01_research"
+        ]
+      },
+      {
+        "id": "client_nakshatra",
+        "type": "client",
+        "path": "clients/Nakshatra/client-strategy.md",
+        "when_to_use": "Nakshatra (Dr. Ramit Kamate) — client strategy, brand, design, site extraction",
+        "related": [
+          "sop_client_onboarding",
+          "skill_onboarding_01_research"
+        ]
+      },
+      {
+        "id": "client_neurosociety_pune",
+        "type": "client",
+        "path": "clients/Neurosociety Pune/client-strategy.md",
+        "when_to_use": "Pune Neuro Society (Dr. Dhairyasheel Saste) — client strategy, brand, research",
+        "related": [
+          "sop_client_onboarding",
+          "skill_onboarding_01_research"
+        ]
+      },
+      {
+        "id": "client_pinnacle_science_academy",
+        "type": "client",
+        "path": "clients/Pinnacle Science Academy/client-strategy.md",
+        "when_to_use": "Pinnacle Science Academy — client strategy, brand, research, prompting guide",
+        "related": [
+          "sop_client_onboarding",
+          "skill_onboarding_01_research"
+        ]
+      },
+      {
+        "id": "client_pparam",
+        "type": "client",
+        "path": "clients/Pparam/client-strategy.md",
+        "when_to_use": "Pparam Architect (Mr. Aditya Uttekar) — client strategy, brand brain, SEO, GMB",
+        "related": [
+          "sop_client_onboarding",
+          "skill_onboarding_04_seo_foundation"
+        ]
+      },
+      {
+        "id": "client_prime_hospital",
+        "type": "client",
+        "path": "clients/Prime Hospital/client-strategy.md",
+        "when_to_use": "Prime Speciality Hospital — client strategy, brand brain, SEO, GMB foundation",
+        "related": [
+          "sop_client_onboarding",
+          "skill_onboarding_06_brand_brain"
+        ]
+      },
+      {
+        "id": "client_suman_hospital",
+        "type": "client",
+        "path": "clients/Suman Hospital/client-strategy.md",
+        "when_to_use": "Suman Multispecialty Hospital (Dr. Rahul Gaikwad) — client strategy, brand brain, SEO, GMB",
+        "related": [
+          "sop_client_onboarding",
+          "skill_onboarding_06_brand_brain"
+        ]
+      },
+      {
+        "id": "client_digitech_solutions",
+        "type": "client",
+        "path": "clients/The Digitech Solutions/client-strategy.md",
+        "when_to_use": "The Digitech Solutions — agency own brand strategy, brand brain, SEO, design system",
+        "related": [
+          "sop_client_onboarding",
+          "skill_onboarding_04_seo_foundation"
         ]
       }
     ]

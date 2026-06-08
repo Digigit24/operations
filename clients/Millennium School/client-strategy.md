@@ -1,3 +1,12 @@
+---
+id: client_millennium_school
+type: client
+when_to_use: "Millennium Woods School — client strategy, brand, research, prompting guide"
+related:
+  - sop_client_onboarding
+  - skill_onboarding_01_research
+---
+
 # Client Strategy — Millennium Woods Techno Kids Pre-School
 **Last updated:** 2026-06-08
 **Prepared by:** PM Command Center

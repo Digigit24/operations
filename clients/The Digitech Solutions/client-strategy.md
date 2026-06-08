@@ -1,3 +1,12 @@
+---
+id: client_digitech_solutions
+type: client
+when_to_use: "The Digitech Solutions — agency own brand strategy, brand brain, SEO, design system"
+related:
+  - sop_client_onboarding
+  - skill_onboarding_04_seo_foundation
+---
+
 # The Digitech Solutions — Client Strategy
 **Last updated:** 2026-06-08
 **Synthesised from:** Research files 01–07 (Strategic Research, Design Instructions, AI Prompting Guide, Site Extraction, SEO Foundation, GMB Foundation, Master Brand Brain, Design System)

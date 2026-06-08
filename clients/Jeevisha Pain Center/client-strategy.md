@@ -1,3 +1,12 @@
+---
+id: client_jeevisha
+type: client
+when_to_use: "Jeevisha Pain Center (Dr. Sanjog Mekewar) — client strategy, brand brain, SEO, GMB"
+related:
+  - sop_client_onboarding
+  - skill_onboarding_06_brand_brain
+---
+
 # Client Strategy — Jeevisha Spine Pain & Regenerative Clinic
 
 **Last updated:** 2026-06-08

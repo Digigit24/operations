@@ -1,3 +1,12 @@
+---
+id: client_nakshatra
+type: client
+when_to_use: "Nakshatra (Dr. Ramit Kamate) — client strategy, brand, design, site extraction"
+related:
+  - sop_client_onboarding
+  - skill_onboarding_01_research
+---
+
 # Client Strategy — Nakshatra IVF & Fertility Clinic
 **Last updated:** 2026-06-08
 **Prepared by:** PM Command Center

@@ -1,3 +1,12 @@
+---
+id: client_gore_hospital
+type: client
+when_to_use: "Gore Multispeciality Hospital — client strategy, brand, SEO, prompting guide"
+related:
+  - sop_client_onboarding
+  - skill_onboarding_01_research
+---
+
 # Gore Multispeciality Hospital — Client Strategy
 
 > Last updated: 2026-06-08

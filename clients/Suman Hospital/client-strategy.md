@@ -1,3 +1,12 @@
+---
+id: client_suman_hospital
+type: client
+when_to_use: "Suman Multispecialty Hospital (Dr. Rahul Gaikwad) — client strategy, brand brain, SEO, GMB"
+related:
+  - sop_client_onboarding
+  - skill_onboarding_06_brand_brain
+---
+
 # SUMAN HOSPITAL — CLIENT STRATEGY
 **Suman Multispecialty Hospital & ICU Care**
 **Prepared by:** The Digitech Solutions

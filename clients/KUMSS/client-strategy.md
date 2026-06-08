@@ -1,3 +1,12 @@
+---
+id: client_kumss
+type: client
+when_to_use: "KUMSS (Mr. Vilas Nirmal) — client strategy, brand brain, design system"
+related:
+  - sop_client_onboarding
+  - skill_onboarding_06_brand_brain
+---
+
 # Client Strategy — KUMSS Private I.T.I Karhati
 
 **Last updated:** 2026-06-08

@@ -1,3 +1,12 @@
+---
+id: client_hera_clinic
+type: client
+when_to_use: "Hera Clinic (Dr. Sairandhri Kate) — client strategy, brand, design instructions"
+related:
+  - sop_client_onboarding
+  - skill_onboarding_01_research
+---
+
 # Client Strategy — Hera Clinic
 
 **Last updated:** 2026-06-08

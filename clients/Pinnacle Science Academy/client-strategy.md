@@ -1,3 +1,12 @@
+---
+id: client_pinnacle_science_academy
+type: client
+when_to_use: "Pinnacle Science Academy — client strategy, brand, research, prompting guide"
+related:
+  - sop_client_onboarding
+  - skill_onboarding_01_research
+---
+
 # Pinnacle Science Academy — Client Strategy
 **Digitech Internal Reference · Shortcode: `pinnacle` · Last updated: 2026-06-08**
 

@@ -1,3 +1,12 @@
+---
+id: client_nrs_hospital
+type: client
+when_to_use: "NRS Hospital (Dr. Narayan Survase) — client strategy, brand, design instructions"
+related:
+  - sop_client_onboarding
+  - skill_onboarding_01_research
+---
+
 # NRS Hospital — Client Strategy
 **Digitech Internal Reference · Shortcode: `nrs` · Last updated: 2026-06-08**
 

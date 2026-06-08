@@ -40,6 +40,23 @@ For situations (routing): read the situation file → follow `recommended_skills
 | An agent definition | `brain/workers/` |
 | A past decision + rationale | `brain/decisions/` |
 | Live client context | `brain/contexts/[client-shortcode]-context.md` |
+| Full client strategy + research | `clients/[Client Name]/client-strategy.md` |
+| Notion DB IDs + property map | `brain/actions/action_notion_databases.md` |
+
+---
+
+## Notion Database Rules (enforce always)
+
+Before writing to Notion, read `brain/actions/action_notion_databases.md`. It has exact DB IDs, property names, and status values — no discovery calls needed.
+
+**Tasks vs Posts — the hard rule:**
+
+> Does this produce a publishable content piece (post, reel, video)?
+> **Yes → Posts DB. No → Tasks DB.**
+
+- **Posts DB** is the task tracker AND content inventory for all content work. Status pipeline: `Idea → Planning → In Progress → Scripting → Review → Approved → Posted`
+- **Tasks DB** is for all non-content work: calls, audits, website tasks, reports, strategy, dev
+- **`Posted` status is human-only.** AI may create/update posts up to `Approved` only. Never set `Posted` via automation.
 
 ---
 
@@ -66,6 +83,11 @@ operations/
 │   ├── workers/            ← agent definitions (who does what)
 │   ├── decisions/          ← decision log (what was decided and why)
 │   └── contexts/           ← generated client context files (never edit manually)
+├── clients/
+│   └── [Client Name]/
+│       ├── client-strategy.md   ← indexed in manifest (type: client)
+│       ├── assets/              ← logos and brand assets
+│       └── research/            ← deep research files (not indexed individually)
 └── manifest/
     ├── manifest.json       ← the index — read this first
     └── generate_manifest.py ← re-run after adding any file
@@ -80,7 +102,7 @@ Always add YAML frontmatter before committing:
 ```yaml
 ---
 id: unique_snake_case_id
-type: skill | sop | worker | situation | action | decision | context
+type: skill | sop | worker | situation | action | decision | context | client
 when_to_use: "One sentence describing exactly when an agent should use this file"
 related:
   - id_of_related_file
