@@ -1,0 +1,2627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KUMSS — Design System (Working Version)</title>
+<style>
+/* ============================================
+   KUMSS DESIGN SYSTEM — WORKING VERSION
+   Inline CSS only. System-safe fonts. No CDN.
+   ============================================ */
+
+:root {
+  /* Primary palette */
+  --kesari: #E85D04;
+  --kesari-tint: #F89860;
+  --kesari-shade: #C84B16;
+  --sanstha-green: #1B6B3D;
+  --sanstha-green-tint: #4A9B5F;
+  --sanstha-green-shade: #0F4525;
+  --navy: #1A2540;
+  --navy-tint: #3D4B6F;
+  --cream: #FAF6EE;
+  --cream-darker: #F0E9D8;
+  --white: #FFFFFF;
+  --charcoal: #2A2A2A;
+  --sand-border: #E8DFCB;
+
+  /* Accents */
+  --ochre: #B8860B;
+  --maroon: #831A1A;
+
+  /* Type stacks */
+  --serif: Georgia, 'Source Serif Pro', 'Crimson Pro', 'EB Garamond', 'Times New Roman', serif;
+  --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, 'Helvetica Neue', Arial, sans-serif;
+  --devanagari: 'Mukta Vaani', 'Hind', 'Mangal', 'Sanskrit Text', 'Devanagari Sangam MN', 'Noto Sans Devanagari', system-ui, sans-serif;
+  --devanagari-shloka: 'Tiro Devanagari Sanskrit', 'Sanskrit Text', 'Mangal', 'Devanagari MT', serif;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--charcoal);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* ============================================
+   LAYOUT
+   ============================================ */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section {
+  padding: 80px 0;
+  border-bottom: 1px solid var(--sand-border);
+}
+
+.section-label {
+  font-family: var(--sans);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--kesari);
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 1.2;
+  color: var(--navy);
+  margin: 0 0 16px;
+}
+
+.section-subtitle {
+  font-family: var(--sans);
+  font-size: 17px;
+  color: var(--navy-tint);
+  max-width: 720px;
+  margin: 0 0 40px;
+}
+
+h3.block-title {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 22px;
+  color: var(--navy);
+  margin: 32px 0 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--sand-border);
+}
+
+h4.sub-title {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  color: var(--navy);
+  text-transform: uppercase;
+  margin: 24px 0 12px;
+}
+
+p { margin: 0 0 16px; }
+
+.lead {
+  font-size: 18px;
+  color: var(--navy);
+}
+
+.marathi {
+  font-family: var(--devanagari);
+  line-height: 1.7;
+}
+
+.shloka {
+  font-family: var(--devanagari-shloka);
+  color: var(--kesari);
+  letter-spacing: 0.02em;
+}
+
+/* ============================================
+   COVER / HERO
+   ============================================ */
+.cover {
+  background: linear-gradient(170deg, var(--cream) 0%, var(--cream-darker) 100%);
+  padding: 100px 0 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cover::before {
+  content: "";
+  position: absolute;
+  top: 0; right: -100px;
+  width: 400px; height: 400px;
+  background: var(--kesari);
+  border-radius: 50%;
+  opacity: 0.08;
+}
+
+.cover::after {
+  content: "";
+  position: absolute;
+  bottom: -150px; left: -100px;
+  width: 500px; height: 500px;
+  background: var(--sanstha-green);
+  border-radius: 50%;
+  opacity: 0.08;
+}
+
+.cover-inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .cover-inner {
+    grid-template-columns: 200px 1fr;
+    gap: 60px;
+  }
+}
+
+.logo-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px;
+  background: var(--white);
+  border: 1px solid var(--sand-border);
+  border-radius: 4px;
+  text-align: center;
+}
+
+.logo-stylized {
+  width: 120px;
+  height: 120px;
+  position: relative;
+  margin-bottom: 16px;
+}
+
+/* Stylized logo recreation — placeholder for actual logo */
+.logo-stylized .book {
+  position: absolute;
+  inset: 20px 0 0 0;
+  background: var(--sanstha-green);
+  border-radius: 8px 8px 4px 4px;
+  clip-path: polygon(15% 15%, 50% 0%, 85% 15%, 100% 100%, 0% 100%);
+}
+
+.logo-stylized .figure {
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 60px;
+  background: var(--kesari);
+  border-radius: 12px 12px 4px 4px;
+}
+
+.logo-stylized .figure::before {
+  content: "";
+  position: absolute;
+  top: -16px; left: 50%;
+  transform: translateX(-50%);
+  width: 16px; height: 16px;
+  background: var(--kesari);
+  border-radius: 50%;
+}
+
+.logo-wordmark {
+  font-family: var(--sans);
+  font-weight: 800;
+  font-size: 24px;
+  letter-spacing: 0.02em;
+  margin-top: 4px;
+}
+
+.logo-wordmark .ku { color: var(--kesari); }
+.logo-wordmark .mss { color: var(--navy); }
+
+.logo-tagline {
+  font-family: var(--sans);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  color: var(--navy);
+  text-transform: lowercase;
+  margin-top: 2px;
+}
+
+.logo-shloka {
+  font-family: var(--devanagari-shloka);
+  font-size: 11px;
+  color: var(--kesari);
+  margin-top: 12px;
+  letter-spacing: 0.04em;
+}
+
+.placeholder-tag {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--navy-tint);
+  margin-top: 12px;
+  padding: 4px 8px;
+  background: var(--cream);
+  border: 1px dashed var(--navy-tint);
+  border-radius: 2px;
+}
+
+.cover-content .eyebrow {
+  font-family: var(--sans);
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--kesari);
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.cover-content h1 {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 1.1;
+  color: var(--navy);
+  margin: 0 0 16px;
+}
+
+@media (min-width: 768px) {
+  .cover-content h1 { font-size: 56px; }
+}
+
+.cover-content .marathi-headline {
+  font-family: var(--devanagari);
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1.4;
+  color: var(--navy);
+  margin: 0 0 24px;
+}
+
+.cover-meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--sand-border);
+}
+
+.cover-meta div {
+  font-size: 14px;
+}
+
+.cover-meta .label {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--navy-tint);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.cover-meta .value {
+  color: var(--navy);
+  font-weight: 500;
+}
+
+/* ============================================
+   STATUS BAR
+   ============================================ */
+.status-bar {
+  background: var(--navy);
+  color: var(--cream);
+  padding: 24px 0;
+}
+
+.status-bar-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 32px;
+  font-size: 13px;
+}
+
+.status-marker {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.status-marker .badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 2px;
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+}
+
+.badge-verified { background: var(--sanstha-green-tint); color: var(--white); }
+.badge-assumption { background: var(--kesari); color: var(--white); }
+.badge-confirm { background: var(--ochre); color: var(--white); }
+.badge-verify { background: var(--navy-tint); color: var(--white); }
+.badge-access { background: var(--maroon); color: var(--white); }
+.badge-update { background: var(--cream); color: var(--navy); }
+
+/* ============================================
+   COLOR PALETTE
+   ============================================ */
+.swatch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.swatch {
+  background: var(--white);
+  border: 1px solid var(--sand-border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.swatch-color {
+  height: 120px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 12px;
+  color: var(--white);
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.swatch-info {
+  padding: 16px;
+}
+
+.swatch-info .name {
+  font-family: var(--serif);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+
+.swatch-info .hex {
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  color: var(--kesari);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.swatch-info .role {
+  font-size: 12px;
+  color: var(--navy-tint);
+  line-height: 1.5;
+}
+
+/* ============================================
+   TYPOGRAPHY SAMPLES
+   ============================================ */
+.type-sample {
+  background: var(--white);
+  border: 1px solid var(--sand-border);
+  border-radius: 4px;
+  padding: 24px 28px;
+  margin-bottom: 16px;
+}
+
+.type-sample .meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--navy-tint);
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--sand-border);
+}
+
+.type-sample .meta .role {
+  color: var(--kesari);
+  font-weight: 700;
+}
+
+.h1-sample {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 1.15;
+  color: var(--navy);
+  margin: 0;
+}
+
+.h2-sample {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.2;
+  color: var(--navy);
+  margin: 0;
+}
+
+.h3-sample {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.3;
+  color: var(--navy);
+  margin: 0;
+}
+
+.body-sample {
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--charcoal);
+  margin: 0;
+}
+
+.caption-sample {
+  font-family: var(--sans);
+  font-size: 14px;
+  color: var(--navy-tint);
+  margin: 0;
+}
+
+.marathi-h1 {
+  font-family: var(--devanagari);
+  font-weight: 700;
+  font-size: 38px;
+  line-height: 1.4;
+  color: var(--navy);
+  margin: 0;
+}
+
+.marathi-h2 {
+  font-family: var(--devanagari);
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 1.5;
+  color: var(--navy);
+  margin: 0;
+}
+
+.marathi-body {
+  font-family: var(--devanagari);
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--charcoal);
+  margin: 0;
+}
+
+.shloka-sample {
+  font-family: var(--devanagari-shloka);
+  font-size: 32px;
+  text-align: center;
+  color: var(--kesari);
+  letter-spacing: 0.04em;
+  padding: 24px 0;
+}
+
+/* ============================================
+   LOGO USAGE
+   ============================================ */
+.logo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.logo-variant {
+  background: var(--white);
+  border: 1px solid var(--sand-border);
+  border-radius: 4px;
+  padding: 32px 24px;
+  text-align: center;
+}
+
+.logo-variant.dark { background: var(--navy); color: var(--cream); }
+.logo-variant.cream { background: var(--cream-darker); }
+
+.logo-variant .variant-name {
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--navy-tint);
+  font-weight: 600;
+  margin-top: 16px;
+}
+
+.logo-variant.dark .variant-name { color: var(--cream-darker); }
+
+.logo-variant .use-case {
+  font-size: 13px;
+  color: var(--navy-tint);
+  margin-top: 8px;
+}
+
+.logo-variant.dark .use-case { color: var(--cream); }
+
+.logo-mini {
+  display: inline-block;
+  font-family: var(--sans);
+  font-weight: 800;
+  font-size: 22px;
+  letter-spacing: 0.02em;
+}
+
+.logo-mini .ku { color: var(--kesari); }
+.logo-mini .mss { color: var(--navy); }
+.logo-variant.dark .logo-mini .mss { color: var(--cream); }
+
+/* ============================================
+   COMPONENT EXAMPLES
+   ============================================ */
+.btn {
+  display: inline-block;
+  padding: 14px 28px;
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  border-radius: 2px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+}
+
+.btn-primary {
+  background: var(--kesari);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background: var(--kesari-shade);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--navy);
+  border-color: var(--navy);
+}
+
+.btn-secondary:hover {
+  background: var(--navy);
+  color: var(--cream);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--navy);
+  border-color: transparent;
+  text-decoration: underline;
+}
+
+.btn-whatsapp {
+  background: #25D366;
+  color: var(--white);
+}
+
+.btn-whatsapp:hover { background: #1DA851; }
+
+.button-set {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  margin: 24px 0 12px;
+  padding: 32px;
+  background: var(--white);
+  border: 1px solid var(--sand-border);
+  border-radius: 4px;
+}
+
+/* Cards */
+.card {
+  background: var(--white);
+  border: 1px solid var(--sand-border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.card-photo {
+  background: var(--cream-darker);
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px;
+  color: var(--navy-tint);
+  font-size: 13px;
+  font-style: italic;
+  border-bottom: 1px solid var(--sand-border);
+}
+
+.card-photo.green { background: var(--sanstha-green-shade); color: var(--cream); }
+.card-photo.saffron { background: var(--kesari-shade); color: var(--white); }
+.card-photo.navy { background: var(--navy); color: var(--cream); }
+
+.card-body {
+  padding: 24px;
+}
+
+.card-body .trade-marathi {
+  font-family: var(--devanagari);
+  font-weight: 700;
+  font-size: 22px;
+  color: var(--navy);
+  margin: 0 0 4px;
+}
+
+.card-body .trade-english {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 17px;
+  color: var(--kesari);
+  margin: 0 0 12px;
+}
+
+.card-body .meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  font-size: 12px;
+  color: var(--navy-tint);
+  letter-spacing: 0.04em;
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--sand-border);
+}
+
+.card-body .meta-row span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.card-body .meta-row strong {
+  color: var(--navy);
+  font-weight: 600;
+}
+
+.card-body p {
+  font-size: 14px;
+  color: var(--charcoal);
+  margin: 0 0 16px;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  margin-top: 24px;
+}
+
+/* ============================================
+   SOCIAL POST TEMPLATES
+   ============================================ */
+.post-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.post {
+  background: var(--white);
+  border: 1px solid var(--sand-border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.post-canvas {
+  position: relative;
+  width: 100%;
+  padding-top: 100%;
+  background: var(--cream);
+}
+
+.post-canvas.portrait { padding-top: 125%; }
+.post-canvas.landscape { padding-top: 75%; }
+
+.post-content {
+  position: absolute;
+  inset: 0;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.post-content .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.post-content .micro-lockup {
+  font-family: var(--sans);
+  font-weight: 800;
+  font-size: 14px;
+}
+
+.post-content .micro-lockup .ku { color: var(--kesari); }
+.post-content .micro-lockup .mss { color: var(--navy); }
+
+.post.dark { background: var(--navy); }
+.post.dark .post-canvas { background: var(--navy); }
+.post.dark .post-content .micro-lockup .ku { color: var(--kesari); }
+.post.dark .post-content .micro-lockup .mss { color: var(--cream); }
+
+.post.saffron .post-canvas { background: var(--kesari); }
+.post.saffron .post-content .micro-lockup .ku { color: var(--white); }
+.post.saffron .post-content .micro-lockup .mss { color: var(--white); }
+
+.post.green .post-canvas { background: var(--sanstha-green); }
+.post.green .post-content .micro-lockup .ku { color: var(--cream); }
+.post.green .post-content .micro-lockup .mss { color: var(--white); }
+
+.post-headline-mr {
+  font-family: var(--devanagari);
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.4;
+  color: var(--navy);
+  margin: 0;
+}
+
+.post-headline-en {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 1.3;
+  color: var(--navy);
+  margin: 8px 0 0;
+}
+
+.post.dark .post-headline-mr,
+.post.dark .post-headline-en,
+.post.saffron .post-headline-mr,
+.post.saffron .post-headline-en,
+.post.green .post-headline-mr,
+.post.green .post-headline-en {
+  color: var(--cream);
+}
+
+.post-body-text {
+  font-family: var(--sans);
+  font-size: 13px;
+  color: var(--navy-tint);
+  line-height: 1.5;
+  margin: 12px 0 0;
+}
+
+.post.dark .post-body-text,
+.post.saffron .post-body-text,
+.post.green .post-body-text {
+  color: rgba(250, 246, 238, 0.85);
+}
+
+.post-cta {
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--kesari);
+}
+
+.post.dark .post-cta,
+.post.saffron .post-cta,
+.post.green .post-cta {
+  color: var(--cream);
+}
+
+.post-label {
+  padding: 12px 20px;
+  background: var(--cream-darker);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--navy-tint);
+  font-weight: 600;
+  border-top: 1px solid var(--sand-border);
+}
+
+.post-label .dim {
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  color: var(--navy-tint);
+}
+
+/* ============================================
+   WEBSITE HERO
+   ============================================ */
+.web-hero {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--sanstha-green-shade) 100%);
+  color: var(--cream);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 24px;
+  position: relative;
+}
+
+.web-hero-inner {
+  padding: 48px 40px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .web-hero-inner {
+    grid-template-columns: 1fr 280px;
+    padding: 64px 56px;
+  }
+}
+
+.web-hero h2.marathi-hero {
+  font-family: var(--devanagari);
+  font-weight: 700;
+  font-size: 38px;
+  line-height: 1.4;
+  color: var(--cream);
+  margin: 0 0 16px;
+}
+
+.web-hero h3.english-hero {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 1.4;
+  color: var(--kesari-tint);
+  margin: 0 0 24px;
+}
+
+.web-hero p {
+  font-size: 16px;
+  color: rgba(250, 246, 238, 0.85);
+  margin: 0 0 28px;
+  max-width: 540px;
+}
+
+.web-hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.web-hero-photo {
+  background: rgba(232, 93, 4, 0.18);
+  border: 1px solid rgba(250, 246, 238, 0.25);
+  border-radius: 4px;
+  padding: 32px;
+  text-align: center;
+  font-size: 13px;
+  font-style: italic;
+  color: rgba(250, 246, 238, 0.75);
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ============================================
+   ADMISSION CAMPAIGN
+   ============================================ */
+.admission-creative {
+  background: var(--kesari);
+  color: var(--cream);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.admission-creative-inner {
+  padding: 48px 40px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.admission-creative .micro-lockup {
+  font-family: var(--sans);
+  font-weight: 800;
+  font-size: 18px;
+  color: var(--cream);
+  letter-spacing: 0.02em;
+}
+
+.admission-creative h3 {
+  font-family: var(--devanagari);
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 1.4;
+  margin: 0;
+  color: var(--cream);
+}
+
+.admission-creative .english-sub {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 18px;
+  color: rgba(250, 246, 238, 0.9);
+  margin: 0;
+}
+
+.admission-creative .trade-list {
+  font-family: var(--devanagari);
+  font-size: 17px;
+  line-height: 1.8;
+  color: var(--cream);
+  margin: 16px 0;
+  padding: 16px 24px;
+  background: rgba(0,0,0,0.12);
+  border-radius: 4px;
+}
+
+.admission-creative .trade-list strong {
+  font-weight: 600;
+}
+
+.admission-creative .contact-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  padding-top: 16px;
+  border-top: 1px solid rgba(250, 246, 238, 0.25);
+}
+
+.admission-creative .contact-row span {
+  background: rgba(0,0,0,0.18);
+  padding: 8px 14px;
+  border-radius: 2px;
+}
+
+/* ============================================
+   FOOTER / NAP EXAMPLE
+   ============================================ */
+.footer-example {
+  background: var(--navy);
+  color: var(--cream);
+  border-radius: 4px;
+  padding: 48px 40px;
+  margin-top: 24px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  margin-bottom: 32px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid rgba(250, 246, 238, 0.2);
+}
+
+@media (min-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1.4fr 1fr 1.2fr 1fr;
+  }
+}
+
+.footer-col h5 {
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--kesari-tint);
+  margin: 0 0 16px;
+}
+
+.footer-col p, .footer-col li, .footer-col a {
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(250, 246, 238, 0.85);
+  text-decoration: none;
+  margin: 0 0 6px;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-lockup-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  color: rgba(250, 246, 238, 0.7);
+}
+
+.footer-lockup-row .shloka-line {
+  font-family: var(--devanagari-shloka);
+  color: var(--kesari-tint);
+  font-size: 14px;
+  letter-spacing: 0.04em;
+}
+
+/* ============================================
+   PHOTOGRAPHY DIRECTION
+   ============================================ */
+.photo-direction {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.photo-slot {
+  background: var(--cream-darker);
+  border: 1px dashed var(--navy-tint);
+  border-radius: 4px;
+  padding: 24px;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.photo-slot .slot-label {
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--kesari);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.photo-slot .slot-desc {
+  font-size: 13px;
+  color: var(--navy);
+  line-height: 1.5;
+}
+
+.photo-slot .slot-replace {
+  font-size: 11px;
+  font-style: italic;
+  color: var(--navy-tint);
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--sand-border);
+}
+
+/* ============================================
+   AI PROMPT BOX
+   ============================================ */
+.prompt-box {
+  background: var(--navy);
+  color: var(--cream);
+  border-radius: 4px;
+  padding: 28px;
+  margin: 16px 0;
+  font-family: 'Courier New', 'Monaco', monospace;
+  font-size: 13px;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  overflow-x: auto;
+}
+
+.prompt-box .prompt-meta {
+  display: block;
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--kesari-tint);
+  font-weight: 700;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(250, 246, 238, 0.2);
+}
+
+/* ============================================
+   DOS AND DONTS
+   ============================================ */
+.do-dont-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  margin-top: 24px;
+}
+
+@media (min-width: 768px) {
+  .do-dont-grid { grid-template-columns: 1fr 1fr; }
+}
+
+.do-dont {
+  background: var(--white);
+  border-radius: 4px;
+  padding: 28px 28px 24px;
+}
+
+.do-dont.do-col {
+  border-left: 4px solid var(--sanstha-green);
+}
+
+.do-dont.dont-col {
+  border-left: 4px solid var(--maroon);
+}
+
+.do-dont h4 {
+  margin: 0 0 16px;
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.do-dont.do-col h4 { color: var(--sanstha-green); }
+.do-dont.dont-col h4 { color: var(--maroon); }
+
+.do-dont ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.do-dont li {
+  position: relative;
+  padding: 10px 0 10px 28px;
+  font-size: 14px;
+  line-height: 1.5;
+  border-bottom: 1px solid var(--sand-border);
+}
+
+.do-dont li:last-child { border-bottom: 0; }
+
+.do-dont.do-col li::before {
+  content: "✓";
+  position: absolute;
+  left: 0; top: 10px;
+  color: var(--sanstha-green);
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.do-dont.dont-col li::before {
+  content: "✗";
+  position: absolute;
+  left: 0; top: 10px;
+  color: var(--maroon);
+  font-weight: 700;
+  font-size: 18px;
+}
+
+/* ============================================
+   VERIFICATION LIST
+   ============================================ */
+.verification-list {
+  background: var(--white);
+  border: 1px solid var(--sand-border);
+  border-radius: 4px;
+  padding: 32px;
+  margin-top: 24px;
+}
+
+.verification-row {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--sand-border);
+  align-items: flex-start;
+}
+
+.verification-row:last-child { border-bottom: 0; }
+
+.verification-row .v-marker {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 6px;
+  border-radius: 2px;
+  text-align: center;
+  display: inline-block;
+}
+
+.v-confirm { background: var(--ochre); color: var(--white); }
+.v-verify { background: var(--navy-tint); color: var(--white); }
+.v-access { background: var(--maroon); color: var(--white); }
+.v-update { background: var(--cream-darker); color: var(--navy); border: 1px solid var(--sand-border); }
+
+.verification-row .v-text {
+  font-size: 14px;
+  color: var(--charcoal);
+}
+
+/* ============================================
+   QUICK REFERENCE CARD
+   ============================================ */
+.qref {
+  background: var(--white);
+  border: 1px solid var(--sand-border);
+  border-radius: 4px;
+  padding: 40px;
+  margin-top: 24px;
+}
+
+.qref h3 {
+  margin: 0 0 8px;
+  text-align: center;
+  font-family: var(--serif);
+  font-size: 28px;
+  color: var(--navy);
+}
+
+.qref .qref-sub {
+  text-align: center;
+  font-size: 13px;
+  color: var(--navy-tint);
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--sand-border);
+}
+
+.qref-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 28px;
+}
+
+.qref-block .qref-label {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--kesari);
+  margin-bottom: 8px;
+}
+
+.qref-block .qref-value {
+  font-family: var(--serif);
+  font-size: 15px;
+  color: var(--navy);
+  line-height: 1.5;
+}
+
+.qref-block .qref-value.marathi {
+  font-family: var(--devanagari);
+}
+
+/* ============================================
+   UTILITIES
+   ============================================ */
+.note {
+  background: var(--cream-darker);
+  border-left: 4px solid var(--kesari);
+  padding: 16px 20px;
+  font-size: 14px;
+  color: var(--navy);
+  border-radius: 0 4px 4px 0;
+  margin: 16px 0;
+}
+
+.note-warn {
+  border-left-color: var(--maroon);
+  background: rgba(131, 26, 26, 0.06);
+}
+
+table.data {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+  font-size: 14px;
+}
+
+table.data th, table.data td {
+  text-align: left;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--sand-border);
+}
+
+table.data th {
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--navy);
+  background: var(--cream-darker);
+}
+
+table.data td {
+  vertical-align: top;
+  color: var(--charcoal);
+}
+
+table.data td strong { color: var(--navy); }
+
+/* Final */
+.footer-meta {
+  text-align: center;
+  padding: 48px 24px;
+  background: var(--navy);
+  color: var(--cream-darker);
+  font-size: 13px;
+}
+
+.footer-meta .shloka-line {
+  font-family: var(--devanagari-shloka);
+  font-size: 22px;
+  color: var(--kesari);
+  margin-bottom: 16px;
+  letter-spacing: 0.04em;
+}
+
+.footer-meta .small {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.6;
+  margin-top: 12px;
+}
+
+</style>
+</head>
+<body>
+
+<!-- ============================================
+     1. COVER / HERO
+     ============================================ -->
+<section class="cover">
+  <div class="container">
+    <div class="cover-inner">
+      <div class="logo-block">
+        <div class="logo-stylized">
+          <div class="book"></div>
+          <div class="figure"></div>
+        </div>
+        <div class="logo-wordmark"><span class="ku">KU</span><span class="mss">MSS</span></div>
+        <div class="logo-tagline">Bright future begins here</div>
+        <div class="logo-shloka">॥ उद्धरेदात्मनात्मानम् ॥</div>
+        <span class="placeholder-tag">Replace with actual KUMSS logo</span>
+      </div>
+      <div class="cover-content">
+        <div class="eyebrow">KUMSS · Working Version · Design System</div>
+        <h1>The KUMSS Design System</h1>
+        <p class="marathi-headline">कुमस संस्थेची दृश्य ओळख</p>
+        <p class="lead">
+          A working visual reference for the team — covering colors, typography, components, social and admission templates, photography direction, and AI prompting samples for KUMSS Private I.T.I Karhati, Baramati. Marathi-first. Heritage-led. Institutional in posture, warm in tone, real in detail.
+        </p>
+        <div class="cover-meta">
+          <div>
+            <div class="label">Scope</div>
+            <div class="value">ITI-only (working assumption)</div>
+          </div>
+          <div>
+            <div class="label">Positioning</div>
+            <div class="value">Heritage-led, skill-education</div>
+          </div>
+          <div>
+            <div class="label">Language</div>
+            <div class="value">Marathi-first, English supportive</div>
+          </div>
+          <div>
+            <div class="label">Version</div>
+            <div class="value">Working — refreshes as inputs land</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     STATUS BAR
+     ============================================ -->
+<section class="status-bar">
+  <div class="container">
+    <div class="status-bar-inner">
+      <div class="status-marker"><span class="badge badge-verified">VERIFIED</span> Directly observed</div>
+      <div class="status-marker"><span class="badge badge-assumption">ASSUMPTION</span> Directional, refine with data</div>
+      <div class="status-marker"><span class="badge badge-confirm">NEEDS CLIENT CONFIRMATION</span></div>
+      <div class="status-marker"><span class="badge badge-verify">NEEDS PORTAL VERIFICATION</span></div>
+      <div class="status-marker"><span class="badge badge-access">NEEDS ACCESS</span></div>
+      <div class="status-marker"><span class="badge badge-update">NEEDS UPDATE</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     2. BRAND ESSENCE
+     ============================================ -->
+<section class="section">
+  <div class="container">
+    <div class="section-label">02 · Brand Essence</div>
+    <h2 class="section-title">What KUMSS is</h2>
+    <p class="section-subtitle">
+      KUMSS is a Maharashtrian educational trust that has quietly served rural Pune district for generations, now extending its work into skill-based vocational training. Not a coaching class. Not a SaaS brand. Not a luxury school. An established institutional sanstha anchored in the region's agrarian-industrial reality.
+    </p>
+
+    <h3 class="block-title">The philosophical anchor</h3>
+    <div class="shloka-sample">॥ उद्धरेदात्मनात्मानम् ॥</div>
+    <p style="text-align:center; font-style:italic; color:var(--navy-tint); max-width:560px; margin:0 auto 32px;">
+      <em>Uddhared ātmanā ātmānam</em> — Bhagavad Gita 6.5 — "Lift yourself by yourself." Not decorative inscription; it is the institute's mission compressed into Sanskrit. KUMSS provides the workshop, the tools, the teachers; the student does the lifting.
+    </p>
+
+    <h3 class="block-title">The brand in one line</h3>
+    <p class="lead" style="border-left: 4px solid var(--kesari); padding-left: 20px; font-family: var(--serif); font-size: 22px; line-height: 1.5; color: var(--navy);">
+      An established Maharashtrian educational trust offering vocational training built on multi-generational educational service — where students learn real skills to stand on their own.
+    </p>
+
+    <div class="note">
+      <strong>Positioning to avoid:</strong> "Premium ITI," "Best ITI in Maharashtra," "100% Placement Guaranteed," "Future-ready Skill India institute," or any framing that leads with political family identity. Political associations are background context, not marketing claim.
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     3. LOGO USAGE
+     ============================================ -->
+<section class="section">
+  <div class="container">
+    <div class="section-label">03 · Logo Usage</div>
+    <h2 class="section-title">Logo lockup variants</h2>
+    <p class="section-subtitle">
+      The canonical lockup composed of five elements: symbol mark, wordmark, English tagline, Devanagari shloka, TM mark. Three working variants for different applications. Vector files (SVG / AI / EPS) pending from client.
+    </p>
+
+    <div class="logo-grid">
+      <div class="logo-variant">
+        <div class="logo-stylized">
+          <div class="book"></div>
+          <div class="figure"></div>
+        </div>
+        <div class="logo-mini"><span class="ku">KU</span><span class="mss">MSS</span></div>
+        <div style="font-size:9px; letter-spacing:0.12em; color:var(--navy); text-transform:lowercase; margin-top:2px;">Bright future begins here</div>
+        <div style="font-family:var(--devanagari-shloka); font-size:10px; color:var(--kesari); margin-top:8px;">॥ उद्धरेदात्मनात्मानम् ॥</div>
+        <div class="variant-name">Full lockup</div>
+        <div class="use-case">Website header · Brochure cover · Official surfaces</div>
+      </div>
+
+      <div class="logo-variant cream">
+        <div class="logo-stylized">
+          <div class="book"></div>
+          <div class="figure"></div>
+        </div>
+        <div class="logo-mini"><span class="ku">KU</span><span class="mss">MSS</span></div>
+        <div class="variant-name">Compact lockup</div>
+        <div class="use-case">Social media profile · Email signature · Document headers</div>
+      </div>
+
+      <div class="logo-variant dark">
+        <div class="logo-stylized" style="opacity:0.95;">
+          <div class="book" style="background: var(--sanstha-green-tint);"></div>
+          <div class="figure"></div>
+        </div>
+        <div class="logo-mini"><span class="ku">KU</span><span class="mss">MSS</span></div>
+        <div class="variant-name">Knockout / dark surface</div>
+        <div class="use-case">Over photography · Footer · Dark social posts</div>
+      </div>
+    </div>
+
+    <h3 class="block-title">Usage rules</h3>
+    <table class="data">
+      <tr><th>Rule</th><th>Specification</th></tr>
+      <tr><td><strong>Clear space</strong></td><td>Minimum equal to height of the "K" in the wordmark on all sides</td></tr>
+      <tr><td><strong>Min size (full lockup)</strong></td><td>200 px wide digital · 40 mm wide print</td></tr>
+      <tr><td><strong>Min size (compact)</strong></td><td>120 px wide</td></tr>
+      <tr><td><strong>Min size (icon-only)</strong></td><td>48 px</td></tr>
+      <tr><td><strong>Default placement</strong></td><td>Top-left for documents · Centered for posters · Bottom-right acceptable for sign-off corners</td></tr>
+      <tr><td><strong>Sanskrit shloka</strong></td><td>Never strip from official surfaces · Acceptable to omit in compact/icon variants only</td></tr>
+      <tr><td><strong>Recoloring</strong></td><td>Never outside the locked palette · No drop shadows, glows, 3D treatments, or aggressive animation</td></tr>
+    </table>
+
+    <div class="note note-warn">
+      <strong>⚠️ NEEDS IMPORTANT UPDATE:</strong> Vector logo files (SVG / AI / EPS) — current PNG works for working-version design; vector needed for production-grade rendering.
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     4. COLOR PALETTE
+     ============================================ -->
+<section class="section" style="background: var(--cream-darker);">
+  <div class="container">
+    <div class="section-label">04 · Color Palette</div>
+    <h2 class="section-title">Locked palette</h2>
+    <p class="section-subtitle">
+      Warm institutional palette. Saffron and green name the trust's character (Krishi Udyog — agriculture + industry). Navy and cream anchor the institutional gravity. Hex values are working approximations; pixel-sample from vector logo to lock final values.
+    </p>
+
+    <h4 class="sub-title">Primary</h4>
+    <div class="swatch-grid">
+      <div class="swatch">
+        <div class="swatch-color" style="background: var(--kesari);">#E85D04</div>
+        <div class="swatch-info">
+          <div class="name">Kesari Saffron</div>
+          <div class="hex">#E85D04</div>
+          <div class="role">The figure, "KU" wordmark, shloka, primary CTAs, admission accents</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: var(--sanstha-green);">#1B6B3D</div>
+        <div class="swatch-info">
+          <div class="name">Sanstha Green</div>
+          <div class="hex">#1B6B3D</div>
+          <div class="role">The book/shield form, agrarian-industrial anchor, badges</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: var(--navy);">#1A2540</div>
+        <div class="swatch-info">
+          <div class="name">Institutional Navy</div>
+          <div class="hex">#1A2540</div>
+          <div class="role">"MSS" wordmark, tagline, body text, secondary CTAs, footers</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: var(--cream); color: var(--navy);">#FAF6EE</div>
+        <div class="swatch-info">
+          <div class="name">Warm Cream</div>
+          <div class="hex">#FAF6EE</div>
+          <div class="role">Default surface, parent-facing backgrounds</div>
+        </div>
+      </div>
+    </div>
+
+    <h4 class="sub-title">Extended</h4>
+    <div class="swatch-grid">
+      <div class="swatch">
+        <div class="swatch-color" style="background: var(--kesari-tint);">#F89860</div>
+        <div class="swatch-info"><div class="name">Light Saffron</div><div class="hex">#F89860</div><div class="role">Hover states, highlights</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: var(--kesari-shade);">#C84B16</div>
+        <div class="swatch-info"><div class="name">Deep Kesari</div><div class="hex">#C84B16</div><div class="role">Emphasis, hover-active</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: var(--sanstha-green-tint);">#4A9B5F</div>
+        <div class="swatch-info"><div class="name">Soft Sanstha</div><div class="hex">#4A9B5F</div><div class="role">Subtle backgrounds, badges</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: var(--sanstha-green-shade);">#0F4525</div>
+        <div class="swatch-info"><div class="name">Forest Deep</div><div class="hex">#0F4525</div><div class="role">Footer, deep emphasis</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: var(--ochre);">#B8860B</div>
+        <div class="swatch-info"><div class="name">Maharashtra Ochre</div><div class="hex">#B8860B</div><div class="role">Festival accent, awards</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: var(--maroon);">#831A1A</div>
+        <div class="swatch-info"><div class="name">Sindoor Maroon</div><div class="hex">#831A1A</div><div class="role">Ceremonial, Sanskrit accent</div></div>
+      </div>
+    </div>
+
+    <div class="note">
+      <strong>Palette don'ts:</strong> No cool corporate blue + white · No pastel rainbows · No black + neon · No monochrome · No high-saturation reds + yellows (coaching brand register) · No teal, mint, or sky-blue dominants.
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     5. TYPOGRAPHY SYSTEM
+     ============================================ -->
+<section class="section">
+  <div class="container">
+    <div class="section-label">05 · Typography System</div>
+    <h2 class="section-title">Type stack</h2>
+    <p class="section-subtitle">
+      Heritage-led serif for headlines · humanist sans for body · quality Devanagari paired as first-class system. Working font stacks below are system-safe with recommended fonts as first preferences.
+    </p>
+
+    <h4 class="sub-title">Recommended pairings</h4>
+    <table class="data">
+      <tr><th>Role</th><th>Recommended</th><th>System-safe stack</th></tr>
+      <tr>
+        <td><strong>English headline</strong></td>
+        <td>Source Serif Pro, Crimson Pro</td>
+        <td>Georgia, "Source Serif Pro", "Crimson Pro", "EB Garamond", serif</td>
+      </tr>
+      <tr>
+        <td><strong>English body</strong></td>
+        <td>Source Sans Pro</td>
+        <td>-apple-system, "Segoe UI", system-ui, "Helvetica Neue", sans-serif</td>
+      </tr>
+      <tr>
+        <td><strong>Devanagari (Marathi)</strong></td>
+        <td>Mukta Vaani, Hind</td>
+        <td>"Mukta Vaani", "Hind", "Mangal", "Sanskrit Text", "Noto Sans Devanagari"</td>
+      </tr>
+      <tr>
+        <td><strong>Sanskrit shloka</strong></td>
+        <td>Tiro Devanagari Sanskrit</td>
+        <td>"Tiro Devanagari Sanskrit", "Sanskrit Text", "Mangal", serif</td>
+      </tr>
+    </table>
+
+    <h4 class="sub-title">English type scale</h4>
+
+    <div class="type-sample">
+      <div class="meta"><span class="role">H1 — Hero headline</span><span>Serif · 700 · 48–56px</span></div>
+      <p class="h1-sample">Skills that stand on their own</p>
+    </div>
+
+    <div class="type-sample">
+      <div class="meta"><span class="role">H2 — Section headline</span><span>Serif · 700 · 36–44px</span></div>
+      <p class="h2-sample">An established Maharashtrian educational trust</p>
+    </div>
+
+    <div class="type-sample">
+      <div class="meta"><span class="role">H3 — Sub-headline</span><span>Serif · 600 · 24–28px</span></div>
+      <p class="h3-sample">Workshop-based vocational training</p>
+    </div>
+
+    <div class="type-sample">
+      <div class="meta"><span class="role">Body</span><span>Sans · 400 · 16px · 1.6 line-height</span></div>
+      <p class="body-sample">KUMSS Private I.T.I Karhati offers vocational training in multiple trades, with hands-on workshop learning and experienced trade faculty. The institute is part of a multi-decade Maharashtrian educational trust serving rural Pune district.</p>
+    </div>
+
+    <div class="type-sample">
+      <div class="meta"><span class="role">Caption</span><span>Sans · 400 · 14px · navy-tint</span></div>
+      <p class="caption-sample">Workshop in operation, KUMSS ITI Karhati · 2026</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     6. MARATHI + ENGLISH SAMPLES
+     ============================================ -->
+<section class="section" style="background: var(--cream-darker);">
+  <div class="container">
+    <div class="section-label">06 · Marathi + English Examples</div>
+    <h2 class="section-title">Devanagari as first-class</h2>
+    <p class="section-subtitle">
+      Marathi is primary on parent-facing surfaces. English supports. Devanagari rendered ~10% smaller than English equivalent for visual balance. Line height for Devanagari paragraphs runs 1.6–1.8× for matra clarity.
+    </p>
+
+    <h4 class="sub-title">Devanagari headlines</h4>
+
+    <div class="type-sample">
+      <div class="meta"><span class="role">Marathi H1</span><span>Devanagari · 700 · 38–46px</span></div>
+      <p class="marathi-h1">कौशल्य शिक्षणाची पारंपरिक संस्था</p>
+    </div>
+
+    <div class="type-sample">
+      <div class="meta"><span class="role">Marathi H2</span><span>Devanagari · 600 · 28–32px</span></div>
+      <p class="marathi-h2">पिढ्यानपिढ्या शिकवणारी संस्था — आता ITI च्या रूपात</p>
+    </div>
+
+    <div class="type-sample">
+      <div class="meta"><span class="role">Marathi body</span><span>Devanagari · 400 · 17px · 1.75 line-height</span></div>
+      <p class="marathi-body">KUMSS Private I.T.I कारहाटी ही कुमस ट्रस्टची नवीन संस्था आहे. आम्ही विद्यार्थ्यांना प्रत्यक्ष कार्यशाळेत प्रशिक्षण देतो — फिटर, इलेक्ट्रिशियन, वेल्डर, इलेक्ट्रॉनिक्स मेकॅनिक यांसारख्या कौशल्यांचे शिक्षण आम्ही देतो. प्रशिक्षित विद्यार्थी पुणे जिल्ह्यातील उद्योगांमध्ये काम करण्यासाठी तयार होतो.</p>
+    </div>
+
+    <h4 class="sub-title">Bilingual stacked layout</h4>
+
+    <div class="type-sample">
+      <div class="meta"><span class="role">Bilingual headline pattern</span><span>Marathi primary, English supportive</span></div>
+      <p class="marathi-h1" style="margin-bottom: 8px;">प्रवेश सुरू — शैक्षणिक वर्ष २०२६-२७</p>
+      <p class="h3-sample" style="color: var(--kesari); font-weight: 500;">Admissions Open — Academic Year 2026-27</p>
+    </div>
+
+    <h4 class="sub-title">Sanskrit shloka treatment</h4>
+    <div class="type-sample" style="text-align: center; padding: 40px;">
+      <div class="meta" style="justify-content: center;"><span class="role">Ceremonial / Institutional</span><span>Tiro Devanagari Sanskrit · centered · saffron</span></div>
+      <p class="shloka" style="font-size: 36px; margin: 16px 0;">॥ उद्धरेदात्मनात्मानम् ॥</p>
+      <p class="caption-sample" style="text-align: center; font-style: italic;">Bhagavad Gita 6.5 — "Lift yourself by yourself"</p>
+    </div>
+
+    <div class="note note-warn">
+      <strong>Critical rules:</strong> No system-default Devanagari rendering (looks unprofessional). No all-caps Devanagari (no concept of case). No script/handwritten fonts as primary. Sanskrit shloka rendered only in traditional faces (Tiro Devanagari Sanskrit recommended).
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     7. LAYOUT SYSTEM
+     ============================================ -->
+<section class="section">
+  <div class="container">
+    <div class="section-label">07 · Layout System</div>
+    <h2 class="section-title">Grid + spacing</h2>
+    <p class="section-subtitle">
+      8pt baseline grid. Spacing values in multiples of 8 (8, 16, 24, 32, 48, 64, 96). Symmetric or near-symmetric compositions. Sober information density — text-rich is fine; airy minimalism is not the goal.
+    </p>
+
+    <h4 class="sub-title">Breakpoints</h4>
+    <table class="data">
+      <tr><th>Device</th><th>Range</th><th>Notes</th></tr>
+      <tr><td><strong>Mobile</strong></td><td>360–767px</td><td>Primary parent-facing format · WhatsApp, Instagram</td></tr>
+      <tr><td><strong>Tablet</strong></td><td>768–1023px</td><td>Secondary</td></tr>
+      <tr><td><strong>Desktop</strong></td><td>1024–1439px</td><td>B2B, recruiter, counselor surfaces</td></tr>
+      <tr><td><strong>Large desktop</strong></td><td>1440px+</td><td>Wide hero layouts only</td></tr>
+    </table>
+
+    <h4 class="sub-title">Layout principles</h4>
+    <ul style="font-size: 15px; line-height: 1.8; color: var(--charcoal); padding-left: 24px;">
+      <li>Symmetric or near-symmetric compositions — asymmetric reads as marketing, not institutional</li>
+      <li>Generous breathing room around logos and headlines</li>
+      <li>Sober information density — institutional surfaces respect the reader with text</li>
+      <li>Vertical hierarchy — institutional materials read top-down</li>
+      <li>Photography sits with substantial weight — no floating ghost-imagery</li>
+    </ul>
+
+    <h4 class="sub-title">Section spacing reference</h4>
+    <div style="background: var(--white); border: 1px solid var(--sand-border); padding: 24px; border-radius: 4px;">
+      <div style="height: 64px; background: var(--cream-darker); display: flex; align-items: center; justify-content: center; font-size: 12px; color: var(--navy-tint); letter-spacing: 0.1em; text-transform: uppercase;">64px between major sections</div>
+      <div style="height: 32px; background: var(--cream); display: flex; align-items: center; justify-content: center; font-size: 12px; color: var(--navy-tint); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 8px;">32px between sub-sections</div>
+      <div style="height: 16px; background: var(--cream); display: flex; align-items: center; justify-content: center; font-size: 11px; color: var(--navy-tint); margin-top: 8px;">16px between blocks</div>
+      <div style="height: 8px; background: var(--cream-darker); margin-top: 8px;"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     8. CTA BUTTON STYLES
+     ============================================ -->
+<section class="section" style="background: var(--cream-darker);">
+  <div class="container">
+    <div class="section-label">08 · CTA Buttons</div>
+    <h2 class="section-title">Call-to-action buttons</h2>
+    <p class="section-subtitle">
+      Primary saffron · Secondary outline navy · WhatsApp green for parent inquiry · Ghost text link for tertiary. CTAs are calm, direct, bilingual. No urgency language, no countdown timers.
+    </p>
+
+    <h4 class="sub-title">Primary CTAs</h4>
+    <div class="button-set">
+      <a href="#" class="btn btn-primary">अधिक माहितीसाठी संपर्क करा</a>
+      <a href="#" class="btn btn-primary">Contact for Details</a>
+      <a href="#" class="btn btn-primary">Apply Now / अर्ज करा</a>
+    </div>
+
+    <h4 class="sub-title">Secondary CTAs</h4>
+    <div class="button-set">
+      <a href="#" class="btn btn-secondary">भेट द्या — Visit Campus</a>
+      <a href="#" class="btn btn-secondary">Download Brochure</a>
+      <a href="#" class="btn btn-secondary">View Trades</a>
+    </div>
+
+    <h4 class="sub-title">WhatsApp + ghost</h4>
+    <div class="button-set">
+      <a href="#" class="btn btn-whatsapp">WhatsApp वर बोला</a>
+      <a href="#" class="btn btn-whatsapp">Chat on WhatsApp</a>
+      <a href="#" class="btn btn-ghost">Read more →</a>
+      <a href="#" class="btn btn-ghost">अधिक वाचा →</a>
+    </div>
+
+    <div class="note note-warn">
+      <strong>CTA copy NEVER uses:</strong> "Hurry!" · "Don't miss!" · "Last 3 seats!" · "Limited time!" · "Act now!" · "Last chance!" · Any urgency framing.
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     9. CARD COMPONENTS
+     ============================================ -->
+<section class="section">
+  <div class="container">
+    <div class="section-label">09 · Components</div>
+    <h2 class="section-title">Card patterns</h2>
+    <p class="section-subtitle">
+      Trade cards, faculty cards, achievement panels, testimonial cards. Each follows the same logic: real photo block, bilingual title, meta row, brief description, optional CTA.
+    </p>
+
+    <h3 class="block-title">Trade card example — Fitter</h3>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-photo green">
+          Workshop photo<br>
+          <small style="opacity:0.8; font-style:italic;">Replace with real KUMSS institute photography</small>
+        </div>
+        <div class="card-body">
+          <h4 class="trade-marathi">फिटर</h4>
+          <p class="trade-english">Fitter</p>
+          <div class="meta-row">
+            <span><strong>Duration:</strong> 2 years</span>
+            <span><strong>Eligibility:</strong> 10th pass</span>
+          </div>
+          <p>Precision metal work — bench fitting, lathe operation, assembly, inspection. One of the most demanded trades in Pune's automotive industry corridor.</p>
+          <a href="#" class="btn btn-primary" style="font-size: 13px; padding: 10px 18px;">Apply Now / प्रवेश घ्या</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-photo saffron">
+          Workshop photo<br>
+          <small style="opacity:0.85; font-style:italic;">Replace with real KUMSS institute photography</small>
+        </div>
+        <div class="card-body">
+          <h4 class="trade-marathi">इलेक्ट्रिशियन</h4>
+          <p class="trade-english">Electrician</p>
+          <div class="meta-row">
+            <span><strong>Duration:</strong> 2 years</span>
+            <span><strong>Eligibility:</strong> 10th pass</span>
+          </div>
+          <p>Wiring, panel work, electrical safety, motor controls. Strong demand across construction, manufacturing, and infrastructure sectors.</p>
+          <a href="#" class="btn btn-primary" style="font-size: 13px; padding: 10px 18px;">Apply Now / प्रवेश घ्या</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-photo navy">
+          Workshop photo<br>
+          <small style="opacity:0.85; font-style:italic;">Replace with real KUMSS institute photography</small>
+        </div>
+        <div class="card-body">
+          <h4 class="trade-marathi">वेल्डर</h4>
+          <p class="trade-english">Welder</p>
+          <div class="meta-row">
+            <span><strong>Duration:</strong> 1 year</span>
+            <span><strong>Eligibility:</strong> 8th pass</span>
+          </div>
+          <p>Arc welding, gas welding, MIG/TIG, structural welding. High visual practice, high-demand trade across infrastructure and manufacturing.</p>
+          <a href="#" class="btn btn-primary" style="font-size: 13px; padding: 10px 18px;">Apply Now / प्रवेश घ्या</a>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="block-title">Faculty card</h3>
+    <div class="card-grid">
+      <div class="card" style="max-width: 360px;">
+        <div class="card-photo">
+          Faculty portrait<br>
+          <small style="font-style:italic;">Replace with real faculty photo</small>
+        </div>
+        <div class="card-body">
+          <h4 style="font-family: var(--serif); font-size: 20px; color: var(--navy); margin: 0 0 4px;">श्री. [Faculty Name] सर</h4>
+          <p style="font-family: var(--sans); font-size: 14px; color: var(--kesari); font-weight: 600; margin: 0 0 12px;">Fitter Trade · Senior Instructor</p>
+          <p style="font-size: 14px; margin: 0;">[Years] years of teaching experience. Multiple cohorts trained in precision fitting and industrial workshop practice.</p>
+        </div>
+      </div>
+
+      <div class="card" style="max-width: 360px;">
+        <div class="card-photo" style="background: var(--sanstha-green-tint); color: var(--white);">
+          Achievement photo<br>
+          <small style="font-style:italic; opacity:0.85;">India Book of Records artifact — once verified</small>
+        </div>
+        <div class="card-body">
+          <h4 style="font-family: var(--serif); font-size: 18px; color: var(--navy); margin: 0 0 8px;">Recognition · External Achievement</h4>
+          <p style="font-family: var(--devanagari); font-size: 15px; margin: 0 0 12px;">[Achievement details — once source-verified]</p>
+          <p style="font-size: 13px; color: var(--navy-tint); margin: 0;"><em>🔍 NEEDS SOURCE VERIFICATION</em></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     10. SOCIAL MEDIA POST TEMPLATES
+     ============================================ -->
+<section class="section" style="background: var(--cream-darker);">
+  <div class="container">
+    <div class="section-label">10 · Social Media Templates</div>
+    <h2 class="section-title">Instagram + Facebook post formats</h2>
+    <p class="section-subtitle">
+      Square 1080×1080 (default) · Portrait 1080×1350 (high engagement) · Story 1080×1920. Marathi headline above English. Lockup top corner. Sober institutional posture.
+    </p>
+
+    <div class="post-grid">
+      <div class="post">
+        <div class="post-canvas">
+          <div class="post-content">
+            <div class="top">
+              <div class="micro-lockup"><span class="ku">KU</span><span class="mss">MSS</span></div>
+              <div style="font-size: 10px; color: var(--navy-tint); letter-spacing: 0.1em;">FACULTY</div>
+            </div>
+            <div>
+              <p class="post-headline-mr">अनुभवी प्रशिक्षक</p>
+              <p class="post-headline-en">Experienced trainers, real workshops</p>
+              <p class="post-body-text">श्री. [Name] सर — [X] वर्षांचा अनुभव. शेकडो विद्यार्थ्यांना प्रशिक्षित केले आहे.</p>
+            </div>
+            <div class="post-cta">KUMSS · ITI Baramati</div>
+          </div>
+        </div>
+        <div class="post-label">Square 1:1 · Faculty highlight <span class="dim">Light surface variant</span></div>
+      </div>
+
+      <div class="post dark">
+        <div class="post-canvas">
+          <div class="post-content">
+            <div class="top">
+              <div class="micro-lockup"><span class="ku">KU</span><span class="mss">MSS</span></div>
+              <div style="font-size: 10px; color: var(--cream-darker); letter-spacing: 0.1em;">ACHIEVEMENT</div>
+            </div>
+            <div>
+              <p class="post-headline-mr">कौशल्याची ओळख</p>
+              <p class="post-headline-en">Skill that earns recognition</p>
+              <p class="post-body-text">आमच्या विद्यार्थ्यांनी [event] येथे [achievement] मिळवले.</p>
+            </div>
+            <div class="post-cta">KUMSS · ITI Karhati</div>
+          </div>
+        </div>
+        <div class="post-label">Square 1:1 · Achievement post <span class="dim">Dark surface variant</span></div>
+      </div>
+
+      <div class="post saffron">
+        <div class="post-canvas portrait">
+          <div class="post-content">
+            <div class="top">
+              <div class="micro-lockup"><span class="ku">KU</span><span class="mss">MSS</span></div>
+              <div style="font-size: 10px; color: var(--cream); letter-spacing: 0.1em;">ADMISSION</div>
+            </div>
+            <div>
+              <p class="post-headline-mr" style="font-size: 26px;">प्रवेश सुरू</p>
+              <p class="post-headline-en" style="font-size: 20px;">2026-27 Academic Year</p>
+              <p class="post-body-text">Fitter · Electrician · Welder · Electronics<br>Eligibility: 8th / 10th pass</p>
+            </div>
+            <div class="post-cta">+91 [contact] · KUMSS Karhati</div>
+          </div>
+        </div>
+        <div class="post-label">Portrait 4:5 · Admission post <span class="dim">Saffron surface variant</span></div>
+      </div>
+
+      <div class="post green">
+        <div class="post-canvas">
+          <div class="post-content">
+            <div class="top">
+              <div class="micro-lockup"><span class="ku">KU</span><span class="mss">MSS</span></div>
+              <div style="font-size: 10px; color: var(--cream); letter-spacing: 0.1em;">FESTIVAL</div>
+            </div>
+            <div>
+              <p class="post-headline-mr">महाराष्ट्र दिनाच्या हार्दिक शुभेच्छा</p>
+              <p class="post-headline-en">Happy Maharashtra Day</p>
+              <p class="post-body-text">कौशल्य निर्माण करणारी मराठी भूमी — आम्ही त्या परंपरेचा भाग आहोत.</p>
+            </div>
+            <div class="post-cta">KUMSS · Karhati Baramati</div>
+          </div>
+        </div>
+        <div class="post-label">Square 1:1 · Festival post <span class="dim">Green surface variant</span></div>
+      </div>
+    </div>
+
+    <div class="note">
+      <strong>Post-type rules:</strong> Real institute photography in the photo zone (not stock). Marathi headline above English. Lockup small, top corner. Sober tone. No motivational quote posts. No urgency banners. No emoji-stuffed copy.
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     11. GMB POST TEMPLATES
+     ============================================ -->
+<section class="section">
+  <div class="container">
+    <div class="section-label">11 · GMB Templates</div>
+    <h2 class="section-title">Google Business Profile posts</h2>
+    <p class="section-subtitle">
+      4:3 landscape (1200×900) · Marathi headline above English · Real photo subject · Lockup top-left · CTA aligned to post type. Cadence: 1–2 per week.
+    </p>
+
+    <div class="post-grid">
+      <div class="post">
+        <div class="post-canvas landscape" style="background: var(--cream);">
+          <div class="post-content">
+            <div class="top">
+              <div class="micro-lockup"><span class="ku">KU</span><span class="mss">MSS</span></div>
+              <div style="font-size: 10px; color: var(--navy-tint); letter-spacing: 0.1em;">EVENT</div>
+            </div>
+            <div>
+              <p class="post-headline-mr" style="font-size: 19px;">उद्योग भेट</p>
+              <p class="post-headline-en" style="font-size: 14px;">Industry Visit — [Company]</p>
+              <p class="post-body-text" style="font-size: 12px;">आमच्या विद्यार्थ्यांनी कारखान्यातील प्रत्यक्ष कामकाज पाहिले.</p>
+            </div>
+            <div class="post-cta" style="font-size: 11px;">Visit us · Call now</div>
+          </div>
+        </div>
+        <div class="post-label">GMB · 1200×900 · Industry visit</div>
+      </div>
+
+      <div class="post">
+        <div class="post-canvas landscape" style="background: var(--cream-darker);">
+          <div class="post-content">
+            <div class="top">
+              <div class="micro-lockup"><span class="ku">KU</span><span class="mss">MSS</span></div>
+              <div style="font-size: 10px; color: var(--navy-tint); letter-spacing: 0.1em;">FACILITY</div>
+            </div>
+            <div>
+              <p class="post-headline-mr" style="font-size: 19px;">आमची कार्यशाळा</p>
+              <p class="post-headline-en" style="font-size: 14px;">Our workshop — Real machinery, real practice</p>
+              <p class="post-body-text" style="font-size: 12px;">Inside the KUMSS ITI fitter workshop.</p>
+            </div>
+            <div class="post-cta" style="font-size: 11px;">Visit our campus</div>
+          </div>
+        </div>
+        <div class="post-label">GMB · 1200×900 · Facility highlight</div>
+      </div>
+
+      <div class="post saffron">
+        <div class="post-canvas landscape">
+          <div class="post-content">
+            <div class="top">
+              <div class="micro-lockup"><span class="ku">KU</span><span class="mss">MSS</span></div>
+              <div style="font-size: 10px; color: var(--cream); letter-spacing: 0.1em;">ADMISSION</div>
+            </div>
+            <div>
+              <p class="post-headline-mr" style="font-size: 22px;">प्रवेश सुरू — २०२६-२७</p>
+              <p class="post-headline-en" style="font-size: 14px;">2026-27 Admissions Open</p>
+              <p class="post-body-text" style="font-size: 12px;">Fitter · Electrician · Welder · Electronics</p>
+            </div>
+            <div class="post-cta" style="font-size: 11px;">WhatsApp · Call · Visit</div>
+          </div>
+        </div>
+        <div class="post-label">GMB · 1200×900 · Admission update</div>
+      </div>
+    </div>
+
+    <div class="note note-warn">
+      <strong>GMB rules:</strong> No "offer" posts (KUMSS doesn't run discount-style offers) · No urgency banners · No external links beyond institute website / WhatsApp · No quoted placement % or guaranteed-job claims · No political content · No motivational quotes.
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     12. ADMISSION CAMPAIGN
+     ============================================ -->
+<section class="section" style="background: var(--cream-darker);">
+  <div class="container">
+    <div class="section-label">12 · Admission Campaign</div>
+    <h2 class="section-title">Admission creative template</h2>
+    <p class="section-subtitle">
+      Saffron-led palette during admission cycle (active / aspirational color signals active cycle). Marathi-led copy. Bilingual trade list. Calm CTA — no urgency.
+    </p>
+
+    <div class="admission-creative">
+      <div class="admission-creative-inner">
+        <div class="micro-lockup">KUMSS · ITI Karhati</div>
+        <h3>प्रवेश सुरू<br>शैक्षणिक वर्ष २०२६-२७</h3>
+        <p class="english-sub">Admissions Open · Academic Year 2026-27</p>
+        <div class="trade-list">
+          <strong>उपलब्ध ट्रेड्स / Available Trades:</strong><br>
+          • फिटर / Fitter (2 years)<br>
+          • इलेक्ट्रिशियन / Electrician (2 years)<br>
+          • वेल्डर / Welder (1 year)<br>
+          • इलेक्ट्रॉनिक्स मेकॅनिक / Electronics Mechanic (2 years)
+        </div>
+        <p style="font-size: 14px; color: rgba(250,246,238,0.9); margin:0;">
+          पात्रता: ८वी / १०वी उत्तीर्ण (trade-wise) · Eligibility: 8th / 10th pass per trade
+        </p>
+        <div class="contact-row">
+          <span>📞 +91 [phone]</span>
+          <span>💬 WhatsApp</span>
+          <span>📍 Karhati, Tal-Baramati</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="note note-warn">
+      <strong>⚠️ Mandatory absences in admission creative:</strong> No "100% Placement" or "Guaranteed Placement." No quantified placement claims until verified. No affiliation badges (DGT/NCVT/DVET/ISO) until portal-verified. No false urgency. Acceptable replacements: "Active Placement Cell," "Industry-Connected Training," "DGT-Affiliated Training" (post-verification).
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     13. WEBSITE HERO
+     ============================================ -->
+<section class="section">
+  <div class="container">
+    <div class="section-label">13 · Website Hero</div>
+    <h2 class="section-title">Homepage hero example</h2>
+    <p class="section-subtitle">
+      Full-bleed real campus / workshop photography behind. Lockup top-left. Marathi headline + English headline stacked. Primary saffron CTA + secondary outline CTA. No carousel.
+    </p>
+
+    <div class="web-hero">
+      <div class="web-hero-inner">
+        <div>
+          <div style="font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--kesari-tint); margin-bottom: 16px; font-weight: 700;">
+            KUMSS Private I.T.I Karhati
+          </div>
+          <h2 class="marathi-hero">कौशल्य शिक्षणाची पारंपरिक संस्था</h2>
+          <h3 class="english-hero">Vocational training rooted in regional industry, built on generations of educational service.</h3>
+          <p>
+            An established Maharashtrian educational trust extending into skill-based vocational training. Workshop-based learning, experienced faculty, industry-connected trades. Located in Karhati, Tal-Baramati, Dist-Pune.
+          </p>
+          <div class="web-hero-buttons">
+            <a href="#" class="btn btn-primary">Apply Now / प्रवेश घ्या</a>
+            <a href="#" class="btn" style="background: transparent; color: var(--cream); border: 2px solid var(--cream);">Visit Campus / भेट द्या</a>
+          </div>
+        </div>
+        <div class="web-hero-photo">
+          Real campus / workshop hero photo<br>
+          <em style="font-size: 11px; display: block; margin-top: 8px;">Replace with real KUMSS institute photography</em>
+        </div>
+      </div>
+    </div>
+
+    <h4 class="sub-title">Trust band — verified items only</h4>
+    <div style="background: var(--white); border: 1px solid var(--sand-border); border-radius: 4px; padding: 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; text-align: center;">
+      <div>
+        <div style="font-family: var(--serif); font-size: 28px; font-weight: 700; color: var(--kesari);">Multi-decade</div>
+        <div style="font-size: 12px; color: var(--navy-tint); letter-spacing: 0.08em;">Educational heritage ✅</div>
+      </div>
+      <div>
+        <div style="font-family: var(--serif); font-size: 28px; font-weight: 700; color: var(--sanstha-green);">7</div>
+        <div style="font-size: 12px; color: var(--navy-tint); letter-spacing: 0.08em;">Institutes under trust ✅</div>
+      </div>
+      <div>
+        <div style="font-family: var(--serif); font-size: 28px; font-weight: 700; color: var(--navy);">4.9★</div>
+        <div style="font-size: 12px; color: var(--navy-tint); letter-spacing: 0.08em;">104 GMB reviews ✅</div>
+      </div>
+      <div>
+        <div style="font-family: var(--serif); font-size: 28px; font-weight: 700; color: var(--ochre);">DGT</div>
+        <div style="font-size: 12px; color: var(--navy-tint); letter-spacing: 0.08em;">Affiliated 🔍 verification pending</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     14. TRADE CARDS (already shown — extended view)
+     15. FOOTER / NAP
+     ============================================ -->
+<section class="section" style="background: var(--cream-darker);">
+  <div class="container">
+    <div class="section-label">15 · Footer / NAP Layout</div>
+    <h2 class="section-title">Canonical footer pattern</h2>
+    <p class="section-subtitle">
+      Multi-column layout · NAP bilingual · Verified affiliations only · Sanskrit shloka as ceremonial anchor. NAP itself pending client confirmation in Discovery Call 1.
+    </p>
+
+    <div class="footer-example">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h5>KUMSS · कुमस</h5>
+          <p style="font-family: var(--devanagari); margin-bottom: 12px;">कृषि उद्योग मूल शिक्षण संस्था<br>KUMSS Private I.T.I Karhati</p>
+          <p style="font-size: 13px; opacity: 0.7; font-style: italic;">An established Maharashtrian educational trust serving rural Pune district for generations.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Quick Links</h5>
+          <ul>
+            <li>About / आमच्या विषयी</li>
+            <li>Trades / ट्रेड्स</li>
+            <li>Admissions / प्रवेश</li>
+            <li>Achievements / यश</li>
+            <li>Contact / संपर्क</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <p style="font-family: var(--devanagari); font-size: 13px;">कारहाटी / मालवाडी,<br>तालुका बारामती, जिल्हा पुणे, ४१२२०४</p>
+          <p style="font-size: 13px;">📞 [phone — pending NAP lock]</p>
+          <p style="font-size: 13px;">💬 WhatsApp · 📧 [email]</p>
+        </div>
+        <div class="footer-col">
+          <h5>Recognition</h5>
+          <ul style="font-size: 13px;">
+            <li>4.9★ across 104 reviews ✅</li>
+            <li>DGT affiliated 🔍</li>
+            <li>NCVT recognized 🔍</li>
+            <li>DVET registered 🔍</li>
+            <li>ISO 9001:2015 🔍</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-lockup-row">
+        <div>
+          <div style="font-size: 18px; font-weight: 800; margin-bottom: 4px;"><span style="color: var(--kesari);">KU</span><span style="color: var(--cream);">MSS</span></div>
+          <div>© KUMSS · Krishi Udyog Mool Shikshan Sanstha</div>
+        </div>
+        <div class="shloka-line">॥ उद्धरेदात्मनात्मानम् ॥</div>
+      </div>
+    </div>
+
+    <div class="note note-warn">
+      <strong>⚠️ NEEDS IMPORTANT UPDATE:</strong> Canonical NAP locked in Discovery Call 1. Until confirmed, footer carries most-recently-verified NAP from Day 0 audit. All affiliation badges (DGT/NCVT/DVET/ISO) marked 🔍 until portal verification completes.
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     16. PHOTOGRAPHY DIRECTION
+     ============================================ -->
+<section class="section">
+  <div class="container">
+    <div class="section-label">16 · Photography Direction</div>
+    <h2 class="section-title">What to photograph</h2>
+    <p class="section-subtitle">
+      Documentary, not staged. Warm natural light. Real Marathi-speaking students in real environments. Multi-person frames over single-hero portraits. Captions in Marathi for parent-facing surfaces, English for B2B / institutional.
+    </p>
+
+    <div class="photo-direction">
+      <div class="photo-slot">
+        <div>
+          <div class="slot-label">Workshop in operation</div>
+          <div class="slot-desc">Students at fitting bench, electrician wiring, welder in arc, draughtsman at drawing board. Real machinery, real PPE, real tools.</div>
+        </div>
+        <div class="slot-replace">Replace with real KUMSS institute photography</div>
+      </div>
+      <div class="photo-slot">
+        <div>
+          <div class="slot-label">Classroom in session</div>
+          <div class="slot-desc">Faculty teaching, students engaged, real chalkboard / whiteboard, learning materials visible. Mid-shot or wide.</div>
+        </div>
+        <div class="slot-replace">Replace with real KUMSS institute photography</div>
+      </div>
+      <div class="photo-slot">
+        <div>
+          <div class="slot-label">Faculty portrait</div>
+          <div class="slot-desc">Mid-shot, environment behind (workshop / lab), warm natural side light, direct or three-quarter angle, dignified.</div>
+        </div>
+        <div class="slot-replace">Replace with real faculty portraits</div>
+      </div>
+      <div class="photo-slot">
+        <div>
+          <div class="slot-label">Student in trade environment</div>
+          <div class="slot-desc">Trade-specific space — Electronics Mech with circuit, Interior Design with material samples. Hands working.</div>
+        </div>
+        <div class="slot-replace">Replace with real KUMSS student photos (consent required)</div>
+      </div>
+      <div class="photo-slot">
+        <div>
+          <div class="slot-label">Infrastructure</div>
+          <div class="slot-desc">Workshop wide shots, library, hostel exterior, computer lab, campus exterior. Architectural-institutional photography.</div>
+        </div>
+        <div class="slot-replace">Replace with real KUMSS infrastructure photos</div>
+      </div>
+      <div class="photo-slot">
+        <div>
+          <div class="slot-label">Achievements & events</div>
+          <div class="slot-desc">Award ceremonies, certificate presentations, milestones (India Book of Records event, once verified).</div>
+        </div>
+        <div class="slot-replace">Replace with real event documentation</div>
+      </div>
+    </div>
+
+    <h4 class="sub-title">Photography don'ts</h4>
+    <ul style="font-size: 14px; line-height: 1.7; color: var(--charcoal); padding-left: 24px;">
+      <li>No stock photos of foreign / coached students (current problem on the kumss.org ITI trade cards)</li>
+      <li>No "graduate with diploma in hand" hero shots</li>
+      <li>No coached smiles or corporate handshake shots</li>
+      <li>No "modern campus" CGI / 3D renders</li>
+      <li>No aerial / drone shots (feels real-estate-style)</li>
+      <li>No macro shots of textbooks / pens / study-aesthetic objects</li>
+      <li>No group photos with students arranged like school assembly</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================
+     17. AI PROMPT EXAMPLES
+     ============================================ -->
+<section class="section" style="background: var(--cream-darker);">
+  <div class="container">
+    <div class="section-label">17 · AI Image Prompts</div>
+    <h2 class="section-title">Ready-to-use AI prompts</h2>
+    <p class="section-subtitle">
+      Working prompt examples for Midjourney / ChatGPT / Ideogram / Recraft / Flux. Universal master DNA block + content-type-specific prompts. Full template library in <code>KUMSS_01_AI_Prompting_Style_Guide.md</code>.
+    </p>
+
+    <h4 class="sub-title">Universal KUMSS DNA block</h4>
+    <div class="prompt-box">
+<span class="prompt-meta">KUMSS Visual DNA · Use in every prompt</span>Subject: Marathi-speaking students, faculty, or trade environments at an
+Indian vocational training institute in semi-urban Maharashtra.
+
+Style: documentary institutional photography — the register of a Maharashtra
+Krishi Vigyan Kendra outreach photo, a state agriculture university annual
+report, or a cooperative bank's heritage brochure.
+
+Lighting: warm natural daylight, golden hour bias, soft shadows. No cold
+studio lighting, no premium hospitality lighting.
+
+Palette: warm saffron (#E85D04), institutional green (#1B6B3D), navy
+(#1A2540), warm cream (#FAF6EE).
+
+Composition: symmetric or near-symmetric framing. Subject treated with
+dignity and weight. Generous breathing room for headline overlay.
+
+Mood: grounded, focused, real, institutional, dignified.
+
+Avoid: SaaS landing page aesthetic, international school aesthetic, premium
+luxury, coaching brand hype, motivational poster register, futuristic /
+hologram overlays, Western stock photo models, coached smiles, pastel
+candy palettes.</div>
+
+    <h4 class="sub-title">Trade-specific prompt — Fitter</h4>
+    <div class="prompt-box">
+<span class="prompt-meta">Trade spotlight · Fitter · Instagram post</span>A young Marathi-speaking student in a workshop, working at a fitting bench
+with hand tools and a partially assembled metal component.
+
+Style: documentary institutional photography, real and grounded, in the
+register of a Maharashtra Krishi Vigyan Kendra outreach photo.
+
+Lighting: warm natural daylight from a side window, golden hour bias.
+
+Color palette: deep green workshop walls, warm saffron accents on safety
+signage, navy work apron, cream concrete floor.
+
+Composition: medium shot, slightly elevated angle, symmetric framing, student
+slightly off-center looking at the work, not the camera.
+
+Mood: focused, calm, dignified.
+
+Avoid: stock photography, posed handshake, corporate tech style, modern SaaS
+aesthetic, coaching banner aesthetic, glowing 3D circuits, futuristic
+overlays, pastel colors, cartoon illustration, Western models, coached smiles.</div>
+
+    <h4 class="sub-title">Admission banner prompt</h4>
+    <div class="prompt-box">
+<span class="prompt-meta">Admission campaign · Master banner</span>A young Marathi-speaking student standing in front of a vocational training
+institute building, holding a notebook, looking thoughtfully toward the
+middle distance. Building has institutional character — warm cream walls,
+saffron accent signage, real architecture.
+
+Style: warm documentary institutional photography, Maharashtra educational
+poster register.
+
+Lighting: golden hour, warm natural light, soft shadows.
+
+Color palette: saffron building accents, navy clothing, cream walls, deep
+green plants visible in surrounds.
+
+Composition: portrait 4:5, student on right third, left two-thirds clear
+for headline overlay added in post-production.
+
+Mood: hopeful, grounded, real.
+
+Avoid: coaching brand aesthetic, urgency banners, coached posing, hologram
+effects, modern tech startup look, Western styling, premium hospitality
+lighting, stock photography composition.</div>
+
+    <div class="note">
+      <strong>Marathi text handling:</strong> Default workflow is to generate the image with no text, leave clean breathing room in composition, then add Marathi text in post-production using Mukta Vaani / Hind / Tiro Devanagari. Native Marathi generation is only acceptable on Recraft / Ideogram with character-by-character QA.
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     18. DO / DON'T VISUAL RULES
+     ============================================ -->
+<section class="section">
+  <div class="container">
+    <div class="section-label">18 · Do / Don't</div>
+    <h2 class="section-title">Visual rules — what to do, what to avoid</h2>
+    <p class="section-subtitle">
+      Compressed checklist for designers and content creators. Anything that violates the "Don't" column should be rejected before shipping, regardless of how good it looks.
+    </p>
+
+    <div class="do-dont-grid">
+      <div class="do-dont do-col">
+        <h4>Do</h4>
+        <ul>
+          <li>Lead with Marathi on parent-facing surfaces</li>
+          <li>Use real institute photography wherever possible</li>
+          <li>Treat trade skills as identity-positive</li>
+          <li>Reference multi-decade heritage as institutional context</li>
+          <li>Use canonical logo with full lockup on official surfaces</li>
+          <li>Carry the Sanskrit shloka on institutional materials</li>
+          <li>Use the locked palette (saffron, green, navy, cream)</li>
+          <li>State specific facts when making claims</li>
+          <li>Use bilingual headlines on parent-facing surfaces</li>
+          <li>Use WhatsApp as a primary inquiry channel</li>
+          <li>Respond to every GMB review within 7 days</li>
+          <li>Use canonical NAP exactly the same across every surface</li>
+        </ul>
+      </div>
+      <div class="do-dont dont-col">
+        <h4>Don't</h4>
+        <ul>
+          <li>Reproduce "100% Placement" or quantified placement claims</li>
+          <li>Claim affiliations without certificate verification</li>
+          <li>Lead with political-family identity in marketing copy</li>
+          <li>Use motivational quote graphics</li>
+          <li>Use urgency banners or countdown timers</li>
+          <li>Use coaching-brand hype register</li>
+          <li>Use SaaS / startup vocabulary</li>
+          <li>Use luxury / premium-minimalist aesthetic</li>
+          <li>Use international-school visual register</li>
+          <li>Use stock photos of foreign / coached models</li>
+          <li>Use AI-generated Marathi text without QA</li>
+          <li>Use cool corporate blue palettes</li>
+          <li>Use pastel rainbows or neons</li>
+          <li>Fabricate alumni quotes or recruiter associations</li>
+          <li>Strip the Sanskrit shloka from institutional surfaces</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     19. OPEN VERIFICATION ITEMS
+     ============================================ -->
+<section class="section" style="background: var(--cream-darker);">
+  <div class="container">
+    <div class="section-label">19 · Open Verification</div>
+    <h2 class="section-title">Pending items</h2>
+    <p class="section-subtitle">
+      Items that refresh this design system as they land. None blocks the working-version execution; all are tracked actively and refresh-in-place.
+    </p>
+
+    <div class="verification-list">
+      <div class="verification-row">
+        <div><span class="v-marker v-confirm">CONFIRM</span></div>
+        <div class="v-text">Engagement scope — ITI-only or trust-wide. Working assumption: ITI-only.</div>
+      </div>
+      <div class="verification-row">
+        <div><span class="v-marker v-confirm">CONFIRM</span></div>
+        <div class="v-text">Canonical NAP lock — drives every footer, contact card, GMB sync.</div>
+      </div>
+      <div class="verification-row">
+        <div><span class="v-marker v-confirm">CONFIRM</span></div>
+        <div class="v-text">Trade reconciliation — 4 trades (kumss.org) vs 7 trades (iti.kumss.org).</div>
+      </div>
+      <div class="verification-row">
+        <div><span class="v-marker v-update">UPDATE</span></div>
+        <div class="v-text">Vector logo files (SVG / AI / EPS) — current PNG works for working version; vector needed for production-grade design system.</div>
+      </div>
+      <div class="verification-row">
+        <div><span class="v-marker v-confirm">CONFIRM</span></div>
+        <div class="v-text">"100% Placement Assistance Guaranteed" claim on the ITI website — client conversation for safer rewording.</div>
+      </div>
+      <div class="verification-row">
+        <div><span class="v-marker v-verify">VERIFY</span></div>
+        <div class="v-text">DGT registration certificate — portal verification.</div>
+      </div>
+      <div class="verification-row">
+        <div><span class="v-marker v-verify">VERIFY</span></div>
+        <div class="v-text">NCVT MIS portal listing per trade — portal verification.</div>
+      </div>
+      <div class="verification-row">
+        <div><span class="v-marker v-verify">VERIFY</span></div>
+        <div class="v-text">DVET Maharashtra registration — portal verification.</div>
+      </div>
+      <div class="verification-row">
+        <div><span class="v-marker v-verify">VERIFY</span></div>
+        <div class="v-text">ISO 9001:2015 certificate (issuing body + validity).</div>
+      </div>
+      <div class="verification-row">
+        <div><span class="v-marker v-verify">VERIFY</span></div>
+        <div class="v-text">India Book of Records achievement (Feb 2026) — source documentation.</div>
+      </div>
+      <div class="verification-row">
+        <div><span class="v-marker v-access">ACCESS</span></div>
+        <div class="v-text">Google Search Console + Google Analytics — for SEO baseline.</div>
+      </div>
+      <div class="verification-row">
+        <div><span class="v-marker v-access">ACCESS</span></div>
+        <div class="v-text">GMB owner-side access (both profiles) + Pritimohol identification.</div>
+      </div>
+      <div class="verification-row">
+        <div><span class="v-marker v-update">UPDATE</span></div>
+        <div class="v-text">3 reference design collections + real institute photography shoot.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     20. QUICK REFERENCE
+     ============================================ -->
+<section class="section">
+  <div class="container">
+    <div class="section-label">20 · Quick Reference</div>
+    <h2 class="section-title">The brand on one card</h2>
+    <p class="section-subtitle">
+      For team daily reference. Print and keep visible. Everything below is the locked working-version brand spine.
+    </p>
+
+    <div class="qref">
+      <h3>KUMSS Brand Quick Reference</h3>
+      <div class="qref-sub">Working Version · Refresh as discovery and verification land</div>
+
+      <div class="qref-grid">
+        <div class="qref-block">
+          <div class="qref-label">Brand in one line</div>
+          <div class="qref-value">Established Maharashtrian educational trust offering vocational training built on multi-generational educational service.</div>
+        </div>
+        <div class="qref-block">
+          <div class="qref-label">Positioning anchor</div>
+          <div class="qref-value">Heritage-led · Institutional · Skill-education</div>
+        </div>
+        <div class="qref-block">
+          <div class="qref-label">Philosophical core</div>
+          <div class="qref-value marathi shloka">॥ उद्धरेदात्मनात्मानम् ॥</div>
+          <div style="font-size: 12px; color: var(--navy-tint); margin-top: 6px;">"Lift yourself by yourself"</div>
+        </div>
+        <div class="qref-block">
+          <div class="qref-label">Primary audience</div>
+          <div class="qref-value">Marathi-speaking parents of 15–22 year olds in semi-urban Western Maharashtra (Baramati / South Pune).</div>
+        </div>
+        <div class="qref-block">
+          <div class="qref-label">Primary language</div>
+          <div class="qref-value">Marathi. English supportive.</div>
+        </div>
+        <div class="qref-block">
+          <div class="qref-label">Voice attributes</div>
+          <div class="qref-value">Grounded · Institutional · Specific · Bilingual-respectful · Skill-respectful · Heritage-aware · Honest about limits · Calm · Warm</div>
+        </div>
+        <div class="qref-block">
+          <div class="qref-label">Primary colors</div>
+          <div class="qref-value" style="font-family: 'Courier New', monospace; font-size: 13px;">
+            Kesari Saffron · #E85D04<br>
+            Sanstha Green · #1B6B3D<br>
+            Institutional Navy · #1A2540<br>
+            Warm Cream · #FAF6EE
+          </div>
+        </div>
+        <div class="qref-block">
+          <div class="qref-label">Typography (working)</div>
+          <div class="qref-value" style="font-size: 13px;">
+            <strong>English headline:</strong> Georgia · Source Serif Pro<br>
+            <strong>English body:</strong> System sans (-apple-system stack)<br>
+            <strong>Devanagari:</strong> Mukta Vaani · Hind · Mangal<br>
+            <strong>Sanskrit:</strong> Tiro Devanagari Sanskrit
+          </div>
+        </div>
+        <div class="qref-block">
+          <div class="qref-label">Top 5 don'ts</div>
+          <div class="qref-value" style="font-size: 13px;">
+            1. No "100% Placement" / quantified placement claims<br>
+            2. No coaching brand hype / urgency banners<br>
+            3. No SaaS / international school / luxury aesthetic<br>
+            4. No political-family-led marketing claims<br>
+            5. No motivational quote graphics
+          </div>
+        </div>
+        <div class="qref-block">
+          <div class="qref-label">Top 5 dos</div>
+          <div class="qref-value" style="font-size: 13px;">
+            1. Lead with Marathi on parent-facing surfaces<br>
+            2. Use real institute photography<br>
+            3. Treat trade skills as identity-positive<br>
+            4. Carry the Sanskrit shloka on institutional surfaces<br>
+            5. Apply the 10-question check before publishing
+          </div>
+        </div>
+        <div class="qref-block">
+          <div class="qref-label">Pairs with</div>
+          <div class="qref-value" style="font-size: 13px;">
+            <code>KUMSS_00_Strategic_Research_Intelligence.md</code><br>
+            <code>KUMSS_01_Design_Instructions.md</code><br>
+            <code>KUMSS_01_AI_Prompting_Style_Guide.md</code><br>
+            <code>KUMSS_02_Master_Brand_Brain.md</code>
+          </div>
+        </div>
+        <div class="qref-block">
+          <div class="qref-label">Refresh triggers</div>
+          <div class="qref-value" style="font-size: 13px;">
+            Discovery Call 1 land · Portal verifications complete · Access provisioning · Real photography shoot · 3 references collected · Vector logo received
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     FOOTER
+     ============================================ -->
+<footer class="footer-meta">
+  <div class="shloka-line">॥ उद्धरेदात्मनात्मानम् ॥</div>
+  <div>KUMSS_03 — Design System HTML · Working Version · 2026-05-20</div>
+  <div class="small">Source inputs: KUMSS_00 · KUMSS_01 (both) · KUMSS_02 · logo calibration · logo verification · KUMSS logo.png</div>
+</footer>
+
+</body>
+</html>
