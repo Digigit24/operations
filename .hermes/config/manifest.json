@@ -1,0 +1,234 @@
+{
+  "system": {
+    "name": "DigiTech Operations",
+    "version": "1.0.0",
+    "workspace_root": "E:/digitech/operations",
+    "repo_url": "https://github.com/yourorg/operations",
+    "timezone": "Asia/Kolkata",
+    "environment": "production"
+  },
+
+  "hermes": {
+    "profile_name": "digitech-ops",
+    "workdir": "E:/digitech/operations",
+    "config_dir": ".hermes",
+    "auto_reload": true,
+    "reload_interval_minutes": 5
+  },
+
+  "whatsapp": {
+    "enabled": true,
+    "gateway": "default",
+    "admin_number": "919142982138",
+    "audit_number": "919142982138",
+    "team_communications": {
+      "rules": [
+        "All team messages are logged for audit purposes",
+        "Sensitive commands require admin confirmation",
+        "Deploy commands always ask for confirmation",
+        "Status updates are public to all team members",
+        "Task assignments notify the assigned person",
+        "Error reports go to admin immediately"
+      ],
+      "formatting": {
+        "use_emojis": true,
+        "max_message_length": 2000,
+        "prefer_bullets": true,
+        "no_markdown_tables": true
+      },
+      "notifications": {
+        "on_task_create": true,
+        "on_deploy": true,
+        "on_error": true,
+        "daily_digest": false
+      }
+    }
+  },
+
+  "team": {
+    "919142982138": {
+      "name": "Ritik Roushan",
+      "role": "admin",
+      "email": "ritik@thedigitechsolutions.com",
+      "access": {
+        "repos": ["*"],
+        "commands": ["*"],
+        "agents": ["*"],
+        "workspaces": ["*"]
+      },
+      "preferences": {
+        "digest_time": "09:00",
+        "timezone": "Asia/Kolkata"
+      }
+    }
+  },
+
+  "repos": {
+    "client-portal": {
+      "path": "repos/client-portal",
+      "description": "Client-facing portal application",
+      "branch": "main",
+      "deploy_cmd": "npm run deploy",
+      "status": "active",
+      "team": ["919142982138"]
+    },
+    "internal-tools": {
+      "path": "repos/internal-tools",
+      "description": "Internal automation scripts and tools",
+      "branch": "main",
+      "deploy_cmd": "python deploy.py",
+      "status": "active",
+      "team": ["919142982138"]
+    },
+    "website": {
+      "path": "repos/website",
+      "description": "Company website and landing pages",
+      "branch": "main",
+      "deploy_cmd": "vercel --prod",
+      "status": "active",
+      "team": ["919142982138"]
+    }
+  },
+
+  "agents": {
+    "operations": {
+      "prompt_file": "agents/operations.md",
+      "description": "General operations and coordination",
+      "default": true,
+      "capabilities": ["repo", "status", "task", "ask", "deploy"]
+    },
+    "admin": {
+      "prompt_file": "agents/admin.md",
+      "description": "System administration and overrides",
+      "default": false,
+      "capabilities": ["*"]
+    }
+  },
+
+  "slash_commands": {
+    "help": {
+      "description": "Show available commands",
+      "syntax": "help [command]",
+      "examples": ["help", "help repo"],
+      "agent": "operations",
+      "public": true
+    },
+    "repo": {
+      "description": "List or switch repos",
+      "syntax": "repo [list|switch <name>|status]",
+      "examples": ["repo list", "repo switch client-portal", "repo status"],
+      "agent": "operations",
+      "public": true
+    },
+    "status": {
+      "description": "Show workspace status",
+      "syntax": "status",
+      "examples": ["status"],
+      "agent": "operations",
+      "public": true
+    },
+    "task": {
+      "description": "Manage tasks",
+      "syntax": "task [add <description>|list|done <id>|assign <who> <what>]",
+      "examples": ["task add Fix login bug", "task list", "task done 3", "task assign Alice Review PR"],
+      "agent": "operations",
+      "public": true
+    },
+    "deploy": {
+      "description": "Deploy a repo",
+      "syntax": "deploy <repo-name>",
+      "examples": ["deploy website"],
+      "agent": "operations",
+      "requires_confirmation": true,
+      "requires_role": ["admin"],
+      "public": false
+    },
+    "ask": {
+      "description": "Ask the agent anything",
+      "syntax": "ask <question>",
+      "examples": ["ask How do I reset the staging db?"],
+      "agent": "current",
+      "public": true
+    },
+    "agent": {
+      "description": "Switch agent personality",
+      "syntax": "agent [list|switch <name>]",
+      "examples": ["agent list", "agent switch sophie", "agent switch admin"],
+      "agent": "admin",
+      "requires_role": ["admin"],
+      "public": false
+    },
+    "config": {
+      "description": "Show or reload config",
+      "syntax": "config [show|reload]",
+      "examples": ["config show", "config reload"],
+      "agent": "admin",
+      "requires_role": ["admin"],
+      "public": false
+    }
+  },
+
+  "cron": {
+    "enabled": false,
+    "jobs": {
+      "daily_digest": {
+        "schedule": "0 9 * * *",
+        "description": "Send daily task summary to team",
+        "enabled": false,
+        "recipients": ["919142982138"],
+        "template": "prompts/daily-digest.md"
+      },
+      "weekly_report": {
+        "schedule": "0 10 * * 1",
+        "description": "Send weekly activity report to admin",
+        "enabled": false,
+        "recipients": ["919142982138"],
+        "template": "prompts/weekly-report.md"
+      },
+      "reminder_check": {
+        "schedule": "*/15 * * * *",
+        "description": "Check and send due reminders",
+        "enabled": false,
+        "template": "prompts/reminder.md"
+      }
+    }
+  },
+
+  "reminders": {
+    "enabled": false,
+    "storage": "cron/reminders.json",
+    "max_reminders_per_user": 10,
+    "default_snooze_minutes": 15
+  },
+
+  "audit": {
+    "enabled": true,
+    "log_file": "cron/audit.log",
+    "log_level": "info",
+    "events": ["command_used", "repo_switched", "task_created", "deploy_requested"],
+    "retention_days": 30
+  },
+
+  "composio": {
+    "enabled": true,
+    "zata_backend_url": "http://localhost:5000",
+    "workspace_map_endpoint": "/api/agent/workspace-map",
+    "client_context_endpoint": "/api/agent/workspace/:workspace_id/composio-context",
+    "token_storage": "zata_env",
+    "env_file": "E:/digitech/AIOS/.env",
+    "available_toolkits": [
+      "google_search_console",
+      "facebook",
+      "instagram",
+      "linkedin",
+      "youtube",
+      "twitter",
+      "google_ads"
+    ],
+    "rules": {
+      "read_only": true,
+      "allow_write_summary": true,
+      "allow_pm_reports": true
+    }
+  }
+}

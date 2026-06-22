@@ -1,0 +1,24 @@
+﻿{
+    "workspace":  {
+                      "root":  "E:/digitech/operations",
+                      "name":  "DigiTech Operations",
+                      "version":  "1.0.0",
+                      "manifest":  "E:\\digitech\\operations\\.hermes\\config\\manifest.json"
+                  },
+    "features":  {
+                     "cron_reminders":  false,
+                     "audit_reports":  true,
+                     "multi_workspace":  false,
+                     "auto_reload":  true,
+                     "confirm_destructive":  true
+                 },
+    "repos":  [
+                  "client-portal",
+                  "internal-tools",
+                  "website"
+              ],
+    "team":  {
+                 "count":  1,
+                 "admin":  "919142982138"
+             }
+}

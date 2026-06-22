@@ -1,0 +1,13 @@
+{
+  "reminders": [],
+  "templates": {
+    "task_due": "⏰ Reminder: Task #{id} is due now!\n• {task_description}\n• Assigned to: {assignee}\n• Created: {created_at}",
+    "meeting": "📅 Meeting Reminder:\n• {meeting_name}\n• Time: {time}\n• Attendees: {attendees}",
+    "custom": "🔔 Reminder for {name}:\n• {message}\n• Set by: {set_by}"
+  },
+  "settings": {
+    "default_snooze_minutes": 15,
+    "max_reminders_per_user": 10,
+    "cleanup_after_days": 7
+  }
+}

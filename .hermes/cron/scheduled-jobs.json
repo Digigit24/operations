@@ -1,0 +1,37 @@
+{
+  "jobs": {
+    "daily_digest": {
+      "enabled": false,
+      "schedule": "0 9 * * *",
+      "description": "Send daily task summary to team",
+      "recipients": ["919142982138"],
+      "template": "prompts/daily-digest.md",
+      "last_run": null,
+      "next_run": null
+    },
+    "weekly_report": {
+      "enabled": false,
+      "schedule": "0 10 * * 1",
+      "description": "Send weekly activity report to admin",
+      "recipients": ["919142982138"],
+      "template": "prompts/weekly-report.md",
+      "last_run": null,
+      "next_run": null
+    },
+    "reminder_check": {
+      "enabled": false,
+      "schedule": "*/15 * * * *",
+      "description": "Check and send due reminders",
+      "recipients": [],
+      "template": "prompts/reminder.md",
+      "last_run": null,
+      "next_run": null
+    }
+  },
+  "audit": {
+    "enabled": true,
+    "log_level": "info",
+    "events": ["command_used", "repo_switched", "task_created", "deploy_requested"],
+    "retention_days": 30
+  }
+}
