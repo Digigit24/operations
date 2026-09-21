@@ -1,7 +1,7 @@
 {
   "_meta": {
-    "generated_at": "2026-08-19T08:25:20.021914Z",
-    "total_entries": 74,
+    "generated_at": "2026-09-21T11:55:28.964542Z",
+    "total_entries": 75,
     "types": {
       "action": 4,
       "context": 5,
@@ -10,7 +10,7 @@
       "skill": 13,
       "sop": 13,
       "worker": 10,
-      "client": 15
+      "client": 16
     },
     "usage": "Read this manifest first. Find the entry. Fetch the file at path. Execute in 2-3 tool calls."
   },
@@ -787,6 +787,16 @@
       "related": [
         "sop_client_onboarding",
         "skill_onboarding_04_seo_foundation"
+      ]
+    },
+    {
+      "id": "client_aprik_fashion",
+      "type": "client",
+      "path": "clients/aprik fashion/client-strategy.md",
+      "when_to_use": "APRIK Designers & Institute (Hadapsar, Pune) — boutique + fashion institute; client strategy, research status, positioning, and prompt-chain progress",
+      "related": [
+        "sop_client_onboarding",
+        "skill_onboarding_01_research"
       ]
     }
   ],
@@ -1578,6 +1588,16 @@
         "related": [
           "sop_client_onboarding",
           "skill_onboarding_04_seo_foundation"
+        ]
+      },
+      {
+        "id": "client_aprik_fashion",
+        "type": "client",
+        "path": "clients/aprik fashion/client-strategy.md",
+        "when_to_use": "APRIK Designers & Institute (Hadapsar, Pune) — boutique + fashion institute; client strategy, research status, positioning, and prompt-chain progress",
+        "related": [
+          "sop_client_onboarding",
+          "skill_onboarding_01_research"
         ]
       }
     ]
