@@ -1,0 +1,2 @@
+# Original upload — the handover build prompt
+This folder normally holds untouched client uploads. The only "upload" in this session was the **PM/brand-strategist/archivist handover-system prompt** that generated this pack (pasted as text, 2026-07-16). It instructed: identify the client, review full project history, and build the 00–99 folder system with master files, CSV indexes, conflict register, naming rules, validation rules, and a ZIP. The four NRS strategy docs + logo were the pre-existing project files (copied into their labelled folders).

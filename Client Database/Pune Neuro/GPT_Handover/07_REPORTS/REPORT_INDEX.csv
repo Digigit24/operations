@@ -1,0 +1,9 @@
+Report ID,Report name,Report type,Platform,Date range,Status,Original source,Destination folder,Notes
+REP-001,No social media report found,Social media,Instagram/Facebook/LinkedIn,Unknown,MISSING,Current project files,07_REPORTS/01_Social_Media,Collect platform exports.
+REP-002,No Meta Ads report found,Ads,Meta Ads,Unknown,MISSING,Current project files,07_REPORTS/02_Meta_Ads,No ad account data.
+REP-003,No Google Ads report found,Ads,Google Ads,Unknown,MISSING,Current project files,07_REPORTS/03_Google_Ads,No ad account data.
+REP-004,No website analytics found,Website analytics,GA4/Search Console/Windsor,Unknown,BLOCKED/MISSING,Strategic Research,07_REPORTS/04_Website,Research says no fabricated SEO/GMB data; Windsor needed.
+REP-005,No SEO report found,SEO,Search Console/keyword tools,Unknown,BLOCKED/MISSING,Strategic Research,07_REPORTS/05_SEO,Qualitative opportunities only available.
+REP-006,No GMB report found,GMB,Google Business Profile,Unknown,NOT_APPLICABLE/MISSING,Strategic Research,07_REPORTS/06_GMB,GMB not applicable unless client confirms profile.
+REP-007,No lead report found,Leads,Forms/CRM,Unknown,MISSING,Current project files,07_REPORTS/07_Leads,NSP is not a patient lead-gen business; collect membership/event enquiry reports if any.
+REP-008,No monthly report found,Monthly report,Internal,Unknown,MISSING,Current project files,07_REPORTS/08_Monthly_Reports,Create after analytics collection.

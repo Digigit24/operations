@@ -1,0 +1,25 @@
+﻿Task_ID,Task,Category,Priority,Status,Owner,Source,Next_Action
+TASK-001,Confirm 150 monthly patients target definition and baseline,General,High,OPEN,,TaskOS/File Library,"Define whether target means unique consultations, procedures or all visits; add baseline and reporting owner."
+TASK-002,Prepare recurring Monday shoot plan,Video,Medium,OPEN,,TaskOS/File Library,"Create shot list including GMB photos, founder videos, equipment and privacy-safe B-roll."
+TASK-003,Write 15 video scripts,Video,Medium,OPEN,,TaskOS/File Library,Use Marathi framework; doctor-review medical facts; log status per script.
+TASK-004,Define 360-degree marketing plan,Strategy,Normal,OPEN,,TaskOS/File Library,"Translate into channel plan, funnel, budget, owners and KPIs."
+TASK-005,Plan YouTube videos,Video,Medium,OPEN,,TaskOS/File Library,"Prioritize founder introduction, MRI review, PRP, surgery second opinion and patient-safe education."
+TASK-006,Complete Dr. Sanjog personal-profile planning,Planning,Medium,OPEN,,TaskOS/File Library,"Define LinkedIn/Instagram voice, content series, profile assets and publication cadence."
+TASK-007,Deliver LinkedIn and Instagram blueprint,Social,Medium,OPEN,,TaskOS/File Library,"Build channel-specific pillars, frequency, format and approval process."
+TASK-008,Obtain GBP Manager access for Digitech,GMB,P0,OPEN,,Project state,Owner retains ownership; grant manager-level access; record date/account.
+TASK-009,Lock canonical NAP,GMB/SEO,P0,OPEN,,Project state,"Founder signs exact name, address, phone, website and hours."
+TASK-010,Decide compliant GBP business-name approach,GMB,P0,OPEN,,Project state/GMB Foundation,Assess current name evidence/ranking and approve clean or transition path.
+TASK-011,Complete GBP screenshot/Manager audit,GMB,P0,OPEN,,Project state/GMB Foundation,"Capture verification, categories, services, posts, photos, Q&A, hours and 90-day performance."
+TASK-012,Verify WhatsApp Business on canonical number,CRM/Front desk,P0,OPEN,,Project state,"Confirm ownership, privacy, quick replies, response hours and CTA links."
+TASK-013,Establish patient photo/story consent process,Compliance,P0,OPEN,,Project state/GMB Foundation,"Create consent form, register, storage location, permitted channels and withdrawal procedure."
+TASK-014,Collect logo master and variants,Assets,P0,OPEN,,Handover audit,Collect SVG/AI/EPS/PDF + transparent PNG + monochrome variants; record owner and approval.
+TASK-015,Collect editable creative files and links,Assets,P0,OPEN,,Handover audit,Collect Canva/Figma/PSD/AI/CDR/Premiere/AE links and source packages.
+TASK-016,Resolve phone-number conflict,NAP,P0,OPEN,,Handover audit,Confirm +91 91191 11837 vs +91 90284 31238 and update all live surfaces.
+TASK-017,Doctor-review master services and treatment list,Medical compliance,P0,OPEN,,Handover audit,"Approve exact names, indications, exclusions and claims for 21 GBP service drafts."
+TASK-018,Create approval and publication log,Governance,P0,OPEN,,Handover audit,"Record asset version, approver, date, channel, status and live URL."
+TASK-019,Collect analytics/report access and exports,Reports,P0,OPEN,,Handover audit,"GBP, GA4, GSC, Meta, Google Ads, Instagram/Facebook, CRM, calls, appointments."
+TASK-020,Replace fictional/demo patient content,Compliance/Content,P0,OPEN,,Project note and audit,Remove Mrs. M/demo stat from public-facing work; use consented verified cases only.
+TASK-021,Finalize recent knee-cartilage creative,Design,P1,OPEN,,File Library feedback,White/cream version; remove top-left hospital text; reduce bottom copy; handwriting treatment; medical approval; final client sign-off.
+TASK-022,Implement GMB month-one drafts only after audit,GMB,P1,BLOCKED,,GMB Foundation,"Approve/rewrite 8 posts, 10 Q&As, description and services after current-state audit."
+TASK-023,Implement P0 SEO pages and technical baseline,SEO,P1,BLOCKED,,SEO Foundation,"Audit current website; verify GSC/GA4; build Wakad/PCMC/Hinjewadi, doctor, knee/back, second opinion pages."
+TASK-024,Create privacy-safe review workflow,GMB/Front desk,P1,BLOCKED,,GMB Foundation,"Assign owner, use minimal patient data, secure log, one optional request, no rating pressure."

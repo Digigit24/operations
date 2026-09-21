@@ -1,0 +1,5 @@
+# CAMPAIGN: Social → Website Traffic (video + carousels citing essays)
+Objective: Convert social effort into site sessions (from ~50 → ~200 sessions/90d) and repair the broken cross-post pipeline.
+Tracks: (1) 30–90s video summaries of existing essays (IG Reels primary, YT Shorts, LinkedIn) with on-screen "Read the full essay at thinkinghealer.com/[slug]"; (2) 8–10-slide carousels with final CTA slide + QR; (3) retrofit 150+ existing cross-posts: Medium canonicals (28), Dev.to canonical_url (23), "Originally published at…" on Substack/LinkedIn/Minds, UTM on every link, CTA in first 200 words; (4) per-essay distribution checklist (Day 0–14).
+Status: PLANNED since May 2026 (client explicitly requested content flow continue + this track added). No scripts/creatives produced in this project. Canonical/UTM retrofit status UNKNOWN — verify against the distribution tracker.
+Assets available: 100 tweets (draft), UTM convention, CTA templates, top-essay shortlist (Heisenberg, Belief Stabilization, Uncertainty, Wittgenstein, Theseus).

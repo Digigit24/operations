@@ -1,0 +1,43 @@
+Photography Style: Most competitor sites use professional stock or in-house photos of: happy couples,
+smiling babies, prenatal care, and lab/doctors. They lean heavily on images of joyful infants and family.
+Clothing is clean and casual, settings are bright medical offices or parks. A few use illustrations (Nucleus’s
+IVF cartoon【37†】). Overall style is bright, optimistic. 
+Layout Patterns: Many follow a similar layout: large hero banner, icon-driven “why choose us,” grid of
+services, testimonials slider, FAQ section. Visual hierarchy often uses color blocks (pastel backgrounds) to
+separate sections. Plenty of white space, centered headings, and left-aligned body. Mobile-friendly
+“stacking.” 
+Design Clichés: We see lots of fertility cliches: baby carriages, pink hearts, embryo-cell icons, love motif.
+Generic images of stork or cartoon eggs (avoid if possible, seen on many low-quality sites). Too much use of
+the heart/baby motif can feel unoriginal. 
+Premium Visual Signals: Use of high-quality real photos (not overly staged stock). Subtle animations or
+video headers can signal premium. Sophisticated typography (contrast weights, clean spacing). A
+consistent, limited palette (versus random bright colors). Many design-forward fertility sites (like some on
+Colorlib list) use elegant serif fonts and muted earth tones to feel more high-end. 
+Low-Trust Visuals: Generic stock photos (of random couples with no clinic reference), cluttered layout,
+garish colors, or cartoonish elements may seem less professional. Overuse of pastel pink without contrast
+can appear dated or gender-stereotyped. 
+Overused by Competitors: Pastel-pink-and-purple backgrounds, images of a cartoon embryo or test tube,
+and phrases like “stork bringing baby” (common in kiddy imagery) are overdone. Also, “baby hops/footprints”
+graphics are tired. Websites often feature “Hello baby!” banners with newborns – somewhat clichéd. 
+Visual Gap / Standout Opportunity: Most competitors are very medical or soft-lifestyle. Nakshatra could
+stand out by using a more modern and slightly more masculine palette (e.g., teal or turquoise with coral
+accent instead of all pink). For example, using teal/green for trust/calming plus a warm accent color (peach or
+gold) could feel fresh. Incorporating authentic photos of Indian couples/families (diverse) in their
+environment (home, park) could connect better than studio shots. Illustrative icons can be custom-designed
+(not stock) for a cohesive brand look. 
+Design Recommendations:
+Color Territory: Consider a teal-green or warm blue as the primary, reflecting health/trust
+(differentiate from pink-heavy competitors). Add an accent in warm coral/orange or mustard gold for
+buttons/CTAs (contrasting with teal). A neutral base (off-white or pale gray) keeps it clean. 
+Photography: Focus on real, empathetic moments: doctor consulting couple, happy family with
+baby, reassuring hand-hold. Avoid overly posed or generic stock. For diversity, use photos of Indian
+couples in everyday settings. If budget allows, sponsor a professional shoot. 
+Typography: Choose a humanist sans-serif for body (e.g. Open Sans, Roboto) and a friendly serif or
+decorative sans for headings to convey warmth. Ensure good readability on mobile. 
+Layout: Go for spacious, minimalistic layout with clear sections. Use geometric shapes or subtle
+background patterns (not overt baby graphics) to break monotony. 
+• 
+• 
+• 
+• 
+29

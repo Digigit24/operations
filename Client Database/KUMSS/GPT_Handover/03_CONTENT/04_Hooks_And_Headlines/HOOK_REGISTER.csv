@@ -1,0 +1,13 @@
+﻿Hook_ID,Hook,Audience,Language,Status,Campaign
+HOOK-001,तुमचा मुलगा १०वी झाला आहे का? पुढचा ट्रेड कोणता असेल हे ठरवण्यासाठी आम्हाला भेट द्या.,Parent,Marathi,DRAFT,Admission
+HOOK-002,ITI म्हणजे फक्त “पुस्तकी शिक्षणाला पर्याय” नाही — खरे कौशल्य शिकण्याची संधी आहे.,Parent,Marathi,DRAFT,Awareness
+HOOK-003,"[fee] रुपयांत २ वर्षांचा NCVT कोर्स. प्रत्यक्ष कार्यशाळेत प्रशिक्षण. कारहाटी, बारामती.",Parent,Marathi,CONDITIONAL_DRAFT,Admission
+HOOK-004,"मुलाला नोकरी नाही, कौशल्य द्या — कौशल्य असेल तर नोकरी मिळते.",Parent,Marathi,NEEDS_REVIEW,Admission
+HOOK-005,Fitter असणे म्हणजे काय? — ३० सेकंदात पाहा.,Student,Marathi,DRAFT,Trade Spotlight
+HOOK-006,Welder ट्रेड + Pune industry = तुमचा पुढचा मार्ग. KUMSS ITI.,Student,Mixed,CONDITIONAL_DRAFT,Trade Spotlight
+HOOK-007,Workshop तुमचा classroom. Hands-on तुमची exam. Skill तुमचा certificate.,Student,Mixed,DRAFT,Skill Demonstration
+HOOK-008,School counselors — your students who choose vocational pathways deserve serious institutional options.,Counselor,English,DRAFT,Counselor Outreach
+HOOK-009,Looking for a vocational training institute to recommend to your 10th-pass cohort?,Counselor,English,DRAFT,Counselor Outreach
+HOOK-010,Hiring trade-trained candidates in the Pune corridor?,Recruiter,English,DRAFT,Industry Connection
+HOOK-011,प्रवेश सुरू. जागा भरत आहेत. भेटीसाठी [phone] वर संपर्क करा.,Parent/Student,Marathi,CONDITIONAL_DRAFT,Admission
+HOOK-012,Documents ready? Apply for admission to KUMSS Private I.T.I Karhati 2026-27.,Student/Parent,English,DRAFT,Admission

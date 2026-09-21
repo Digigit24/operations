@@ -1,0 +1,1 @@
+No clinic/facility photos in project — request from client.

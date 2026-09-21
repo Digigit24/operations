@@ -1,0 +1,51 @@
+﻿Fact ID,Fact,Value,Label,Source,Notes
+FACT-001,Official working business name,Prime Speciality Hospital,CONFIRMED,All project sources and logo,Use pending legal-name confirmation.
+FACT-002,Named clinical lead,Dr. Pankaj Bhalerao,CONFIRMED,Brand/SEO/GMB/audits,Exact title/founder status requires approval.
+FACT-003,Legal/operational category,Focused surgical centre vs speciality/multi-speciality hospital,CONFLICTING,Master Brand Brain vs design/public material,Do not publish definitive category until leadership approval.
+FACT-004,Website,https://primespecialityhospital.in/,CONFIRMED,SEO/GMB/audits,Refresh current accessibility/content.
+FACT-005,Instagram handle,@primespecialityhospitalmoshi,PUBLISHED,July 2026 competitive audit,Refresh current handle.
+FACT-006,GBP name,Prime Speciality Hospital - Dr. Pankaj Bhalerao,PUBLISHED,May 2026 GBP pull,Check current and name-guideline compliance.
+FACT-007,GBP Place ID,ChIJz8FhkLG3wjsRUxMjwpc1MFw,PUBLISHED,May 2026 GBP pull,Refresh before operational use.
+FACT-008,Address,"1st Floor, Phase 2, Nisarg Vatika, Dehu–Moshi Road, near Ramdev Dhaba, Borhadewadi, Moshi, Pimpri-Chinchwad, Maharashtra 412105",PUBLISHED,May 2026 GBP pull,Confirm exact canonical spelling/PIN.
+FACT-009,Phone A,074474 41426 / 7447441426,CONFLICTING,GBP pull / Instagram audit,Role and canonical status unknown.
+FACT-010,Phone B,+91 94226 68921,CONFLICTING,Website/SEO/GMB materials,Frequently treated as WhatsApp; confirm.
+FACT-011,Email,info@primespecialityhospital.in,UNVERIFIED,Draft JSON-LD only,Test and approve.
+FACT-012,Hours A,Monday–Saturday 9 AM–9 PM; Sunday closed,CONFLICTING,May 2026 GBP pull,May be hospital hours; confirm.
+FACT-013,Hours B,Monday–Saturday 5 PM–9 PM,CONFLICTING,Public contact page reported July 2026,May be OPD hours; confirm.
+FACT-014,Hours C,11 AM–5 PM Monday–Sunday,CONFLICTING,Practo listing reported July 2026,Third-party data; confirm/update.
+FACT-015,Primary geography,Moshi / Borhadewadi / PCMC,CONFIRMED,Address and all strategy sources,Core locality.
+FACT-016,Wider catchment,"Bhosari, Chakan, Pimpri, Chinchwad, Pune, Alandi",DRAFT,Brand/SEO/Instagram strategy,Use only where operationally accurate.
+FACT-017,Laparoscopic surgery,Offered/advertised,LIVE_ON_WEBSITE,SEO site audit,Exact procedure list required.
+FACT-018,Laser piles treatment,Offered/advertised,LIVE_ON_WEBSITE,SEO site audit,Claims require review.
+FACT-019,Hernia surgery,Offered/advertised,LIVE_ON_WEBSITE,SEO site audit,Types/techniques require approval.
+FACT-020,Fissure treatment,Offered/advertised,LIVE_ON_WEBSITE,SEO site audit,Exact scope required.
+FACT-021,Fistula treatment,Offered/advertised,LIVE_ON_WEBSITE,SEO site audit,Exact techniques required.
+FACT-022,Gallbladder surgery,Offered/advertised,LIVE_ON_WEBSITE,SEO site audit,Stay/recovery claims unverified.
+FACT-023,Appendix surgery,Offered/advertised,LIVE_ON_WEBSITE,SEO site audit,Emergency process unverified.
+FACT-024,Endoscopy,Offered/advertised,LIVE_ON_WEBSITE,SEO site audit / FAQ image,Confirm upper GI/colonoscopy and operating model.
+FACT-025,Breast surgery,Offered/advertised,LIVE_ON_WEBSITE,SEO site audit,Confirm current service/doctor.
+FACT-026,Thyroid surgery,Offered/advertised,LIVE_ON_WEBSITE,SEO site audit,Confirm current service/doctor.
+FACT-027,GI/colorectal surgery,Strategic service,PUBLISHED,Brand/SEO material,Define exact procedures.
+FACT-028,ICU support,Available when required,UNVERIFIED,GMB Q&A draft,Facility capability/availability not supplied.
+FACT-029,24/7 emergency,Implied in some design content,CONFLICTING,Updated design vs hours/focused positioning,Do not advertise until confirmed.
+FACT-030,Cashless insurance,Accepted / major plans,UNVERIFIED,SEO/GMB drafts,Current TPA list absent.
+FACT-031,Dr. Bhalerao qualifications,"MBBS, MS General Surgery, FMAS",PUBLISHED,Multiple source documents,Canonical institutions/registrations unresolved.
+FACT-032,Dr. Bhalerao experience,10+ years,CONFLICTING,Website/flyer/prompt vs revision removal,Verify exact figure/date.
+FACT-033,Same surgeon consults and operates,Differentiation claim,UNVERIFIED,Brand/SEO/GMB strategy,Document exceptions.
+FACT-034,WhatsApp response within four hours,Service-level claim,UNVERIFIED,Brand/GMB strategy,Confirm staffing/SLA.
+FACT-035,Google reviews,108 reviews at 4.9,PUBLISHED,May 2026 GBP pull,Dated; refresh before use.
+FACT-036,GMB posts,0 in prior 90 days,PUBLISHED,May 2026 GBP pull,Historical baseline only.
+FACT-037,GMB 90-day impressions,"3,929",PUBLISHED,May 2026 GBP pull,Historical window Feb 19–May 18.
+FACT-038,GMB 90-day calls,161,PUBLISHED,May 2026 GBP pull,Historical.
+FACT-039,GMB 90-day website clicks,35,PUBLISHED,May 2026 GBP pull,Historical.
+FACT-040,GMB 90-day directions,352,PUBLISHED,May 2026 GBP pull,Historical.
+FACT-041,Laser piles cost,"₹50,000–₹75,000",UNVERIFIED,SEO/GMB drafts,Not Prime-approved price sheet.
+FACT-042,Hernia cost,"₹45,000–₹80,000",UNVERIFIED,SEO/GMB drafts,Not Prime-approved price sheet.
+FACT-043,Gallbladder cost,"₹40,000–₹70,000",UNVERIFIED,SEO/GMB drafts,Not Prime-approved price sheet.
+FACT-044,Under-30-minute laser piles procedure,Draft claim,UNVERIFIED,SEO/GMB drafts,Requires eligible-case evidence.
+FACT-045,Same-day discharge,Draft claim,UNVERIFIED,SEO/GMB drafts,Requires procedure/case caveats.
+FACT-046,Return to work in 3–5 or 5–7 days,Draft claim,UNVERIFIED,SEO/GMB drafts,Requires clinical approval.
+FACT-047,Current working palette,Blue/green/white logo palette,DRAFT,Latest updated design/prompt guide,Latest explicit working system; formal client approval missing.
+FACT-048,Brand voice,"Calm, direct, educational, information-first",DRAFT,Master Brand Brain,Strategically active; formal approval missing.
+FACT-049,Published promo reel,Advanced surgical care is now closer to you,PUBLISHED,Public match in July audit,Exact URL/source file absent.
+FACT-050,Approved production assets,None evidenced,UNVERIFIED,Project audit,Final-looking files are not automatically approved.

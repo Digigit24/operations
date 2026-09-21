@@ -1,0 +1,2 @@
+Asset ID,Asset name,Current filename,Recommended filename,File type,Campaign,Platform,Dimensions,Language,Status,Approval source,Original source,Destination folder,Usage rights,Consent status,Notes
+AST-01,NRS logo,nrslogo.png,NRS_Hospital_Logo_Primary_v01.png,PNG,Brand,All,-,-,LIVE,Client logo,Project file,02_ASSETS/01_Logos,Client-owned,N/A,Only production asset present; PNG only - need vector (SVG/AI/CDR) + white/inverted version

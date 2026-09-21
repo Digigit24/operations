@@ -1,0 +1,7 @@
+Content ID,Title,Topic,Content type,Language,Platform,Campaign,Status,Approval source,Published date,Original source,Destination folder,Notes
+CNT-01,Director Intro Reel Script,School intro,Reel script,English,Instagram/FB,Awareness,DELIVERED,Client-refined (no formal sign-off),Unknown,chat 62e56ed3,03_CONTENT/01_Scripts,See SCR-01
+CNT-02,Reel caption (short),School intro,Caption,English,Instagram,Awareness,DRAFT,None,-,chat 62e56ed3,03_CONTENT/02_Captions,"'Where every little mind gets the space to shine.'"
+CNT-03,IG caption options (3 short),School intro,Caption,English,Instagram,Awareness,DRAFT (options),None,-,chat 62e56ed3,03_CONTENT/02_Captions,Warm / Parent-trust / Fun variants
+CNT-04,IG caption options (3 long),School intro,Caption,English,Instagram,Awareness,DRAFT (options),None,-,chat 62e56ed3,03_CONTENT/02_Captions,Longer versions of CNT-03
+CNT-05,Instagram Monthly SMO Report,Performance report,Report (DOCX),English,Instagram,-,DELIVERED,Delivered to client,2026-07-01,chat 43c5b83d,07_REPORTS/08_Monthly_Reports,Jun 1-Jul 1 2026 Insights
+CNT-06,Content idea register,Idea bank,Ideas,English,Multi,-,MIXED,-,SRC-01/SRC-09,03_CONTENT/03_Content_Ideas,See CONTENT_IDEA_REGISTER.csv

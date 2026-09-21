@@ -1,0 +1,1 @@
+Ad copy for this campaign is in the Brief (this folder's `../Brief/`) and consolidated in `../../../03_CONTENT/08_Ad_Copy/Ad_Copy_All_Campaigns.md`. No finished/approved ad copy exists yet.

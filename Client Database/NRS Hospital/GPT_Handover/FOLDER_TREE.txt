@@ -1,0 +1,344 @@
+NRS_Hospital_Client_Handover_2026-07-16/
+├── 00_SOURCES/
+│   ├── Campaign_Briefs/
+│   │   └── CAMPAIGN_BRIEF_INDEX.md
+│   ├── Content_References/
+│   │   ├── CAPTION_FORMAT_REFERENCE.md
+│   │   ├── CONTENT_FORMAT_REFERENCE.md
+│   │   └── SCRIPT_FORMAT_REFERENCE.md
+│   ├── Design_References/
+│   │   └── NRS_Hospital_02_Design_Instructions.md
+│   ├── GMB_References/
+│   │   └── GMB Post and Image Guidelines.txt
+│   ├── Original_Uploads/
+│   │   ├── FILE_LIBRARY_ASSET_POINTERS.md
+│   │   ├── GMB Post and Image Guidelines.txt
+│   │   ├── nrs-hospital-prompt-02-design-instructions.md
+│   │   ├── nrs-logo.png
+│   │   ├── NRS_Hospital_01_Strategic_Research.md
+│   │   ├── NRS_Hospital_02_AI_Prompting_Guide.md
+│   │   ├── NRS_Hospital_02_Design_Instructions.md
+│   │   └── NRS_Hospital_03_Site_Extraction.md
+│   ├── Prompting_Guides/
+│   │   ├── nrs-hospital-prompt-02-design-instructions.md
+│   │   └── NRS_Hospital_02_AI_Prompting_Guide.md
+│   ├── Research/
+│   │   ├── NRS_Hospital_01_Strategic_Research.md
+│   │   └── NRS_Hospital_03_Site_Extraction.md
+│   ├── FILE_NAMING_AND_STATUS_RULES.md
+│   ├── OPEN_QUESTIONS_AND_CONFLICTS.md
+│   ├── PROJECT_SUMMARY.md
+│   ├── SOURCE_INDEX.csv
+│   └── START_HERE.md
+├── 01_DESIGN/
+│   ├── Approved_Design_References/
+│   │   └── README_NO_APPROVED_REFERENCES.md
+│   ├── Legacy_Design_References/
+│   │   └── LEGACY_VISUAL_SYSTEM.md
+│   ├── AI_Image_Prompting_Guide.md
+│   ├── Brand_Quick_Reference.md
+│   ├── Client_Design_Preferences.md
+│   ├── Colour_Palette.md
+│   ├── Full_Design_Guidelines.md
+│   ├── Logo_Usage_Guide.md
+│   └── Typography_Guide.md
+├── 02_ASSETS/
+│   ├── 01_Logos/
+│   │   └── nrs-logo.png
+│   ├── 02_Approved_Posts/
+│   │   └── README_NO_APPROVED_POSTS.md
+│   ├── 03_Approved_Images/
+│   │   └── README_NO_APPROVED_IMAGES.md
+│   ├── 04_Doctor_Founder_Team_Photos/
+│   │   └── FILE_LIBRARY_PHOTO_POINTERS.md
+│   ├── 05_Clinic_Office_Product_Photos/
+│   │   └── README_MISSING_FACILITY_PHOTOS.md
+│   ├── 06_Raw_Videos/
+│   │   └── README_NO_RAW_VIDEOS.md
+│   ├── 07_Editable_Source_Files/
+│   │   └── README_NO_EDITABLE_FILES.md
+│   ├── 08_Final_Exports/
+│   │   └── README_NO_APPROVED_FINAL_EXPORTS.md
+│   ├── 09_Stock_And_Licences/
+│   │   └── README_NO_LICENCES_OR_CONSENTS.md
+│   ├── ASSET_INDEX.csv
+│   └── README_ASSET_GOVERNANCE.md
+├── 03_CONTENT/
+│   ├── 01_Scripts/
+│   │   └── README_NO_SCRIPTS_FOUND.md
+│   ├── 02_Captions/
+│   │   ├── Caption_Templates.md
+│   │   ├── Extracted_Copy_And_Caption_Library.md
+│   │   └── Hashtag_And_Keyword_Formats.md
+│   ├── 03_Content_Ideas/
+│   │   ├── CONTENT_IDEA_REGISTER.csv
+│   │   └── Content_Idea_Summary.md
+│   ├── 04_Hooks_And_Headlines/
+│   │   └── Hook_Headline_CTA_Library.md
+│   ├── 05_Carousel_Content/
+│   │   ├── 2026-05-20_NRS-Hospital_Obesity-Risks_Carousel-English-Instagram_DRAFT_v01.md
+│   │   └── 2026-05-20_NRS-Hospital_Stress-Weight-Mind-Body_Carousel-English-Instagram_DRAFT_v01.md
+│   ├── 06_Static_Post_Content/
+│   │   ├── 2026-05-20_NRS-Hospital_Nine-Tile-Medical-Awareness_Static-Posts-Mixed-Social_DRAFT_v01.md
+│   │   └── 2026-07-02_NRS-Hospital_Health-Consultation_Static-Ad-English-Social_DRAFT_v01.md
+│   ├── 07_Reel_And_Video_Concepts/
+│   │   └── Reel_And_Video_Concept_Register.md
+│   ├── 08_Ad_Copy/
+│   │   └── Ad_Angles_And_Copy.md
+│   ├── 09_Content_Calendar/
+│   │   ├── Draft_90_Day_Content_Framework.md
+│   │   └── README_NO_APPROVED_CALENDAR.md
+│   ├── 10_Published_Content/
+│   │   └── README_NO_PUBLISHED_CONTENT_PROOF.md
+│   ├── 11_Content_Performance/
+│   │   └── README_NO_CONTENT_PERFORMANCE_DATA.md
+│   ├── CONTENT_MASTER_INDEX.csv
+│   └── SCRIPT_INDEX.csv
+├── 04_GMB/
+│   ├── 01_Posting_Guidelines/
+│   │   ├── GMB_Post_And_Image_Guidelines_GENERAL.txt
+│   │   └── NRS_GMB_Quick_Guide.md
+│   ├── 02_GMB_Post_Ideas/
+│   │   └── GMB_Post_Idea_Register.md
+│   ├── 03_GMB_Post_Copy/
+│   │   └── GMB_Copy_Templates.md
+│   ├── 04_GMB_Images/
+│   │   └── GMB_Image_Specifications_And_Prompts.md
+│   ├── 05_Published_Posts/
+│   │   └── README_NO_PUBLISHED_GMB_POSTS.md
+│   ├── 06_Review_Responses/
+│   │   └── Review_Response_Templates.md
+│   ├── 07_QA_Content/
+│   │   └── Business_QA_Draft.md
+│   ├── 08_GMB_Performance/
+│   │   └── README_NO_GMB_PERFORMANCE_DATA.md
+│   └── GMB_CONTENT_INDEX.csv
+├── 05_CAMPAIGNS/
+│   ├── 2026-05_Medical-Awareness-And-Occasions/
+│   │   ├── Ad_Copy/
+│   │   │   └── AD_COPY_STATUS.md
+│   │   ├── Approvals/
+│   │   │   └── APPROVAL_STATUS.md
+│   │   ├── Brief/
+│   │   │   └── CAMPAIGN_BRIEF.md
+│   │   ├── Captions/
+│   │   │   └── README_CAPTION_STATUS.md
+│   │   ├── Creatives/
+│   │   │   └── CREATIVE_STATUS.md
+│   │   ├── Landing_Page/
+│   │   │   └── LANDING_PAGE_STATUS.md
+│   │   ├── Performance/
+│   │   │   └── PERFORMANCE_STATUS.md
+│   │   ├── Research/
+│   │   │   └── RESEARCH_AND_SOURCE_NOTES.md
+│   │   └── Scripts/
+│   │       └── README_SCRIPT_STATUS.md
+│   ├── 2026-05_NRS-Wellness_Stress-Weight-Mind-Body/
+│   │   ├── Ad_Copy/
+│   │   │   └── AD_COPY_STATUS.md
+│   │   ├── Approvals/
+│   │   │   └── APPROVAL_STATUS.md
+│   │   ├── Brief/
+│   │   │   └── CAMPAIGN_BRIEF.md
+│   │   ├── Captions/
+│   │   │   └── README_CAPTION_STATUS.md
+│   │   ├── Creatives/
+│   │   │   └── CREATIVE_STATUS.md
+│   │   ├── Landing_Page/
+│   │   │   └── LANDING_PAGE_STATUS.md
+│   │   ├── Performance/
+│   │   │   └── PERFORMANCE_STATUS.md
+│   │   ├── Research/
+│   │   │   └── RESEARCH_AND_SOURCE_NOTES.md
+│   │   └── Scripts/
+│   │       └── README_SCRIPT_STATUS.md
+│   ├── 2026-05_Obesity-Awareness-And-Consultation/
+│   │   ├── Ad_Copy/
+│   │   │   └── AD_COPY_STATUS.md
+│   │   ├── Approvals/
+│   │   │   └── APPROVAL_STATUS.md
+│   │   ├── Brief/
+│   │   │   └── CAMPAIGN_BRIEF.md
+│   │   ├── Captions/
+│   │   │   └── README_CAPTION_STATUS.md
+│   │   ├── Creatives/
+│   │   │   └── CREATIVE_STATUS.md
+│   │   ├── Landing_Page/
+│   │   │   └── LANDING_PAGE_STATUS.md
+│   │   ├── Performance/
+│   │   │   └── PERFORMANCE_STATUS.md
+│   │   ├── Research/
+│   │   │   └── RESEARCH_AND_SOURCE_NOTES.md
+│   │   └── Scripts/
+│   │       └── README_SCRIPT_STATUS.md
+│   ├── 2026-07_Health-Consultation/
+│   │   ├── Ad_Copy/
+│   │   │   └── AD_COPY_STATUS.md
+│   │   ├── Approvals/
+│   │   │   └── APPROVAL_STATUS.md
+│   │   ├── Brief/
+│   │   │   └── CAMPAIGN_BRIEF.md
+│   │   ├── Captions/
+│   │   │   └── README_CAPTION_STATUS.md
+│   │   ├── Creatives/
+│   │   │   └── CREATIVE_STATUS.md
+│   │   ├── Landing_Page/
+│   │   │   └── LANDING_PAGE_STATUS.md
+│   │   ├── Performance/
+│   │   │   └── PERFORMANCE_STATUS.md
+│   │   ├── Research/
+│   │   │   └── RESEARCH_AND_SOURCE_NOTES.md
+│   │   └── Scripts/
+│   │       └── README_SCRIPT_STATUS.md
+│   ├── DATE-UNKNOWN_24x7-Emergency-And-Local-Visibility/
+│   │   ├── Ad_Copy/
+│   │   │   └── AD_COPY_STATUS.md
+│   │   ├── Approvals/
+│   │   │   └── APPROVAL_STATUS.md
+│   │   ├── Brief/
+│   │   │   └── CAMPAIGN_BRIEF.md
+│   │   ├── Captions/
+│   │   │   └── README_CAPTION_STATUS.md
+│   │   ├── Creatives/
+│   │   │   └── CREATIVE_STATUS.md
+│   │   ├── Landing_Page/
+│   │   │   └── LANDING_PAGE_STATUS.md
+│   │   ├── Performance/
+│   │   │   └── PERFORMANCE_STATUS.md
+│   │   ├── Research/
+│   │   │   └── RESEARCH_AND_SOURCE_NOTES.md
+│   │   └── Scripts/
+│   │       └── README_SCRIPT_STATUS.md
+│   ├── DATE-UNKNOWN_Cashless-And-Insurance-Clarity/
+│   │   ├── Ad_Copy/
+│   │   │   └── AD_COPY_STATUS.md
+│   │   ├── Approvals/
+│   │   │   └── APPROVAL_STATUS.md
+│   │   ├── Brief/
+│   │   │   └── CAMPAIGN_BRIEF.md
+│   │   ├── Captions/
+│   │   │   └── README_CAPTION_STATUS.md
+│   │   ├── Creatives/
+│   │   │   └── CREATIVE_STATUS.md
+│   │   ├── Landing_Page/
+│   │   │   └── LANDING_PAGE_STATUS.md
+│   │   ├── Performance/
+│   │   │   └── PERFORMANCE_STATUS.md
+│   │   ├── Research/
+│   │   │   └── RESEARCH_AND_SOURCE_NOTES.md
+│   │   └── Scripts/
+│   │       └── README_SCRIPT_STATUS.md
+│   ├── DATE-UNKNOWN_Doctor-Led-Family-Hospital/
+│   │   ├── Ad_Copy/
+│   │   │   └── AD_COPY_STATUS.md
+│   │   ├── Approvals/
+│   │   │   └── APPROVAL_STATUS.md
+│   │   ├── Brief/
+│   │   │   └── CAMPAIGN_BRIEF.md
+│   │   ├── Captions/
+│   │   │   └── README_CAPTION_STATUS.md
+│   │   ├── Creatives/
+│   │   │   └── CREATIVE_STATUS.md
+│   │   ├── Landing_Page/
+│   │   │   └── LANDING_PAGE_STATUS.md
+│   │   ├── Performance/
+│   │   │   └── PERFORMANCE_STATUS.md
+│   │   ├── Research/
+│   │   │   └── RESEARCH_AND_SOURCE_NOTES.md
+│   │   └── Scripts/
+│   │       └── README_SCRIPT_STATUS.md
+│   ├── DATE-UNKNOWN_Monsoon-Health-PCMC/
+│   │   ├── Ad_Copy/
+│   │   │   └── AD_COPY_STATUS.md
+│   │   ├── Approvals/
+│   │   │   └── APPROVAL_STATUS.md
+│   │   ├── Brief/
+│   │   │   └── CAMPAIGN_BRIEF.md
+│   │   ├── Captions/
+│   │   │   └── README_CAPTION_STATUS.md
+│   │   ├── Creatives/
+│   │   │   └── CREATIVE_STATUS.md
+│   │   ├── Landing_Page/
+│   │   │   └── LANDING_PAGE_STATUS.md
+│   │   ├── Performance/
+│   │   │   └── PERFORMANCE_STATUS.md
+│   │   ├── Research/
+│   │   │   └── RESEARCH_AND_SOURCE_NOTES.md
+│   │   └── Scripts/
+│   │       └── README_SCRIPT_STATUS.md
+│   ├── DATE-UNKNOWN_Review-Growth-And-GBP/
+│   │   ├── Ad_Copy/
+│   │   │   └── AD_COPY_STATUS.md
+│   │   ├── Approvals/
+│   │   │   └── APPROVAL_STATUS.md
+│   │   ├── Brief/
+│   │   │   └── CAMPAIGN_BRIEF.md
+│   │   ├── Captions/
+│   │   │   └── README_CAPTION_STATUS.md
+│   │   ├── Creatives/
+│   │   │   └── CREATIVE_STATUS.md
+│   │   ├── Landing_Page/
+│   │   │   └── LANDING_PAGE_STATUS.md
+│   │   ├── Performance/
+│   │   │   └── PERFORMANCE_STATUS.md
+│   │   ├── Research/
+│   │   │   └── RESEARCH_AND_SOURCE_NOTES.md
+│   │   └── Scripts/
+│   │       └── README_SCRIPT_STATUS.md
+│   ├── Future_Campaigns/
+│   │   └── README.md
+│   └── CAMPAIGN_INDEX.csv
+├── 06_CLIENT_DETAILS/
+│   ├── Approvals/
+│   │   └── APPROVAL_REGISTER.md
+│   ├── Audience_Profiles.md
+│   ├── Brand_Positioning.md
+│   ├── Business_Details.md
+│   ├── Client_Fact_Sheet.md
+│   ├── Client_Preferences.md
+│   ├── CLIENT_QUESTIONS.md
+│   ├── Contact_And_Location.md
+│   ├── Doctors_Founders_Team.md
+│   ├── FACT_CONFLICT_REGISTER.csv
+│   └── Services_And_Offers.md
+├── 07_REPORTS/
+│   ├── 01_Social_Media/
+│   │   └── README_NO_SOCIAL_MEDIA_REPORTS.md
+│   ├── 02_Meta_Ads/
+│   │   └── README_NO_META_ADS_REPORTS.md
+│   ├── 03_Google_Ads/
+│   │   └── README_NO_GOOGLE_ADS_REPORTS.md
+│   ├── 04_Website/
+│   │   ├── 2026-05-26_NRS-Hospital_Website-Extraction_Report.md
+│   │   └── README_NO_IMPLEMENTATION_OR_ANALYTICS_PROOF.md
+│   ├── 05_SEO/
+│   │   └── README_NO_SEO_PERFORMANCE_REPORTS.md
+│   ├── 06_GMB/
+│   │   └── README_NO_GMB_REPORTS.md
+│   ├── 07_Leads/
+│   │   └── README_NO_LEAD_REPORTS.md
+│   ├── 08_Monthly_Reports/
+│   │   ├── 2026-07-13_NRS-Hospital_Project-Audit_FILE-LIBRARY-POINTER.md
+│   │   └── 2026-07-16_NRS-Hospital_Handover-Completion-Report.md
+│   └── REPORT_INDEX.csv
+├── 99_ARCHIVE/
+│   ├── 01_Old_Guidelines/
+│   │   └── README.md
+│   ├── 02_Rejected_Assets/
+│   │   └── README_NO_REJECTION_EVIDENCE.md
+│   ├── 03_Superseded_Content/
+│   │   └── LEGACY_CREATIVE_REGISTER.md
+│   ├── 04_Duplicate_Files/
+│   │   └── DUPLICATE_FILE_REGISTER.md
+│   ├── 05_Old_Campaigns/
+│   │   └── README.md
+│   └── 06_Unverified_Material/
+│       └── UNVERIFIED_CLAIM_REGISTER.md
+├── BUILD_SUMMARY.json
+├── BUILD_VALIDATION.md
+├── FILE_MANIFEST.csv
+├── FOLDER_TREE.txt
+├── HANDOVER_COMPLETION_SCORE.md
+├── HANDOVER_REPORT.md
+├── INTERN_ACTION_CHECKLIST.md
+└── README.md

@@ -1,0 +1,3 @@
+# ARCHIVE NOTES
+- brain_v1_LEGACY_brand_brain.md — the ORIGINAL Master Brand Brain (v1.0). Superseded by 01_SOURCE_DOCUMENTS/Jeevisha_Master_Brand_Brain_vFinal.md (2026-05-18). Kept because it contains a 4-ICP audience model (adds Midlife Mobility Seeker, Caregiver, Active Adult) and mid-market 5/10 positioning notes that were later revised to premium-justified 7/10. Do NOT use for new work; consult only for historical context. Conflicts recorded in CONFLICTS_AND_RISKS.md §4.
+- May 2026 SMO report style (charts + estimates) — SUPERSEDED by the June plain-table standard. The May HTML file itself lives in the 2 Jun chat downloads.

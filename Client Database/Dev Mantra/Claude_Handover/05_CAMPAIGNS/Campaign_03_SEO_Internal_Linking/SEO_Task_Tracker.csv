@@ -1,0 +1,23 @@
+Task ID,Description,Phase,Due Date,Impact,Status,Dependency
+TASK 16,Force HTTP to HTTPS redirect site-wide,Technical Setup,Not dated (Urgent),Security/SEO foundation,Not confirmed complete,None noted
+TASK 17,NAP consistency + LocalBusiness schema,Technical Setup,Not dated (High),Local SEO foundation,Not confirmed complete,None noted
+TASK 18,XML sitemap + robots.txt audit,Technical Setup,Not dated (High),Crawlability,Not confirmed complete,None noted
+TASK 19,Canonical tag implementation + duplicate content fix,Technical Setup,Not dated (Medium),De-duplication,Not confirmed complete,None noted
+TASK 20,Email privacy + DMARC mail record,Technical Setup,Not dated (Medium),Email deliverability,Not confirmed complete,None noted
+TASK 21,Improve LLM rendered content ratio (GEO optimization),Technical Setup,Not dated (Medium),AI search visibility,Not confirmed complete,None noted
+TASK 22,Add Twitter/X cards + Open Graph meta tags,Technical Setup,Not dated (Low),Social sharing,Not confirmed complete,None noted
+TASK 23,Social profiles setup (X YouTube Facebook Pixel),Technical Setup,Not dated (Low),Tracking/presence,Not confirmed complete,None noted
+TASK 24,Schema.org Organization + Person markup,Technical Setup,Not dated (Medium),Rich results,Not confirmed complete,None noted
+TASK 25,Backlink building strategy (130 to 250 referring domains),Technical Setup,Not dated (Strategic),Domain authority,Not confirmed complete,None noted
+TASK 26,Add 23 Blog to Service in-content links,Phase 1,2026-05-16,23 high-value contextual links,Not confirmed complete,Requires blog database IDs
+TASK 27,Fix homepage service anchor text,Phase 1,2026-05-17,Keyword-rich CTAs (87 backlinks authority),Not confirmed complete,None noted
+TASK 28,Emergency index recovery (5 links per unindexed page),Phase 1,2026-05-19,"120 links, 24 pages recovered",Not confirmed complete,Requires GSC Crawled-not-indexed export
+TASK 29,Implement keyword-rich breadcrumbs,Phase 1,2026-05-20,Semantic breadcrumbs with service links,Not confirmed complete,None noted
+TASK 30,Service to Content in-body links (not footer),Phase 2,2026-05-23,27 in-content links,Not confirmed complete,None noted
+TASK 31,Cross-service intelligent linking (18 links),Phase 2,2026-05-26,Service-to-service authority distribution,Not confirmed complete,None noted
+TASK 32,"""How Dev Mantra Can Help"" on reports/case studies",Phase 2,2026-05-28,8 conversion-optimized links,Not confirmed complete,None noted
+TASK 33,Expand calculator to service links (3 to 12),Phase 2,2026-05-30,High-intent traffic conversion,Not confirmed complete,None noted
+TASK 34,Newsletter archive activation (64 editions + hub),Phase 3,2026-06-02,64 new indexable pages + 192 links,Not confirmed complete,Requires newsletter database verification
+TASK 35,Complete topic cluster linking (5 clusters),Phase 3,2026-06-09,Topical authority signal to Google,Not confirmed complete,None noted
+TASK 36,Author bio service links (if bios exist),Phase 3,2026-06-16,18 scalable compounding links,Not confirmed complete,Requires author bios to exist
+TASK 37,Implement anchor text variation system,Phase 3,2026-06-23,Over-optimization protection,Not confirmed complete,None noted

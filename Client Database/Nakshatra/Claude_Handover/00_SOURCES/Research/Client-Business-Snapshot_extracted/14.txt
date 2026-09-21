@@ -1,0 +1,35 @@
+SECTION 6 — SEARCH INTENT MAPPING
+TOFU — Awareness Stage
+Behavior: Users are learning about infertility and treatments for the first time. They search symptoms
+(“can’t conceive,” “repeated miscarriage,” “PCOS and pregnancy”), or broad education (“what is IVF?”). They
+may watch YouTube “explainer” videos or read blogs.
+Keyword Examples: “why can’t I get pregnant,” “PCOS fertility tips,” “what is IUI,” “fertility diet tips.”
+Content Topics: Intro guides (IVF 101, IUI process, male fertility factors), myth-busting (“IVF age facts”),
+basic FAQs (“What causes infertility?”).
+Best Formats: Blog articles, infographics (“IVF step by step”), short explainer videos, Q&A pages.
+Emotional State: Curious but anxious; seeking hope and clarity.
+CTA Style: Soft CTAs like “Learn More,” “Download Fertility Guide,” or newsletter sign-up. No hard sell;
+invitation to understand options.
+MOFU — Consideration Stage
+Behavior: Users compare clinics or treatments. They might search “best IVF clinic Pune,” “IVF vs IUI cost,” or
+“IVF success rate at Nakshatra.” They consult reviews and testimonials, and perhaps contact clinics for info.
+Keyword Examples: “Best IVF clinic Pune,” “IVF vs IUI success,” “top IVF doctor in Pune,” “Nakshatra IVF
+reviews.”
+Content Topics: Clinic comparisons, doctor profiles, patient stories, service details (e.g. “What happens
+during IUI?”). Emphasis on proof (“Our 72% success”), differentiators (AI lab), and trust (accreditation).
+Best Formats: Comparison charts, case study videos (“Our patient story”), testimonial pages, detailed
+service pages, downloadable checklists.
+Emotional State: Hopeful but cautious; looking for reassurance. Concerned about safety and legitimacy.
+CTA Style: Medium CTAs like “Book a Free Consultation,” “Chat with Specialist,” or “Check Our Success
+Rates.” Start form fills or hotline calls.
+BOFU — Conversion Stage
+Behavior: Ready-to-act users. They search specific clinics by name or phrases like “Nakshatra IVF contact,”
+“Book IVF consultation Baner,” or “IVF cost at Nakshatra.” They might also use “near me” and review queries.
+Keyword Examples: “Book IVF consultation Pune,” “Nakshatra IVF clinic phone,” “IVF near me Baner.”
+Landing Needs: Trust signals (reviews, certifications), clear service summary, pricing hints, and a simple
+contact form.
+Trust Signals Needed: Google reviews, patient testimonials, staff credentials, NABH/NABL logos, success
+statistics.
+CTA Style: Direct, urgent CTAs: “Book Now,” “Call Us Today,” “Get Quote.” Offer hooks like “Free First Visit” or
+“Limited Discount.” Possibly WhatsApp chat or call buttons prominent. 
+14

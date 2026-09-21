@@ -1,0 +1,18 @@
+# File Library Reference Index
+
+These files were found through project-history search. Their metadata/content snippets were used for extraction, but raw bytes were not mounted into the active runtime and therefore are not copied into this ZIP.
+
+| File | File_ID | Reference | Category | Summary | Availability |
+| --- | --- | --- | --- | --- | --- |
+| Pasted markdown.md | file_0000000039b871faaf46b796fe5c4716 | turn7file0 | Project state | Prompt 00–05 complete; onboarding 95%; audit/execution dependencies listed. | Reference only; raw bytes not mounted. |
+| digitech-taskos-mini-app.html | file_00000000fd407207b0844ea4b0891bfd | turn7file2 | Task tracker | Jeevisha target and open video/social/planning tasks. | Reference only; raw bytes not mounted. |
+| client-tasks-dashboard.html | file_0000000073c072079e5166bacdc05d8f | turn7file5 | Task tracker | Duplicate/parallel task tracker with Jeevisha tasks not started. | Reference only; raw bytes not mounted. |
+| digitech-client-task-canvas.html | file_00000000aafc7207b9178f3a45f0386a | turn7file8 | Task tracker | Parallel task canvas; same Jeevisha open tasks. | Reference only; raw bytes not mounted. |
+| 1000066961.jpg | file_00000000f9f071f8a5fb789ac160b40f | turn7file7 | Contact reference | Displays alternate booking phone +91 90284 31238. | Reference only; raw bytes not mounted. |
+| Jeevisha Pain Clinic - Transforming lives, painlessly.png | file_0000000013847209b0a94ab29f5f0531 | turn7file9 | Creative reference | Poster adaptation request for Jeevisha. | Reference only; raw bytes not mounted. |
+| Knee cartilage solutions at Jeevisha Hospital.png | file_00000000c70c7207b5fd83e83217d80e | turn7file15 | Creative feedback | Revision request: make white/cream. | Reference only; raw bytes not mounted. |
+| 8daac6f2-d88d-4c9e-86d9-351e89edb97e.png | file_00000000af80720bafa559ddb77c1cb9 | turn7file11 | Creative reference | Knee cartilage / before knee replacement promotional graphic. | Reference only; raw bytes not mounted. |
+| Knee cartilage: worn out or fixed?.png | file_00000000d678720b98702ff6209c121b | turn6file8 | Creative feedback | Design 'ok' with changes: remove hospital text, smaller bottom content, handwriting font. | Reference only; raw bytes not mounted. |
+| Jeevisha.jpg | file_0000000076b87208b236a814d601c193 | turn6file4 | Legacy creative | Maharashtra/Labour Day poster using old 'Pain Management Center' naming. | Reference only; raw bytes not mounted. |
+| Pasted markdown.md — design-system note | file_00000000c850720890dc8fbf33df39ca | turn6file17 | Governance note | HTML internal-only; fictional testimonial and demo content warning; written sources authoritative. | Reference only; raw bytes not mounted. |
+| Older NAP/brand brief markdown | file_0000000026487207800503b1137dabe8 | turn4file11 | Legacy NAP | Uses 'Jeevisha Spine Pain & Regenerative Hospital' and generic address/PIN. | Reference only; raw bytes not mounted. |

@@ -1,0 +1,3 @@
+Report ID,Report type,Period,Source,Status,Data type,Destination folder,Notes
+RPT-01,SMO monthly report,May 2026,chat c26ced18,Delivered (retrieve HTML),Template + reconstructed,07_REPORTS/08_Monthly_Reports,Reusable; verify numbers
+RPT-02,GMB audit,Jun 2026,chat 4254e28b,Delivered (summary),Live-web + project,04_GMB/08_GMB_Performance,Surfaced phone conflict

@@ -1,0 +1,16 @@
+Content ID,Title,Type,Status,Published date,Source,Notes
+GMB-01,Category & Profile Optimisation Guidelines,Posting guideline,APPLIED,June 2026,05_gmb_foundation.md §2-3,Category changed Hospital → Surgical Centre; description rewritten
+GMB-02,NAP Consistency Rules,Posting guideline,PARTIALLY APPLIED,June 2026,05_gmb_foundation.md §4,Phone number mismatch still unresolved — see conflicts register
+GMB-03,Photo Strategy Requirements,Posting guideline,NOT CONFIRMED APPLIED,n/a,05_gmb_foundation.md §6,No photo upload confirmation found anywhere in project
+GMB Post 1,Laser Piles Surgery (Standard),GMB post template + published post,LIVE,2026-06-03,05_gmb_foundation.md §9 / m5_content_calendar.md,First post in 90+ days
+GMB Post 2,Is Piles Surgery Painful?,GMB post template + published post,LIVE,2026-06-10,05_gmb_foundation.md §9 / m5_content_calendar.md,Educational/FAQ type
+GMB Post 3,Laparoscopic Hernia Surgery,GMB post template + published post,LIVE,2026-06-17,05_gmb_foundation.md §9 / m5_content_calendar.md,Service post type
+GMB Post 4,Same Surgeon Who Consults Also Operates,GMB post template,READY — not scheduled in June calendar,n/a,05_gmb_foundation.md §9,Available for July
+GMB Post 5-9,"(see full templates in 03_GMB_Post_Copy)",GMB post template,READY — unused,n/a,05_gmb_foundation.md §9,5 additional ready-to-use templates beyond the 4 used in June
+GMB Post 10,Cost/income framing post,GMB post template,READY — unused,n/a,05_gmb_foundation.md §9,
+GMB Post 11,Local Proof (Moshi/Bhosari/Chakan families),GMB post template,READY — unused,n/a,05_gmb_foundation.md §9,Includes 3 real patient review quotes
+GMB Post 12,Appendix Surgery Educational,GMB post template,READY — unused,n/a,05_gmb_foundation.md §9,
+GMB-QA-01 to 15,15 Q&A seed pairs,Q&A content,SEEDED (per M6 report),June 2026,05_gmb_foundation.md §10,See 07_QA_Content
+GMB-REV-TEMPLATES,5 review response templates,Review response,APPLIED to all 27 backlog reviews,June 2026 (week 1),05_gmb_foundation.md §12,Reply rate moved 10% → 95%+ per M6 report
+GMB-PERF-01,90-day baseline performance (Feb-May 2026),Performance data,CONFIRMED LIVE DATA,2026-05-20 (pull date),05_gmb_foundation.md §7,Windsor.ai MCP live pull
+GMB-PERF-02,June 2026 actual performance,Performance data,NOT YET FILLED,n/a,m6_client_report_june2026.md §2,"KPI table has [PULL FROM GBP INSIGHTS] placeholders — data never pulled in as of report date"

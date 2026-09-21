@@ -1,0 +1,46 @@
+Process Section:
+Outline the Nakshatra IVF Process in 4–5 steps (as on Indira or Iswarya site). E.g. Step1:
+Consultation, Step2: Testing, Step3: Treatment, Step4: Transfer & Follow-up. 
+Use friendly icons or photos for each. This reduces fear by clarifying what to expect.
+FAQ Section:
+Top 5–7 FAQs from patients (draw from [1] or Google searches): “Is IVF safe?”, “How long does
+treatment take?”, “How much does IVF cost?”, etc. Each expands/collapses. 
+CTA Blocks / Sticky Contact:
+Sticky header or footer with contact: “Call us (phone icon) 24/7” or “Book WhatsApp chat.”
+A chatbot or popup offering free consult if user lingers.
+Conversion Enhancements:
+Form Simplicity: A quick “Schedule Call/Visit” form requiring minimal info (name, phone, brief
+issue). 
+Offers: Banner or section for “Free Consultation” or “Health Checkup Package”.
+Multiple CTAs: Place “Book Now” at top, mid-page, and bottom. 
+Mobile Optimization: Ensure big buttons, click-to-call phone, fast loading images. 
+Chat/WhatsApp: A floating WhatsApp button for instant query (common in India).
+Recommended Homepage Structure: 1. Hero: Headline + subtext + primary CTA (book). 2. Sympathy/
+Challenge: Statement of patient pain & promise. 3. Services Snapshot: Quick links (IVF, IUI, etc) with short
+blurb & “Learn More.” 4. Why Us: Trust badges, success stats, unique features list. 5. How It Works: IVF
+process 4-step graphic. 6. Testimonial(s): 1–2 featured stories or rotating quotes. 7. Team Intro: Photo of
+Dr. Kamate with tagline or credentials. 8. FAQs: Top questions with toggles. 9. Contact Block: Secondary
+CTA to schedule (restate phone/email). 10. Footer: Links to all pages, contact info, GBP badge, awards.
+Throughout, use friendly language (“we,” “your journey,” etc.). Avoid medical jargon in headings. Ensure
+every section ends with a relevant CTA (“Learn More,” “Book Now,” etc.). 
+SECTION 14 — VISUAL CATEGORY RESEARCH
+Common Color Schemes: Many fertility/IVF clinics use soft, calming palettes. Common colors include pastel
+pinks, purples, blues, and greens. For example, Femcare uses bright pink/white; Progenesis uses pastel
+peach/mint; Orion uses white/red; Iswarya uses white/burgundy. Lots of white space plus one accent color.
+Overall trends: light neutrals (white, beige) combined with cool greens/blues or warm pastels. (Colorlib notes
+“warm tones” and “nature-inspired” layouts for fertility sites ). 
+Typography: Websites favor clean, modern sans-serif fonts (Open Sans, Lato, etc.) for readability. Titles
+often bold and uppercase. Body text is straightforward. Some premium clinics might use a serif for headers
+(to imply trust), but most use sans fonts for a fresh feel. 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+45
+28

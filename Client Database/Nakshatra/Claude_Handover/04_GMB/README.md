@@ -1,0 +1,1 @@
+GMB content only — no live GMB data in project. See 01_Posting_Guidelines. Post ideas/copy/images/published/reviews/QA/performance subfolders are placeholders to fill once GBP access is granted.

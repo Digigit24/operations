@@ -1,0 +1,10 @@
+Conflict ID,Conflict,Version A,Source A,Version B,Source B,Risk,Recommended action,Who must confirm
+CF-01,Primary phone number,7307961962,Website main / GMB rec / Step 03 / Dengue script,7303961962,User instruction 18-Jun ('correct number') + website ambulance line,Wrong number = lost emergency calls + NAP damage; also 7770099221 (early scripts) and 9923602900 (Facebook) in circulation,Client confirms ONE canonical primary + labels ambulance/2nd line; roll across all directories,Client (hospital admin)
+CF-02,Live superlative violations,"'Best Multispeciality Hospital' etc still live",Newer + older homepage (Step 03),Compliant rewrites drafted,Step 03 Section 6,NMC + ASCI exposure; compounds with ads,Apply compliant rewrites before any SEO/ads spend,Web dev + admin
+CF-03,Bed count,25,Older homepage / Practo / HexaHealth / Bajaj,30,Newer homepage block,SEO/GMB content compounds wrong number; trust + NAP,Confirm current count; standardise everywhere,Client
+CF-04,Hotel name spelling,Ambience,Contact page / older homepage,Ambiance,Newer pages / Justdial / Google,NAP inconsistency hurts Map Pack,Standardise to 'Ambiance',Client/dev
+CF-05,Hospital name styling,NRS Hospital,Most pages,NRS Multi Speciality Hospital,About page,Brand vs legal name confusion,Pick canonical brand name; legal name for legal docs only,Client
+CF-06,OPD timings,9AM-7PM,MyUpchar,10AM-7PM,Practo,Wrong hours = missed visits + GBP mismatch,Confirm and lock,Client
+CF-07,Established year,2018,Wikipedia,Not stated,Site,Minor trust/E-E-A-T,Confirm + add to /about,Client
+CF-08,'Nearly 1 lakh patients' framing,Dr. Survase career total,Brand Brain framing,Ambiguous (could read as hospital),Website block,Overclaim risk,Confirm framing before any use,Client
+CF-09,NABH/NABL/ISO accreditation,Not accredited (assumed),No public listing shows it,Unknown,-,Implying accreditation without it = serious compliance risk,Confirm yes/no; never imply until confirmed,Client

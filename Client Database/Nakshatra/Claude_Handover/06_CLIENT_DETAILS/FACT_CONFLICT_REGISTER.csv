@@ -1,0 +1,12 @@
+Conflict,Version A,Source A,Version B,Source B,Risk,Recommended action,Person who must confirm
+Doctor experience years,12+ years,Brand Knowledgebase; Briefs 02/03; site About bio,15+ years,Master Brand Brain; Strategic Research; site hero+counter; Brief 01,Trust/E-E-A-T inconsistency; two values on same site,Confirm true figure; correct everywhere,Client / Dr. Ramit
+On-camera doctor name,Dr. Ramit Kamate,All brand/strategy/site docs,Dr. Priyank (report) / Dr. Meera (site testimonials),Content Performance Analysis / website testimonials,High: wrong name = credibility failure,Confirm real clinician; scrub other names,Client
+Email address,nakshtraclinic@gmail.com (misspelled + Gmail),Live site / brand notes,Domain email expected (@nakshatraclinic.com),Inference / Site Extraction,Missed enquiries; unprofessional; public typo,Confirm/fix; move to domain email,Client
+Doctor qualifications,MBBS + Masters(UK/Dubai) + Fellowship(USA),Brand Knowledgebase,"MBBS, DNB, DGO, FRM (UK); college listed as 'Baner'",Live site / Site Extraction,Inconsistent medical credentials,Obtain verified credential list; standardise,Client / Dr. Ramit
+Service-area list,"Baner, Hinjewadi, Wakad, Ravet & Baner (duplicate)",About page,"Baner, Wakad, Ravet, Pimpri-Chinchwad (+Aundh/Pashan)",Service page / brand notes,Inconsistent local signals,Define one canonical list,Client
+'150+' figure reused,150+ Google reviews,Homepage stat card,150+ Happy Families,About page,Same number for two metrics,Separate & verify each,Client
+Brand voice system,"Newer restrained (bans 'compassionate care','dream')",Master Brand Brain / Design Instructions,"Older warmer (uses those phrases,'Book Now')",Brand Knowledgebase / Briefs,Inconsistent copy across team,Ratify newer system as governing,Brand lead / Client
+Logo colour vs palette,Magenta-purple logo,Logo asset / Design Instructions,No-pink palette,Design Instructions / brand system,Magenta could leak into layouts,Follow Identity-Magenta rule (logo-only); get vector,Client / Designer
+First-consult pricing,Free first consultation,Site / Knowledgebase,₹100 online consult,Brief 03,Confusing offer,Confirm exact consult pricing,Client
+2-Cycle offer prices,₹2.5L / ₹3L with inclusions,Brief 01,Not stated elsewhere,-,Publishing unconfirmed prices is risky,Confirm prices + inclusions,Client
+IVF starting price on-page,₹1.20L (brand notes),Knowledgebase / Strategic Research,Not published on-page ('affordable' only),Site Extraction,'Honest price' hammer unused; possible mismatch,Confirm and publish real price,Client

@@ -7,7 +7,6 @@
     "timezone": "Asia/Kolkata",
     "environment": "production"
   },
-
   "hermes": {
     "profile_name": "digitech-ops",
     "workdir": "E:/digitech/operations",
@@ -15,7 +14,6 @@
     "auto_reload": true,
     "reload_interval_minutes": 5
   },
-
   "whatsapp": {
     "enabled": true,
     "gateway": "default",
@@ -44,17 +42,24 @@
       }
     }
   },
-
   "team": {
     "919142982138": {
       "name": "Ritik Roushan",
       "role": "admin",
       "email": "ritik@thedigitechsolutions.com",
       "access": {
-        "repos": ["*"],
-        "commands": ["*"],
-        "agents": ["*"],
-        "workspaces": ["*"]
+        "repos": [
+          "*"
+        ],
+        "commands": [
+          "*"
+        ],
+        "agents": [
+          "*"
+        ],
+        "workspaces": [
+          "*"
+        ]
       },
       "preferences": {
         "digest_time": "09:00",
@@ -62,7 +67,6 @@
       }
     }
   },
-
   "repos": {
     "client-portal": {
       "path": "repos/client-portal",
@@ -70,7 +74,9 @@
       "branch": "main",
       "deploy_cmd": "npm run deploy",
       "status": "active",
-      "team": ["919142982138"]
+      "team": [
+        "919142982138"
+      ]
     },
     "internal-tools": {
       "path": "repos/internal-tools",
@@ -78,7 +84,9 @@
       "branch": "main",
       "deploy_cmd": "python deploy.py",
       "status": "active",
-      "team": ["919142982138"]
+      "team": [
+        "919142982138"
+      ]
     },
     "website": {
       "path": "repos/website",
@@ -86,88 +94,142 @@
       "branch": "main",
       "deploy_cmd": "vercel --prod",
       "status": "active",
-      "team": ["919142982138"]
+      "team": [
+        "919142982138"
+      ]
     }
   },
-
   "agents": {
     "operations": {
       "prompt_file": "agents/operations.md",
       "description": "General operations and coordination",
       "default": true,
-      "capabilities": ["repo", "status", "task", "ask", "deploy"]
+      "capabilities": [
+        "repo",
+        "status",
+        "task",
+        "ask",
+        "deploy"
+      ]
+    },
+    "sales": {
+      "prompt_file": "agents/sales.md",
+      "description": "Sales and client management",
+      "default": false,
+      "capabilities": [
+        "lead",
+        "client",
+        "followup",
+        "quote",
+        "meeting"
+      ]
     },
     "admin": {
       "prompt_file": "agents/admin.md",
       "description": "System administration and overrides",
       "default": false,
-      "capabilities": ["*"]
+      "capabilities": [
+        "*"
+      ]
     }
   },
-
+  "smart_routing": {
+    "enabled": false,
+    "note": "DEPRECATED. Keyword-based persona switching has been replaced by sender-based profile routing. Routing (who -> which profile) and per-sender identity are now configured in ~/.hermes/sender-routing.json + ~/.hermes/identities/, applied by the ~/.hermes/hooks/sender-routing gateway hook. Each profile defines its own workspace, repos, and identity (SOUL.md)."
+  },
   "slash_commands": {
     "help": {
       "description": "Show available commands",
       "syntax": "help [command]",
-      "examples": ["help", "help repo"],
+      "examples": [
+        "help",
+        "help repo"
+      ],
       "agent": "operations",
       "public": true
     },
     "repo": {
       "description": "List or switch repos",
       "syntax": "repo [list|switch <name>|status]",
-      "examples": ["repo list", "repo switch client-portal", "repo status"],
+      "examples": [
+        "repo list",
+        "repo switch client-portal",
+        "repo status"
+      ],
       "agent": "operations",
       "public": true
     },
     "status": {
       "description": "Show workspace status",
       "syntax": "status",
-      "examples": ["status"],
+      "examples": [
+        "status"
+      ],
       "agent": "operations",
       "public": true
     },
     "task": {
       "description": "Manage tasks",
       "syntax": "task [add <description>|list|done <id>|assign <who> <what>]",
-      "examples": ["task add Fix login bug", "task list", "task done 3", "task assign Alice Review PR"],
+      "examples": [
+        "task add Fix login bug",
+        "task list",
+        "task done 3",
+        "task assign Alice Review PR"
+      ],
       "agent": "operations",
       "public": true
     },
     "deploy": {
       "description": "Deploy a repo",
       "syntax": "deploy <repo-name>",
-      "examples": ["deploy website"],
+      "examples": [
+        "deploy website"
+      ],
       "agent": "operations",
       "requires_confirmation": true,
-      "requires_role": ["admin"],
+      "requires_role": [
+        "admin"
+      ],
       "public": false
     },
     "ask": {
       "description": "Ask the agent anything",
       "syntax": "ask <question>",
-      "examples": ["ask How do I reset the staging db?"],
+      "examples": [
+        "ask How do I reset the staging db?"
+      ],
       "agent": "current",
       "public": true
     },
     "agent": {
       "description": "Switch agent personality",
       "syntax": "agent [list|switch <name>]",
-      "examples": ["agent list", "agent switch sophie", "agent switch admin"],
+      "examples": [
+        "agent list",
+        "agent switch sophie",
+        "agent switch admin"
+      ],
       "agent": "admin",
-      "requires_role": ["admin"],
+      "requires_role": [
+        "admin"
+      ],
       "public": false
     },
     "config": {
       "description": "Show or reload config",
       "syntax": "config [show|reload]",
-      "examples": ["config show", "config reload"],
+      "examples": [
+        "config show",
+        "config reload"
+      ],
       "agent": "admin",
-      "requires_role": ["admin"],
+      "requires_role": [
+        "admin"
+      ],
       "public": false
     }
   },
-
   "cron": {
     "enabled": false,
     "jobs": {
@@ -175,14 +237,18 @@
         "schedule": "0 9 * * *",
         "description": "Send daily task summary to team",
         "enabled": false,
-        "recipients": ["919142982138"],
+        "recipients": [
+          "919142982138"
+        ],
         "template": "prompts/daily-digest.md"
       },
       "weekly_report": {
         "schedule": "0 10 * * 1",
         "description": "Send weekly activity report to admin",
         "enabled": false,
-        "recipients": ["919142982138"],
+        "recipients": [
+          "919142982138"
+        ],
         "template": "prompts/weekly-report.md"
       },
       "reminder_check": {
@@ -193,22 +259,24 @@
       }
     }
   },
-
   "reminders": {
     "enabled": false,
     "storage": "cron/reminders.json",
-    "max_reminders_per_user": 10,
+    "max_reminders_per_user": 50,
     "default_snooze_minutes": 15
   },
-
   "audit": {
     "enabled": true,
     "log_file": "cron/audit.log",
     "log_level": "info",
-    "events": ["command_used", "repo_switched", "task_created", "deploy_requested"],
+    "events": [
+      "command_used",
+      "repo_switched",
+      "task_created",
+      "deploy_requested"
+    ],
     "retention_days": 30
   },
-
   "composio": {
     "enabled": true,
     "zata_backend_url": "http://localhost:5000",

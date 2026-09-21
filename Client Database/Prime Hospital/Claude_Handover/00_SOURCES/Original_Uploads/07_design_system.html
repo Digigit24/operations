@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prime Speciality Hospital — Design System v1.0</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue: #0057D9;
+    --navy: #003B8F;
+    --green: #0BAA2B;
+    --dkgreen: #067A1B;
+    --white: #FFFFFF;
+    --grey-bg: #F5F7FA;
+    --blue-tint: #EAF3FF;
+    --green-tint: #EAFBEF;
+    --charcoal: #1C2430;
+    --slate: #5E6B75;
+    --red: #D64545;
+    --amber: #F5A623;
+    --border: #E2E7EE;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', sans-serif; background: #F0F2F5; color: var(--charcoal); }
+  a { color: var(--blue); text-decoration: none; }
+
+  /* NAV */
+  .sidenav { position: fixed; left: 0; top: 0; width: 220px; height: 100vh; background: var(--navy); padding: 0; overflow-y: auto; z-index: 100; }
+  .sidenav .logo-area { padding: 24px 20px 20px; border-bottom: 1px solid rgba(255,255,255,0.12); }
+  .sidenav .logo-area .brand { font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 700; color: #fff; line-height: 1.3; }
+  .sidenav .logo-area .sub { font-size: 10px; color: rgba(255,255,255,0.5); margin-top: 2px; }
+  .sidenav nav a { display: block; padding: 9px 20px; font-size: 12px; color: rgba(255,255,255,0.65); font-weight: 500; border-left: 3px solid transparent; transition: all .15s; }
+  .sidenav nav a:hover, .sidenav nav a.active { color: #fff; background: rgba(255,255,255,0.08); border-left-color: var(--green); }
+  .sidenav nav .nav-section { font-size: 10px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,0.3); padding: 16px 20px 5px; }
+
+  /* MAIN */
+  .main { margin-left: 220px; padding: 40px 48px; max-width: 1100px; }
+  .page-header { margin-bottom: 48px; }
+  .page-header h1 { font-family: 'Poppins', sans-serif; font-size: 28px; font-weight: 700; color: var(--blue); }
+  .page-header p { font-size: 14px; color: var(--slate); margin-top: 6px; }
+  .page-header .meta { display: flex; gap: 16px; margin-top: 12px; }
+  .page-header .meta span { font-size: 11px; color: var(--slate); background: var(--grey-bg); padding: 4px 10px; border-radius: 20px; }
+
+  /* SECTIONS */
+  .section { margin-bottom: 64px; }
+  .section-num { font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--green); margin-bottom: 6px; }
+  .section-title { font-family: 'Poppins', sans-serif; font-size: 20px; font-weight: 600; color: var(--charcoal); margin-bottom: 4px; }
+  .section-desc { font-size: 13px; color: var(--slate); margin-bottom: 24px; line-height: 1.6; }
+  .divider { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
+
+  /* COLOR SWATCHES */
+  .swatch-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }
+  .swatch { border-radius: 10px; overflow: hidden; border: 1px solid var(--border); background: #fff; }
+  .swatch .color-block { height: 70px; }
+  .swatch .color-info { padding: 10px 12px; }
+  .swatch .color-name { font-size: 12px; font-weight: 600; color: var(--charcoal); }
+  .swatch .color-hex { font-size: 11px; color: var(--slate); font-family: monospace; margin-top: 2px; }
+  .swatch .color-use { font-size: 10px; color: var(--slate); margin-top: 3px; line-height: 1.4; }
+
+  /* TYPOGRAPHY */
+  .type-sample { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 20px 24px; margin-bottom: 10px; display: flex; align-items: baseline; gap: 24px; }
+  .type-label { font-size: 11px; color: var(--slate); width: 110px; flex-shrink: 0; }
+  .type-spec { font-size: 10px; color: var(--slate); font-family: monospace; margin-left: auto; }
+
+  /* BUTTONS */
+  .btn-grid { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; border-radius: 8px; font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 600; cursor: pointer; border: none; text-decoration: none; transition: opacity .15s; }
+  .btn:hover { opacity: .88; }
+  .btn-primary { background: var(--blue); color: #fff; }
+  .btn-green { background: var(--green); color: #fff; }
+  .btn-outline { background: transparent; color: var(--blue); border: 2px solid var(--blue); }
+  .btn-outline-green { background: transparent; color: var(--dkgreen); border: 2px solid var(--green); }
+  .btn-emergency { background: var(--red); color: #fff; }
+  .btn-ghost { background: transparent; color: var(--slate); border: 1.5px solid var(--border); }
+  .btn-wa { background: #25D366; color: #fff; }
+  .btn-sm { padding: 7px 14px; font-size: 12px; }
+  .btn-lg { padding: 14px 28px; font-size: 16px; }
+  .btn-disabled { background: var(--grey-bg); color: var(--slate); cursor: not-allowed; }
+
+  /* CARDS */
+  .card-showcase { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
+  .card { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
+  .card-procedure { }
+  .card-procedure .proc-icon { width: 40px; height: 40px; background: var(--blue-tint); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
+  .card-procedure .proc-icon svg { width: 22px; height: 22px; stroke: var(--blue); fill: none; stroke-width: 2; stroke-linecap: round; }
+  .card-procedure .proc-name { font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 600; color: var(--charcoal); }
+  .card-procedure .proc-benefit { font-size: 12px; color: var(--slate); margin-top: 4px; line-height: 1.5; }
+  .card-procedure .proc-recovery { font-size: 11px; color: var(--dkgreen); font-weight: 500; margin-top: 8px; }
+  .card-procedure .proc-cta { display: inline-block; margin-top: 12px; font-size: 12px; color: var(--blue); font-weight: 600; }
+
+  .card-doctor { display: flex; gap: 14px; align-items: flex-start; }
+  .doctor-avatar { width: 52px; height: 52px; border-radius: 50%; background: var(--blue-tint); display: flex; align-items: center; justify-content: center; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 700; color: var(--blue); flex-shrink: 0; }
+  .doctor-name { font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 600; color: var(--charcoal); }
+  .doctor-cred { font-size: 11px; color: var(--blue); font-weight: 500; margin-top: 2px; }
+  .doctor-spec { font-size: 11px; color: var(--slate); margin-top: 4px; line-height: 1.5; }
+
+  .card-testimonial { }
+  .card-testimonial .stars { color: #F5A623; font-size: 14px; letter-spacing: 2px; margin-bottom: 8px; }
+  .card-testimonial .quote { font-size: 13px; color: var(--charcoal); line-height: 1.6; font-style: italic; }
+  .card-testimonial .patient { margin-top: 10px; font-size: 11px; color: var(--slate); font-weight: 500; }
+  .card-testimonial .procedure-badge { display: inline-block; margin-top: 6px; font-size: 10px; background: var(--green-tint); color: var(--dkgreen); padding: 3px 8px; border-radius: 20px; font-weight: 600; }
+
+  .card-stat { text-align: center; background: var(--blue); border: none; }
+  .card-stat .stat-num { font-family: 'Poppins', sans-serif; font-size: 32px; font-weight: 700; color: #fff; }
+  .card-stat .stat-label { font-size: 12px; color: rgba(255,255,255,0.75); margin-top: 4px; }
+
+  /* FORMS */
+  .form-demo { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 24px; max-width: 480px; }
+  .form-group { margin-bottom: 16px; }
+  .form-group label { display: block; font-size: 12px; font-weight: 600; color: var(--charcoal); margin-bottom: 6px; }
+  .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 10px 14px; border: 1.5px solid var(--border); border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 14px; color: var(--charcoal); background: #fff; outline: none; transition: border-color .15s; }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--blue); }
+  .form-group input::placeholder, .form-group textarea::placeholder { color: var(--slate); }
+  .form-group textarea { resize: vertical; min-height: 80px; }
+  .input-default { border-color: var(--border) !important; }
+  .input-focused { border-color: var(--blue) !important; }
+  .input-error { border-color: var(--red) !important; }
+  .input-error-msg { font-size: 11px; color: var(--red); margin-top: 4px; }
+
+  /* NAV COMPONENTS */
+  .nav-demo { background: #fff; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; margin-bottom: 12px; }
+  .nav-desktop { display: flex; align-items: center; justify-content: space-between; padding: 0 24px; height: 64px; }
+  .nav-logo-text { font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 700; color: var(--blue); }
+  .nav-logo-sub { font-size: 9px; color: var(--green); font-weight: 500; }
+  .nav-links { display: flex; gap: 28px; }
+  .nav-links a { font-size: 13px; color: var(--charcoal); font-weight: 500; }
+  .nav-links a:hover { color: var(--blue); }
+  .nav-cta { background: var(--green); color: #fff; padding: 8px 18px; border-radius: 8px; font-size: 13px; font-weight: 600; font-family: 'Poppins', sans-serif; }
+
+  /* FOOTER */
+  .footer-demo { background: var(--navy); border-radius: 10px; padding: 24px 28px; }
+  .footer-top { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 24px; margin-bottom: 20px; }
+  .footer-brand .name { font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 700; color: #fff; }
+  .footer-brand .tagline { font-size: 11px; color: rgba(255,255,255,0.55); margin-top: 4px; line-height: 1.5; max-width: 200px; }
+  .footer-col h4 { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 10px; }
+  .footer-col a, .footer-col p { display: block; font-size: 12px; color: rgba(255,255,255,0.7); margin-bottom: 5px; }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 14px; display: flex; justify-content: space-between; align-items: center; }
+  .footer-bottom p { font-size: 11px; color: rgba(255,255,255,0.4); }
+  .footer-contact-strip { background: var(--blue); border-radius: 8px; padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+  .footer-contact-strip .item { display: flex; align-items: center; gap: 8px; }
+  .footer-contact-strip .icon-circle { width: 28px; height: 28px; background: var(--green); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #fff; flex-shrink: 0; }
+  .footer-contact-strip .text { font-size: 12px; color: #fff; font-weight: 500; }
+
+  /* HERO */
+  .hero-demo { background: var(--blue-tint); border-radius: 12px; padding: 40px 36px; position: relative; overflow: hidden; }
+  .hero-demo::before { content: ''; position: absolute; right: -40px; top: -40px; width: 280px; height: 280px; background: rgba(0,87,217,0.06); border-radius: 50%; }
+  .hero-eyebrow { display: inline-flex; align-items: center; gap: 6px; background: var(--green-tint); color: var(--dkgreen); font-size: 11px; font-weight: 600; padding: 4px 12px; border-radius: 20px; margin-bottom: 14px; border: 1px solid rgba(11,170,43,0.2); }
+  .hero-h1 { font-family: 'Poppins', sans-serif; font-size: 32px; font-weight: 700; color: var(--navy); line-height: 1.2; max-width: 480px; margin-bottom: 14px; }
+  .hero-sub { font-size: 14px; color: var(--slate); line-height: 1.7; max-width: 420px; margin-bottom: 24px; }
+  .hero-ctas { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 24px; }
+  .trust-strip { display: flex; gap: 20px; flex-wrap: wrap; }
+  .trust-item { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--slate); font-weight: 500; }
+  .trust-dot { width: 6px; height: 6px; background: var(--green); border-radius: 50%; }
+
+  /* SOCIAL CREATIVE SPECS */
+  .spec-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
+  .spec-card { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 16px; }
+  .spec-card .format-name { font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 600; color: var(--charcoal); }
+  .spec-card .format-size { font-size: 12px; color: var(--blue); font-weight: 500; margin-top: 2px; }
+  .spec-card .format-use { font-size: 11px; color: var(--slate); margin-top: 6px; line-height: 1.5; }
+  .spec-card .format-ratio { display: inline-block; margin-top: 8px; font-size: 10px; background: var(--blue-tint); color: var(--navy); padding: 3px 8px; border-radius: 4px; font-weight: 600; }
+
+  /* GMB SOCIAL PREVIEW */
+  .gmb-preview { width: 320px; background: #fff; border-radius: 12px; border: 1px solid var(--border); overflow: hidden; }
+  .gmb-header { background: var(--blue); padding: 14px 16px; }
+  .gmb-header .headline { font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 700; color: #fff; line-height: 1.3; }
+  .gmb-header .sub { font-size: 11px; color: rgba(255,255,255,0.75); margin-top: 3px; }
+  .gmb-body { padding: 14px 16px; }
+  .check-item { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .check-circle { width: 20px; height: 20px; background: var(--green); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .check-circle svg { width: 11px; height: 11px; stroke: #fff; fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+  .check-text { font-size: 12px; color: var(--charcoal); font-weight: 500; }
+  .gmb-footer { background: var(--navy); padding: 12px 16px; display: flex; justify-content: space-between; align-items: center; }
+  .gmb-footer .contact { font-size: 10px; color: rgba(255,255,255,0.8); }
+  .gmb-footer .wa-btn { background: var(--green); color: #fff; font-size: 10px; font-weight: 600; padding: 5px 10px; border-radius: 5px; }
+
+  /* ICONS */
+  .icon-grid { display: flex; flex-wrap: wrap; gap: 8px; }
+  .icon-item { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 12px; background: #fff; border: 1px solid var(--border); border-radius: 8px; min-width: 64px; }
+  .icon-item .icon-wrap { width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+  .icon-item .icon-wrap.blue { background: var(--blue-tint); }
+  .icon-item .icon-wrap.green { background: var(--green-tint); }
+  .icon-item .icon-wrap svg { width: 20px; height: 20px; stroke-width: 2; stroke-linecap: round; }
+  .icon-item .icon-label { font-size: 9px; color: var(--slate); text-align: center; }
+
+  /* SPACING */
+  .spacing-row { display: flex; align-items: center; gap: 16px; margin-bottom: 10px; }
+  .spacing-block { background: var(--blue-tint); border-radius: 4px; height: 24px; }
+  .spacing-label { font-size: 12px; color: var(--slate); font-family: monospace; width: 50px; }
+  .spacing-desc { font-size: 11px; color: var(--slate); }
+
+  /* VOICE EXAMPLES */
+  .voice-card { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-bottom: 8px; }
+  .voice-label { font-size: 10px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--green); margin-bottom: 6px; }
+  .voice-text { font-size: 14px; color: var(--charcoal); line-height: 1.6; }
+  .voice-anti { background: #fff8f8; border: 1px solid #f5c6c6; border-radius: 10px; padding: 16px 20px; margin-bottom: 8px; }
+  .voice-anti .voice-label { color: var(--red); }
+  .voice-anti .voice-text { color: #a33; }
+
+  /* ANTICHEAT */
+  .avoid-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .avoid-item { background: #fff8f8; border: 1px solid #f5c6c6; border-radius: 8px; padding: 10px 14px; font-size: 12px; color: #a33; display: flex; align-items: flex-start; gap: 8px; }
+  .do-item { background: var(--green-tint); border: 1px solid rgba(11,170,43,0.2); border-radius: 8px; padding: 10px 14px; font-size: 12px; color: var(--dkgreen); display: flex; align-items: flex-start; gap: 8px; }
+  .mark-x { color: var(--red); font-weight: 700; flex-shrink: 0; }
+  .mark-v { color: var(--green); font-weight: 700; flex-shrink: 0; }
+
+  /* SCROLL TARGET FIX */
+  .scroll-target { scroll-margin-top: 24px; }
+
+  @media (max-width: 900px) {
+    .sidenav { display: none; }
+    .main { margin-left: 0; padding: 24px 20px; }
+    .footer-top { grid-template-columns: 1fr; }
+    .avoid-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<nav class="sidenav" aria-label="Design system navigation">
+  <div class="logo-area">
+    <div class="brand">Prime Speciality Hospital</div>
+    <div class="sub">Design System v1.0 · June 2026</div>
+  </div>
+  <nav>
+    <div class="nav-section">Brand</div>
+    <a href="#colors">01 · Color palette</a>
+    <a href="#typography">02 · Typography</a>
+    <a href="#spacing">03 · Spacing & grid</a>
+    <div class="nav-section">Components</div>
+    <a href="#buttons">04 · Buttons</a>
+    <a href="#cards">05 · Cards</a>
+    <a href="#forms">06 · Forms</a>
+    <a href="#navigation">07 · Navigation</a>
+    <a href="#footer">08 · Footer</a>
+    <div class="nav-section">Layouts</div>
+    <a href="#hero">09 · Hero section</a>
+    <a href="#social">10 · Social formats</a>
+    <a href="#gmb">11 · GMB thumbnail</a>
+    <a href="#icons">12 · Iconography</a>
+    <div class="nav-section">Brand Rules</div>
+    <a href="#voice">13 · Voice & copy</a>
+    <a href="#antipatterns">14 · Anti-patterns</a>
+  </nav>
+</nav>
+
+<!-- MAIN CONTENT -->
+<main class="main">
+
+  <div class="page-header">
+    <h1>Prime Speciality Hospital — Design System</h1>
+    <p>Visual identity reference for all digital and print assets — website, social, GMB, ads, WhatsApp</p>
+    <div class="meta">
+      <span>v1.0 · June 2026</span>
+      <span>Dr. Pankaj Bhalerao · Moshi, PCMC</span>
+      <span>Lead: Onboarding Step 07</span>
+    </div>
+  </div>
+
+  <!-- 01 COLORS -->
+  <section class="section scroll-target" id="colors">
+    <div class="section-num">01</div>
+    <div class="section-title">Color palette</div>
+    <div class="section-desc">The Prime palette is built directly from the logo: strong medical blue for trust, fresh healing green for recovery, and clean white as the dominant canvas. Use white 55%, Blue 20%, Green 10%, tints 10%, accents 5%.</div>
+    <div class="swatch-grid">
+      <div class="swatch"><div class="color-block" style="background:#0057D9"></div><div class="color-info"><div class="color-name">Prime Blue</div><div class="color-hex">#0057D9</div><div class="color-use">Headlines, CTAs, footer, trust elements</div></div></div>
+      <div class="swatch"><div class="color-block" style="background:#003B8F"></div><div class="color-info"><div class="color-name">Prime Navy</div><div class="color-hex">#003B8F</div><div class="color-use">Footer bg, deep accent, hover states</div></div></div>
+      <div class="swatch"><div class="color-block" style="background:#0BAA2B"></div><div class="color-info"><div class="color-name">Prime Green</div><div class="color-hex">#0BAA2B</div><div class="color-use">Checkmarks, icons, healing cues, WhatsApp CTA</div></div></div>
+      <div class="swatch"><div class="color-block" style="background:#067A1B"></div><div class="color-info"><div class="color-name">Dark Green</div><div class="color-hex">#067A1B</div><div class="color-use">Green hover states, strong accents</div></div></div>
+      <div class="swatch"><div class="color-block" style="background:#FFFFFF; border-bottom: 1px solid #eee"></div><div class="color-info"><div class="color-name">Medical White</div><div class="color-hex">#FFFFFF</div><div class="color-use">Primary background (dominant — 55%)</div></div></div>
+      <div class="swatch"><div class="color-block" style="background:#F5F7FA"></div><div class="color-info"><div class="color-name">Soft Clinical Grey</div><div class="color-hex">#F5F7FA</div><div class="color-use">Section backgrounds, card fills</div></div></div>
+      <div class="swatch"><div class="color-block" style="background:#EAF3FF"></div><div class="color-info"><div class="color-name">Blue Tint</div><div class="color-hex">#EAF3FF</div><div class="color-use">Feature panels, info callouts</div></div></div>
+      <div class="swatch"><div class="color-block" style="background:#EAFBEF"></div><div class="color-info"><div class="color-name">Green Tint</div><div class="color-hex">#EAFBEF</div><div class="color-use">Success states, healing highlights</div></div></div>
+      <div class="swatch"><div class="color-block" style="background:#1C2430"></div><div class="color-info"><div class="color-name">Charcoal</div><div class="color-hex">#1C2430</div><div class="color-use">Primary body text</div></div></div>
+      <div class="swatch"><div class="color-block" style="background:#5E6B75"></div><div class="color-info"><div class="color-name">Slate Grey</div><div class="color-hex">#5E6B75</div><div class="color-use">Secondary text, captions, labels</div></div></div>
+      <div class="swatch"><div class="color-block" style="background:#D64545"></div><div class="color-info"><div class="color-name">Emergency Red</div><div class="color-hex">#D64545</div><div class="color-use">Emergency CTAs only — use sparingly</div></div></div>
+      <div class="swatch"><div class="color-block" style="background:#F5A623"></div><div class="color-info"><div class="color-name">Attention Amber</div><div class="color-hex">#F5A623</div><div class="color-use">Attention callouts — rare use only</div></div></div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- 02 TYPOGRAPHY -->
+  <section class="section scroll-target" id="typography">
+    <div class="section-num">02</div>
+    <div class="section-title">Typography</div>
+    <div class="section-desc">Poppins for display and headlines — medical confidence, modern weight. Inter for body and UI — maximum readability at all sizes. Two families only, never more.</div>
+
+    <div class="type-sample">
+      <div class="type-label">Display / H1</div>
+      <div style="font-family:'Poppins',sans-serif;font-size:42px;font-weight:700;color:#0057D9;line-height:1.1">Minimally invasive surgery in PCMC</div>
+      <div class="type-spec">Poppins 700 · 42px · #0057D9</div>
+    </div>
+    <div class="type-sample">
+      <div class="type-label">Section H2</div>
+      <div style="font-family:'Poppins',sans-serif;font-size:28px;font-weight:600;color:#1C2430">What makes Prime different</div>
+      <div class="type-spec">Poppins 600 · 28px · #1C2430</div>
+    </div>
+    <div class="type-sample">
+      <div class="type-label">Subheading H3</div>
+      <div style="font-family:'Poppins',sans-serif;font-size:20px;font-weight:600;color:#1C2430">Laser piles treatment</div>
+      <div class="type-spec">Poppins 600 · 20px · #1C2430</div>
+    </div>
+    <div class="type-sample">
+      <div class="type-label">Card title H4</div>
+      <div style="font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;color:#1C2430">30-minute procedure · same day home</div>
+      <div class="type-spec">Poppins 600 · 15px · #1C2430</div>
+    </div>
+    <div class="type-sample">
+      <div class="type-label">Body text</div>
+      <div style="font-family:'Inter',sans-serif;font-size:15px;font-weight:400;color:#1C2430;line-height:1.7;max-width:460px">Laser treatment removes the cause. It doesn't just manage the symptoms. The procedure takes 30 minutes. Most patients are home the same afternoon.</div>
+      <div class="type-spec">Inter 400 · 15px · #1C2430</div>
+    </div>
+    <div class="type-sample">
+      <div class="type-label">Secondary text</div>
+      <div style="font-family:'Inter',sans-serif;font-size:13px;font-weight:400;color:#5E6B75">Available Monday – Saturday · 9am to 7pm · Emergency 24/7</div>
+      <div class="type-spec">Inter 400 · 13px · #5E6B75</div>
+    </div>
+    <div class="type-sample">
+      <div class="type-label">Label / caption</div>
+      <div style="font-family:'Inter',sans-serif;font-size:11px;font-weight:500;color:#5E6B75;letter-spacing:.04em;text-transform:uppercase">GI Surgery · Laparoscopy · Piles · Hernia</div>
+      <div class="type-spec">Inter 500 · 11px · caps · #5E6B75</div>
+    </div>
+    <div class="type-sample">
+      <div class="type-label">Green highlight</div>
+      <div style="font-family:'Poppins',sans-serif;font-size:22px;font-weight:700;color:#1C2430">108 patients. <span style="color:#0BAA2B">4.9 stars.</span> Every time.</div>
+      <div class="type-spec">Blue stat + green accent highlight</div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- 03 SPACING -->
+  <section class="section scroll-target" id="spacing">
+    <div class="section-num">03</div>
+    <div class="section-title">Spacing & grid</div>
+    <div class="section-desc">Base unit: 4px. Scale multiples × 2 from there. Section padding: 80–96px vertical on desktop, 40–48px on mobile. Max content width: 1200px centered.</div>
+    <div class="spacing-row"><div class="spacing-label">4px</div><div class="spacing-block" style="width:4px"></div><div class="spacing-desc">Icon gap, tight inline spacing</div></div>
+    <div class="spacing-row"><div class="spacing-label">8px</div><div class="spacing-block" style="width:8px"></div><div class="spacing-desc">Component internal gap</div></div>
+    <div class="spacing-row"><div class="spacing-label">16px</div><div class="spacing-block" style="width:16px"></div><div class="spacing-desc">Card padding, list gap</div></div>
+    <div class="spacing-row"><div class="spacing-label">24px</div><div class="spacing-block" style="width:24px"></div><div class="spacing-desc">Card padding, section sub-gap</div></div>
+    <div class="spacing-row"><div class="spacing-label">32px</div><div class="spacing-block" style="width:32px"></div><div class="spacing-desc">Grid gap, between-section spacing</div></div>
+    <div class="spacing-row"><div class="spacing-label">48px</div><div class="spacing-block" style="width:48px"></div><div class="spacing-desc">Section spacing mobile</div></div>
+    <div class="spacing-row"><div class="spacing-label">80px</div><div class="spacing-block" style="width:80px"></div><div class="spacing-desc">Section spacing desktop</div></div>
+    <div class="spacing-row"><div class="spacing-label">96px</div><div class="spacing-block" style="width:96px"></div><div class="spacing-desc">Hero section vertical padding</div></div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- 04 BUTTONS -->
+  <section class="section scroll-target" id="buttons">
+    <div class="section-num">04</div>
+    <div class="section-title">Button system</div>
+    <div class="section-desc">WhatsApp CTA is always the primary conversion button. Blue for primary trust actions. Ghost for secondary navigation. Never use red except for genuine emergency contexts.</div>
+    <div class="btn-grid">
+      <a class="btn btn-primary" href="#">Book consultation</a>
+      <a class="btn btn-green" href="#">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.049.517 3.98 1.427 5.668L0 24l6.507-1.402A11.938 11.938 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.95 0-3.775-.524-5.353-1.437l-.384-.228-3.982.858.873-3.877-.249-.397A9.944 9.944 0 012 12c0-5.514 4.486-10 10-10s10 4.486 10 10-4.486 10-10 10z"/></svg>
+        WhatsApp us
+      </a>
+      <a class="btn btn-outline" href="#">Learn more</a>
+      <a class="btn btn-outline-green" href="#">View services</a>
+      <a class="btn btn-ghost" href="#">Download brochure</a>
+      <a class="btn btn-emergency" href="#">Emergency: call now</a>
+    </div>
+    <div style="margin-top:16px">
+      <p style="font-size:12px;color:var(--slate);margin-bottom:10px;font-weight:500;">Size variants</p>
+      <div class="btn-grid">
+        <a class="btn btn-primary btn-sm" href="#">Small CTA</a>
+        <a class="btn btn-primary" href="#">Default CTA</a>
+        <a class="btn btn-primary btn-lg" href="#">Large CTA</a>
+        <a class="btn btn-disabled">Disabled</a>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- 05 CARDS -->
+  <section class="section scroll-target" id="cards">
+    <div class="section-num">05</div>
+    <div class="section-title">Card components</div>
+    <div class="section-desc">Cards are the primary content unit. 12px radius, 1px border, white background, 20px internal padding. Each card type has a specific structure — never deviate from it.</div>
+    <div class="card-showcase">
+
+      <div class="card card-procedure">
+        <div class="proc-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2z"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <div class="proc-name">Laser piles treatment</div>
+        <div class="proc-benefit">Minimally invasive laser procedure. No cuts. No stitches. Same-day discharge.</div>
+        <div class="proc-recovery">✓ Back to normal in 3–5 days</div>
+        <a class="proc-cta" href="#">Learn more →</a>
+      </div>
+
+      <div class="card card-procedure">
+        <div class="proc-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg>
+        </div>
+        <div class="proc-name">Laparoscopic hernia surgery</div>
+        <div class="proc-benefit">3 small incisions. Mesh reinforcement. Proven technique for all hernia types.</div>
+        <div class="proc-recovery">✓ Back to work in 5–7 days</div>
+        <a class="proc-cta" href="#">Learn more →</a>
+      </div>
+
+      <div class="card" style="padding:20px">
+        <div class="card-doctor">
+          <div class="doctor-avatar">PB</div>
+          <div>
+            <div class="doctor-name">Dr. Pankaj Bhalerao</div>
+            <div class="doctor-cred">MBBS · MS · FMAS</div>
+            <div class="doctor-spec">Minimally Invasive Surgeon · GI Specialist · Moshi, PCMC · 10+ years</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card card-testimonial">
+        <div class="stars">★★★★★</div>
+        <div class="quote">"Painless. Same day home. I can't believe I waited two years. Dr. Bhalerao explained everything before the procedure."</div>
+        <div class="patient">Sunita M. · Moshi</div>
+        <span class="procedure-badge">Laser piles treatment</span>
+      </div>
+
+      <div class="card card-stat">
+        <div class="stat-num">108</div>
+        <div class="stat-label">Google reviews · 4.9★ average</div>
+      </div>
+
+      <div class="card card-stat" style="background:var(--green)">
+        <div class="stat-num">1,200+</div>
+        <div class="stat-label">Laparoscopic procedures performed</div>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- 06 FORMS -->
+  <section class="section scroll-target" id="forms">
+    <div class="section-num">06</div>
+    <div class="section-title">Form elements</div>
+    <div class="section-desc">Appointment form is the tertiary conversion path after WhatsApp and phone. Keep fields minimal — name, phone, procedure, message. Never ask for more than needed.</div>
+    <div class="form-demo">
+      <div style="font-family:'Poppins',sans-serif;font-size:16px;font-weight:600;color:var(--charcoal);margin-bottom:18px">Book a consultation</div>
+      <div class="form-group">
+        <label>Full name</label>
+        <input type="text" placeholder="Your name" class="input-default">
+      </div>
+      <div class="form-group">
+        <label>Phone number</label>
+        <input type="tel" placeholder="+91 XXXXX XXXXX" class="input-focused" style="border-color:#0057D9">
+      </div>
+      <div class="form-group">
+        <label>Procedure / concern</label>
+        <select>
+          <option value="">Select a procedure</option>
+          <option>Laser piles treatment</option>
+          <option>Hernia surgery</option>
+          <option>Gallbladder removal</option>
+          <option>Appendix surgery</option>
+          <option>Fissure / fistula</option>
+          <option>Other / general consultation</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Message (optional)</label>
+        <textarea placeholder="Briefly describe your symptoms or question…"></textarea>
+      </div>
+      <div class="form-group" style="margin-bottom:0">
+        <label style="color:#D64545">Phone (error state demo)</label>
+        <input type="tel" value="invalid" class="input-error" style="border-color:#D64545">
+        <div class="input-error-msg">Please enter a valid 10-digit mobile number</div>
+      </div>
+      <div style="margin-top:16px;display:flex;gap:10px">
+        <a class="btn btn-primary" style="flex:1;justify-content:center" href="#">Book appointment</a>
+        <a class="btn btn-green" href="#">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+          WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- 07 NAVIGATION -->
+  <section class="section scroll-target" id="navigation">
+    <div class="section-num">07</div>
+    <div class="section-title">Navigation</div>
+    <div class="section-desc">Desktop: logo left, nav center, green WhatsApp CTA right. Sticky on scroll. Mobile: logo left, hamburger right, WhatsApp always visible. Never hide the primary CTA on mobile.</div>
+    <div class="nav-demo">
+      <div class="nav-desktop">
+        <div>
+          <div class="nav-logo-text">Prime Speciality Hospital</div>
+          <div class="nav-logo-sub">GI Surgery · Laparoscopy · Piles · Hernia · Thyroid</div>
+        </div>
+        <div class="nav-links">
+          <a href="#">Procedures</a>
+          <a href="#">About Dr. Bhalerao</a>
+          <a href="#">FAQ</a>
+          <a href="#">Contact</a>
+        </div>
+        <a class="nav-cta" href="#">WhatsApp us</a>
+      </div>
+    </div>
+    <div style="background:var(--grey-bg);padding:12px 16px;border-radius:8px;margin-top:8px;display:flex;align-items:center;justify-content:space-between">
+      <div style="font-family:'Poppins',sans-serif;font-size:13px;font-weight:700;color:var(--blue)">Prime Speciality Hospital</div>
+      <div style="display:flex;gap:8px;align-items:center">
+        <a class="btn btn-green btn-sm" href="#">WhatsApp</a>
+        <div style="display:flex;flex-direction:column;gap:3px;cursor:pointer">
+          <div style="width:18px;height:2px;background:var(--charcoal);border-radius:2px"></div>
+          <div style="width:18px;height:2px;background:var(--charcoal);border-radius:2px"></div>
+          <div style="width:18px;height:2px;background:var(--charcoal);border-radius:2px"></div>
+        </div>
+      </div>
+    </div>
+    <p style="font-size:11px;color:var(--slate);margin-top:6px">↑ Mobile nav — WhatsApp CTA always visible</p>
+  </section>
+
+  <hr class="divider">
+
+  <!-- 08 FOOTER -->
+  <section class="section scroll-target" id="footer">
+    <div class="section-num">08</div>
+    <div class="section-title">Footer</div>
+    <div class="section-desc">Navy background. Prime Care Strip at top — blue + green icons + white contact. Three-column layout: brand + services + contact. Always include exact NAP.</div>
+    <div class="footer-demo">
+      <div class="footer-contact-strip">
+        <div class="item"><div class="icon-circle">📞</div><div class="text">+91-7447441426</div></div>
+        <div class="item"><div class="icon-circle">💬</div><div class="text">WhatsApp: +91-9422668921</div></div>
+        <div class="item"><div class="icon-circle">🌐</div><div class="text">primespecialityhospital.in</div></div>
+        <div class="item"><div class="icon-circle">📍</div><div class="text">Moshi, PCMC, Pune 412105</div></div>
+      </div>
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="name">Prime Speciality Hospital</div>
+          <div class="tagline">Minimally invasive surgical care by Dr. Pankaj Bhalerao (FMAS) — Moshi, PCMC, Pune.</div>
+        </div>
+        <div class="footer-col">
+          <h4>Procedures</h4>
+          <a href="#">Laser piles treatment</a>
+          <a href="#">Hernia surgery</a>
+          <a href="#">Gallbladder removal</a>
+          <a href="#">Appendix surgery</a>
+          <a href="#">Fissure & fistula</a>
+          <a href="#">Thyroid surgery</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <p>Mon–Sat: 9am – 7pm</p>
+          <p>Emergency: 24/7</p>
+          <p>Moshi, Pimpri-Chinchwad</p>
+          <p>Pune 412105</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Prime Speciality Hospital. All rights reserved.</p>
+        <p>Privacy Policy · Terms of Use</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- 09 HERO -->
+  <section class="section scroll-target" id="hero">
+    <div class="section-num">09</div>
+    <div class="section-title">Hero section</div>
+    <div class="section-desc">The hero is the conversion anchor. H1 must contain primary keyword. Trust strip below CTAs shows 4.9★ rating. WhatsApp is always the primary CTA — blue call is secondary.</div>
+    <div class="hero-demo">
+      <div class="hero-eyebrow">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#067A1B" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+        Dr. Pankaj Bhalerao · FMAS · Moshi, PCMC
+      </div>
+      <h1 class="hero-h1">Minimally invasive surgery in PCMC — by a specialist, close to home</h1>
+      <p class="hero-sub">Laser piles, hernia, gallbladder, and GI surgery performed by a senior surgeon at a hospital you don't have to drive to central Pune to reach.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-green btn-lg" href="#">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+          WhatsApp for consultation
+        </a>
+        <a class="btn btn-outline btn-lg" href="#">Call: +91-7447441426</a>
+      </div>
+      <div class="trust-strip">
+        <div class="trust-item"><div class="trust-dot"></div>4.9★ · 108 Google reviews</div>
+        <div class="trust-item"><div class="trust-dot"></div>FMAS certified surgeon</div>
+        <div class="trust-item"><div class="trust-dot"></div>Moshi, PCMC · 24/7 emergency</div>
+        <div class="trust-item"><div class="trust-dot"></div>All insurance accepted</div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- 10 SOCIAL FORMATS -->
+  <section class="section scroll-target" id="social">
+    <div class="section-num">10</div>
+    <div class="section-title">Social media format specs</div>
+    <div class="section-desc">All social creatives must include: logo top-left, Prime Blue headline, Prime Green checkmarks, contact strip footer. Never use teal, dark mode, or stock photo poses.</div>
+    <div class="spec-grid">
+      <div class="spec-card"><div class="format-name">Instagram square</div><div class="format-size">1080 × 1080 px</div><div class="format-use">Standard posts, GMB thumbnails, procedure awareness</div><span class="format-ratio">1:1</span></div>
+      <div class="spec-card"><div class="format-name">Instagram portrait</div><div class="format-size">1080 × 1350 px</div><div class="format-use">Doctor posts, patient stories, testimonials</div><span class="format-ratio">4:5</span></div>
+      <div class="spec-card"><div class="format-name">Instagram story</div><div class="format-size">1080 × 1920 px</div><div class="format-use">Announcements, quick procedure facts, CTAs</div><span class="format-ratio">9:16</span></div>
+      <div class="spec-card"><div class="format-name">Carousel slide</div><div class="format-size">1080 × 1080 px</div><div class="format-use">Educational content, procedure step-by-step, FAQs</div><span class="format-ratio">1:1</span></div>
+      <div class="spec-card"><div class="format-name">Meta ad creative</div><div class="format-size">1080 × 1350 px</div><div class="format-use">Facebook and Instagram paid campaigns</div><span class="format-ratio">4:5</span></div>
+      <div class="spec-card"><div class="format-name">WhatsApp creative</div><div class="format-size">1080 × 1080 px</div><div class="format-use">Health awareness broadcasts, appointment reminders</div><span class="format-ratio">1:1</span></div>
+      <div class="spec-card"><div class="format-name">Website hero banner</div><div class="format-size">1920 × 700 px</div><div class="format-use">Homepage hero, procedure page heroes</div><span class="format-ratio">16:5</span></div>
+      <div class="spec-card"><div class="format-name">GMB cover photo</div><div class="format-size">1332 × 750 px</div><div class="format-use">Google Business Profile cover image</div><span class="format-ratio">16:9</span></div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- 11 GMB THUMBNAIL -->
+  <section class="section scroll-target" id="gmb">
+    <div class="section-num">11</div>
+    <div class="section-title">GMB thumbnail — Prime Care Strip</div>
+    <div class="section-desc">The Prime Care Strip is the signature recurring motif. Every GMB post uses: Blue header, white body with green checkmark cards, Navy footer with green circle contact icons. This is the non-negotiable brand structure for all GMB content.</div>
+    <div class="gmb-preview">
+      <div class="gmb-header">
+        <div class="headline">Laser piles treatment. Same day. No cuts.</div>
+        <div class="sub">Available in Moshi, PCMC · Prime Speciality Hospital</div>
+      </div>
+      <div class="gmb-body">
+        <div class="check-item">
+          <div class="check-circle"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div class="check-text">30-minute laser procedure</div>
+        </div>
+        <div class="check-item">
+          <div class="check-circle"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div class="check-text">Back home same day</div>
+        </div>
+        <div class="check-item">
+          <div class="check-circle"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div class="check-text">Covered by insurance</div>
+        </div>
+        <div class="check-item">
+          <div class="check-circle"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div class="check-text">Dr. Bhalerao performs personally</div>
+        </div>
+        <div style="margin-top:12px;font-size:11px;color:var(--slate);line-height:1.5">If you've been living with piles — the pain, the bleeding — you don't need to keep waiting. WhatsApp us for a frank conversation about your options.</div>
+      </div>
+      <div class="gmb-footer">
+        <div class="contact">📞 +91-7447441426 · primespecialityhospital.in<br>📍 Moshi, Pimpri-Chinchwad, Pune 412105</div>
+        <div class="wa-btn">WhatsApp</div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- 12 ICONS -->
+  <section class="section scroll-target" id="icons">
+    <div class="section-num">12</div>
+    <div class="section-title">Iconography</div>
+    <div class="section-desc">Line style only — 2px stroke, rounded caps. Blue icons on blue tint backgrounds for informational elements. Green icons for positive health outcomes and checkmarks. Never use filled icons except for the Prime Care Strip checkmarks.</div>
+    <div class="icon-grid">
+      <div class="icon-item"><div class="icon-wrap blue"><svg viewBox="0 0 24 24" stroke="#0057D9" fill="none" stroke-width="2" stroke-linecap="round"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2z"/><path d="M12 6v6l4 2"/></svg></div><div class="icon-label">Consultation</div></div>
+      <div class="icon-item"><div class="icon-wrap green"><svg viewBox="0 0 24 24" stroke="#0BAA2B" fill="none" stroke-width="2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div><div class="icon-label">Checkmark</div></div>
+      <div class="icon-item"><div class="icon-wrap blue"><svg viewBox="0 0 24 24" stroke="#0057D9" fill="none" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.22 1.22 2 2 0 012.22.22h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.08 6.08l1.77-1.56a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 13.92z"/></svg></div><div class="icon-label">Phone</div></div>
+      <div class="icon-item"><div class="icon-wrap green"><svg viewBox="0 0 24 24" stroke="#0BAA2B" fill="none" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="icon-label">Safety</div></div>
+      <div class="icon-item"><div class="icon-wrap blue"><svg viewBox="0 0 24 24" stroke="#0057D9" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div><div class="icon-label">Info</div></div>
+      <div class="icon-item"><div class="icon-wrap blue"><svg viewBox="0 0 24 24" stroke="#0057D9" fill="none" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><div class="icon-label">Appointment</div></div>
+      <div class="icon-item"><div class="icon-wrap green"><svg viewBox="0 0 24 24" stroke="#0BAA2B" fill="none" stroke-width="2" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div><div class="icon-label">Care</div></div>
+      <div class="icon-item"><div class="icon-wrap blue"><svg viewBox="0 0 24 24" stroke="#0057D9" fill="none" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div class="icon-label">Location</div></div>
+      <div class="icon-item"><div class="icon-wrap blue"><svg viewBox="0 0 24 24" stroke="#0057D9" fill="none" stroke-width="2" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><div class="icon-label">Hospital</div></div>
+      <div class="icon-item"><div class="icon-wrap green"><svg viewBox="0 0 24 24" stroke="#0BAA2B" fill="none" stroke-width="2" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div class="icon-label">Recovery</div></div>
+      <div class="icon-item"><div class="icon-wrap blue"><svg viewBox="0 0 24 24" stroke="#0057D9" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a4 4 0 018 0v2"/></svg></div><div class="icon-label">Doctor</div></div>
+      <div class="icon-item"><div class="icon-wrap green"><svg viewBox="0 0 24 24" stroke="#0BAA2B" fill="none" stroke-width="2" stroke-linecap="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div><div class="icon-label">4.9 Star</div></div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- 13 VOICE & COPY -->
+  <section class="section scroll-target" id="voice">
+    <div class="section-num">13</div>
+    <div class="section-title">Voice & copy examples</div>
+    <div class="section-desc">Calm. Confident. Educational. Direct. The cadence of a senior surgeon explaining to one patient. Specific over superlative. Numbers over adjectives. Lead with the patient's question, answer it directly, add context, close with WhatsApp.</div>
+
+    <div class="voice-card">
+      <div class="voice-label">Headline — procedure</div>
+      <div class="voice-text" style="font-family:'Poppins',sans-serif;font-size:20px;font-weight:600;color:var(--navy)">Laser piles treatment. 30 minutes. Same day home. No cuts.</div>
+    </div>
+    <div class="voice-card">
+      <div class="voice-label">Body copy — procedure page opener</div>
+      <div class="voice-text">Laser treatment removes the cause. It doesn't manage the symptom — it resolves the problem. The procedure takes 30 minutes. Most patients return home the same afternoon and are back to normal activity within 3–5 days.</div>
+    </div>
+    <div class="voice-card">
+      <div class="voice-label">Trust statement</div>
+      <div class="voice-text" style="font-family:'Poppins',sans-serif;font-size:18px;font-weight:600">108 patients gave us 4.9 stars. We intend to keep that.</div>
+    </div>
+    <div class="voice-card">
+      <div class="voice-label">CTA copy</div>
+      <div class="voice-text">WhatsApp Dr. Bhalerao's team — we'll give you a clear picture of your options before you commit to anything.</div>
+    </div>
+    <div class="voice-card">
+      <div class="voice-label">Differentiator</div>
+      <div class="voice-text">The doctor you meet in consultation is the doctor who operates. No junior substitution. No bait-and-switch.</div>
+    </div>
+    <div style="margin:16px 0 8px;font-size:12px;font-weight:600;color:var(--red)">Never write like this</div>
+    <div class="voice-anti"><div class="voice-label">Banned — superlatives</div><div class="voice-text">"Our world-class, cutting-edge, state-of-the-art compassionate holistic surgical team is committed to transforming healthcare in PCMC."</div></div>
+    <div class="voice-anti"><div class="voice-label">Banned — fake urgency</div><div class="voice-text">"Only 3 consultation slots left this week! Book NOW before they're gone!"</div></div>
+    <div class="voice-anti"><div class="voice-label">Banned — guarantee</div><div class="voice-text">"100% painless. Guaranteed results. Risk-free surgery."</div></div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- 14 ANTI-PATTERNS -->
+  <section class="section scroll-target" id="antipatterns">
+    <div class="section-num">14</div>
+    <div class="section-title">Anti-patterns — what to never use</div>
+    <div class="section-desc">These patterns undermine brand trust and are never permitted in any Prime asset.</div>
+    <div class="avoid-grid">
+      <div class="avoid-item"><span class="mark-x">✕</span>Countdown timers ("Book in 00:45:12")</div>
+      <div class="do-item"><span class="mark-v">✓</span>Persistent WhatsApp CTA — always available</div>
+      <div class="avoid-item"><span class="mark-x">✕</span>Surgeon pointing at CT scan (hero image)</div>
+      <div class="do-item"><span class="mark-v">✓</span>Doctor in consultation — side angle, warm light</div>
+      <div class="avoid-item"><span class="mark-x">✕</span>Stethoscope on keyboard (tech-meets-medicine cliché)</div>
+      <div class="do-item"><span class="mark-v">✓</span>Real hospital interior, reception, consultation room</div>
+      <div class="avoid-item"><span class="mark-x">✕</span>DNA helix over blue gradient</div>
+      <div class="do-item"><span class="mark-v">✓</span>Blue tint + white + green accents — brand palette only</div>
+      <div class="avoid-item"><span class="mark-x">✕</span>Smiling doctor holding clipboard (stock pose)</div>
+      <div class="do-item"><span class="mark-v">✓</span>Editorial documentary — candid, genuine interactions</div>
+      <div class="avoid-item"><span class="mark-x">✕</span>Gradient mesh backgrounds (startup aesthetic)</div>
+      <div class="do-item"><span class="mark-v">✓</span>Flat white backgrounds — clean, clinical, trustworthy</div>
+      <div class="avoid-item"><span class="mark-x">✕</span>Glassmorphism or dark mode design</div>
+      <div class="do-item"><span class="mark-v">✓</span>Light-dominant layouts — white + blue + green</div>
+      <div class="avoid-item"><span class="mark-x">✕</span>"Flat 30% OFF on piles surgery this month!"</div>
+      <div class="do-item"><span class="mark-v">✓</span>Transparent cost ranges — shared upfront, no discounts</div>
+      <div class="avoid-item"><span class="mark-x">✕</span>Star ratings without source attribution</div>
+      <div class="do-item"><span class="mark-v">✓</span>"108 Google reviews · 4.9★" — attributed, verifiable</div>
+      <div class="avoid-item"><span class="mark-x">✕</span>Pop-ups within 5 seconds of page load</div>
+      <div class="do-item"><span class="mark-v">✓</span>Sticky WhatsApp button — always accessible, never intrusive</div>
+      <div class="avoid-item"><span class="mark-x">✕</span>"World-class, cutting-edge, state-of-the-art"</div>
+      <div class="do-item"><span class="mark-v">✓</span>"1,200+ laparoscopic procedures. Dr. Bhalerao, FMAS."</div>
+    </div>
+    <div style="background:var(--navy);border-radius:10px;padding:20px 24px;margin-top:20px;text-align:center">
+      <div style="font-family:'Poppins',sans-serif;font-size:16px;font-weight:600;color:#fff;margin-bottom:8px">The one QA test for every asset</div>
+      <div style="font-size:13px;color:rgba(255,255,255,0.75);line-height:1.7;max-width:500px;margin:0 auto">"Would Dr. Pankaj Bhalerao say this out loud to a patient sitting in front of him?"<br>If not — rewrite it.</div>
+    </div>
+  </section>
+
+  <div style="height:48px"></div>
+
+</main>
+</body>
+</html>

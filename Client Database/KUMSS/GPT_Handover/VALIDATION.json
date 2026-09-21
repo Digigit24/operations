@@ -1,0 +1,17 @@
+{
+  "root": "/mnt/data/2026-07-17_KUMSS_Client_Handover_v01",
+  "zip": "/mnt/data/2026-07-17_KUMSS_Client_Handover_v01.zip",
+  "report": "/mnt/data/2026-07-17_KUMSS_Client_Handover_Report_v01.md",
+  "files_in_folder": 153,
+  "directories_in_folder": 112,
+  "ideas": 111,
+  "scripts": 5,
+  "captions": 11,
+  "hooks": 12,
+  "campaigns": 5,
+  "conflicts": 15,
+  "zip_entries": 154,
+  "zip_test": "PASS",
+  "zip_sha256": "f8ac0e60349f0c0c72676a2cf34101aadf408d7719e9ba398adb4934b2b868b5",
+  "report_sha256": "fed0987a233755a7ac6c9d5ccbd24d19f95efd082298805e93d836bdd90797fb"
+}

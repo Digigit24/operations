@@ -1,0 +1,1 @@
+No video scripts. Closest assets: hooks + ad copy (see 03_CONTENT).

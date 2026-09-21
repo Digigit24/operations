@@ -1,0 +1,16 @@
+﻿Claim ID,Claim,Where used,Status,Required evidence/action,Owner
+CLM-001,10+ years experience,Website/flyer/prompt examples,UNVERIFIED,Verify start date and approved wording,Dr. Bhalerao
+CLM-002,Same surgeon consults and operates,Brand/SEO/GMB,UNVERIFIED,Document operational exceptions,Dr. Bhalerao / Operations
+CLM-003,Laser piles procedure under 30 minutes,SEO/GMB drafts,UNVERIFIED,Clinical evidence and eligible-case definition,Clinical lead
+CLM-004,No cuts / no stitches,GMB draft,UNVERIFIED / HIGH RISK,Replace with procedure-specific language,Clinical lead / Compliance
+CLM-005,Same-day discharge,SEO/GMB drafts,UNVERIFIED,Define eligible procedures/cases and caveat,Clinical lead
+CLM-006,Back to work in 3–5 / 5–7 days,SEO/GMB drafts,UNVERIFIED,Condition-specific evidence and caveat,Clinical lead
+CLM-007,Procedure cost ranges,SEO/GMB drafts,UNVERIFIED,"Prime price sheet, inclusions and validity",Finance
+CLM-008,Cashless insurance / all major plans,SEO/GMB drafts,UNVERIFIED,Current TPA/insurer list and approval process,Insurance desk
+CLM-009,Respond within four hours on WhatsApp,Brand/GMB CTA,UNVERIFIED,Confirm staffing and SLA,Operations
+CLM-010,108 reviews at 4.9,May 2026 live pull,PUBLISHED / STALE-RISK,Refresh at publication time,Marketing
+CLM-011,Procedure counts / hundreds treated,Brand/GMB drafts,UNVERIFIED,Auditable case records and approved scope,Clinical/Operations
+CLM-012,Almost half of self-reported piles are fissure,Reel hook,UNVERIFIED,Cite a valid source or remove,Clinical reviewer
+CLM-013,ICU support,GMB Q&A / broader design,UNVERIFIED,Confirm facility level and availability,Clinical operations
+CLM-014,Emergency care / 24×7 implication,Broader design/public copy,CONFLICTING,Confirm hours and emergency model,Operations
+CLM-015,Transparent/no surprise bills,Brand/GMB drafts,UNVERIFIED,Document estimate/billing process and exclusions,Finance/Operations

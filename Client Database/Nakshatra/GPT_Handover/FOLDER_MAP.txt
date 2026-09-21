@@ -1,0 +1,56 @@
+Nakshatra_Simplified_Handover
+|
+|-- 00_SOURCES
+|   |-- 01_Core_References
+|   |-- 02_Campaign_Briefs
+|   `-- 03_GMB_Source
+|
+|-- 01_DESIGN
+|   |-- 01_Brand_Identity
+|   |-- 02_Design_Guidelines
+|   `-- 03_Design_References
+|
+|-- 02_ASSETS
+|   |-- 01_Approved_Posts
+|   |-- 02_Approved_Images
+|   |-- 03_Doctor_Photos
+|   |-- 04_Clinic_Photos_Videos
+|   |-- 05_Editable_Source_Files
+|   `-- 06_Final_Exports
+|
+|-- 03_CONTENT
+|   |-- 01_Scripts
+|   |-- 02_Captions
+|   |-- 03_Content_Calendar
+|   `-- 04_Published_Content
+|
+|-- 04_GMB
+|   |-- 01_Posting_Guidelines
+|   |-- 02_GMB_Post_Copy
+|   |-- 03_GMB_Images
+|   |-- 04_Published_Posts
+|   `-- 05_GMB_Performance
+|
+|-- 05_CAMPAIGNS
+|   |-- 01_2-Cycle_IVF
+|   |-- 02_Endometrium_IVF
+|   |-- 03_Low_AMH
+|   `-- 04_Future_Campaigns
+|
+|-- 06_CLIENT_DETAILS
+|   |-- 01_Business_Profile
+|   |-- 02_Doctor_and_Team
+|   |-- 03_Services_and_Offers
+|   |-- 04_Contact_and_Location
+|   `-- 05_Client_Approvals
+|
+|-- 07_REPORTS
+|   |-- 01_Social_Media
+|   |-- 02_Meta_Ads
+|   |-- 03_Website_SEO
+|   `-- 04_Lead_Reports
+|
+`-- 99_ARCHIVE
+    |-- 01_Old_Guidelines
+    |-- 02_Rejected_Assets
+    `-- 03_Superseded_Files

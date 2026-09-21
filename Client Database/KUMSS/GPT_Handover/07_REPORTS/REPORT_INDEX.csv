@@ -1,0 +1,8 @@
+﻿Report_ID,Category,Report_Name,Period,Data_Type,Status,File,Notes
+RPT-001,Social Media,Public Social Baseline,20 May 2026 + conflict,PUBLIC_SNAPSHOT,AVAILABLE_PARTIAL,07_REPORTS/01_Social_Media/Public_Social_Baseline.md,No owner insights.
+RPT-002,Website,Public Website Audit,20 May 2026,PUBLIC_AUDIT,AVAILABLE_PARTIAL,07_REPORTS/04_Website/Public_Website_Audit.md,No GA4.
+RPT-003,SEO,Public SEO Baseline,20 May 2026,PUBLIC_AUDIT,AVAILABLE_PARTIAL,07_REPORTS/05_SEO/Public_SEO_Baseline.md,No GSC/rank tracker.
+RPT-004,GMB,Public GMB Baseline,20 May 2026,PUBLIC_SNAPSHOT,AVAILABLE_PARTIAL,07_REPORTS/06_GMB/Public_GMB_Baseline.md,No owner insights.
+RPT-005,Meta Ads,Not available,,NONE,MISSING,07_REPORTS/02_Meta_Ads/README.md,
+RPT-006,Google Ads,Not available,,NONE,MISSING,07_REPORTS/03_Google_Ads/README.md,
+RPT-007,Leads/CRM,Not available,,NONE,MISSING,07_REPORTS/07_Leads/README.md,

@@ -1,0 +1,19 @@
+# Report Inventory
+
+| Report_ID | Report_Name | Report_Type | Period | Status | Actual_or_Target | Metrics | Location | Notes |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| RPT-001 | Public GBP profile snapshot | Public baseline | 2026-07-16 project upload snapshot | AVAILABLE_LIMITED | ACTUAL PUBLIC SNAPSHOT | 4.9 rating; 195 reviews; live name/category/address/website; open/close snapshot | 05_GMB/Current_State | Not a GBP Manager performance export. |
+| RPT-002 | SEO measurement framework | KPI framework | 12-month targets | AVAILABLE_TEMPLATE | TARGETS ONLY | Organic enquiries, traffic, rankings, reviews, technical health | seo-foundation.md; 08_REPORTS_AND_ANALYTICS | No actual results supplied. |
+| RPT-003 | GMB monthly report template | Report template | Monthly | AVAILABLE_TEMPLATE | TEMPLATE | Calls/bookings, rankings, reviews, posts, photos, Q&A, competitor movement | 05_GMB/Reports | Needs Manager data and attribution. |
+| RPT-004 | GMB 90-day performance baseline/export | GBP analytics | Last 90 days | MISSING | ACTUAL REQUIRED | Searches, views, calls, directions, website clicks, queries | MISSING | Complete Manager audit. |
+| RPT-005 | Instagram insights | Social analytics |  | MISSING | ACTUAL REQUIRED | Reach, views, watch time, saves, shares, follows, profile actions | MISSING |  |
+| RPT-006 | Facebook insights | Social analytics |  | MISSING | ACTUAL REQUIRED | Reach, engagement, clicks, leads | MISSING |  |
+| RPT-007 | Meta Ads report | Paid media |  | MISSING | ACTUAL REQUIRED | Spend, impressions, CTR, CPL, leads, appointments, creative performance | MISSING |  |
+| RPT-008 | Google Ads report | Paid search |  | MISSING | ACTUAL REQUIRED | Spend, keywords, calls, leads, CPL, conversion rate | MISSING |  |
+| RPT-009 | GA4 report | Website analytics |  | MISSING | ACTUAL REQUIRED | Sessions, source/medium, landing pages, conversions | MISSING |  |
+| RPT-010 | Google Search Console report | SEO analytics |  | MISSING | ACTUAL REQUIRED | Queries, clicks, impressions, CTR, positions, index coverage | MISSING |  |
+| RPT-011 | Keyword ranking report | SEO rankings |  | MISSING | ACTUAL REQUIRED | Local/organic rankings for P0 terms | MISSING |  |
+| RPT-012 | Lead and appointment report | Business outcomes |  | MISSING | ACTUAL REQUIRED | Leads, calls, WhatsApp, booked consultations, procedures, sources | MISSING | Needed to measure 150 monthly patient target. |
+| RPT-013 | CRM report | CRM/funnel |  | MISSING | ACTUAL REQUIRED | Lead stages, response times, conversion, lost reasons | MISSING |  |
+| RPT-014 | Call report / recordings summary | Call analytics |  | MISSING | ACTUAL REQUIRED | Calls, answer rate, qualified calls, bookings, missed calls | MISSING |  |
+| RPT-015 | Creative/content performance report | Content analytics |  | MISSING | ACTUAL REQUIRED | Best/low performers, hooks, formats, watch-time, saves/shares | MISSING |  |

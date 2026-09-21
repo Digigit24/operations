@@ -1,0 +1,8 @@
+# CAMPAIGN: Website Redesign + On-Page SEO/AEO/GEO Sprint (June 15–30, 2026)
+Trigger: client complaints escalated — no visible traffic progress; client demanded expert independent audit, AEO/GEO readiness, E-E-A-T, clean canonical architecture, weekly reporting (Issues/Action/Pending/Next).
+Objective: New site on Laravel 11 + Blade + Gutenberg-HTML content, indexed by June 22; on-page SEO/AEO/GEO + client report by June 30.
+Stack: Laravel 11, PHP 8.2+, PostgreSQL (Neon per starter prompt v2; Supabase also endorsed — CONFLICTING, confirm), no Livewire/Inertia/Vue/React, queue=database, app/Agents folder incl. GutenbergBlogCreator.
+Content migration: from wpvj_posts.sql. Dump findings: content is Gutenberg-annotated HTML in post_content (NOT Elementor in the dump); SEO fields = rank_math_* (AIOSEO fallback); 36 posts; WP IDs 749 & 2087 have corrupt slug "publish" — derive from title; migration_verified flag per post.
+New pillar taxonomy + full 301 redirect map (old /techcare/ → /ai-in-medicine/, /humandoc/ → /humanism-in-medicine/, /physician-insight/ → /physician-reflections/, /health-decoded/ → /health-unveiled/, /praxis-and-policy/ → /health-policy/, /lifeology/ → /journal/ or /health-unveiled/ per essay, /uncategorized/ → /medisophy/).
+Standing rules: no GMB/local SEO; banned-words scan command against config('thinking_healer.banned_phrases'); H1–H3 only; medical disclaimers; Person + MedicalScholarlyArticle + BreadcrumbList + FAQPage schema; llms.txt; ORCID + Google Scholar for Dr. Shinde.
+Status at last record (2026-06-14): planning + starter prompt complete; build in flight. VERIFY: launch/indexing status, redirect map live, June 30 report sent, weekly reports running since July 1.

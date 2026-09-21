@@ -1,0 +1,34 @@
+# Client Master Profile
+
+| Field | Value | Claim_Status | Source | Notes |
+| --- | --- | --- | --- | --- |
+| Client / active strategic brand name | Jeevisha Spine Pain & Regenerative Clinic | CONFLICTING | Jeevisha_Master_Brand_Brain_vFinal.md; live GBP uses stuffed 'Jeevisha Pain Clinic...' name | Preferred active strategic name, but founder/NAP sign-off is recorded as pending. |
+| Live GBP business name | Jeevisha Pain Clinic \| Pain Management Clinic PCMC/Pune \| Dr. Sanjog Mekewar - Pain Specialist Doctor | PUBLISHED | gmb-overview.png (public Google Maps screenshot, 2026-07-16 project upload) | Keyword-stuffed name; GMB Foundation identifies policy/suspension risk. |
+| Older brand names | Jeevisha Spine Pain & Regenerative Hospital; Jeevisha Pain Management Center; Jeevisha Pain Clinic | CONFLICTING | Legacy design/prompting files and File Library poster references | Do not propagate until canonical name is signed off. |
+| Business category | Pain management physician / interventional pain management and regenerative medicine clinic | PUBLISHED | gmb-overview.png; active brand documents | GBP category shown as Pain management physician. |
+| Founder / lead doctor | Dr. Sanjog Mekewar | CONFIRMED | Active Brand Brain, SEO Foundation, GMB Foundation, research | Consistent across core sources. |
+| Credentials | MBBS, DA, DNB, FIPM, FIAPM | CONFIRMED | Active Brand Brain and GMB Foundation | Must be verified against certificates before legal/public schema rollout. |
+| Primary positioning | Regenerative pain medicine + non-surgical options first + honest surgery second opinion | DRAFT | Active Brand Brain and SEO Foundation | Strategic direction; not a medical outcome promise. |
+| Primary location | Wakad / Pimpri Chinchwad / Pune, Maharashtra | CONFIRMED | All active strategic sources | General location consistent. |
+| Published street address | Shop No. 214 Solitaire Business Hub Road, Kalewadi Phata, Kaspate Wasti, Pune, Maharashtra 411057 | PUBLISHED | gmb-overview.png | Exact NAP still requires client sign-off and cross-platform audit. |
+| Primary phone candidate | +91 91191 11837 | CONFLICTING | Active Brand Brain, GMB/SEO files, caption format, legacy poster | Most frequently used; alternative number appears in a File Library contact screenshot. |
+| Alternate phone found | +91 90284 31238 | CONFLICTING | File Library reference 1000066961.jpg | Confirm whether old, doctor-specific, directory-specific or still active. |
+| Website | jeevishapainclinic.com | PUBLISHED | gmb-overview.png and active strategy documents | Canonical www/https version requires technical confirmation. |
+| Email address |  | UNVERIFIED | Not found | Collect official patient-facing and administrative email. |
+| WhatsApp | +91 91191 11837 proposed as WhatsApp Business | UNVERIFIED | GMB Foundation | WhatsApp Business enablement explicitly marked to verify. |
+| Business hours | Public screenshot showed 'Open · Closes 9 pm' at capture time | PUBLISHED | gmb-overview.png | Full day-by-day hours and special hours not available. |
+| Languages | English, Hindi and Marathi proposed | UNVERIFIED | GMB Q&A draft | Confirm doctor/team language capability before publishing. |
+| Primary audience 1 | Desk-job professionals aged 28–45 in Hinjewadi/Wakad/Baner | DRAFT | Active Brand Brain | Strategic ICP. |
+| Primary audience 2 | Chronic pain sufferers aged 40–65 who are treatment-fatigued | DRAFT | Active Brand Brain | Strategic ICP. |
+| Secondary audiences | Surgery-anxious seniors, caregivers, active adults/sports patients | DRAFT | Research and legacy Brand Brain | Useful segments; active vFinal focuses two leading ICPs. |
+| Core service family | Interventional pain management, regenerative pain medicine, surgery second opinion | DRAFT | Active Brand Brain and GMB service drafts | Exact scope requires doctor approval. |
+| Conditions mentioned | Back pain, knee pain, neck pain, sciatica, slipped disc, shoulder pain, sports injuries, fibromyalgia, CRPS, post-herpetic neuralgia, cancer pain and others | DRAFT | GMB Foundation and Research | No master doctor-approved service list supplied. |
+| Treatments mentioned | PRP, biologics/stem-cell-related therapies, RFA, epidural injections, facet injections, vertebroplasty/kyphoplasty, nerve blocks and others | DRAFT | GMB Foundation and Research | Requires clinical, regulatory and naming review. |
+| Consultation price |  | UNVERIFIED | Not supplied; draft recommends phone/WhatsApp confirmation | Research contains proposed free/₹500 offers but no approval. |
+| Treatment prices |  | UNVERIFIED | No approved price list | Research ranges and comparisons are market research only. |
+| Current public review baseline | 4.9 average rating; 195 reviews | PUBLISHED | gmb-overview.png and redacted gmb-reviews screenshot | Snapshot baseline, not GBP Manager analytics. |
+| Monthly patient target | 150 patients per month | DRAFT | TaskOS/File Library project tracker | Target only; no baseline, owner or measurement definition supplied. |
+| Approval workflow |  | UNVERIFIED | Not found | No turnaround time, approver, channel or evidence standard documented. |
+| Social media handles |  | UNVERIFIED | Not found in accessible files | Collect Instagram, Facebook, LinkedIn, YouTube and Practo URLs. |
+| Awards/accreditations/associations |  | UNVERIFIED | Research mentions possible associations but no client-approved proof | Collect certificates/logos and usage rights. |
+| Patient count / success claims |  | UNVERIFIED | Research contains varying market/website claims; active brand rules reject unverified numbers | Do not use until documentary evidence and doctor approval. |

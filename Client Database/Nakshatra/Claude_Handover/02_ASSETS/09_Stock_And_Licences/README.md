@@ -1,0 +1,1 @@
+No stock assets or licences documented. No patient/model consent records in project.

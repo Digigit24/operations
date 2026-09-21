@@ -1,0 +1,10 @@
+﻿Report ID,Report name,Report type,Period,Source,Status,Actual platform data,Destination folder,Notes
+RPT-001,NRS Hospital Project Audit,Governance/project audit,2026-04-27 to 2026-07-13,SRC-008 File Library,AVAILABLE_AS_POINTER,No,07_REPORTS/08_Monthly_Reports,Full audit reviewed via File Library; exact bytes not mounted.
+RPT-002,Website and Content Extraction,Website/content/compliance audit,2026-05-26,SRC-006,AVAILABLE_PROVISIONAL,No,07_REPORTS/04_Website,Indirect extraction because robots.txt returned HTTP 500.
+RPT-003,Social Media Performance,Instagram/Facebook,Not available,None,MISSING,No,07_REPORTS/01_Social_Media,No insights or publication register.
+RPT-004,Meta Ads Performance,Paid media,Not available,None,MISSING,No,07_REPORTS/02_Meta_Ads,No account/export/spend/results.
+RPT-005,Google Ads Performance,Paid search,Not available,None,MISSING,No,07_REPORTS/03_Google_Ads,No account/export/spend/results.
+RPT-006,SEO Performance,SEO/GSC/rankings,Not available,None,MISSING,No,07_REPORTS/05_SEO,Formal Step 04 and performance data absent.
+RPT-007,GMB Performance,Google Business Profile,Not available,None,MISSING,No,07_REPORTS/06_GMB,No GBP access or export.
+RPT-008,Lead and Appointment Performance,CRM/calls/appointments,Not available,None,MISSING,No,07_REPORTS/07_Leads,No CRM/call/appointment data.
+RPT-009,Client Handover Completion Report,Handover/governance,Through 2026-07-16,Current handover,CREATED,No,07_REPORTS/08_Monthly_Reports,"Documentation and readiness score, not a marketing performance report."

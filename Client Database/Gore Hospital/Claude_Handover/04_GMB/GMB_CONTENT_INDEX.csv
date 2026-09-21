@@ -1,0 +1,6 @@
+Content ID,Title,Type,Status,Date,Source,Notes
+GMB-01,17-Point GBP Audit,Audit report,DELIVERED,29 Jun 2026,GBP audit conversation,"Score 61/100; original JSX artifacts not retrievable; full summary in 04_GMB/GBP_17_Point_Audit_Summary.md"
+GMB-02,Notion Publisher tool,Automation tool,DELIVERED,29 Jun 2026,GBP audit conversation,"Companion tool to push the audit into Notion as structured blocks; JSX not retrievable"
+GMB-03,15 recommended Q&A seed questions,Q&A content,RECOMMENDED - not confirmed seeded,29 Jun 2026,GBP audit conversation,"See 04_GMB/07_QA_Content/Recommended_GBP_QA_Seed_List.md; only 10 of 15 fully preserved in transcript"
+GMB-04,GBP posting cadence recommendation,Guideline,RECOMMENDED - not confirmed started,24 May - 29 Jun 2026,SEO Foundation + GBP audit,"Mon/Thu weekly cadence, alternating English/Marathi; LocalPosts table returned zero rows as of 29 Jun 2026"
+GMB-05,Review generation flow (QR code + WhatsApp follow-up),Process recommendation,RECOMMENDED - not confirmed implemented,24 May - 29 Jun 2026,Strategic Research + GBP audit,"Target 200+ reviews within 2 quarters, 5 new/week minimum"

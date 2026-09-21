@@ -1,0 +1,17 @@
+# Ad Copy Library
+
+| Copy_ID | Channel_Angle | Hook_or_Headline | Format | Funnel | CTA | Claim_or_Proof | Status | Risk | Source |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| AD-COPY-01 | Meta — Knee pain problem-aware | If climbing stairs feels like climbing a mountain... | Video testimonial + overlay | MOFU | Book free knee assessment | Avoid knee replacement with PRP | NEEDS_REVIEW | Unsupported offer/outcome/superlative/urgency | Jeevisha Research.md §12 |
+| AD-COPY-02 | Meta — Surgery second opinion | Your doctor said you need surgery. Get a second opinion first. | Carousel ad | MOFU | Book free second opinion | 80% of patients avoid surgery | NEEDS_REVIEW | Unsupported offer/outcome/superlative/urgency | Jeevisha Research.md §12 |
+| AD-COPY-03 | Meta — Monsoon joint pain | Monsoon joint pain is real. And treatable. | Image ad | BOFU | Book before the rains get worse | 500+ patients treated this monsoon; same-week appointment | NEEDS_REVIEW | Unsupported offer/outcome/superlative/urgency | Jeevisha Research.md §12 |
+| AD-COPY-04 | Meta — Founder-led | Meet Dr. Sanjog — the doctor who believes surgery should be the last option. | Founder video | MOFU | Meet Dr. Sanjog | Credentials and patient reviews | DRAFT | Doctor and client approval required | Jeevisha Research.md §12 |
+| AD-COPY-05 | Google Search — Knee pain | Knee Pain Treatment Wakad / Non-Surgical PRP Therapy / Book Same-Week Appointment | Search ad | BOFU | Call/WhatsApp | Avoid knee replacement | DRAFT | Doctor and client approval required | Jeevisha Research.md §12 |
+| AD-COPY-06 | Google Search — Second opinion | Told You Need Surgery? / Get a Free Second Opinion / Non-Surgical Options Available | Search ad | BOFU | Get a free second opinion | 80% of patients find non-surgical relief | NEEDS_REVIEW | Unsupported offer/outcome/superlative/urgency | Jeevisha Research.md §12 |
+| AD-COPY-07 | Google Search — Near me | Pain Clinic Near Me Wakad / Same-Day Appointments / Call/WhatsApp Now | Search ad | BOFU | Call/WhatsApp | Best pain management clinic; no surgery needed | NEEDS_REVIEW | Unsupported offer/outcome/superlative/urgency | Jeevisha Research.md §12 |
+| AD-COPY-08 | YouTube — PRP explainer | What if you could avoid knee surgery with a simple injection? | 30-second pre-roll | MOFU | Learn more | Simple injection | NEEDS_REVIEW | Unsupported offer/outcome/superlative/urgency | Jeevisha Research.md §12 |
+| AD-COPY-09 | YouTube — Patient story | I was told I needed knee replacement at 58. Then I found Dr. Sanjog. | 45-second testimonial | MOFU/BOFU | Book consultation | Patient outcome | NEEDS_REVIEW | Unsupported offer/outcome/superlative/urgency | Jeevisha Research.md §12 |
+| AD-COPY-10 | WhatsApp — Direct outreach | Free MRI review for patients considering knee surgery | WhatsApp outreach | BOFU | Reply YES | Free MRI review | NEEDS_REVIEW | Unsupported offer/outcome/superlative/urgency | Jeevisha Research.md §12 |
+| AD-COPY-11 | WhatsApp — Nurture sequence | Welcome → education → testimonial → booking reminder | 14-day sequence | MOFU/BOFU | Book consultation | Special offer | NEEDS_REVIEW | Unsupported offer/outcome/superlative/urgency | Jeevisha Research.md §12 |
+
+All copy remains draft. Claims such as 80%, 500+, best, free, same-day/no-surgery or rapid outcomes are quarantined until evidenced and approved.

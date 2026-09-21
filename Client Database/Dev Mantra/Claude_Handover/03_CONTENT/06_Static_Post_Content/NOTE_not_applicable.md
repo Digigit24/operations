@@ -1,0 +1,3 @@
+# 06_Static_Post_Content — Not Applicable As A Separate Category
+
+Dev Mantra's content model (per DevMantra_LinkedIn_Strategy_v3.md) has only two visual/post formats: personal-profile text posts/articles (see 03_CONTENT/02_Captions/) and brand-page carousels (see 03_CONTENT/05_Carousel_Content/). There is no separate "static single-image post" content type documented or drafted anywhere in this project - occasional single-image posts are mentioned only as a rare exception on personal profiles ("Occasional single-image post with a deal data point or market stat as the hook"), with no actual copy drafted for one.

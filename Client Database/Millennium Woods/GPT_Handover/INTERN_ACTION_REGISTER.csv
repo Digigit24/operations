@@ -1,0 +1,27 @@
+﻿Task ID,Priority,Task,Owner,Required input,Expected output,Status
+T001,P0,Send and close the client fact questionnaire,PM / Account Lead,CLIENT_QUESTIONS.md,Signed fact sheet and evidence pack,Not started
+T002,P0,"Lock canonical business name, legal entity and franchise/parent-entity status",PM + Client,Client responses and legal/brand proof,Approved identity block,Blocked
+T003,P0,"Lock canonical NAP, map entrance pin, phone, email, WhatsApp and hours",PM + Local SEO + Client,"Address proof, map pin, contact ownership",Approved NAP sheet,Blocked
+T004,P0,"Confirm current programs, age bands, session, timetable and tour process",PM + Principal,Program sheet and daily/tour schedule,Approved services/operations sheet,Blocked
+T005,P0,"Create approved claims register for safety, curriculum, ratio, enrichment and ratings",PM + Principal,Documentary proof and approved wording,Approved claims register,Blocked
+T006,P0,"Obtain approved logo pack, colour codes, font system and usage hierarchy",Designer + Client,Vector masters and brand approval,Approved brand kit,Blocked
+T007,P0,Obtain child image consent policy and existing consent records,PM + Client,Consent templates/records,Consent register,Blocked
+T008,P0,"Fix website footer phone link, competitor contamination and wrong social links",Developer,Approved NAP/identity/social URLs,P0 fixes deployed and QA screenshot,Blocked
+T009,P0,"Correct stale admissions session, program ages and conflicting site copy",Developer + Content + Principal,Approved program/session facts,Updated site pages,Blocked
+T010,P0,"Verify GBP, GA4, GSC, Windsor, Meta and Google Ads access",Analytics / SEO,Account invitations and property IDs,Access register,Not started
+T011,P1,Fact-check and rewrite the A Day at Millennium Woods carousel as v02,Content + Principal,"Approved timetable, facilities and tour policy",Release-ready copy,Blocked
+T012,P1,Rebuild the incomplete Five Reasons reel as a new governed draft,Content,Approved facts and campaign brief,New v01/v02 script,Blocked
+T013,P1,Finalize current Brand Quick Reference after logo approval,Designer / Brand Lead,Approved brand kit,Locked design reference,Blocked
+T014,P1,Collect approved production photos/video and index rights/consent,Designer / Videographer / PM,Asset shoot and consent records,Production asset library,Not started
+T015,P1,Complete the full remaining website extraction,SEO / Content,Live site access,Complete site inventory,Not started
+T016,P1,Complete data-backed SEO Foundation after access verification,SEO,GSC/GA4/Windsor and approved facts,SEO Foundation,Blocked
+T017,P1,Complete GMB Foundation after GBP verification,Local SEO,GBP access and approved NAP/services,GMB Foundation,Blocked
+T018,P1,"Create/repair admissions, Day Care and location landing pages",Web + Content + SEO,Approved offers/facts and keyword map,Conversion pages,Blocked
+T019,P1,Build a 90-day content calendar from the 75-item idea register,Content / SMO,"Approved campaigns, frequency and calendar",Approved calendar,Blocked
+T020,P1,Create publication and approval ledger,PM / Content Ops,Approval workflow and platform access,Live content ledger,Not started
+T021,P1,Set up call/form/WhatsApp/tour conversion tracking,Analytics / Developer,Access and approved destinations,Tracking QA report,Blocked
+T022,P2,"Create English master captions, then approved Hindi/Marathi/Hinglish variants",Content,Language requirement and approved English facts,Multilingual copy library,Blocked
+T023,P2,Create GMB post and review-response calendar,GMB / Content,GMB Foundation and approved local facts,Monthly GBP plan,Blocked
+T024,P2,"Create ads only after landing pages, tracking, budget and claims are approved",Paid Media,Approved campaign brief and budget,Launch-ready campaigns,Blocked
+T025,P2,Establish monthly reporting with actual platform exports,Analytics / PM,Verified data sources and KPI definitions,Monthly report template and first baseline,Blocked
+T026,P2,Archive duplicates and version every final export,Design Ops,Asset/source inventory,Governed archive,In progress

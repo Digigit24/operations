@@ -1,0 +1,355 @@
+Millennium_Woods_Techno_Kids_Handover_2026-07-17/
+├── 00_SOURCES/
+│   ├── Campaign_Briefs/
+│   │   ├── CAMPAIGN_INDEX_REFERENCE.csv
+│   │   └── README.md
+│   ├── Content_References/
+│   │   └── RETRIEVED_PRIOR_CONTEXT_EVIDENCE_NOTE.md
+│   ├── Design_References/
+│   │   └── ACTIVE_AND_LEGACY_DESIGN_SOURCE_MAP.md
+│   ├── GMB_References/
+│   │   └── GMB_FOUNDATION_STATUS.md
+│   ├── Original_Uploads/
+│   │   ├── Millennium Techno School logo (3).png
+│   │   ├── Millennium_Woods_01_Strategic_Research.md
+│   │   ├── Millennium_Woods_02_AI_Prompting_Guide.md
+│   │   ├── Millennium_Woods_02_Design_Instructions.md
+│   │   ├── Millennium_Woods_03_Site_Extraction.md
+│   │   └── Pasted text.txt
+│   ├── Prompting_Guides/
+│   │   └── README.md
+│   ├── Research/
+│   │   ├── FILE_LIBRARY_REFERENCE_Project_Audit_Report.md
+│   │   └── README.md
+│   ├── OPEN_QUESTIONS_AND_CONFLICTS.md
+│   ├── PROJECT_SUMMARY.md
+│   ├── SOURCE_INDEX.csv
+│   └── START_HERE.md
+├── 01_DESIGN/
+│   ├── Approved_Design_References/
+│   │   └── README.md
+│   ├── Legacy_Design_References/
+│   │   └── README.md
+│   ├── AI_Image_Prompting_Guide.md
+│   ├── Brand_Quick_Reference.md
+│   ├── Client_Design_Preferences.md
+│   ├── Colour_Palette.md
+│   ├── Full_Design_Guidelines.md
+│   ├── Logo_Usage_Guide.md
+│   └── Typography_Guide.md
+├── 02_ASSETS/
+│   ├── 01_Logos/
+│   │   └── DATE-UNKNOWN_Millennium-Woods_Primary-Logo_English_MultiPlatform_1206x657_PENDING_CLIENT_v01.png
+│   ├── 02_Approved_Posts/
+│   │   └── README.md
+│   ├── 03_Approved_Images/
+│   │   └── README.md
+│   ├── 04_Doctor_Founder_Team_Photos/
+│   │   └── README.md
+│   ├── 05_Clinic_Office_Product_Photos/
+│   │   └── README.md
+│   ├── 06_Raw_Videos/
+│   │   └── README.md
+│   ├── 07_Editable_Source_Files/
+│   │   └── README.md
+│   ├── 08_Final_Exports/
+│   │   └── README.md
+│   ├── 09_Stock_And_Licences/
+│   │   └── README.md
+│   ├── ASSET_INDEX.csv
+│   └── MISSING_ASSETS.md
+├── 03_CONTENT/
+│   ├── 01_Scripts/
+│   │   ├── 2026-05-13_Millennium-Woods_Five-Reasons-to-Enroll_Reel-Script_English_Instagram_INCOMPLETE_v01.md
+│   │   └── 2026-05-13_Millennium-Woods_Preschool-Readiness_Reel-Script_English_Instagram_DRAFT_v01.md
+│   ├── 02_Captions/
+│   │   ├── CAPTION_AND_COPY_FORMATS.md
+│   │   ├── CAPTION_INDEX.csv
+│   │   ├── KEYWORD_AND_HASHTAG_REFERENCES.md
+│   │   └── RECOVERED_SOCIAL_CAPTIONS.md
+│   ├── 03_Content_Ideas/
+│   │   ├── CONTENT_IDEA_REGISTER.csv
+│   │   └── CONTENT_IDEA_REGISTER.md
+│   ├── 04_Hooks_And_Headlines/
+│   │   └── HOOK_HEADLINE_CTA_LIBRARY.md
+│   ├── 05_Carousel_Content/
+│   │   ├── 2026-06-01_Millennium-Woods_A-Day-at-School_Carousel-Copy_English_Instagram_DRAFT_v01.md
+│   │   └── CAROUSEL_INDEX.csv
+│   ├── 06_Static_Post_Content/
+│   │   ├── 2026-05-13_Millennium-Woods_Confidence-Development_Banner-Copy_English_Social_DRAFT_v01.md
+│   │   └── README.md
+│   ├── 07_Reel_And_Video_Concepts/
+│   │   └── REEL_AND_VIDEO_CONCEPT_LIBRARY.md
+│   ├── 08_Ad_Copy/
+│   │   └── AD_COPY_AND_ANGLE_LIBRARY.md
+│   ├── 09_Content_Calendar/
+│   │   └── CONTENT_CALENDAR_RECOVERY_AND_REBUILD.md
+│   ├── 10_Published_Content/
+│   │   └── README.md
+│   ├── 11_Content_Performance/
+│   │   └── README.md
+│   ├── CONTENT_MASTER_INDEX.csv
+│   ├── README.md
+│   └── SCRIPT_INDEX.csv
+├── 04_GMB/
+│   ├── 01_Posting_Guidelines/
+│   │   └── GMB_POSTING_GUIDELINES.md
+│   ├── 02_GMB_Post_Ideas/
+│   │   ├── GMB_POST_IDEA_REGISTER.csv
+│   │   └── GMB_POST_IDEAS.md
+│   ├── 03_GMB_Post_Copy/
+│   │   └── NO_COMPLETE_GMB_POST_COPY_FOUND.md
+│   ├── 04_GMB_Images/
+│   │   └── README.md
+│   ├── 05_Published_Posts/
+│   │   └── README.md
+│   ├── 06_Review_Responses/
+│   │   └── INTERNAL_REVIEW_RESPONSE_TEMPLATES.md
+│   ├── 07_QA_Content/
+│   │   └── GMB_QA_DRAFT_QUESTION_BANK.md
+│   ├── 08_GMB_Performance/
+│   │   └── README.md
+│   ├── GMB_CONTENT_INDEX.csv
+│   └── README.md
+├── 05_CAMPAIGNS/
+│   ├── Campaign_01_Admissions-and-School-Tours/
+│   │   ├── Ad_Copy/
+│   │   │   └── REFERENCES.md
+│   │   ├── Approvals/
+│   │   │   └── APPROVAL_STATUS.md
+│   │   ├── Brief/
+│   │   │   └── CAMP001_Admissions-and-School-Tours_Campaign_Brief.md
+│   │   ├── Captions/
+│   │   │   └── REFERENCES.md
+│   │   ├── Creatives/
+│   │   │   └── ASSET_STATUS.md
+│   │   ├── Landing_Page/
+│   │   │   └── LANDING_PAGE_STATUS.md
+│   │   ├── Performance/
+│   │   │   └── PERFORMANCE_STATUS.md
+│   │   ├── Research/
+│   │   │   └── RESEARCH_SUMMARY.md
+│   │   └── Scripts/
+│   │       └── REFERENCES.md
+│   ├── Campaign_02_Day-Care-for-Working-Parents/
+│   │   ├── Ad_Copy/
+│   │   │   └── REFERENCES.md
+│   │   ├── Approvals/
+│   │   │   └── APPROVAL_STATUS.md
+│   │   ├── Brief/
+│   │   │   └── CAMP002_Day-Care-for-Working-Parents_Campaign_Brief.md
+│   │   ├── Captions/
+│   │   │   └── REFERENCES.md
+│   │   ├── Creatives/
+│   │   │   └── ASSET_STATUS.md
+│   │   ├── Landing_Page/
+│   │   │   └── LANDING_PAGE_STATUS.md
+│   │   ├── Performance/
+│   │   │   └── PERFORMANCE_STATUS.md
+│   │   ├── Research/
+│   │   │   └── RESEARCH_SUMMARY.md
+│   │   └── Scripts/
+│   │       └── REFERENCES.md
+│   ├── Campaign_03_Parent-Trust-and-Safety/
+│   │   ├── Ad_Copy/
+│   │   │   └── REFERENCES.md
+│   │   ├── Approvals/
+│   │   │   └── APPROVAL_STATUS.md
+│   │   ├── Brief/
+│   │   │   └── CAMP003_Parent-Trust-and-Safety_Campaign_Brief.md
+│   │   ├── Captions/
+│   │   │   └── REFERENCES.md
+│   │   ├── Creatives/
+│   │   │   └── ASSET_STATUS.md
+│   │   ├── Landing_Page/
+│   │   │   └── LANDING_PAGE_STATUS.md
+│   │   ├── Performance/
+│   │   │   └── PERFORMANCE_STATUS.md
+│   │   ├── Research/
+│   │   │   └── RESEARCH_SUMMARY.md
+│   │   └── Scripts/
+│   │       └── REFERENCES.md
+│   ├── Campaign_04_Confidence-Development/
+│   │   ├── Ad_Copy/
+│   │   │   └── REFERENCES.md
+│   │   ├── Approvals/
+│   │   │   └── APPROVAL_STATUS.md
+│   │   ├── Brief/
+│   │   │   └── CAMP004_Confidence-Development_Campaign_Brief.md
+│   │   ├── Captions/
+│   │   │   └── REFERENCES.md
+│   │   ├── Creatives/
+│   │   │   └── ASSET_STATUS.md
+│   │   ├── Landing_Page/
+│   │   │   └── LANDING_PAGE_STATUS.md
+│   │   ├── Performance/
+│   │   │   └── PERFORMANCE_STATUS.md
+│   │   ├── Research/
+│   │   │   └── RESEARCH_SUMMARY.md
+│   │   └── Scripts/
+│   │       └── REFERENCES.md
+│   ├── Campaign_05_A-Day-at-Millennium-Woods/
+│   │   ├── Ad_Copy/
+│   │   │   └── REFERENCES.md
+│   │   ├── Approvals/
+│   │   │   └── APPROVAL_STATUS.md
+│   │   ├── Brief/
+│   │   │   └── CAMP005_A-Day-at-Millennium-Woods_Campaign_Brief.md
+│   │   ├── Captions/
+│   │   │   └── REFERENCES.md
+│   │   ├── Creatives/
+│   │   │   └── ASSET_STATUS.md
+│   │   ├── Landing_Page/
+│   │   │   └── LANDING_PAGE_STATUS.md
+│   │   ├── Performance/
+│   │   │   └── PERFORMANCE_STATUS.md
+│   │   ├── Research/
+│   │   │   └── RESEARCH_SUMMARY.md
+│   │   └── Scripts/
+│   │       └── REFERENCES.md
+│   ├── Campaign_06_Preschool-Readiness/
+│   │   ├── Ad_Copy/
+│   │   │   └── REFERENCES.md
+│   │   ├── Approvals/
+│   │   │   └── APPROVAL_STATUS.md
+│   │   ├── Brief/
+│   │   │   └── CAMP006_Preschool-Readiness_Campaign_Brief.md
+│   │   ├── Captions/
+│   │   │   └── REFERENCES.md
+│   │   ├── Creatives/
+│   │   │   └── ASSET_STATUS.md
+│   │   ├── Landing_Page/
+│   │   │   └── LANDING_PAGE_STATUS.md
+│   │   ├── Performance/
+│   │   │   └── PERFORMANCE_STATUS.md
+│   │   ├── Research/
+│   │   │   └── RESEARCH_SUMMARY.md
+│   │   └── Scripts/
+│   │       └── REFERENCES.md
+│   ├── Campaign_07_Activity-Based-Learning/
+│   │   ├── Ad_Copy/
+│   │   │   └── REFERENCES.md
+│   │   ├── Approvals/
+│   │   │   └── APPROVAL_STATUS.md
+│   │   ├── Brief/
+│   │   │   └── CAMP007_Activity-Based-Learning_Campaign_Brief.md
+│   │   ├── Captions/
+│   │   │   └── REFERENCES.md
+│   │   ├── Creatives/
+│   │   │   └── ASSET_STATUS.md
+│   │   ├── Landing_Page/
+│   │   │   └── LANDING_PAGE_STATUS.md
+│   │   ├── Performance/
+│   │   │   └── PERFORMANCE_STATUS.md
+│   │   ├── Research/
+│   │   │   └── RESEARCH_SUMMARY.md
+│   │   └── Scripts/
+│   │       └── REFERENCES.md
+│   ├── Campaign_08_Future-Ready-Enrichment/
+│   │   ├── Ad_Copy/
+│   │   │   └── REFERENCES.md
+│   │   ├── Approvals/
+│   │   │   └── APPROVAL_STATUS.md
+│   │   ├── Brief/
+│   │   │   └── CAMP008_Future-Ready-Enrichment_Campaign_Brief.md
+│   │   ├── Captions/
+│   │   │   └── REFERENCES.md
+│   │   ├── Creatives/
+│   │   │   └── ASSET_STATUS.md
+│   │   ├── Landing_Page/
+│   │   │   └── LANDING_PAGE_STATUS.md
+│   │   ├── Performance/
+│   │   │   └── PERFORMANCE_STATUS.md
+│   │   ├── Research/
+│   │   │   └── RESEARCH_SUMMARY.md
+│   │   └── Scripts/
+│   │       └── REFERENCES.md
+│   ├── Campaign_09_Local-SEO-and-GBP-Reputation/
+│   │   ├── Ad_Copy/
+│   │   │   └── REFERENCES.md
+│   │   ├── Approvals/
+│   │   │   └── APPROVAL_STATUS.md
+│   │   ├── Brief/
+│   │   │   └── CAMP009_Local-SEO-and-GBP-Reputation_Campaign_Brief.md
+│   │   ├── Captions/
+│   │   │   └── REFERENCES.md
+│   │   ├── Creatives/
+│   │   │   └── ASSET_STATUS.md
+│   │   ├── Landing_Page/
+│   │   │   └── LANDING_PAGE_STATUS.md
+│   │   ├── Performance/
+│   │   │   └── PERFORMANCE_STATUS.md
+│   │   ├── Research/
+│   │   │   └── RESEARCH_SUMMARY.md
+│   │   └── Scripts/
+│   │       └── REFERENCES.md
+│   ├── Future_Campaigns/
+│   │   └── README.md
+│   ├── CAMPAIGN_INDEX.csv
+│   └── README.md
+├── 06_CLIENT_DETAILS/
+│   ├── Approvals/
+│   │   └── APPROVAL_REGISTER.md
+│   ├── Audience_Profiles.md
+│   ├── Brand_Positioning.md
+│   ├── Business_Details.md
+│   ├── Client_Fact_Sheet.md
+│   ├── Client_Preferences.md
+│   ├── Contact_And_Location.md
+│   ├── Doctors_Founders_Team.md
+│   ├── FACT_CONFLICT_REGISTER.csv
+│   ├── README.md
+│   └── Services_And_Offers.md
+├── 07_REPORTS/
+│   ├── 01_Social_Media/
+│   │   └── README.md
+│   ├── 02_Meta_Ads/
+│   │   └── README.md
+│   ├── 03_Google_Ads/
+│   │   └── README.md
+│   ├── 04_Website/
+│   │   └── README.md
+│   ├── 05_SEO/
+│   │   └── README.md
+│   ├── 06_GMB/
+│   │   └── README.md
+│   ├── 07_Leads/
+│   │   └── README.md
+│   ├── 08_Monthly_Reports/
+│   │   └── README.md
+│   ├── README.md
+│   └── REPORT_INDEX.csv
+├── 99_ARCHIVE/
+│   ├── 01_Old_Guidelines/
+│   │   └── LEGACY_GUIDELINE_REGISTER.md
+│   ├── 02_Rejected_Assets/
+│   │   └── README.md
+│   ├── 03_Superseded_Content/
+│   │   └── STALE_AND_SUPERSEDED_COPY.md
+│   ├── 04_Duplicate_Files/
+│   │   └── DUPLICATE_REGISTER.md
+│   ├── 05_Old_Campaigns/
+│   │   └── README.md
+│   ├── 06_Unverified_Material/
+│   │   └── UNVERIFIED_MATERIAL_REGISTER.md
+│   └── README.md
+├── ASSET_INDEX.csv
+├── CAMPAIGN_INDEX.csv
+├── CLIENT_QUESTIONS.md
+├── CONTENT_MASTER_INDEX.csv
+├── FACT_CONFLICT_REGISTER.csv
+├── FILE_MANIFEST.csv
+├── FILE_NAMING_RULES.md
+├── FOLDER_TREE.txt
+├── GMB_CONTENT_INDEX.csv
+├── HANDOVER_COMPLETION_SCORE.md
+├── HANDOVER_REPORT.md
+├── INTERN_ACTION_CHECKLIST.md
+├── INTERN_ACTION_REGISTER.csv
+├── OPEN_QUESTIONS_AND_CONFLICTS.md
+├── REPORT_INDEX.csv
+├── SCRIPT_INDEX.csv
+├── SOURCE_INDEX.csv
+├── START_HERE.md
+├── STATUS_DEFINITIONS.md
+└── VALIDATION_REPORT.md

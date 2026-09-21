@@ -1,0 +1,1 @@
+No PSD/AI/Figma/Canva/CDR source files in project.

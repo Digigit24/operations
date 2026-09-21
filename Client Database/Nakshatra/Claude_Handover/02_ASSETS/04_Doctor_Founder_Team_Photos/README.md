@@ -1,0 +1,1 @@
+No doctor/team photo files in project. Site references dr-ramit-raosaheb-kamate.jpg — request from client.

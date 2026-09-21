@@ -1,0 +1,17 @@
+Conflict,Version A,Source A,Version B,Source B,Risk,Recommended action,Who must confirm
+Building name spelling,"Revaz Business Park",Onboarding brief,"Revas / Rivaz Building",Website / Justdial / Pamphlet,Local SEO + NAP citation damage,Lock one exact spelling across all listings,Client/PM
+Building number,"108/3/1B",Onboarding brief,"108/3/18",Pamphlet (chat 62e56ed3),Wrong address on print/web,Confirm exact door number,Client/PM
+PIN code,"411033",Onboarding brief,"411057",Website footer / Justdial / Pamphlet,Maps mislocation; SEO,Confirm correct PIN,Client/PM
+Locality token,"Tathawade",Onboarding brief,"Marunji / Wakad",Website / Justdial,Local relevance signal split,Pick canonical locality,Client/PM
+Phone number,"+91 9325149578 (primary, displayed)",Website/all docs,"9665336826 (2nd number)",Pamphlet (chat 62e56ed3),Wrong number dialed,Confirm which number(s) are canonical,Client/PM
+Footer tel link,"Displays 9325149578",Website,"tel: href = +1 5417543010 (US placeholder)",Site extraction SRC-04,Taps dial wrong US number - conversion bug,Fix href immediately,PM/Dev
+Competitor name in footer,"Prints 'Little Millennium'",Website footer + Justdial,"Independent brand (assumed)",SRC-01 assumption,Misleads parents; brand/SEO,Scrub all 'Little Millennium' refs; confirm independent status,Client/PM
+Brand name spelling,"Millennium Woods Techno Kids (intended)",Logo/SRC-01,"5 other variants incl 'Millennium Wood Kids', 'millenniumwoodkids', 'Techno KIds'",Site extraction SRC-04 Sec7,Brand integrity + SEO,Lock one canonical name + IG handle,Client/PM
+Program age bands,"Day Care 1.5-3, Playgroup 2-3, Nursery 3-4, JrKG 4-5, SrKG 5-6",Home/Programs page,"Playgroup 1.5-2.5, Nursery 2.5-3.5, JrKG 3.5-4.5, SrKG 4.5-5.5, no Day Care",Admissions page,Wrong info to parents,Confirm correct current age bands + is Day Care active,Client/PM
+Admission session,"2025-26 (stated open on site)",Website Admissions,"Should be 2026-27 (mid-2026 now)",SRC-04,Stale/incorrect intake info,Update to current session + new DOB windows,Client/PM
+Instagram handle,"@milleniumwoods (one 'n')",Live IG / footer,"'Millennium' correct spelling",Brand name,Discoverability + brand,Decide keep vs migrate handle,Client/PM
+Teacher certification claim,"'Blue Ribbon certified' teachers",Script SCR-01 (chat),"Not stated in any SOP doc/site",SRC-01..04,Unverified marketing claim,Verify certification before reuse in content,Client/PM
+CTA pink hex,"#D63C8E (Brand Pink)",Design Instructions SRC-02,"#F93B7B (Bright Pink)",Master Brand Brain SRC-09 (UNVERIFIED),Inconsistent brand colour,Use SRC-02 (approved); treat SRC-09 as superseded,PM
+'Techno Kids' usage,"Core positive angle - use it",Design Instructions/Site,"Never use 'Techno'/'Techno Kids' in consumer copy",Master Brand Brain SRC-09 (UNVERIFIED),Contradictory brand rule,Follow approved SRC-02 unless PM adopts SRC-09 formally,PM
+Business identity,"Preschool (confirmed)",All SOP docs,"Preschool OR furniture brand? (question raised)",Master Brand Brain SRC-09 (UNVERIFIED),Confusion,Ignore furniture line - preschool is confirmed client,PM
+Parent entity,"Independent school",SRC-01 assumption,"'Sai Sakal' / 'SSSPM' parent entity? (nav 'About SSSPM'; footer 'All Rights Reserved by Sai Sakal')",SRC-04 Sec8,Ownership unclear,Confirm parent org / trust,Client/PM

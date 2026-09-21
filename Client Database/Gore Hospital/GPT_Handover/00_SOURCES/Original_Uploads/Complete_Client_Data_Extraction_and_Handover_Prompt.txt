@@ -1,0 +1,1309 @@
+COMPLETE CLIENT DATA EXTRACTION AND
+HANDOVER PROMPT
+Act as a senior project manager, brand strategist and digital asset archivist.
+You are currently inside a project, workspace or conversation dedicated to one specific client.
+Your job is to review the entire available project history and create a complete, simplified client handover
+system containing all important information generated, uploaded, discussed, approved or referenced so far.
+Automatically identify the client from the current project context.
+Do not ask me to provide the client name unless the workspace clearly contains multiple unrelated clients.
+PRIMARY OBJECTIVE
+Create a clean client folder system that allows a new project manager, designer, content writer, social media
+manager, video editor, SEO executive or ads specialist to understand and continue the project without
+depending on previous team members.
+The final structure must remain practical and easy to use.
+Use this folder structure:
+Client Folder
+│
+├── 00_SOURCES
+├── 01_DESIGN
+├── 02_ASSETS
+├── 03_CONTENT
+├── 04_GMB
+├── 05_CAMPAIGNS
+├── 06_CLIENT_DETAILS
+├── 07_REPORTS
+└── 99_ARCHIVE
+Do not create an unnecessarily complicated folder structure.
+1
+STEP 1 — REVIEW THE COMPLETE PROJECT
+Review everything available in this project, including:
+Project instructions
+System instructions specific to the client
+Uploaded files
+Uploaded images
+Logos
+Brand documents
+Research documents
+Website research
+Website links
+Website extraction
+Competitor research
+Client details
+Doctor, founder or team details
+Services
+Products
+Offers
+Prices
+Contact details
+Addresses
+Phone numbers
+Email addresses
+Social media links
+Design instructions
+Colour palettes
+Font instructions
+Logo rules
+Image-generation prompts
+Caption formats
+GMB guidelines
+Content strategies
+Scripts
+Reels
+Captions
+Hooks
+Ad copies
+Carousel concepts
+Static post concepts
+Video concepts
+Campaign briefs
+Client feedback
+Revisions
+Approved designs
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+2
+Rejected designs
+Published content
+Reports
+Performance information
+Pending tasks
+Conflicting information
+Missing information
+Review the complete available message history, not only the latest conversation.
+Do not provide a shallow summary.
+Extract all important material.
+STEP 2 — CREATE THE SIMPLIFIED FOLDER SYSTEM
+00_SOURCES
+This folder must contain untouched or clearly labelled copies of the most important source documents.
+Include:
+Basic brand information
+Strategic research
+Market research
+Competitor research
+Audience research
+Buyer psychology
+Website extraction
+Client-provided instructions
+AI prompting guides
+Caption format references
+Script format references
+Content format references
+Design instruction files
+GMB guidelines
+Campaign briefs
+Important uploaded documents
+Important website findings
+Important project notes
+Create:
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+3
+00_SOURCES
+├── START_HERE.md
+├── SOURCE_INDEX.csv
+├── PROJECT_SUMMARY.md
+├── OPEN_QUESTIONS_AND_CONFLICTS.md
+├── Original_Uploads
+├── Research
+├── Prompting_Guides
+├── Content_References
+├── Design_References
+├── GMB_References
+└── Campaign_Briefs
+Do not modify the meaning of original source documents.
+If two source documents disagree, preserve both and record the conflict.
+01_DESIGN
+This folder must contain everything needed to create brand-consistent designs.
+Include:
+Official logo
+Logo variants
+Brand colours
+Colour hex codes
+Typography
+Font recommendations
+Logo-placement rules
+Clear-space rules
+Design style
+Layout rules
+Image style
+Photography direction
+AI image-generation guidelines
+Negative prompts
+Social media dimensions
+GMB image specifications
+Do and do-not rules
+Approved visual references
+Legacy visual references
+Client design preferences
+Common client revision requests
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+4
+Create:
+01_DESIGN
+├── Brand_Quick_Reference.md
+├── Full_Design_Guidelines.md
+├── AI_Image_Prompting_Guide.md
+├── Logo_Usage_Guide.md
+├── Colour_Palette.md
+├── Typography_Guide.md
+├── Approved_Design_References
+├── Legacy_Design_References
+└── Client_Design_Preferences.md
+The Brand_Quick_Reference.md must be short enough for a designer to read before starting work.
+It should contain:
+Brand personality
+Primary colours
+Secondary colours
+Font system
+Logo placement
+Design style
+Image style
+CTA style
+Important restrictions
+Preferred post dimensions
+Clearly separate:
+Current design system
+Older or legacy design system
+Unverified design preferences
+Client-approved design rules
+Do not silently combine conflicting design systems.
+02_ASSETS
+This folder is only for files that can be used in production.
+Create:
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+5
+02_ASSETS
+├── 01_Logos
+├── 02_Approved_Posts
+├── 03_Approved_Images
+├── 04_Doctor_Founder_Team_Photos
+├── 05_Clinic_Office_Product_Photos
+├── 06_Raw_Videos
+├── 07_Editable_Source_Files
+├── 08_Final_Exports
+├── 09_Stock_And_Licences
+└── ASSET_INDEX.csv
+Identify and list:
+Approved social media posts
+Approved ad creatives
+Approved GMB images
+Approved standalone images
+Logo files
+Doctor or founder photos
+Clinic or office photos
+Product photos
+Raw videos
+Voiceovers
+Edited videos
+Reel covers
+Thumbnails
+PSD files
+AI files
+CDR files
+Canva links
+Figma links
+Premiere Pro files
+After Effects files
+Final JPG files
+Final PNG files
+Final PDF files
+Final MP4 files
+Stock assets
+Asset licences
+Patient or model consent records
+For each asset, record:
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+6
+Asset ID
+Asset name
+Current filename
+Recommended filename
+File type
+Campaign
+Platform
+Dimensions
+Language
+Status
+Approval source
+Original source
+Destination folder
+Usage rights
+Consent status
+Notes
+Use these statuses:
+RAW
+DRAFT
+PENDING_CLIENT
+APPROVED
+LIVE
+REJECTED
+SUPERSEDED
+ARCHIVED
+Do not label an asset approved unless the project contains clear approval evidence.
+03_CONTENT
+This section is extremely important.
+Extract every script, caption, content idea and content-related output generated in the project.
+Do not extract only final scripts.
+Include drafts, alternatives and unused ideas when they may be valuable.
+Create:
+03_CONTENT
+├── 01_Scripts
+•
+•
+•
+•
+•
+•
+•
+•
+7
+├── 02_Captions
+├── 03_Content_Ideas
+├── 04_Hooks_And_Headlines
+├── 05_Carousel_Content
+├── 06_Static_Post_Content
+├── 07_Reel_And_Video_Concepts
+├── 08_Ad_Copy
+├── 09_Content_Calendar
+├── 10_Published_Content
+├── 11_Content_Performance
+├── SCRIPT_INDEX.csv
+└── CONTENT_MASTER_INDEX.csv
+Mandatory script extraction
+Search the complete project for all scripts, including:
+Reel scripts
+Video scripts
+Doctor-speaking scripts
+Voiceover scripts
+Testimonial scripts
+Patient-story scripts
+Educational scripts
+Promotional scripts
+Awareness scripts
+Hindi scripts
+English scripts
+Marathi scripts
+Hinglish scripts
+Long-form scripts
+Short-form scripts
+Hooks
+CTAs
+Scene descriptions
+Shot lists
+On-screen text
+Thumbnail text
+Subtitle copy
+Alternative openings
+Alternative endings
+Rewritten scripts
+Corrected scripts
+Approved scripts
+Rejected scripts
+Incomplete script drafts
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+8
+This applies especially when the project is being reviewed inside Claude AI or another AI where many scripts
+may have been generated previously.
+Do not say “several scripts were generated.”
+Extract and list the actual scripts.
+Where possible, preserve the complete script text.
+Create one file per major script using this naming pattern:
+YYYY-MM-DD_Topic_Content-Type_Language_Status_v01
+Example:
+2026-06-24_Smoking-Sexual-Performance_Reel-Script_Hinglish_APPROVED_v01.md
+For every script, record:
+Script ID
+Title
+Topic
+Content pillar
+Language
+Format
+Duration
+Target audience
+Hook
+Main script
+CTA
+Visual direction
+Status
+Approval evidence
+Original conversation or source
+Date
+Campaign
+Notes
+Mandatory content-idea extraction
+Extract every content idea generated in the project, including:
+• Reel topics
+9
+Static post topics
+Carousel topics
+Story ideas
+GMB post ideas
+Blog ideas
+FAQ ideas
+Myth-versus-fact ideas
+Patient-story ideas
+Doctor authority ideas
+Awareness ideas
+Festival ideas
+Occasion-day ideas
+Offer ideas
+Campaign concepts
+Ad angles
+Content-series ideas
+Thumbnail concepts
+Video-scene ideas
+Visual metaphors
+Hooks that were never developed
+Alternative content directions
+Ideas generated by Claude, ChatGPT, Gemini or other AI systems
+Do not remove ideas merely because they were not published.
+Mark each idea as:
+USED
+APPROVED_NOT_USED
+DRAFT
+UNUSED
+REJECTED
+DUPLICATE
+NEEDS_REVIEW
+Create a content-idea register containing:
+Idea ID
+Topic
+Content type
+Content pillar
+Target audience
+Hook
+Core message
+Suggested CTA
+Language
+Campaign
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+10
+Status
+Original source
+Date
+Duplicate or related idea
+Notes
+Caption extraction
+Extract:
+Complete captions
+Caption templates
+Caption formats
+Hashtag formats
+Keyword blocks
+CTA formats
+Long captions
+Short captions
+English captions
+Hindi captions
+Marathi captions
+Hinglish captions
+GMB captions
+Social media captions
+Ad primary text
+Ad headlines
+Ad descriptions
+Separate approved captions from drafts.
+04_GMB
+Google Business Profile content must remain separate from Instagram and Meta content.
+Create:
+04_GMB
+├── 01_Posting_Guidelines
+├── 02_GMB_Post_Ideas
+├── 03_GMB_Post_Copy
+├── 04_GMB_Images
+├── 05_Published_Posts
+├── 06_Review_Responses
+├── 07_QA_Content
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+11
+├── 08_GMB_Performance
+└── GMB_CONTENT_INDEX.csv
+Extract:
+GMB posting guidelines
+Image rules
+Caption rules
+Healthcare-compliance rules
+Approved GMB posts
+Rejected GMB posts
+GMB post ideas
+GMB captions
+GMB image prompts
+GMB images
+Published dates
+Published links
+Service posts
+Update posts
+Offer posts
+Event posts
+Review-response templates
+Business Q&A
+Local keyword references
+GMB performance reports
+Do not automatically reuse Meta ad copy as GMB copy.
+GMB content should be:
+Helpful
+Local
+Professional
+Moderately branded
+Non-spammy
+Free from aggressive urgency
+Free from unsupported medical claims
+05_CAMPAIGNS
+Create one folder per campaign.
+Use:
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+12
+05_CAMPAIGNS
+├── Campaign_01
+│ ├── Brief
+│ ├── Research
+│ ├── Scripts
+│ ├── Captions
+│ ├── Creatives
+│ ├── Ad_Copy
+│ ├── Landing_Page
+│ ├── Approvals
+│ └── Performance
+├── Campaign_02
+└── Future_Campaigns
+Automatically name campaign folders using the campaign topic.
+Extract every campaign mentioned in the project.
+For each campaign, record:
+Campaign name
+Objective
+Offer
+Target audience
+Location
+Funnel stage
+Pain points
+Value proposition
+Hooks
+Creative angles
+Scripts
+Captions
+Ad copy
+Design direction
+Format and dimensions
+Landing page
+CTA
+Budget
+Campaign dates
+Approval status
+Published status
+Results
+Problems
+Learnings
+Next action
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+13
+Do not combine unrelated campaigns.
+06_CLIENT_DETAILS
+Create:
+06_CLIENT_DETAILS
+├── Client_Fact_Sheet.md
+├── Business_Details.md
+├── Contact_And_Location.md
+├── Services_And_Offers.md
+├── Doctors_Founders_Team.md
+├── Audience_Profiles.md
+├── Brand_Positioning.md
+├── Client_Preferences.md
+├── Approvals
+└── FACT_CONFLICT_REGISTER.csv
+Extract:
+Official business name
+Business category
+Business description
+Founder or doctor
+Team members
+Qualifications
+Experience
+Address
+Locations
+Phone numbers
+WhatsApp numbers
+Email addresses
+Website
+Social media links
+Business hours
+Services
+Treatments
+Products
+Packages
+Prices
+Inclusions
+Exclusions
+Offers
+Offer validity
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+14
+Trust signals
+Success claims
+Reviews
+Awards
+Certifications
+Accreditations
+Target audience
+Primary locations
+Competitors
+Positioning
+Unique selling propositions
+Client preferences
+Common revision requests
+Every claim must have one of these labels:
+CONFIRMED
+CLIENT_APPROVED
+LIVE_ON_WEBSITE
+PUBLISHED
+DRAFT
+INFERRED
+CONFLICTING
+UNVERIFIED
+Do not treat website claims as automatically medically or legally approved.
+Flag:
+Success rates
+Treatment outcomes
+Patient stories
+“Best” claims
+Price claims
+Medical study claims
+Guaranteed-result language
+Review counts
+Years of experience
+Number of patients
+Number of successful cases
+07_REPORTS
+Create:
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+15
+07_REPORTS
+├── 01_Social_Media
+├── 02_Meta_Ads
+├── 03_Google_Ads
+├── 04_Website
+├── 05_SEO
+├── 06_GMB
+├── 07_Leads
+├── 08_Monthly_Reports
+└── REPORT_INDEX.csv
+Extract and list:
+Social media reports
+Instagram insights
+Facebook insights
+Meta Ads reports
+Google Ads reports
+Website traffic reports
+GA4 reports
+Search Console reports
+Keyword rankings
+GMB reports
+Lead reports
+Call reports
+Appointment reports
+CRM reports
+Monthly reports
+Campaign performance
+Creative performance
+Best-performing content
+Low-performing content
+Recommendations
+Separate actual platform data from assumptions or estimated performance.
+99_ARCHIVE
+Create:
+99_ARCHIVE
+├── 01_Old_Guidelines
+├── 02_Rejected_Assets
+├── 03_Superseded_Content
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+16
+├── 04_Duplicate_Files
+├── 05_Old_Campaigns
+└── 06_Unverified_Material
+Do not permanently delete older content.
+Move outdated, duplicated, rejected or replaced material into Archive.
+STEP 3 — CREATE THE MASTER FILES
+Create the following files:
+START_HERE.md
+Include:
+Client overview
+What this folder contains
+Current active brand system
+Current active campaigns
+Most important files
+Current contact details
+Pending decisions
+Important warnings
+Last updated date
+SOURCE_INDEX.csv
+Use:
+Source ID
+Source name
+Source type
+Original filename
+Original location
+Date
+Summary
+Reliability
+Status
+Destination folder
+Notes
+•
+•
+•
+•
+•
+•
+•
+•
+•
+17
+CONTENT_MASTER_INDEX.csv
+Use:
+Content ID
+Title
+Topic
+Content type
+Language
+Platform
+Campaign
+Status
+Approval source
+Published date
+Original source
+Destination folder
+Notes
+SCRIPT_INDEX.csv
+Use:
+Script ID
+Title
+Topic
+Language
+Duration
+Format
+Hook
+CTA
+Campaign
+Status
+Approval evidence
+Original source
+Date
+Destination folder
+Notes
+ASSET_INDEX.csv
+Use:
+18
+Asset ID
+Asset name
+File type
+Campaign
+Platform
+Dimensions
+Language
+Status
+Approval evidence
+Original source
+Rights or consent
+Destination folder
+Notes
+CAMPAIGN_INDEX.csv
+Use:
+Campaign ID
+Campaign name
+Objective
+Offer
+Audience
+Location
+Start date
+End date
+Platforms
+Status
+Primary CTA
+Brief source
+Results available
+Destination folder
+Notes
+OPEN_QUESTIONS_AND_CONFLICTS.md
+Include every unresolved issue, such as:
+Different phone numbers
+Different addresses
+Different prices
+Different years of experience
+Conflicting brand colours
+Conflicting design systems
+•
+•
+•
+•
+•
+•
+19
+Different logo versions
+Unverified claims
+Missing approvals
+Missing editable files
+Missing client consent
+Missing campaign results
+Unclear published status
+For every conflict, provide:
+Conflict
+Version A
+Source A
+Version B
+Source B
+Risk
+Recommended action
+Person who must confirm
+STEP 4 — APPLY FILE-NAMING RULES
+Use this format:
+YYYY-MM-DD_Client-Topic_Content-Type_Language_Platform_Size_Status_vNN.ext
+When the exact date is unknown, use:
+DATE-UNKNOWN_Client-Topic_Content-Type_Status_vNN.ext
+Do not use filenames such as:
+final
+final2
+final-final
+latest
+corrected-final
+new-one
+use-this
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+20
+STEP 5 — VALIDATION RULES
+Follow these rules strictly:
+Do not invent missing information.
+Do not convert assumptions into facts.
+Do not label something approved without approval evidence.
+Do not combine conflicting information.
+Do not delete older useful material.
+Do not expose passwords, OTPs, API keys or access tokens.
+Do not include private patient information.
+Anonymise patient stories unless documented consent exists.
+Flag every medical claim requiring doctor approval.
+Flag every price or offer requiring client confirmation.
+Preserve complete scripts when possible.
+Preserve complete captions when possible.
+Preserve useful unused content ideas.
+Mention when some project history or files are inaccessible.
+Clearly distinguish original client content from AI-generated content.
+Clearly distinguish published content from drafts.
+Clearly distinguish active brand guidelines from legacy guidelines.
+Do not silently correct source material.
+Record the source of every important fact.
+Prefer simple folder organisation over unnecessary complexity.
+STEP 6 — REQUIRED FINAL RESPONSE
+Your final response must contain these sections:
+1. Client identified
+State the client or brand identified from the project.
+2. Extraction scope
+State what you reviewed and what you could not access.
+3. Folder structure
+Show the complete simplified folder tree.
+1.
+2.
+3.
+4.
+5.
+6.
+7.
+8.
+9.
+10.
+11.
+12.
+13.
+14.
+15.
+16.
+17.
+18.
+19.
+20.
+21
+4. Existing important information
+Summarise the most important available information.
+5. Source files found
+List every major uploaded or generated source file.
+6. Scripts found
+State the total number of scripts found and list them.
+Do not provide only topics. Include the complete script text or organise it into individual files whenever
+possible.
+7. Content ideas found
+State the total number of usable content ideas found and organise them by:
+Reels
+Static posts
+Carousels
+Stories
+GMB
+Blogs
+Ads
+Campaigns
+Video concepts
+8. Captions and copy found
+List:
+Social captions
+GMB captions
+Ad copy
+Hooks
+Headlines
+CTAs
+Keyword blocks
+Hashtag formats
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+22
+9. Design information found
+List:
+Logo
+Colours
+Fonts
+Design system
+Image style
+Dimensions
+Restrictions
+Approved visual directions
+Legacy visual directions
+10. Assets found
+List available and missing production assets.
+11. Campaigns found
+List every campaign and its available materials.
+12. Client details found
+List verified, unverified and conflicting business details.
+13. GMB information found
+List GMB guidelines, posts, ideas, images and performance information.
+14. Reports found
+List available analytics and reports.
+15. Conflicts and risks
+Show every important contradiction or compliance risk.
+16. Missing information
+List everything that still needs to be collected.
+•
+•
+•
+•
+•
+•
+•
+•
+•
+23
+17. Client questions
+Provide the exact questions that must be asked to the client.
+18. Intern action checklist
+Provide a clear task checklist in priority order.
+19. Downloadable files
+Create the organised folder and ZIP file when file-generation tools are available.
+If ZIP creation is unavailable, provide every file under a clearly labelled filename so it can be saved manually.
+20. Handover completion score
+Score each area from 0–100%:
+Sources
+Design
+Assets
+Content
+Scripts
+GMB
+Campaigns
+Client details
+Reports
+Approvals
+Explain what is missing from each incomplete area.
+FINAL QUALITY STANDARD
+The completed handover should allow another person to answer these questions immediately:
+Who is the client?
+What does the business offer?
+What brand guidelines are active?
+Which logo and colours should be used?
+What content has already been generated?
+What scripts have already been written?
+Which content ideas have not yet been used?
+Which posts and assets are approved?
+What campaigns exist?
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+1.
+2.
+3.
+4.
+5.
+6.
+7.
+8.
+9.
+24
+What GMB rules apply?
+What information is conflicting?
+What is still pending?
+What should the team work on next?
+Where is every important file located?
+What information requires client or professional approval?
+Do not stop after giving recommendations.
+Complete the extraction using all information currently available in the project.
+10.
+11.
+12.
+13.
+14.
+15.
+25

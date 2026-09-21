@@ -1,0 +1,11 @@
+Report ID,Report name,Category,Period,Status,Key finding,Destination folder,Notes
+RPT-01,90-Day Baseline Audit (M1),GMB + Website + Search,Feb 19 - May 18 2026,CONFIRMED (live data),"108 reviews at 4.9 stars underused; only 35 website clicks from 3929 GMB impressions",07_REPORTS/08_Monthly_Reports,Source: m1_audit.md
+RPT-02,June 2026 Client Report (M6),All channels,June 1-30 2026,PUBLISHED but partially unfilled,"3 wins: GMB category changed, 27 reviews replied to, piles page live",07_REPORTS/08_Monthly_Reports,"Source: m6_client_report_june2026.md; several KPI fields still [FILL]"
+RPT-03,Hospital Analysis Dashboard,GMB + SEO + Competitor,Data period Feb-May 2026,CONFIRMED (live data),Visual consolidation of RPT-01 findings,07_REPORTS/08_Monthly_Reports,Source: prime_hospital_analysis_dashboard.html
+RPT-04,SEO Foundation Report,SEO,May 2026 (live SERP),CONFIRMED,"SEO readiness score 22/100 at baseline; zero-competition keyword identified",07_REPORTS/05_SEO,Source: 04_seo_foundation.md
+RPT-05,GMB Foundation Report,GMB,May 20 2026 (live Windsor.ai pull),CONFIRMED,Profile strength 48/100 at baseline; category + posting were the two biggest gaps,07_REPORTS/06_GMB,Source: 05_gmb_foundation.md
+RPT-06,Website Technical Audit,Website,June 25 2026 (live Firecrawl crawl),CONFIRMED,"13 pages crawled, average 350 words/page, multiple critical errors found",07_REPORTS/04_Website,Source: 03_site_extraction_complete.md
+RPT-07,Social Media Performance,Social (Instagram/Facebook),June 2026,UNVERIFIED / NOT COLLECTED,"14 pieces published per agency report, but no Meta Business Suite metrics ever pulled",07_REPORTS/01_Social_Media,Report fields left as [Fill] in source
+RPT-08,Meta Ads Performance,Paid Social,N/A,NOT ACTIVE,No campaign has run; angles drafted only,07_REPORTS/02_Meta_Ads,No spend data exists
+RPT-09,Google Ads Performance,Paid Search,N/A,NOT ACTIVE,"Planned for July 2026, blocked on GA4 confirmation",07_REPORTS/03_Google_Ads,No spend data exists
+RPT-10,Leads / Patient Inquiry Volume,Leads,Ongoing,UNVERIFIED / MANUAL ESTIMATE ONLY,"Est. ~20+ WhatsApp inquiries/month; no tracking system in place",07_REPORTS/07_Leads,No CRM or call-tracking system found in project

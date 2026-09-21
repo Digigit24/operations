@@ -1,0 +1,2 @@
+# GMB POST IDEAS — NRS Hospital
+12 post templates authored in Step 05 (retrieve verbatim from chat d0ed9dbf). Types: service spotlights, 24×7 emergency reminder, doctor-led (Dr. Survase), cashless support, seasonal/monsoon health, community first-aid camp, festival health-safety, facility/ICU (no patients), specialty explainers. Keep local, helpful, non-spammy; 1 CTA each; confirmed phone; no superlatives/cure claims.

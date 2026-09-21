@@ -1,0 +1,1 @@
+Contains the only logo asset: a raster JPEG (868x196), mis-named .webp in the original project. ⚠️ Request vector (SVG/EPS), navy-reversed variant, and symbol-only mark from client.

@@ -1,0 +1,11 @@
+Report ID,Report name,Type,Date,Data source,Status,Destination folder,Notes
+RPT-01,Social Media Baseline Snapshot,Social Media,2025 (competitor analysis date),Dev_Mantra_Complete_Competitor_Analysis_2025_1.xlsx,FOUND - one-time baseline only,07_REPORTS/01_Social_Media,"1,291 LinkedIn followers at time of report; no ongoing tracking found"
+RPT-02,Meta Ads Performance,Paid Ads,N/A,N/A,NOT FOUND,07_REPORTS/02_Meta_Ads,Paid deliverable per agreement but no report exists in workspace
+RPT-03,Google Ads Performance,Paid Ads,N/A,N/A,NOT FOUND,07_REPORTS/03_Google_Ads,Paid deliverable per agreement but no report exists in workspace
+RPT-04,Website Traffic & Index Recovery Targets,Website/SEO,2026-05-12,DEVMANTRA_PM_NAVIGATION_INDEX.md,FOUND - targets only,07_REPORTS/04_Website,Projections not actuals
+RPT-05,SEO Keyword Gap & Competitive Position,SEO,2025 / 2026-01-30,"Dev_Mantra_Complete_Competitor_Analysis_2025_1.xlsx; DEV_MANTRA_COMPETITIVE_ANALYSIS__DATA_TABLES.pdf",FOUND,07_REPORTS/05_SEO,Two source reports with different competitor sets - see conflict register
+RPT-06,GMB Performance,GMB,N/A,N/A,NOT FOUND,07_REPORTS/06_GMB,See 00_SOURCES/GMB_References/ for full context
+RPT-07,Lead Reports,Leads,N/A,N/A,NOT FOUND,07_REPORTS/07_Leads,Agreement guarantees 10-15 qualified leads/month - unconfirmed
+RPT-08,Monthly Analytics Reports,Monthly Reports,N/A,N/A,NOT FOUND,07_REPORTS/08_Monthly_Reports,Agreement Section 1.8 promises 20+ page monthly report - none found
+RPT-09,Competitive/SWOT/Action-Plan Analysis (xlsx),Competitive Research,2025,Dev_Mantra_Complete_Competitor_Analysis_2025_1.xlsx,FOUND,00_SOURCES/Research,10-sheet full analysis
+RPT-10,Competitive Data Tables (PDF - scanned),Competitive Research,2026-01-30,DEV_MANTRA_COMPETITIVE_ANALYSIS__DATA_TABLES.pdf,FOUND,00_SOURCES/Research,10-table analysis with SWOT/KPI/ROI projections

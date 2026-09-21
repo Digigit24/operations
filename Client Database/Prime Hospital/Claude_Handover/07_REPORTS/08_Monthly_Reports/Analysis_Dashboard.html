@@ -1,0 +1,350 @@
+
+<h2 class="sr-only">Prime Speciality Hospital — Performance analysis dashboard showing GMB metrics, SEO status, content pipeline, competitor comparison, and action plan.</h2>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans)}
+.dash{padding:1.25rem 0}
+.section-label{font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--color-text-tertiary);margin:1.5rem 0 .6rem}
+.metric-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px}
+.metric{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:.85rem 1rem}
+.metric .label{font-size:12px;color:var(--color-text-secondary);margin-bottom:4px;display:flex;align-items:center;gap:5px}
+.metric .val{font-size:22px;font-weight:500;color:var(--color-text-primary);line-height:1}
+.metric .sub{font-size:11px;color:var(--color-text-tertiary);margin-top:3px}
+.metric .badge{font-size:10px;padding:2px 6px;border-radius:4px;font-weight:500}
+.badge-green{background:#eaf3de;color:#3B6D11}
+.badge-red{background:#fcebeb;color:#A32D2D}
+.badge-amber{background:#faeeda;color:#854F0B}
+.badge-blue{background:#e6f1fb;color:#185FA5}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+.card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1rem 1.25rem}
+.card-title{font-size:13px;font-weight:500;color:var(--color-text-secondary);margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.bar-row{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.bar-label{font-size:12px;color:var(--color-text-secondary);width:110px;flex-shrink:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar-track{flex:1;height:6px;background:var(--color-background-secondary);border-radius:3px;overflow:hidden}
+.bar-fill{height:100%;border-radius:3px}
+.bar-val{font-size:12px;font-weight:500;color:var(--color-text-primary);width:36px;text-align:right;flex-shrink:0}
+.kw-row{display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:0.5px solid var(--color-border-tertiary)}
+.kw-row:last-child{border-bottom:none}
+.kw-name{font-size:12px;color:var(--color-text-primary)}
+.kw-vol{font-size:11px;color:var(--color-text-secondary)}
+.kw-badge{font-size:10px;padding:2px 7px;border-radius:4px;font-weight:500}
+.status-row{display:flex;align-items:flex-start;gap:8px;padding:6px 0;border-bottom:0.5px solid var(--color-border-tertiary)}
+.status-row:last-child{border-bottom:none}
+.status-icon{font-size:15px;margin-top:1px;flex-shrink:0}
+.status-text{font-size:12px;color:var(--color-text-primary);line-height:1.4}
+.status-sub{font-size:11px;color:var(--color-text-secondary)}
+.comp-row{display:flex;align-items:center;gap:8px;padding:5px 0;border-bottom:0.5px solid var(--color-border-tertiary)}
+.comp-row:last-child{border-bottom:none}
+.comp-name{font-size:12px;color:var(--color-text-primary);flex:1}
+.comp-stars{font-size:11px;color:var(--color-text-secondary);width:42px;text-align:center}
+.comp-reviews{font-size:11px;font-weight:500;width:36px;text-align:right}
+.comp-seo{font-size:10px;padding:2px 7px;border-radius:4px;font-weight:500;width:44px;text-align:center}
+.action-row{display:flex;gap:10px;padding:7px 0;border-bottom:0.5px solid var(--color-border-tertiary)}
+.action-row:last-child{border-bottom:none}
+.p-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;margin-top:4px}
+.action-text{font-size:12px;color:var(--color-text-primary);line-height:1.5}
+.action-meta{font-size:11px;color:var(--color-text-secondary)}
+.funnel-wrap{display:flex;flex-direction:column;gap:6px;margin-top:4px}
+.funnel-step{display:flex;align-items:center;gap:8px}
+.funnel-label{font-size:12px;color:var(--color-text-secondary);width:90px;flex-shrink:0}
+.funnel-bar{height:20px;border-radius:3px;display:flex;align-items:center;padding-left:8px}
+.funnel-num{font-size:11px;font-weight:500;white-space:nowrap}
+.divider{border:none;border-top:0.5px solid var(--color-border-tertiary);margin:1.25rem 0 0}
+.insight-box{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:.8rem 1rem;margin-top:10px}
+.insight-box p{font-size:12px;color:var(--color-text-secondary);line-height:1.6}
+.insight-box strong{font-weight:500;color:var(--color-text-primary)}
+.progress-wrap{margin-top:6px}
+.prog-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}
+.prog-label{font-size:12px;color:var(--color-text-secondary)}
+.prog-pct{font-size:12px;font-weight:500;color:var(--color-text-primary)}
+.prog-track{height:5px;background:var(--color-background-secondary);border-radius:3px;margin-bottom:8px;overflow:hidden}
+.prog-fill{height:100%;border-radius:3px}
+.header-bar{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:4px}
+.pill{font-size:10px;padding:3px 8px;border-radius:20px;font-weight:500}
+.pill-live{background:#eaf3de;color:#3B6D11}
+</style>
+
+<div class="dash">
+
+<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem">
+  <div>
+    <div style="font-size:17px;font-weight:500;color:var(--color-text-primary)">Prime Speciality Hospital</div>
+    <div style="font-size:12px;color:var(--color-text-secondary);margin-top:2px">Dr. Pankaj Bhalerao · Moshi, PCMC · Data period: Feb–May 2026</div>
+  </div>
+  <span class="pill pill-live"><i class="ti ti-circle-filled" style="font-size:8px;margin-right:3px" aria-hidden="true"></i>Live GMB data</span>
+</div>
+
+<div class="section-label"><i class="ti ti-chart-bar" aria-hidden="true"></i> GMB performance — 90 days</div>
+<div class="metric-grid">
+  <div class="metric">
+    <div class="label"><i class="ti ti-eye" style="font-size:14px" aria-hidden="true"></i>Impressions</div>
+    <div class="val">3,929</div>
+    <div class="sub">~1,310 / month</div>
+  </div>
+  <div class="metric">
+    <div class="label"><i class="ti ti-phone" style="font-size:14px" aria-hidden="true"></i>Calls</div>
+    <div class="val">161</div>
+    <div class="sub">4.1% of impressions</div>
+  </div>
+  <div class="metric">
+    <div class="label"><i class="ti ti-map-pin" style="font-size:14px" aria-hidden="true"></i>Directions</div>
+    <div class="val">352</div>
+    <div class="sub">8.96% — excellent</div>
+  </div>
+  <div class="metric">
+    <div class="label"><i class="ti ti-external-link" style="font-size:14px" aria-hidden="true"></i>Web clicks</div>
+    <div class="val">35</div>
+    <div class="sub"><span class="badge badge-red">0.89%</span> very low</div>
+  </div>
+  <div class="metric">
+    <div class="label"><i class="ti ti-star" style="font-size:14px" aria-hidden="true"></i>Rating</div>
+    <div class="val">4.9★</div>
+    <div class="sub">108 reviews</div>
+  </div>
+  <div class="metric">
+    <div class="label"><i class="ti ti-message" style="font-size:14px" aria-hidden="true"></i>Reply rate</div>
+    <div class="val">10%</div>
+    <div class="sub"><span class="badge badge-red">27 unanswered</span></div>
+  </div>
+</div>
+
+<div style="margin-top:14px">
+  <div class="card">
+    <div class="card-title"><i class="ti ti-device-mobile" aria-hidden="true"></i>Impression source breakdown</div>
+    <div class="bar-row"><div class="bar-label">Mobile search</div><div class="bar-track"><div class="bar-fill" style="width:47%;background:#378ADD"></div></div><div class="bar-val">1,856</div></div>
+    <div class="bar-row"><div class="bar-label">Mobile maps</div><div class="bar-track"><div class="bar-fill" style="width:43%;background:#639922"></div></div><div class="bar-val">1,690</div></div>
+    <div class="bar-row"><div class="bar-label">Desktop search</div><div class="bar-track"><div class="bar-fill" style="width:7%;background:#888780"></div></div><div class="bar-val">280</div></div>
+    <div class="bar-row"><div class="bar-label">Desktop maps</div><div class="bar-track"><div class="bar-fill" style="width:2.6%;background:#B4B2A9"></div></div><div class="bar-val">103</div></div>
+    <div class="insight-box"><p><strong>90.3% mobile</strong> — confirms WhatsApp-first strategy. Every CTA must be thumb-optimised on mobile.</p></div>
+  </div>
+</div>
+
+<div class="row2" style="margin-top:14px">
+  <div class="card">
+    <div class="card-title"><i class="ti ti-search" aria-hidden="true"></i>Top GMB search keywords</div>
+    <div class="kw-row"><div><div class="kw-name">bhalerao hospital</div><div class="kw-vol">52 / month</div></div><span class="kw-badge badge-green">Branded</span></div>
+    <div class="kw-row"><div><div class="kw-name">hospital near me</div><div class="kw-vol">39 / month</div></div><span class="kw-badge badge-blue">Local</span></div>
+    <div class="kw-row"><div><div class="kw-name">prime speciality moshi</div><div class="kw-vol">26 / month</div></div><span class="kw-badge badge-green">Branded</span></div>
+    <div class="kw-row"><div><div class="kw-name">gastroenterologist near me</div><div class="kw-vol">14 / month</div></div><span class="kw-badge badge-blue">Specialty</span></div>
+    <div class="kw-row"><div><div class="kw-name">hernia surgeon PCMC</div><div class="kw-vol">—</div></div><span class="kw-badge badge-red">Not ranking</span></div>
+    <div class="kw-row"><div><div class="kw-name">laser piles Moshi</div><div class="kw-vol">—</div></div><span class="kw-badge badge-red">Not ranking</span></div>
+    <div class="insight-box" style="margin-top:8px"><p>Zero procedure keywords in GMB data. <strong>Category change → Surgical Centre</strong> fixes this in 30–45 days.</p></div>
+  </div>
+  <div class="card">
+    <div class="card-title"><i class="ti ti-users" aria-hidden="true"></i>Competitor GMB comparison</div>
+    <div style="display:grid;grid-template-columns:1fr auto auto auto;gap:0;font-size:10px;color:var(--color-text-tertiary);padding-bottom:4px;border-bottom:0.5px solid var(--color-border-tertiary);margin-bottom:2px">
+      <span>Name</span><span style="text-align:center;width:42px">Rating</span><span style="width:38px;text-align:right">Reviews</span><span style="width:44px;text-align:center">SEO</span>
+    </div>
+    <div class="comp-row"><div class="comp-name" style="font-weight:500;color:#185FA5">Prime (us)</div><span class="comp-stars">4.9★</span><span class="comp-reviews" style="color:#3B6D11">108</span><span class="comp-seo badge-amber">Medium</span></div>
+    <div class="comp-row"><div class="comp-name">KK Care Hosp.</div><span class="comp-stars">~4.6★</span><span class="comp-reviews">~65</span><span class="comp-seo badge-amber">Medium</span></div>
+    <div class="comp-row"><div class="comp-name">Dr. Thorat Hosp.</div><span class="comp-stars">~4.4★</span><span class="comp-reviews">~45</span><span class="comp-seo badge-red">Low</span></div>
+    <div class="comp-row"><div class="comp-name">Dr. Ajagekar</div><span class="comp-stars">~4.5★</span><span class="comp-reviews">~30</span><span class="comp-seo badge-red">Low</span></div>
+    <div class="comp-row"><div class="comp-name">Pristyn Care</div><span class="comp-stars">4.7★</span><span class="comp-reviews">500+</span><span class="comp-seo badge-red" style="background:#fcebeb;color:#A32D2D">High</span></div>
+    <div class="comp-row"><div class="comp-name">Brahm Chaitanya</div><span class="comp-stars">~4.4★</span><span class="comp-reviews">~120</span><span class="comp-seo badge-amber">Medium</span></div>
+    <div class="insight-box" style="margin-top:8px"><p><strong>Prime leads PCMC</strong> on rating + review count. No local competitor is close to 4.9★ with 108 reviews.</p></div>
+  </div>
+</div>
+
+<hr class="divider">
+<div class="section-label"><i class="ti ti-world" aria-hidden="true"></i>SEO & website health</div>
+
+<div class="row2">
+  <div class="card">
+    <div class="card-title"><i class="ti ti-check" aria-hidden="true"></i>Technical status</div>
+    <div class="status-row"><span class="status-icon" style="color:#3B6D11"><i class="ti ti-circle-check" aria-hidden="true"></i></span><div><div class="status-text">HTTPS active</div><div class="status-sub">SSL confirmed live</div></div></div>
+    <div class="status-row"><span class="status-icon" style="color:#3B6D11"><i class="ti ti-circle-check" aria-hidden="true"></i></span><div><div class="status-text">Mobile responsive</div><div class="status-sub">Confirmed from live crawl</div></div></div>
+    <div class="status-row"><span class="status-icon" style="color:#A32D2D"><i class="ti ti-circle-x" aria-hidden="true"></i></span><div><div class="status-text">Homepage title — uses "Best"</div><div class="status-sub">Compliance risk + bad SEO signal</div></div></div>
+    <div class="status-row"><span class="status-icon" style="color:#A32D2D"><i class="ti ti-circle-x" aria-hidden="true"></i></span><div><div class="status-text">GA4 not confirmed</div><div class="status-sub">No conversion tracking</div></div></div>
+    <div class="status-row"><span class="status-icon" style="color:#A32D2D"><i class="ti ti-circle-x" aria-hidden="true"></i></span><div><div class="status-text">Schema markup absent</div><div class="status-sub">LocalBusiness, FAQ, Physician</div></div></div>
+    <div class="status-row"><span class="status-icon" style="color:#A32D2D"><i class="ti ti-circle-x" aria-hidden="true"></i></span><div><div class="status-text">Blog — no content</div><div class="status-sub">Zero content-driven traffic</div></div></div>
+    <div class="status-row"><span class="status-icon" style="color:#854F0B"><i class="ti ti-alert-circle" aria-hidden="true"></i></span><div><div class="status-text">Site last updated Jan 2024</div><div class="status-sub">16+ months stale</div></div></div>
+  </div>
+  <div class="card">
+    <div class="card-title"><i class="ti ti-file-text" aria-hidden="true"></i>Service page content depth</div>
+    <div class="bar-row"><div class="bar-label">Laser piles</div><div class="bar-track"><div class="bar-fill" style="width:30%;background:#E24B4A"></div></div><div class="bar-val" style="color:#A32D2D">&lt;400w</div></div>
+    <div class="bar-row"><div class="bar-label">Hernia</div><div class="bar-track"><div class="bar-fill" style="width:30%;background:#E24B4A"></div></div><div class="bar-val" style="color:#A32D2D">&lt;400w</div></div>
+    <div class="bar-row"><div class="bar-label">Gallbladder</div><div class="bar-track"><div class="bar-fill" style="width:30%;background:#E24B4A"></div></div><div class="bar-val" style="color:#A32D2D">&lt;400w</div></div>
+    <div class="bar-row"><div class="bar-label">Fissure / Fistula</div><div class="bar-track"><div class="bar-fill" style="width:30%;background:#E24B4A"></div></div><div class="bar-val" style="color:#A32D2D">&lt;400w</div></div>
+    <div class="bar-row"><div class="bar-label">Thyroid</div><div class="bar-track"><div class="bar-fill" style="width:30%;background:#E24B4A"></div></div><div class="bar-val" style="color:#A32D2D">&lt;400w</div></div>
+    <div class="bar-row"><div class="bar-label">Target (competitive)</div><div class="bar-track"><div class="bar-fill" style="width:100%;background:#B5D4F4"></div></div><div class="bar-val" style="color:#185FA5">1000w</div></div>
+    <div class="insight-box" style="margin-top:8px"><p>Pristyn Care ranks with <strong>2,000+ word pages</strong>. All Prime service pages are stubs — content depth is the #1 SEO gap.</p></div>
+  </div>
+</div>
+
+<div class="card" style="margin-top:14px">
+  <div class="card-title"><i class="ti ti-target" aria-hidden="true"></i>Top keyword opportunities — competitive gap analysis</div>
+  <div style="display:grid;grid-template-columns:1fr auto auto auto;gap:0;font-size:10px;color:var(--color-text-tertiary);padding-bottom:5px;border-bottom:0.5px solid var(--color-border-tertiary);margin-bottom:2px">
+    <span>Keyword</span><span style="width:70px;text-align:center">Volume/mo</span><span style="width:70px;text-align:center">Competition</span><span style="width:60px;text-align:right">Priority</span>
+  </div>
+  <div class="kw-row" style="display:grid;grid-template-columns:1fr auto auto auto;gap:0">
+    <div class="kw-name">laser piles treatment Moshi</div>
+    <span style="width:70px;text-align:center;font-size:11px;color:var(--color-text-secondary)">~30/mo</span>
+    <span style="width:70px;text-align:center"><span class="kw-badge" style="background:#eaf3de;color:#3B6D11">Zero</span></span>
+    <span style="width:60px;text-align:right"><span class="kw-badge badge-red">🔴 #1</span></span>
+  </div>
+  <div class="kw-row" style="display:grid;grid-template-columns:1fr auto auto auto;gap:0">
+    <div class="kw-name">hernia surgeon PCMC</div>
+    <span style="width:70px;text-align:center;font-size:11px;color:var(--color-text-secondary)">~90/mo</span>
+    <span style="width:70px;text-align:center"><span class="kw-badge badge-amber">Low</span></span>
+    <span style="width:60px;text-align:right"><span class="kw-badge badge-red">🔴 #2</span></span>
+  </div>
+  <div class="kw-row" style="display:grid;grid-template-columns:1fr auto auto auto;gap:0">
+    <div class="kw-name">gallbladder surgery Pune</div>
+    <span style="width:70px;text-align:center;font-size:11px;color:var(--color-text-secondary)">~180/mo</span>
+    <span style="width:70px;text-align:center"><span class="kw-badge badge-amber">Medium</span></span>
+    <span style="width:60px;text-align:right"><span class="kw-badge" style="background:#faeeda;color:#854F0B">🟡 #3</span></span>
+  </div>
+  <div class="kw-row" style="display:grid;grid-template-columns:1fr auto auto auto;gap:0">
+    <div class="kw-name">laser piles treatment PCMC</div>
+    <span style="width:70px;text-align:center;font-size:11px;color:var(--color-text-secondary)">~70/mo</span>
+    <span style="width:70px;text-align:center"><span class="kw-badge badge-amber">Low</span></span>
+    <span style="width:60px;text-align:right"><span class="kw-badge" style="background:#faeeda;color:#854F0B">🟡 #4</span></span>
+  </div>
+  <div class="kw-row" style="display:grid;grid-template-columns:1fr auto auto auto;gap:0">
+    <div class="kw-name">laser piles cost PCMC</div>
+    <span style="width:70px;text-align:center;font-size:11px;color:var(--color-text-secondary)">~170/mo</span>
+    <span style="width:70px;text-align:center"><span class="kw-badge badge-amber">Low</span></span>
+    <span style="width:60px;text-align:right"><span class="kw-badge" style="background:#faeeda;color:#854F0B">🟡 #5</span></span>
+  </div>
+  <div class="kw-row" style="display:grid;grid-template-columns:1fr auto auto auto;gap:0">
+    <div class="kw-name">minimally invasive surgeon Pune</div>
+    <span style="width:70px;text-align:center;font-size:11px;color:var(--color-text-secondary)">~30/mo</span>
+    <span style="width:70px;text-align:center"><span class="kw-badge badge-amber">Low</span></span>
+    <span style="width:60px;text-align:right"><span class="kw-badge badge-blue">🔵 #6</span></span>
+  </div>
+</div>
+
+<hr class="divider">
+<div class="section-label"><i class="ti ti-trending-up" aria-hidden="true"></i>Monthly targets — June 2026</div>
+
+<div class="card">
+  <div class="card-title"><i class="ti ti-chart-line" aria-hidden="true"></i>KPI targets vs baseline</div>
+  <div class="progress-wrap">
+    <div class="prog-row"><span class="prog-label">GMB impressions (target: 1,700/mo)</span><span class="prog-pct">Baseline: 1,310</span></div>
+    <div class="prog-track"><div class="prog-fill" style="width:77%;background:#378ADD"></div></div>
+    <div class="prog-row"><span class="prog-label">GMB calls (target: 65/mo)</span><span class="prog-pct">Baseline: 54</span></div>
+    <div class="prog-track"><div class="prog-fill" style="width:83%;background:#378ADD"></div></div>
+    <div class="prog-row"><span class="prog-label">Review reply rate (target: 95%+)</span><span class="prog-pct">Baseline: 10%</span></div>
+    <div class="prog-track"><div class="prog-fill" style="width:10%;background:#E24B4A"></div></div>
+    <div class="prog-row"><span class="prog-label">GMB website clicks (target: 20/mo)</span><span class="prog-pct">Baseline: 12</span></div>
+    <div class="prog-track"><div class="prog-fill" style="width:60%;background:#378ADD"></div></div>
+    <div class="prog-row"><span class="prog-label">Service pages rewritten (target: 3)</span><span class="prog-pct">Baseline: 0</span></div>
+    <div class="prog-track"><div class="prog-fill" style="width:0%;background:#639922"></div></div>
+    <div class="prog-row"><span class="prog-label">Google reviews (target: 116+)</span><span class="prog-pct">Baseline: 108</span></div>
+    <div class="prog-track"><div class="prog-fill" style="width:93%;background:#639922"></div></div>
+  </div>
+</div>
+
+<hr class="divider">
+<div class="section-label"><i class="ti ti-funnel" aria-hidden="true"></i>Patient acquisition funnel</div>
+
+<div class="card">
+  <div class="card-title"><i class="ti ti-arrows-down" aria-hidden="true"></i>Current funnel performance</div>
+  <div class="funnel-wrap">
+    <div class="funnel-step">
+      <div class="funnel-label">GMB impressions</div>
+      <div class="funnel-bar" style="width:100%;background:#B5D4F4"><span class="funnel-num" style="color:#042C53">3,929 / 90 days</span></div>
+    </div>
+    <div class="funnel-step">
+      <div class="funnel-label">Calls + directions</div>
+      <div class="funnel-bar" style="width:65%;background:#85B7EB"><span class="funnel-num" style="color:#042C53">513 (13%)</span></div>
+    </div>
+    <div class="funnel-step">
+      <div class="funnel-label">Website clicks</div>
+      <div class="funnel-bar" style="width:9%;background:#E24B4A"><span class="funnel-num" style="color:#501313">35 (0.89%)</span></div>
+    </div>
+    <div class="funnel-step">
+      <div class="funnel-label">WhatsApp / inquiries</div>
+      <div class="funnel-bar" style="width:5%;background:#B4B2A9"><span class="funnel-num" style="color:#2C2C2A">Est. ~20+</span></div>
+    </div>
+    <div class="funnel-step">
+      <div class="funnel-label">Bookings</div>
+      <div class="funnel-bar" style="width:3%;background:#888780"><span class="funnel-num" style="color:#2C2C2A">Not tracked</span></div>
+    </div>
+  </div>
+  <div class="insight-box" style="margin-top:10px"><p>The <strong>massive drop from GMB to website (0.89%)</strong> is the biggest funnel leak. Direction requests (8.96%) show high intent — patients are literally going to the hospital but not clicking through online. Fixing the homepage title + adding WhatsApp CTA will close this gap.</p></div>
+</div>
+
+<hr class="divider">
+<div class="section-label"><i class="ti ti-calendar" aria-hidden="true"></i>Content pipeline — June 2026</div>
+
+<div class="card">
+  <div class="card-title"><i class="ti ti-list" aria-hidden="true"></i>22 pieces planned this month</div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px;margin-top:4px">
+    <div class="metric" style="text-align:center;padding:.7rem .5rem">
+      <div class="label" style="justify-content:center;font-size:11px">GMB posts</div>
+      <div class="val" style="font-size:20px;text-align:center">4</div>
+    </div>
+    <div class="metric" style="text-align:center;padding:.7rem .5rem">
+      <div class="label" style="justify-content:center;font-size:11px">Instagram</div>
+      <div class="val" style="font-size:20px;text-align:center">8</div>
+    </div>
+    <div class="metric" style="text-align:center;padding:.7rem .5rem">
+      <div class="label" style="justify-content:center;font-size:11px">Facebook</div>
+      <div class="val" style="font-size:20px;text-align:center">6</div>
+    </div>
+    <div class="metric" style="text-align:center;padding:.7rem .5rem">
+      <div class="label" style="justify-content:center;font-size:11px">Blog articles</div>
+      <div class="val" style="font-size:20px;text-align:center">2</div>
+    </div>
+    <div class="metric" style="text-align:center;padding:.7rem .5rem">
+      <div class="label" style="justify-content:center;font-size:11px">WhatsApp</div>
+      <div class="val" style="font-size:20px;text-align:center">2</div>
+    </div>
+  </div>
+  <div style="margin-top:10px">
+    <div class="bar-row"><div class="bar-label">Laser piles</div><div class="bar-track"><div class="bar-fill" style="width:45%;background:#378ADD"></div></div><div class="bar-val">45%</div></div>
+    <div class="bar-row"><div class="bar-label">Hernia</div><div class="bar-track"><div class="bar-fill" style="width:25%;background:#639922"></div></div><div class="bar-val">25%</div></div>
+    <div class="bar-row"><div class="bar-label">Trust / reviews</div><div class="bar-track"><div class="bar-fill" style="width:20%;background:#EF9F27"></div></div><div class="bar-val">20%</div></div>
+    <div class="bar-row"><div class="bar-label">Gallbladder / other</div><div class="bar-track"><div class="bar-fill" style="width:10%;background:#B4B2A9"></div></div><div class="bar-val">10%</div></div>
+  </div>
+</div>
+
+<hr class="divider">
+<div class="section-label"><i class="ti ti-bolt" aria-hidden="true"></i>Priority action plan</div>
+
+<div class="card">
+  <div class="action-row">
+    <div class="p-dot" style="background:#E24B4A"></div>
+    <div><div class="action-text">Change GMB category → Surgical Centre + add General Surgeon, Proctologist</div><div class="action-meta">30 min · Due: June 2 · PM · Impact: +30% procedure keyword impressions in 30–45 days</div></div>
+  </div>
+  <div class="action-row">
+    <div class="p-dot" style="background:#E24B4A"></div>
+    <div><div class="action-text">Reply to all 27 unanswered reviews — personalised, not templated</div><div class="action-meta">2–3 hrs · Due: June 5 · PM · Impact: Review reply rate 10% → 95%+, local ranking signal</div></div>
+  </div>
+  <div class="action-row">
+    <div class="p-dot" style="background:#E24B4A"></div>
+    <div><div class="action-text">Install GA4 + wire phone_click, whatsapp_click, form_submit events</div><div class="action-meta">4–6 hrs · Due: June 7 · Developer · Impact: Unlocks all data-driven decisions</div></div>
+  </div>
+  <div class="action-row">
+    <div class="p-dot" style="background:#E24B4A"></div>
+    <div><div class="action-text">Fix homepage title — remove "Best", add primary keyword</div><div class="action-meta">30 min · Due: June 5 · Dev · Impact: Removes compliance risk, improves CTR</div></div>
+  </div>
+  <div class="action-row">
+    <div class="p-dot" style="background:#E24B4A"></div>
+    <div><div class="action-text">Rewrite /hemorrhoids/ — 900+ words + FAQ schema (zero competition for "laser piles Moshi")</div><div class="action-meta">1–2 days · Due: June 10 · Writer + Dev · Impact: Top 5 ranking in 30–45 days</div></div>
+  </div>
+  <div class="action-row">
+    <div class="p-dot" style="background:#BA7517"></div>
+    <div><div class="action-text">Add LocalBusiness + MedicalClinic JSON-LD schema to homepage</div><div class="action-meta">3–4 hrs · Due: June 10 · Developer · Impact: Rich results eligibility</div></div>
+  </div>
+  <div class="action-row">
+    <div class="p-dot" style="background:#BA7517"></div>
+    <div><div class="action-text">Publish 4 GMB posts this month (piles, educational, hernia, trust)</div><div class="action-meta">2 hrs/month · Designer + PM · Impact: +20% impressions, procedure keyword discovery</div></div>
+  </div>
+  <div class="action-row">
+    <div class="p-dot" style="background:#BA7517"></div>
+    <div><div class="action-text">Rewrite /dr-pankaj-bhalerao/ — 700+ words, trust anchor page</div><div class="action-meta">L effort · Due: June 14 · Writer · Impact: Converts research traffic to inquiries</div></div>
+  </div>
+  <div class="action-row">
+    <div class="p-dot" style="background:#639922"></div>
+    <div><div class="action-text">Seed 15 Q&A pairs on GMB profile</div><div class="action-meta">2 hrs · Due: June 10 · PM · Impact: Captures patient discovery questions</div></div>
+  </div>
+  <div class="action-row">
+    <div class="p-dot" style="background:#639922"></div>
+    <div><div class="action-text">Submit to Practo, Lybrate, Justdial with exact NAP</div><div class="action-meta">M effort · Due: June 20 · PM · Impact: Citation consistency, local SEO signals</div></div>
+  </div>
+</div>
+
+</div>

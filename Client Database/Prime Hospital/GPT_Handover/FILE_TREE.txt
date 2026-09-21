@@ -1,0 +1,474 @@
+Prime_Speciality_Hospital_Handover_2026-07-16/
+├── 00_SOURCES/
+│   ├── Campaign_Briefs/
+│   │   └── CAMPAIGN_SOURCE_MAP.md
+│   ├── Content_References/
+│   │   └── CONTENT_EVIDENCE_AND_RECOVERY_NOTES.md
+│   ├── Design_References/
+│   │   ├── ACTIVE_STRATEGY_2026-05-26_Prime-Master-Brand-Brain.md
+│   │   ├── CURRENT_WORKING_2026-05-26_Prime-Design-Instructions-Blue-Green.md
+│   │   └── LEGACY_2026-05-20_Prime-Design-Instructions-Teal.md
+│   ├── GMB_References/
+│   │   ├── 2026-05-20_Prime-GMB-Foundation-v1.md
+│   │   └── DATE-UNKNOWN_GMB-Safe-Content-Guidelines.txt
+│   ├── Original_Uploads/
+│   │   ├── 2026-05-20_Prime-Design-Instructions-Legacy-Teal_Source_UNMODIFIED.md
+│   │   ├── 2026-05-20_Prime-GMB-Foundation_v1_Source_UNMODIFIED.md
+│   │   ├── 2026-05-26_Prime-Design-Instructions-Logo-Palette-Updated_Source_UNMODIFIED.md
+│   │   ├── 2026-05-26_Prime-Master-Brand-Brain_v1_Source_UNMODIFIED.md
+│   │   ├── 2026-05-26_Prime-Prompting-Guide-Legacy-Teal_Source_UNMODIFIED.md
+│   │   ├── 2026-05-26_Prime-Prompting-Guide-Logo-Palette-Updated_Source_UNMODIFIED.md
+│   │   ├── 2026-05-26_Prime-SEO-Foundation_v2_Source_UNMODIFIED.md
+│   │   ├── 2026-07-16_Client-Handover-Instructions_Source_UNMODIFIED.txt
+│   │   ├── DATE-UNKNOWN_GMB-Post-And-Image-Guidelines_Source_UNMODIFIED.txt
+│   │   ├── DATE-UNKNOWN_Prime-Logo-And-Footer_Source_UNMODIFIED.png
+│   │   ├── DATE-UNKNOWN_Prime-Official-Logo_Source_UNMODIFIED.png
+│   │   └── README.md
+│   ├── Prompting_Guides/
+│   │   ├── CURRENT_WORKING_2026-05-26_Prime-Prompting-Guide-Blue-Green.md
+│   │   └── LEGACY_2026-05-26_Prime-Prompting-Guide-Teal.md
+│   ├── Research/
+│   │   ├── 2026-05-26_Prime-SEO-Foundation-v2.md
+│   │   ├── 2026-07-13_Comprehensive-Audit-Reference-Notes.md
+│   │   └── 2026-07-16_Competitive-And-Instagram-Audit-Reference-Notes.md
+│   ├── OPEN_QUESTIONS_AND_CONFLICTS.md
+│   ├── PROJECT_SUMMARY.md
+│   ├── SOURCE_INDEX.csv
+│   └── START_HERE.md
+├── 01_DESIGN/
+│   ├── Approved_Design_References/
+│   │   └── README.md
+│   ├── Legacy_Design_References/
+│   │   └── README.md
+│   ├── AI_Image_Prompting_Guide.md
+│   ├── Brand_Quick_Reference.md
+│   ├── Client_Design_Preferences.md
+│   ├── Colour_Palette.md
+│   ├── Full_Design_Guidelines.md
+│   ├── Logo_Usage_Guide.md
+│   └── Typography_Guide.md
+├── 02_ASSETS/
+│   ├── 01_Logos/
+│   │   ├── DATE-UNKNOWN_Prime-Logo-And-Footer-Artwork_RAW_v01.png
+│   │   ├── DATE-UNKNOWN_Prime-Website-Logo_RAW_v01.png
+│   │   └── README.md
+│   ├── 02_Approved_Posts/
+│   │   └── README.md
+│   ├── 03_Approved_Images/
+│   │   └── README.md
+│   ├── 04_Doctor_Founder_Team_Photos/
+│   │   └── README.md
+│   ├── 05_Clinic_Office_Product_Photos/
+│   │   └── README.md
+│   ├── 06_Raw_Videos/
+│   │   └── README.md
+│   ├── 07_Editable_Source_Files/
+│   │   └── README.md
+│   ├── 08_Final_Exports/
+│   │   └── README.md
+│   ├── 09_Stock_And_Licences/
+│   │   └── README.md
+│   └── ASSET_INDEX.csv
+├── 03_CONTENT/
+│   ├── 01_Scripts/
+│   │   ├── 2026-05-13_Prime-Anal-fissure_Reel-Script_English-Marathi_DRAFT_v01.md
+│   │   ├── 2026-05-13_Prime-Anal-fistula_Reel-Script_English-Marathi_DRAFT_v01.md
+│   │   ├── 2026-05-13_Prime-Laser-piles-treatment_Reel-Script_English-Marathi_DRAFT_v01.md
+│   │   ├── 2026-05-13_Prime-Piles_Reel-Script_English-Marathi_DRAFT_v01.md
+│   │   ├── 2026-05-25_Prime-Piles-versus-fissure_Reel-Script_English-Marathi-adaptation-referenced_DRAFT_v01.md
+│   │   ├── 2026-06-23_Prime-Hospital-surgical-service-introduction_Reel-Script_English_LIVE_v01.md
+│   │   └── README.md
+│   ├── 02_Captions/
+│   │   ├── 2026-06-11_Prime-Surgical-Awareness_Caption-Batch_English_RECONSTRUCTED_v01.md
+│   │   ├── 2026-06-23_Prime-Advanced-Surgical-Care_Promo-Caption_English_LIVE-PARTIAL_v01.md
+│   │   └── Caption_Style_And_Format_Reference.md
+│   ├── 03_Content_Ideas/
+│   │   ├── CONTENT_IDEA_REGISTER.csv
+│   │   └── CONTENT_IDEA_SUMMARY.md
+│   ├── 04_Hooks_And_Headlines/
+│   │   └── HOOK_AND_HEADLINE_LIBRARY.md
+│   ├── 05_Carousel_Content/
+│   │   └── 2026-05-25_Prime-Piles-Vs-Fissure_Carousel-Storyboard_English_DRAFT_v01.md
+│   ├── 06_Static_Post_Content/
+│   │   └── 2026-05-21_Prime-What-Are-Piles_Static-Brief_English_DRAFT_v01.md
+│   ├── 07_Reel_And_Video_Concepts/
+│   │   └── FIRST_MONTH_12_DOCTOR_LED_REEL_TOPICS.md
+│   ├── 08_Ad_Copy/
+│   │   └── AD_COPY_AND_ANGLE_REGISTER.md
+│   ├── 09_Content_Calendar/
+│   │   ├── 2026-05-to-08_SEO_Three-Month-Calendar_DRAFT.md
+│   │   └── INSTAGRAM_WEEKLY_PUBLISHING_RHYTHM.md
+│   ├── 10_Published_Content/
+│   │   └── PUBLISHED_CONTENT_REGISTER.md
+│   ├── 11_Content_Performance/
+│   │   └── README.md
+│   ├── CONTENT_MASTER_INDEX.csv
+│   ├── README.md
+│   └── SCRIPT_INDEX.csv
+├── 04_GMB/
+│   ├── 01_Posting_Guidelines/
+│   │   ├── GBP_PROFILE_REMEDIATION_CHECKLIST.md
+│   │   └── Prime_GMB_Posting_Guidelines.md
+│   ├── 02_GMB_Post_Ideas/
+│   │   └── GMB_POST_IDEA_REGISTER.md
+│   ├── 03_GMB_Post_Copy/
+│   │   ├── 2026-05-20_Prime-Awareness-World-Hernia-Day-April-25_GMB-Post_English_DRAFT_v01.md
+│   │   ├── 2026-05-20_Prime-Educational-Appendix-Surgery_GMB-Post_English_DRAFT_v01.md
+│   │   ├── 2026-05-20_Prime-Educational-Day-Care-Surgery-Explained_GMB-Post_English_DRAFT_v01.md
+│   │   ├── 2026-05-20_Prime-Educational-Hernia-FAQ_GMB-Post_English_DRAFT_v01.md
+│   │   ├── 2026-05-20_Prime-Educational-Is-Piles-Surgery-Painful_GMB-Post_English_DRAFT_v01.md
+│   │   ├── 2026-05-20_Prime-Educational-Same-Surgeon-Who-Consults-Also-Operates_GMB-Post_English_DRAFT_v01.md
+│   │   ├── 2026-05-20_Prime-Local-Proof_GMB-Post_English_DRAFT_v01.md
+│   │   ├── 2026-05-20_Prime-Service-Gallbladder-Surgery_GMB-Post_English_DRAFT_v01.md
+│   │   ├── 2026-05-20_Prime-Service-Laparoscopic-Hernia-Surgery_GMB-Post_English_DRAFT_v01.md
+│   │   ├── 2026-05-20_Prime-Service-Laser-FissureFistula_GMB-Post_English_DRAFT_v01.md
+│   │   ├── 2026-05-20_Prime-Service-Laser-Piles-Standard_GMB-Post_English_DRAFT_v01.md
+│   │   └── 2026-05-20_Prime-Trust-Transparent-Pricing_GMB-Post_English_DRAFT_v01.md
+│   ├── 04_GMB_Images/
+│   │   └── GMB_IMAGE_PROMPT_LIBRARY.md
+│   ├── 05_Published_Posts/
+│   │   └── README.md
+│   ├── 06_Review_Responses/
+│   │   ├── REVIEW_REQUEST_WORKFLOW.md
+│   │   └── REVIEW_RESPONSE_GUIDE.md
+│   ├── 07_QA_Content/
+│   │   ├── GMB_QA_DRAFTS.md
+│   │   └── GMB_QA_REGISTER.csv
+│   ├── 08_GMB_Performance/
+│   │   └── 2026-05-20_GMB_Performance_Baseline.md
+│   └── GMB_CONTENT_INDEX.csv
+├── 05_CAMPAIGNS/
+│   ├── CAMP-001_Canonical-Facts-and-Trust-Remediation/
+│   │   ├── Ad_Copy/
+│   │   │   └── README.md
+│   │   ├── Approvals/
+│   │   │   └── README.md
+│   │   ├── Brief/
+│   │   │   ├── README.md
+│   │   │   └── SOURCE_POINTERS.md
+│   │   ├── Captions/
+│   │   │   └── README.md
+│   │   ├── Creatives/
+│   │   │   └── README.md
+│   │   ├── Landing_Page/
+│   │   │   └── README.md
+│   │   ├── Performance/
+│   │   │   └── README.md
+│   │   ├── Research/
+│   │   │   └── README.md
+│   │   ├── Scripts/
+│   │   │   └── README.md
+│   │   └── CAMPAIGN_SUMMARY.md
+│   ├── CAMP-002_Laser-Piles-Education-and-Consultation/
+│   │   ├── Ad_Copy/
+│   │   │   └── README.md
+│   │   ├── Approvals/
+│   │   │   └── README.md
+│   │   ├── Brief/
+│   │   │   ├── README.md
+│   │   │   └── SOURCE_POINTERS.md
+│   │   ├── Captions/
+│   │   │   └── README.md
+│   │   ├── Creatives/
+│   │   │   └── README.md
+│   │   ├── Landing_Page/
+│   │   │   └── README.md
+│   │   ├── Performance/
+│   │   │   └── README.md
+│   │   ├── Research/
+│   │   │   └── README.md
+│   │   ├── Scripts/
+│   │   │   └── README.md
+│   │   └── CAMPAIGN_SUMMARY.md
+│   ├── CAMP-003_Piles-vs-Fissure-Differential-Education/
+│   │   ├── Ad_Copy/
+│   │   │   └── README.md
+│   │   ├── Approvals/
+│   │   │   └── README.md
+│   │   ├── Brief/
+│   │   │   ├── README.md
+│   │   │   └── SOURCE_POINTERS.md
+│   │   ├── Captions/
+│   │   │   └── README.md
+│   │   ├── Creatives/
+│   │   │   └── README.md
+│   │   ├── Landing_Page/
+│   │   │   └── README.md
+│   │   ├── Performance/
+│   │   │   └── README.md
+│   │   ├── Research/
+│   │   │   └── README.md
+│   │   ├── Scripts/
+│   │   │   └── README.md
+│   │   └── CAMPAIGN_SUMMARY.md
+│   ├── CAMP-004_Laparoscopic-Hernia-Education-and-Consultation/
+│   │   ├── Ad_Copy/
+│   │   │   └── README.md
+│   │   ├── Approvals/
+│   │   │   └── README.md
+│   │   ├── Brief/
+│   │   │   ├── README.md
+│   │   │   └── SOURCE_POINTERS.md
+│   │   ├── Captions/
+│   │   │   └── README.md
+│   │   ├── Creatives/
+│   │   │   └── README.md
+│   │   ├── Landing_Page/
+│   │   │   └── README.md
+│   │   ├── Performance/
+│   │   │   └── README.md
+│   │   ├── Research/
+│   │   │   └── README.md
+│   │   ├── Scripts/
+│   │   │   └── README.md
+│   │   └── CAMPAIGN_SUMMARY.md
+│   ├── CAMP-005_Gallbladder-and-Appendix-Education/
+│   │   ├── Ad_Copy/
+│   │   │   └── README.md
+│   │   ├── Approvals/
+│   │   │   └── README.md
+│   │   ├── Brief/
+│   │   │   ├── README.md
+│   │   │   └── SOURCE_POINTERS.md
+│   │   ├── Captions/
+│   │   │   └── README.md
+│   │   ├── Creatives/
+│   │   │   └── README.md
+│   │   ├── Landing_Page/
+│   │   │   └── README.md
+│   │   ├── Performance/
+│   │   │   └── README.md
+│   │   ├── Research/
+│   │   │   └── README.md
+│   │   ├── Scripts/
+│   │   │   └── README.md
+│   │   └── CAMPAIGN_SUMMARY.md
+│   ├── CAMP-006_Fissure-and-Fistula-Awareness/
+│   │   ├── Ad_Copy/
+│   │   │   └── README.md
+│   │   ├── Approvals/
+│   │   │   └── README.md
+│   │   ├── Brief/
+│   │   │   ├── README.md
+│   │   │   └── SOURCE_POINTERS.md
+│   │   ├── Captions/
+│   │   │   └── README.md
+│   │   ├── Creatives/
+│   │   │   └── README.md
+│   │   ├── Landing_Page/
+│   │   │   └── README.md
+│   │   ├── Performance/
+│   │   │   └── README.md
+│   │   ├── Research/
+│   │   │   └── README.md
+│   │   ├── Scripts/
+│   │   │   └── README.md
+│   │   └── CAMPAIGN_SUMMARY.md
+│   ├── CAMP-007_Endoscopy-Education/
+│   │   ├── Ad_Copy/
+│   │   │   └── README.md
+│   │   ├── Approvals/
+│   │   │   └── README.md
+│   │   ├── Brief/
+│   │   │   ├── README.md
+│   │   │   └── SOURCE_POINTERS.md
+│   │   ├── Captions/
+│   │   │   └── README.md
+│   │   ├── Creatives/
+│   │   │   └── README.md
+│   │   ├── Landing_Page/
+│   │   │   └── README.md
+│   │   ├── Performance/
+│   │   │   └── README.md
+│   │   ├── Research/
+│   │   │   └── README.md
+│   │   ├── Scripts/
+│   │   │   └── README.md
+│   │   └── CAMPAIGN_SUMMARY.md
+│   ├── CAMP-008_Advanced-Surgical-Care-Local-Promotion/
+│   │   ├── Ad_Copy/
+│   │   │   └── README.md
+│   │   ├── Approvals/
+│   │   │   └── README.md
+│   │   ├── Brief/
+│   │   │   ├── README.md
+│   │   │   └── SOURCE_POINTERS.md
+│   │   ├── Captions/
+│   │   │   └── README.md
+│   │   ├── Creatives/
+│   │   │   └── README.md
+│   │   ├── Landing_Page/
+│   │   │   └── README.md
+│   │   ├── Performance/
+│   │   │   └── README.md
+│   │   ├── Research/
+│   │   │   └── README.md
+│   │   ├── Scripts/
+│   │   │   └── README.md
+│   │   └── CAMPAIGN_SUMMARY.md
+│   ├── CAMP-009_Google-Business-Profile-90-Day-Growth/
+│   │   ├── Ad_Copy/
+│   │   │   └── README.md
+│   │   ├── Approvals/
+│   │   │   └── README.md
+│   │   ├── Brief/
+│   │   │   ├── README.md
+│   │   │   └── SOURCE_POINTERS.md
+│   │   ├── Captions/
+│   │   │   └── README.md
+│   │   ├── Creatives/
+│   │   │   └── README.md
+│   │   ├── Landing_Page/
+│   │   │   └── README.md
+│   │   ├── Performance/
+│   │   │   └── README.md
+│   │   ├── Research/
+│   │   │   └── README.md
+│   │   ├── Scripts/
+│   │   │   └── README.md
+│   │   └── CAMPAIGN_SUMMARY.md
+│   ├── CAMP-010_SEO-and-Website-Remediation/
+│   │   ├── Ad_Copy/
+│   │   │   └── README.md
+│   │   ├── Approvals/
+│   │   │   └── README.md
+│   │   ├── Brief/
+│   │   │   ├── README.md
+│   │   │   └── SOURCE_POINTERS.md
+│   │   ├── Captions/
+│   │   │   └── README.md
+│   │   ├── Creatives/
+│   │   │   └── README.md
+│   │   ├── Landing_Page/
+│   │   │   └── README.md
+│   │   ├── Performance/
+│   │   │   └── README.md
+│   │   ├── Research/
+│   │   │   └── README.md
+│   │   ├── Scripts/
+│   │   │   └── README.md
+│   │   └── CAMPAIGN_SUMMARY.md
+│   ├── CAMP-011_Instagram-Doctor-Authority-System/
+│   │   ├── Ad_Copy/
+│   │   │   └── README.md
+│   │   ├── Approvals/
+│   │   │   └── README.md
+│   │   ├── Brief/
+│   │   │   ├── README.md
+│   │   │   └── SOURCE_POINTERS.md
+│   │   ├── Captions/
+│   │   │   └── README.md
+│   │   ├── Creatives/
+│   │   │   └── README.md
+│   │   ├── Landing_Page/
+│   │   │   └── README.md
+│   │   ├── Performance/
+│   │   │   └── README.md
+│   │   ├── Research/
+│   │   │   └── README.md
+│   │   ├── Scripts/
+│   │   │   └── README.md
+│   │   └── CAMPAIGN_SUMMARY.md
+│   ├── CAMP-012_June-2026-Promotional-Flyer-Production/
+│   │   ├── Ad_Copy/
+│   │   │   └── README.md
+│   │   ├── Approvals/
+│   │   │   └── README.md
+│   │   ├── Brief/
+│   │   │   ├── README.md
+│   │   │   └── SOURCE_POINTERS.md
+│   │   ├── Captions/
+│   │   │   └── README.md
+│   │   ├── Creatives/
+│   │   │   └── README.md
+│   │   ├── Landing_Page/
+│   │   │   └── README.md
+│   │   ├── Performance/
+│   │   │   └── README.md
+│   │   ├── Research/
+│   │   │   └── README.md
+│   │   ├── Scripts/
+│   │   │   └── README.md
+│   │   └── CAMPAIGN_SUMMARY.md
+│   ├── CAMP-013_Transparent-Pricing-and-Insurance-Education/
+│   │   ├── Ad_Copy/
+│   │   │   └── README.md
+│   │   ├── Approvals/
+│   │   │   └── README.md
+│   │   ├── Brief/
+│   │   │   ├── README.md
+│   │   │   └── SOURCE_POINTERS.md
+│   │   ├── Captions/
+│   │   │   └── README.md
+│   │   ├── Creatives/
+│   │   │   └── README.md
+│   │   ├── Landing_Page/
+│   │   │   └── README.md
+│   │   ├── Performance/
+│   │   │   └── README.md
+│   │   ├── Research/
+│   │   │   └── README.md
+│   │   ├── Scripts/
+│   │   │   └── README.md
+│   │   └── CAMPAIGN_SUMMARY.md
+│   ├── Future_Campaigns/
+│   │   └── README.md
+│   └── CAMPAIGN_INDEX.csv
+├── 06_CLIENT_DETAILS/
+│   ├── Approvals/
+│   │   ├── APPROVAL_LOG_TEMPLATE.csv
+│   │   └── README.md
+│   ├── Audience_Profiles.md
+│   ├── Brand_Positioning.md
+│   ├── Business_Details.md
+│   ├── CLIENT_FACT_REGISTER.csv
+│   ├── Client_Fact_Sheet.md
+│   ├── Client_Preferences.md
+│   ├── Contact_And_Location.md
+│   ├── Doctors_Founders_Team.md
+│   ├── FACT_CONFLICT_REGISTER.csv
+│   └── Services_And_Offers.md
+├── 07_REPORTS/
+│   ├── 01_Social_Media/
+│   │   └── 2026-07-16_Instagram_Audit_Summary.md
+│   ├── 02_Meta_Ads/
+│   │   └── README.md
+│   ├── 03_Google_Ads/
+│   │   └── README.md
+│   ├── 04_Website/
+│   │   └── 2026-07-13_Website_Implementation_Status.md
+│   ├── 05_SEO/
+│   │   └── 2026-05-26_SEO_Executive_Summary.md
+│   ├── 06_GMB/
+│   │   └── 2026-05-20_GMB_Performance_Baseline.md
+│   ├── 07_Leads/
+│   │   └── README.md
+│   ├── 08_Monthly_Reports/
+│   │   ├── 2026-07_Project_Audit_Reference.md
+│   │   └── MONTHLY_REPORT_TEMPLATE.md
+│   └── REPORT_INDEX.csv
+├── 99_ARCHIVE/
+│   ├── 01_Old_Guidelines/
+│   │   ├── 2026-05-20_Prime-Design-Instructions-Teal_SUPERSEDED.md
+│   │   ├── 2026-05-26_Prime-Prompting-Guide-Teal_SUPERSEDED.md
+│   │   └── README.md
+│   ├── 02_Rejected_Assets/
+│   │   └── README.md
+│   ├── 03_Superseded_Content/
+│   │   └── README.md
+│   ├── 04_Duplicate_Files/
+│   │   └── JUNE_FLYER_DUPLICATE_REGISTER.md
+│   ├── 05_Old_Campaigns/
+│   │   └── README.md
+│   └── 06_Unverified_Material/
+│       ├── MEDICAL_AND_COMMERCIAL_CLAIMS_REGISTER.csv
+│       └── README.md
+├── CLIENT_QUESTIONS.md
+├── DOWNLOAD_INDEX.md
+├── FILE_NAMING_STANDARD.md
+├── FOLDER_STRUCTURE.md
+├── HANDOVER_COMPLETION_SCORE.md
+├── HANDOVER_REPORT.md
+├── INTERN_ACTION_CHECKLIST.md
+├── MANIFEST_SHA256.csv
+└── README.md

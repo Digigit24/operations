@@ -1,0 +1,1 @@
+No final exports (JPG/PNG/PDF/MP4) in project.

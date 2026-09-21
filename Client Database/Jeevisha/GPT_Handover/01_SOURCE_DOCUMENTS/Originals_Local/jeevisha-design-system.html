@@ -1,0 +1,1953 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jeevisha — Design System Visual Reference</title>
+<style>
+/* =========================================================
+   JEEVISHA — DESIGN SYSTEM VISUAL REFERENCE
+   This file is a RENDER of the existing Design System,
+   AI Prompting Guide, and Master Brand Brain.
+   It introduces no new rules. Source files remain canonical.
+   ========================================================= */
+
+:root {
+  /* Palette — locked. From Design System §3. */
+  --royal-blue: #073B8E;
+  --deep-navy: #061B3D;
+  --healing-green: #45B42A;
+  --white: #FFFFFF;
+  --warm-ivory: #F8F7F2;
+  --soft-clinical-blue: #EAF3FF;
+  --light-grey: #EEF2F5;
+  --charcoal: #252A32;
+  --pale-green-tint: #EAF8E7;
+  --warm-gold: #D8B76A;
+  --soft-pain-red: #F05A5A;
+
+  /* Typography stacks — from Design System §5 with graceful system-font fallback. */
+  --font-display: 'Playfair Display', 'Cormorant Garamond', 'Libre Baskerville', Georgia, 'Times New Roman', serif;
+  --font-body: 'Manrope', 'DM Sans', 'Onest', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', 'Menlo', 'Monaco', Consolas, monospace;
+
+  /* Rhythm */
+  --pad: 24px;
+  --section-pad: 80px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--charcoal);
+  background: var(--warm-ivory);
+  line-height: 1.6;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.page {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--pad);
+}
+
+/* ---------- COVER ---------- */
+.cover {
+  padding: 120px 0 80px;
+  border-bottom: 1px solid rgba(7, 59, 142, 0.12);
+}
+.cover .eyebrow {
+  font-family: var(--font-body);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--royal-blue);
+  font-weight: 600;
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.cover .eyebrow::before {
+  content: '';
+  width: 28px;
+  height: 1px;
+  background: var(--royal-blue);
+}
+.cover h1 {
+  font-family: var(--font-display);
+  font-size: clamp(48px, 7vw, 88px);
+  font-weight: 500;
+  color: var(--deep-navy);
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  margin-bottom: 24px;
+}
+.cover h1 em {
+  font-style: italic;
+  color: var(--royal-blue);
+}
+.cover .lede {
+  font-family: var(--font-body);
+  font-size: 18px;
+  color: var(--charcoal);
+  max-width: 640px;
+  line-height: 1.65;
+  margin-bottom: 48px;
+}
+.cover .meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 24px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(7, 59, 142, 0.12);
+}
+.cover .meta-item .label {
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(37, 42, 50, 0.55);
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+.cover .meta-item .value {
+  font-size: 14px;
+  color: var(--deep-navy);
+  font-weight: 500;
+}
+.cover .meta-item .value.green::after {
+  content: ' •';
+  color: var(--healing-green);
+  font-weight: 700;
+}
+
+/* ---------- INDEX ---------- */
+.index {
+  padding: var(--section-pad) 0;
+}
+.index-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1px;
+  background: rgba(7, 59, 142, 0.12);
+  border: 1px solid rgba(7, 59, 142, 0.12);
+}
+.index-item {
+  background: var(--warm-ivory);
+  padding: 28px 24px;
+  text-decoration: none;
+  color: var(--deep-navy);
+  display: block;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+.index-item:hover {
+  background: var(--white);
+}
+.index-item .num {
+  font-family: var(--font-display);
+  font-size: 32px;
+  color: var(--royal-blue);
+  font-weight: 500;
+  display: block;
+  margin-bottom: 8px;
+  line-height: 1;
+}
+.index-item .name {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.index-item .desc {
+  font-size: 12px;
+  color: rgba(37, 42, 50, 0.6);
+  margin-top: 6px;
+  line-height: 1.5;
+}
+
+/* ---------- SECTION SHELL ---------- */
+.section {
+  padding: var(--section-pad) 0;
+  border-top: 1px solid rgba(7, 59, 142, 0.12);
+}
+.section-head {
+  display: flex;
+  align-items: baseline;
+  gap: 24px;
+  margin-bottom: 56px;
+  flex-wrap: wrap;
+}
+.section-head .sn {
+  font-family: var(--font-display);
+  font-size: 28px;
+  color: var(--royal-blue);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+.section-head h2 {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 500;
+  color: var(--deep-navy);
+  letter-spacing: -0.015em;
+  line-height: 1.1;
+  flex: 1;
+  min-width: 240px;
+}
+.section-head .ref {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(37, 42, 50, 0.5);
+  font-weight: 600;
+  white-space: nowrap;
+}
+.section-intro {
+  font-size: 16px;
+  color: rgba(37, 42, 50, 0.75);
+  max-width: 640px;
+  margin-bottom: 56px;
+  line-height: 1.7;
+}
+
+/* ---------- COLOR SECTION ---------- */
+.swatch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+.swatch {
+  background: var(--white);
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(7, 59, 142, 0.08);
+  transition: transform 0.3s ease;
+}
+.swatch:hover { transform: translateY(-2px); }
+.swatch .chip {
+  height: 160px;
+  position: relative;
+}
+.swatch .chip.bordered {
+  border-bottom: 1px solid rgba(7, 59, 142, 0.08);
+}
+.swatch .info {
+  padding: 20px 22px 22px;
+}
+.swatch .name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--deep-navy);
+  margin-bottom: 4px;
+}
+.swatch .role {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--royal-blue);
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+.swatch .hex {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--charcoal);
+  margin-bottom: 4px;
+}
+.swatch .rgb {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: rgba(37, 42, 50, 0.5);
+  margin-bottom: 12px;
+}
+.swatch .usage {
+  font-size: 12px;
+  color: rgba(37, 42, 50, 0.7);
+  line-height: 1.55;
+}
+
+/* Color ratio bar */
+.ratio {
+  margin-top: 64px;
+  background: var(--white);
+  border-radius: 14px;
+  padding: 32px;
+  border: 1px solid rgba(7, 59, 142, 0.08);
+}
+.ratio h3 {
+  font-family: var(--font-display);
+  font-size: 22px;
+  color: var(--deep-navy);
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+.ratio p {
+  font-size: 13px;
+  color: rgba(37, 42, 50, 0.65);
+  margin-bottom: 24px;
+}
+.ratio-bar {
+  display: flex;
+  height: 56px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.ratio-bar div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--deep-navy);
+  letter-spacing: 0.06em;
+}
+.ratio-bar .r-white { background: var(--white); flex: 70; border: 1px solid rgba(7, 59, 142, 0.08); }
+.ratio-bar .r-blue { background: var(--royal-blue); color: var(--white); flex: 20; }
+.ratio-bar .r-green { background: var(--healing-green); color: var(--white); flex: 10; }
+
+/* ---------- TYPOGRAPHY ---------- */
+.type-row {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 32px;
+  padding: 32px 0;
+  border-bottom: 1px solid rgba(7, 59, 142, 0.08);
+  align-items: baseline;
+}
+.type-row:last-child { border-bottom: none; }
+.type-row .spec {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: rgba(37, 42, 50, 0.55);
+  letter-spacing: 0.04em;
+  line-height: 1.7;
+}
+.type-row .spec strong {
+  display: block;
+  color: var(--royal-blue);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+.type-row .sample.h1 {
+  font-family: var(--font-display);
+  font-size: 56px;
+  font-weight: 500;
+  color: var(--deep-navy);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+.type-row .sample.h2 {
+  font-family: var(--font-display);
+  font-size: 40px;
+  font-weight: 500;
+  color: var(--deep-navy);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+}
+.type-row .sample.h3 {
+  font-family: var(--font-body);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--deep-navy);
+  line-height: 1.3;
+  letter-spacing: -0.005em;
+}
+.type-row .sample.h4 {
+  font-family: var(--font-body);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--royal-blue);
+  letter-spacing: 0.02em;
+}
+.type-row .sample.body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--charcoal);
+  line-height: 1.7;
+  max-width: 580px;
+}
+.type-row .sample.caption {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(37, 42, 50, 0.6);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.type-row .sample.cta {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--white);
+  background: var(--royal-blue);
+  padding: 14px 24px;
+  border-radius: 10px;
+  display: inline-block;
+  letter-spacing: 0.01em;
+}
+.type-row .sample.footer-type {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--white);
+  background: var(--deep-navy);
+  padding: 14px 20px;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+/* ---------- BUTTONS ---------- */
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 32px;
+  align-items: center;
+}
+.btn {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 14px 24px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  letter-spacing: 0.01em;
+  transition: all 0.22s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.btn-primary {
+  background: var(--royal-blue);
+  color: var(--white);
+}
+.btn-primary:hover {
+  background: var(--deep-navy);
+  transform: translateY(-1px);
+}
+.btn-primary .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--healing-green);
+}
+.btn-secondary {
+  background: var(--white);
+  color: var(--royal-blue);
+  border-color: var(--royal-blue);
+}
+.btn-secondary:hover {
+  background: var(--soft-clinical-blue);
+}
+.btn-ghost {
+  background: transparent;
+  color: var(--royal-blue);
+  padding: 14px 8px;
+}
+.btn-ghost::after {
+  content: '→';
+  transition: transform 0.22s ease;
+}
+.btn-ghost:hover::after { transform: translateX(4px); }
+.btn-disabled {
+  background: var(--light-grey);
+  color: rgba(37, 42, 50, 0.4);
+  cursor: not-allowed;
+}
+.btn-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(37, 42, 50, 0.5);
+  margin-top: 8px;
+  display: block;
+}
+
+/* ---------- CARDS ---------- */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+.card {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 32px;
+  border: 1px solid rgba(7, 59, 142, 0.06);
+  box-shadow: 0 1px 3px rgba(7, 59, 142, 0.04);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.card:hover {
+  box-shadow: 0 8px 24px rgba(7, 59, 142, 0.08);
+  transform: translateY(-2px);
+}
+.card-service .icon-circle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--soft-clinical-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+.card-service .icon-circle svg {
+  width: 28px;
+  height: 28px;
+  stroke: var(--royal-blue);
+  fill: none;
+  stroke-width: 1.6;
+}
+.card-service h3 {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--deep-navy);
+  margin-bottom: 12px;
+  letter-spacing: -0.005em;
+}
+.card-service p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(37, 42, 50, 0.75);
+  margin-bottom: 24px;
+}
+.card-service .link {
+  font-size: 13px;
+  color: var(--royal-blue);
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.card-service .link::after {
+  content: ' →';
+  color: var(--healing-green);
+}
+
+.card-testimonial {
+  background: var(--soft-clinical-blue);
+  border: none;
+}
+.card-testimonial .quote-mark {
+  font-family: var(--font-display);
+  font-size: 56px;
+  color: var(--royal-blue);
+  line-height: 0.6;
+  margin-bottom: 8px;
+}
+.card-testimonial .quote {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--deep-navy);
+  line-height: 1.55;
+  margin-bottom: 28px;
+}
+.card-testimonial .attrib {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.card-testimonial .initial {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--royal-blue);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 500;
+}
+.card-testimonial .who {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--deep-navy);
+  line-height: 1.3;
+}
+.card-testimonial .who span {
+  display: block;
+  font-weight: 400;
+  font-size: 12px;
+  color: rgba(37, 42, 50, 0.6);
+  margin-top: 2px;
+}
+
+.card-stat {
+  background: var(--deep-navy);
+  border: none;
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+.card-stat::before {
+  content: '';
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 160px;
+  height: 160px;
+  background: radial-gradient(circle, rgba(69, 180, 42, 0.18) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.card-stat .stat-label {
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 24px;
+  font-weight: 600;
+  position: relative;
+}
+.card-stat .stat-num {
+  font-family: var(--font-display);
+  font-size: 64px;
+  font-weight: 500;
+  color: var(--white);
+  line-height: 1;
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+  position: relative;
+}
+.card-stat .stat-num em {
+  color: var(--healing-green);
+  font-style: normal;
+}
+.card-stat .stat-desc {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.55;
+  position: relative;
+}
+
+/* ---------- FOOTER STRIP ---------- */
+.footer-strip {
+  background: var(--deep-navy);
+  border-radius: 14px;
+  padding: 28px 36px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  align-items: center;
+}
+.footer-strip .col {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.footer-strip .icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(69, 180, 42, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.footer-strip .icon svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--healing-green);
+  fill: none;
+  stroke-width: 1.8;
+}
+.footer-strip .meta-label {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 2px;
+  font-weight: 600;
+}
+.footer-strip .meta-value {
+  font-size: 13px;
+  color: var(--white);
+  font-weight: 500;
+}
+
+/* ---------- SOCIAL MOCKUPS ---------- */
+.mockups-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+}
+.mockup-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.mockup-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0 4px;
+}
+.mockup-meta .name {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--deep-navy);
+}
+.mockup-meta .size {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: rgba(37, 42, 50, 0.5);
+}
+.mockup {
+  aspect-ratio: 4 / 5;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(7, 59, 142, 0.08);
+}
+
+/* MOCKUP 1: Light Background */
+.mockup-light {
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+  padding: 28px 24px 0;
+}
+.mockup-light .logo-tag {
+  font-family: var(--font-body);
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--royal-blue);
+  font-weight: 700;
+  margin-bottom: 32px;
+}
+.mockup-light .headline {
+  font-family: var(--font-display);
+  font-size: 26px;
+  line-height: 1.15;
+  color: var(--deep-navy);
+  margin-bottom: 14px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+.mockup-light .headline em {
+  color: var(--royal-blue);
+  font-style: italic;
+}
+.mockup-light .sub {
+  font-size: 12px;
+  color: rgba(37, 42, 50, 0.7);
+  line-height: 1.55;
+  margin-bottom: 24px;
+  max-width: 220px;
+}
+.mockup-light .accent-line {
+  height: 2px;
+  width: 36px;
+  background: var(--healing-green);
+  margin-bottom: 16px;
+}
+.mockup-light .doc-img {
+  margin-top: auto;
+  aspect-ratio: 16 / 10;
+  background: linear-gradient(135deg, var(--soft-clinical-blue) 0%, var(--white) 60%, var(--pale-green-tint) 100%);
+  border-radius: 8px 8px 0 0;
+  margin-left: -24px;
+  margin-right: -24px;
+  position: relative;
+  overflow: hidden;
+}
+.mockup-light .doc-img::before {
+  content: 'photorealistic doctor-patient scene';
+  position: absolute;
+  bottom: 14px;
+  left: 18px;
+  font-family: var(--font-mono);
+  font-size: 8px;
+  letter-spacing: 0.08em;
+  color: rgba(7, 59, 142, 0.5);
+  text-transform: uppercase;
+}
+.mockup-footer-mini {
+  background: var(--deep-navy);
+  color: var(--white);
+  padding: 10px 16px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 8px;
+  letter-spacing: 0.04em;
+  margin-left: -24px;
+  margin-right: -24px;
+}
+.mockup-footer-mini span:first-child { color: var(--healing-green); }
+
+/* MOCKUP 2: Photorealistic-led */
+.mockup-photo {
+  background: linear-gradient(160deg, #2c4a7e 0%, var(--royal-blue) 60%, #4a6fa8 100%);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.mockup-photo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 65% 45%, rgba(255, 255, 255, 0.18) 0%, transparent 50%),
+    radial-gradient(ellipse at 35% 80%, rgba(7, 27, 61, 0.6) 0%, transparent 60%);
+  pointer-events: none;
+}
+.mockup-photo .top {
+  padding: 24px;
+  position: relative;
+  z-index: 2;
+}
+.mockup-photo .badge {
+  display: inline-block;
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--royal-blue);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border-radius: 100px;
+  margin-bottom: 20px;
+}
+.mockup-photo .ph-text {
+  font-family: var(--font-display);
+  font-size: 30px;
+  line-height: 1.1;
+  color: var(--white);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+.mockup-photo .ph-text em {
+  color: var(--healing-green);
+  font-style: normal;
+  font-weight: 600;
+}
+.mockup-photo .bottom {
+  margin-top: auto;
+  padding: 18px 24px;
+  background: rgba(6, 27, 61, 0.7);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 2;
+  position: relative;
+}
+.mockup-photo .cta-pill {
+  background: var(--healing-green);
+  color: var(--white);
+  font-size: 10px;
+  padding: 8px 14px;
+  border-radius: 100px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+.mockup-photo .phone-text {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 0.04em;
+}
+
+/* MOCKUP 3: Infographic */
+.mockup-info {
+  background: var(--white);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+.mockup-info .head {
+  margin-bottom: 22px;
+}
+.mockup-info .top-label {
+  font-size: 8px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--healing-green);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.mockup-info .head-h {
+  font-family: var(--font-display);
+  font-size: 18px;
+  line-height: 1.2;
+  color: var(--deep-navy);
+  font-weight: 500;
+}
+.mockup-info .callouts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+.mockup-info .callout {
+  background: var(--soft-clinical-blue);
+  border-radius: 8px;
+  padding: 12px 10px;
+}
+.mockup-info .callout .num {
+  font-family: var(--font-display);
+  font-size: 18px;
+  color: var(--royal-blue);
+  font-weight: 500;
+  display: block;
+  margin-bottom: 4px;
+  line-height: 1;
+}
+.mockup-info .callout .lbl {
+  font-size: 9px;
+  color: var(--deep-navy);
+  line-height: 1.4;
+  font-weight: 500;
+}
+.mockup-info .center-circle {
+  margin: 8px auto 18px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--royal-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mockup-info .center-circle svg {
+  width: 28px;
+  height: 28px;
+  stroke: var(--healing-green);
+  fill: none;
+  stroke-width: 1.5;
+}
+.mockup-info .cta-row {
+  margin-top: auto;
+  background: var(--royal-blue);
+  color: var(--white);
+  padding: 10px 16px;
+  margin: 0 -24px -24px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 9px;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+}
+.mockup-info .cta-row .arr { color: var(--healing-green); }
+
+/* MOCKUP 4: Text-Heavy 75% */
+.mockup-text {
+  background: var(--white);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+.mockup-text .th-eyebrow {
+  font-size: 8px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--royal-blue);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.mockup-text .th-head {
+  font-family: var(--font-display);
+  font-size: 22px;
+  line-height: 1.15;
+  color: var(--deep-navy);
+  margin-bottom: 18px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+.mockup-text .th-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.mockup-text .th-list li {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(7, 59, 142, 0.08);
+}
+.mockup-text .th-list li:last-child { border-bottom: none; }
+.mockup-text .th-list .n {
+  font-family: var(--font-display);
+  font-size: 14px;
+  color: var(--healing-green);
+  font-weight: 600;
+  flex-shrink: 0;
+  line-height: 1.3;
+}
+.mockup-text .th-list .t {
+  font-size: 10px;
+  color: var(--charcoal);
+  line-height: 1.5;
+}
+.mockup-text .th-cta {
+  margin-top: auto;
+  text-align: center;
+  padding: 12px;
+  background: var(--soft-clinical-blue);
+  border-radius: 8px;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--royal-blue);
+  letter-spacing: 0.04em;
+}
+
+/* MOCKUP 5: Festival */
+.mockup-festival {
+  background: var(--warm-ivory);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.mockup-festival::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(216, 183, 106, 0.2) 0%, transparent 60%);
+}
+.mockup-festival .moon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 1.5px solid var(--warm-gold);
+  margin: 16px auto 20px;
+  position: relative;
+  z-index: 2;
+  background: radial-gradient(circle at 60% 40%, rgba(216, 183, 106, 0.3), transparent);
+}
+.mockup-festival .fest-eyebrow {
+  font-family: var(--font-display);
+  font-size: 11px;
+  letter-spacing: 0.32em;
+  color: var(--warm-gold);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  position: relative;
+  z-index: 2;
+  font-weight: 500;
+}
+.mockup-festival .fest-h {
+  font-family: var(--font-display);
+  font-size: 24px;
+  color: var(--deep-navy);
+  font-weight: 500;
+  margin-bottom: 14px;
+  line-height: 1.2;
+  font-style: italic;
+  position: relative;
+  z-index: 2;
+}
+.mockup-festival .fest-sub {
+  font-size: 10px;
+  color: rgba(37, 42, 50, 0.7);
+  line-height: 1.6;
+  max-width: 220px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+.mockup-festival .fest-foot {
+  margin-top: auto;
+  font-family: var(--font-body);
+  font-size: 8px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--royal-blue);
+  font-weight: 700;
+  padding-top: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+/* MOCKUP 6: Ad Creative */
+.mockup-ad {
+  background: var(--white);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+.mockup-ad .ad-image-block {
+  aspect-ratio: 4/3;
+  background: linear-gradient(135deg, var(--royal-blue) 0%, var(--deep-navy) 100%);
+  border-radius: 10px;
+  margin-bottom: 16px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  padding: 14px;
+}
+.mockup-ad .ad-image-block::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 70% 30%, rgba(255, 255, 255, 0.2) 0%, transparent 60%);
+}
+.mockup-ad .ad-image-block .img-tag {
+  font-family: var(--font-mono);
+  font-size: 7px;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  position: relative;
+  z-index: 2;
+}
+.mockup-ad .ad-head {
+  font-family: var(--font-display);
+  font-size: 22px;
+  color: var(--deep-navy);
+  font-weight: 500;
+  line-height: 1.15;
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+.mockup-ad .ad-chips {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+.mockup-ad .chip {
+  font-size: 8px;
+  padding: 5px 9px;
+  background: var(--pale-green-tint);
+  color: var(--healing-green);
+  border-radius: 100px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+.mockup-ad .ad-cta {
+  margin-top: auto;
+  background: var(--healing-green);
+  color: var(--white);
+  text-align: center;
+  padding: 11px;
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+/* ---------- AI PROMPT BLOCKS ---------- */
+.prompt-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.prompt-card {
+  background: var(--deep-navy);
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+.prompt-card .prompt-head {
+  padding: 20px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.prompt-card .prompt-title {
+  font-family: var(--font-display);
+  font-size: 18px;
+  color: var(--white);
+  font-weight: 500;
+}
+.prompt-card .prompt-tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--healing-green);
+  background: rgba(69, 180, 42, 0.12);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+.prompt-card pre {
+  padding: 24px 28px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.85);
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-x: auto;
+}
+.prompt-card pre .k { color: var(--healing-green); font-weight: 600; }
+
+/* ---------- DOCUMENT FOOT ---------- */
+.doc-foot {
+  padding: 80px 0 100px;
+  border-top: 1px solid rgba(7, 59, 142, 0.12);
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+.doc-foot .left h4 {
+  font-family: var(--font-display);
+  font-size: 24px;
+  color: var(--deep-navy);
+  font-weight: 500;
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+}
+.doc-foot .left p {
+  font-size: 14px;
+  color: rgba(37, 42, 50, 0.7);
+  line-height: 1.7;
+  max-width: 460px;
+}
+.doc-foot .sources {
+  font-size: 12px;
+  font-family: var(--font-mono);
+  color: rgba(37, 42, 50, 0.55);
+  line-height: 2;
+}
+.doc-foot .sources strong {
+  display: block;
+  font-family: var(--font-body);
+  color: var(--royal-blue);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+.doc-foot .sources li {
+  list-style: none;
+  padding-left: 16px;
+  position: relative;
+}
+.doc-foot .sources li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--healing-green);
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+  :root { --section-pad: 56px; --pad: 20px; }
+  .cover { padding: 80px 0 56px; }
+  .cover h1 { font-size: 44px; }
+  .type-row { grid-template-columns: 1fr; gap: 12px; }
+  .type-row .sample.h1 { font-size: 36px; }
+  .type-row .sample.h2 { font-size: 28px; }
+  .footer-strip { grid-template-columns: 1fr; gap: 16px; padding: 24px; }
+  .doc-foot { grid-template-columns: 1fr; gap: 32px; }
+  .card-stat .stat-num { font-size: 48px; }
+  .index-grid { grid-template-columns: 1fr 1fr; }
+  .section-head h2 { font-size: 28px; }
+  .section-intro { font-size: 15px; }
+}
+
+@media (max-width: 480px) {
+  .btn-row { flex-direction: column; align-items: stretch; }
+  .index-grid { grid-template-columns: 1fr; }
+  .section-head { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .section-head .ref { font-size: 10px; }
+}
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- =============== COVER =============== -->
+  <header class="cover">
+    <div class="eyebrow">Visual Reference · Internal Document</div>
+    <h1>Jeevisha <em>Design System</em></h1>
+    <p class="lede">
+      A rendered reference of the existing brand visual system. This file demonstrates
+      the locked palette, typography, components, and creative formats — for the design,
+      content, and AI-tooling team. Source-of-truth files remain authoritative.
+    </p>
+    <div class="meta">
+      <div class="meta-item">
+        <div class="label">Brand</div>
+        <div class="value">Jeevisha Spine Pain<br>&amp; Regenerative Clinic</div>
+      </div>
+      <div class="meta-item">
+        <div class="label">Location</div>
+        <div class="value">Wakad, PCMC, Pune</div>
+      </div>
+      <div class="meta-item">
+        <div class="label">Document Type</div>
+        <div class="value green">Visual Reference</div>
+      </div>
+      <div class="meta-item">
+        <div class="label">Source Files</div>
+        <div class="value">Design System · AI Prompting Guide · Brand Brain</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- =============== INDEX =============== -->
+  <section class="index">
+    <div class="section-head">
+      <div class="sn">00</div>
+      <h2>Contents</h2>
+      <div class="ref">Sections 01–07</div>
+    </div>
+    <div class="index-grid">
+      <a href="#colors" class="index-item">
+        <span class="num">01</span>
+        <span class="name">Color System</span>
+        <span class="desc">Palette, ratios, usage</span>
+      </a>
+      <a href="#type" class="index-item">
+        <span class="num">02</span>
+        <span class="name">Typography</span>
+        <span class="desc">Hierarchy, voice samples</span>
+      </a>
+      <a href="#buttons" class="index-item">
+        <span class="num">03</span>
+        <span class="name">Buttons</span>
+        <span class="desc">Four variants, real CTAs</span>
+      </a>
+      <a href="#cards" class="index-item">
+        <span class="num">04</span>
+        <span class="name">Cards</span>
+        <span class="desc">Service, testimonial, stat</span>
+      </a>
+      <a href="#footer" class="index-item">
+        <span class="num">05</span>
+        <span class="name">Footer Strip</span>
+        <span class="desc">Canonical contact bar</span>
+      </a>
+      <a href="#mockups" class="index-item">
+        <span class="num">06</span>
+        <span class="name">Social Formats</span>
+        <span class="desc">Six rendered mockups</span>
+      </a>
+      <a href="#prompts" class="index-item">
+        <span class="num">07</span>
+        <span class="name">AI Prompts</span>
+        <span class="desc">Copy-ready blocks</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- =============== 01 COLOR SYSTEM =============== -->
+  <section class="section" id="colors">
+    <div class="section-head">
+      <div class="sn">01</div>
+      <h2>Color System</h2>
+      <div class="ref">Design System §3</div>
+    </div>
+    <p class="section-intro">
+      Royal blue carries authority. Healing green is an accent only — never dominant.
+      White and warm ivory carry the premium signal through whitespace.
+    </p>
+
+    <div class="swatch-grid">
+
+      <div class="swatch">
+        <div class="chip" style="background: #073B8E;"></div>
+        <div class="info">
+          <div class="name">Royal Blue</div>
+          <div class="role">Primary · Authority</div>
+          <div class="hex">#073B8E</div>
+          <div class="rgb">RGB 7, 59, 142</div>
+          <div class="usage">Logo, headline highlights, footer band, primary CTA base.</div>
+        </div>
+      </div>
+
+      <div class="swatch">
+        <div class="chip" style="background: #061B3D;"></div>
+        <div class="info">
+          <div class="name">Deep Navy</div>
+          <div class="role">Secondary · Body Text</div>
+          <div class="hex">#061B3D</div>
+          <div class="rgb">RGB 6, 27, 61</div>
+          <div class="usage">Main body copy, premium contrast, serious medical authority.</div>
+        </div>
+      </div>
+
+      <div class="swatch">
+        <div class="chip" style="background: #45B42A;"></div>
+        <div class="info">
+          <div class="name">Healing Green</div>
+          <div class="role">Accent · Recovery</div>
+          <div class="hex">#45B42A</div>
+          <div class="rgb">RGB 69, 180, 42</div>
+          <div class="usage">CTA accents, icon details, keyword highlights. Accent only — never dominant.</div>
+        </div>
+      </div>
+
+      <div class="swatch">
+        <div class="chip bordered" style="background: #EAF3FF;"></div>
+        <div class="info">
+          <div class="name">Soft Clinical Blue</div>
+          <div class="role">Background · Panel</div>
+          <div class="hex">#EAF3FF</div>
+          <div class="rgb">RGB 234, 243, 255</div>
+          <div class="usage">Background gradients, medical overlays, soft panels.</div>
+        </div>
+      </div>
+
+      <div class="swatch">
+        <div class="chip bordered" style="background: #FFFFFF;"></div>
+        <div class="info">
+          <div class="name">Medical White</div>
+          <div class="role">Base · Background</div>
+          <div class="hex">#FFFFFF</div>
+          <div class="rgb">RGB 255, 255, 255</div>
+          <div class="usage">Primary background. The premium signal is the volume of whitespace.</div>
+        </div>
+      </div>
+
+      <div class="swatch">
+        <div class="chip bordered" style="background: #F8F7F2;"></div>
+        <div class="info">
+          <div class="name">Warm Ivory</div>
+          <div class="role">Festival · Premium Calm</div>
+          <div class="hex">#F8F7F2</div>
+          <div class="rgb">RGB 248, 247, 242</div>
+          <div class="usage">Festival and occasion posts. Editorial calm background.</div>
+        </div>
+      </div>
+
+      <div class="swatch">
+        <div class="chip bordered" style="background: #EEF2F5;"></div>
+        <div class="info">
+          <div class="name">Light Grey</div>
+          <div class="role">Surface · Divider</div>
+          <div class="hex">#EEF2F5</div>
+          <div class="rgb">RGB 238, 242, 245</div>
+          <div class="usage">Card backgrounds, dividers, subtle surfaces.</div>
+        </div>
+      </div>
+
+      <div class="swatch">
+        <div class="chip" style="background: #252A32;"></div>
+        <div class="info">
+          <div class="name">Charcoal Text</div>
+          <div class="role">Body · Reading</div>
+          <div class="hex">#252A32</div>
+          <div class="rgb">RGB 37, 42, 50</div>
+          <div class="usage">Body copy and long-form reading text.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="ratio">
+      <h3>Color Ratio Rule</h3>
+      <p>For most social creatives. From Design System §3.</p>
+      <div class="ratio-bar">
+        <div class="r-white">70% white / ivory</div>
+        <div class="r-blue">20% royal blue</div>
+        <div class="r-green">10% green</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============== 02 TYPOGRAPHY =============== -->
+  <section class="section" id="type">
+    <div class="section-head">
+      <div class="sn">02</div>
+      <h2>Typography</h2>
+      <div class="ref">Design System §5 · Brand Brain §5</div>
+    </div>
+    <p class="section-intro">
+      Editorial serif for hero and reflective moments. Refined sans for body, UI, and clinical clarity.
+      Hierarchy is clear, not stacked. Brand voice samples are used as demonstration content.
+    </p>
+
+    <div class="type-row">
+      <div class="spec">
+        <strong>H1 Display</strong>
+        Serif · 56 / 88 px<br>
+        Weight 500<br>
+        Tracking -0.02em
+      </div>
+      <div class="sample h1">
+        Surgery isn't always the answer. Sometimes, your body is.
+      </div>
+    </div>
+
+    <div class="type-row">
+      <div class="spec">
+        <strong>H2 Section</strong>
+        Serif · 40 px<br>
+        Weight 500<br>
+        Tracking -0.015em
+      </div>
+      <div class="sample h2">
+        Regenerative pain medicine, image-guided procedures, and the time to explain both.
+      </div>
+    </div>
+
+    <div class="type-row">
+      <div class="spec">
+        <strong>H3 Subhead</strong>
+        Sans · 24 px<br>
+        Weight 600<br>
+        Tracking -0.005em
+      </div>
+      <div class="sample h3">
+        A second opinion before surgery. That's all we ask.
+      </div>
+    </div>
+
+    <div class="type-row">
+      <div class="spec">
+        <strong>H4 Section Label</strong>
+        Sans · 18 px<br>
+        Weight 600<br>
+        Color: Royal Blue
+      </div>
+      <div class="sample h4">
+        Before you decide on surgery
+      </div>
+    </div>
+
+    <div class="type-row">
+      <div class="spec">
+        <strong>Body</strong>
+        Sans · 16 px<br>
+        Weight 400<br>
+        Line height 1.7
+      </div>
+      <div class="sample body">
+        Most patients who walk into Jeevisha have already seen two or three doctors. That's not a problem. That's the starting point. We examine first. We explain second. We treat third — and only when treatment is the right call.
+      </div>
+    </div>
+
+    <div class="type-row">
+      <div class="spec">
+        <strong>Caption</strong>
+        Sans · 12 px<br>
+        Uppercase<br>
+        Tracking 0.08em
+      </div>
+      <div class="sample caption">
+        Fellowship-trained · FIPM · FIAPM
+      </div>
+    </div>
+
+    <div class="type-row">
+      <div class="spec">
+        <strong>CTA Button</strong>
+        Sans · 15 px<br>
+        Weight 600<br>
+        Royal Blue bg
+      </div>
+      <div class="sample">
+        <span class="cta">Book a consultation</span>
+      </div>
+    </div>
+
+    <div class="type-row">
+      <div class="spec">
+        <strong>Footer Text</strong>
+        Sans · 13 px<br>
+        Weight 500<br>
+        White on Navy
+      </div>
+      <div class="sample">
+        <span class="footer-type">+91 91191 11837 · jeevishapainclinic.com</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============== 03 BUTTONS =============== -->
+  <section class="section" id="buttons">
+    <div class="section-head">
+      <div class="sn">03</div>
+      <h2>Button Variants</h2>
+      <div class="ref">Design System §11 · Brand Brain §7</div>
+    </div>
+    <p class="section-intro">
+      Invitations, not insistence. CTAs are paired with a reason where possible. Never urgency-led.
+    </p>
+
+    <div class="btn-row">
+      <div>
+        <button class="btn btn-primary"><span class="dot"></span>Book a consultation</button>
+        <span class="btn-label">Primary</span>
+      </div>
+      <div>
+        <button class="btn btn-secondary">Bring your MRI — let's discuss</button>
+        <span class="btn-label">Secondary</span>
+      </div>
+      <div>
+        <button class="btn btn-ghost">Talk to Dr. Sanjog</button>
+        <span class="btn-label">Ghost / Link</span>
+      </div>
+      <div>
+        <button class="btn btn-disabled" disabled>Slot unavailable</button>
+        <span class="btn-label">Disabled</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============== 04 CARDS =============== -->
+  <section class="section" id="cards">
+    <div class="section-head">
+      <div class="sn">04</div>
+      <h2>Card Components</h2>
+      <div class="ref">Design System §6 · §11</div>
+    </div>
+    <p class="section-intro">
+      Soft shadows, rounded corners, generous breathing room. One idea per card.
+    </p>
+
+    <div class="cards-grid">
+
+      <div class="card card-service">
+        <div class="icon-circle">
+          <svg viewBox="0 0 32 32" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 5v9m0 0c-3 0-6 2-6 5s3 5 6 5 6-2 6-5-3-5-6-5z"/>
+            <circle cx="16" cy="5" r="2"/>
+          </svg>
+        </div>
+        <h3>Regenerative Pain Medicine</h3>
+        <p>Image-guided PRP, biologics, and precision injections — for the right candidate, after a full evaluation.</p>
+        <a href="#" class="link">Explore options</a>
+      </div>
+
+      <div class="card card-testimonial">
+        <div class="quote-mark">"</div>
+        <p class="quote">After three orthopedic opinions, I finally felt examined — not rushed. The plan made sense. Six months later, no surgery, walking comfortably.</p>
+        <div class="attrib">
+          <div class="initial">M</div>
+          <div class="who">
+            Mrs. M.
+            <span>62 · Knee osteoarthritis · Wakad</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card card-stat">
+        <div class="stat-label">Surgery referrals</div>
+        <div class="stat-num">1 in <em>5</em></div>
+        <p class="stat-desc">We refer to a surgeon only when surgery is truly the right call. Most patients find non-surgical relief.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =============== 05 FOOTER =============== -->
+  <section class="section" id="footer">
+    <div class="section-head">
+      <div class="sn">05</div>
+      <h2>Footer / Contact Strip</h2>
+      <div class="ref">Design System §10</div>
+    </div>
+    <p class="section-intro">
+      Deep navy band with healing-green icon accents. Three columns. White text. Used at the foot of social creatives, ads, and web sections.
+    </p>
+
+    <div class="footer-strip">
+      <div class="col">
+        <div class="icon">
+          <svg viewBox="0 0 24 24"><path d="M12 21s-7-6.5-7-12a7 7 0 0114 0c0 5.5-7 12-7 12z" stroke-linejoin="round"/><circle cx="12" cy="9" r="2.5"/></svg>
+        </div>
+        <div>
+          <div class="meta-label">Location</div>
+          <div class="meta-value">Jeevisha Spine Pain &amp; Regenerative Clinic, Wakad, Pune</div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="icon">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z" stroke-linejoin="round"/></svg>
+        </div>
+        <div>
+          <div class="meta-label">Phone</div>
+          <div class="meta-value">+91 91191 11837</div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg>
+        </div>
+        <div>
+          <div class="meta-label">Website</div>
+          <div class="meta-value">jeevishapainclinic.com</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============== 06 MOCKUPS =============== -->
+  <section class="section" id="mockups">
+    <div class="section-head">
+      <div class="sn">06</div>
+      <h2>Social Format Mockups</h2>
+      <div class="ref">Design System §12 · AI Prompting Guide §4</div>
+    </div>
+    <p class="section-intro">
+      Six of the thirteen approved design types — rendered at 4:5 aspect (1080×1350 canvas). These show layout, hierarchy, and brand application. Final creatives use real photography, not placeholders.
+    </p>
+
+    <div class="mockups-grid">
+
+      <!-- 1. Light Background -->
+      <div class="mockup-wrap">
+        <div class="mockup-meta">
+          <span class="name">Light Background</span>
+          <span class="size">1080 × 1350</span>
+        </div>
+        <div class="mockup mockup-light">
+          <div class="logo-tag">Jeevisha · Specialist Care</div>
+          <div class="accent-line"></div>
+          <h3 class="headline">Move <em>freely</em> again.</h3>
+          <p class="sub">Advanced spine and regenerative care — built around your evaluation, not a template.</p>
+          <div class="doc-img"></div>
+          <div class="mockup-footer-mini">
+            <span>BOOK A CONSULTATION</span>
+            <span>+91 91191 11837</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Photorealistic -->
+      <div class="mockup-wrap">
+        <div class="mockup-meta">
+          <span class="name">Photorealistic</span>
+          <span class="size">1080 × 1350</span>
+        </div>
+        <div class="mockup mockup-photo">
+          <div class="top">
+            <span class="badge">Specialist Care</span>
+            <h3 class="ph-text">Pain that's lasted years deserves <em>more than ten minutes</em> of attention.</h3>
+          </div>
+          <div class="bottom">
+            <span class="cta-pill">Book a consultation</span>
+            <span class="phone-text">+91 91191 11837</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Infographic -->
+      <div class="mockup-wrap">
+        <div class="mockup-meta">
+          <span class="name">Infographic</span>
+          <span class="size">1080 × 1350</span>
+        </div>
+        <div class="mockup mockup-info">
+          <div class="head">
+            <div class="top-label">Non-Surgical Pain Care</div>
+            <h3 class="head-h">Four pillars of considered pain management</h3>
+          </div>
+          <div class="callouts">
+            <div class="callout"><span class="num">01</span><span class="lbl">Accurate diagnosis first</span></div>
+            <div class="callout"><span class="num">02</span><span class="lbl">Personalized treatment plan</span></div>
+            <div class="callout"><span class="num">03</span><span class="lbl">Image-guided precision</span></div>
+            <div class="callout"><span class="num">04</span><span class="lbl">Rehabilitation support</span></div>
+          </div>
+          <div class="center-circle">
+            <svg viewBox="0 0 32 32" stroke-linecap="round"><path d="M16 4v24M4 16h24"/></svg>
+          </div>
+          <div class="cta-row">
+            <span>CONSULT JEEVISHA</span>
+            <span class="arr">→</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Text-Heavy 75% -->
+      <div class="mockup-wrap">
+        <div class="mockup-meta">
+          <span class="name">Text-Heavy 75%</span>
+          <span class="size">1080 × 1350</span>
+        </div>
+        <div class="mockup mockup-text">
+          <div class="th-eyebrow">Educational · Awareness</div>
+          <h3 class="th-head">5 signs your back pain needs expert attention</h3>
+          <ul class="th-list">
+            <li><span class="n">01</span><span class="t">Pain lasting longer than two weeks</span></li>
+            <li><span class="n">02</span><span class="t">Tingling or numbness in the legs</span></li>
+            <li><span class="n">03</span><span class="t">Pain that worsens while sitting or standing</span></li>
+            <li><span class="n">04</span><span class="t">Sleep regularly disturbed by pain</span></li>
+            <li><span class="n">05</span><span class="t">Daily movement becoming difficult</span></li>
+          </ul>
+          <div class="th-cta">Consult Jeevisha for a specialist evaluation</div>
+        </div>
+      </div>
+
+      <!-- 5. Festival -->
+      <div class="mockup-wrap">
+        <div class="mockup-meta">
+          <span class="name">Festival / Occasion</span>
+          <span class="size">1080 × 1350</span>
+        </div>
+        <div class="mockup mockup-festival">
+          <div class="moon"></div>
+          <div class="fest-eyebrow">Guru Purnima</div>
+          <h3 class="fest-h">Honouring the wisdom<br>that heals.</h3>
+          <p class="fest-sub">With gratitude to every guide, mentor, and healer who lights the path to strength, recovery, and hope.</p>
+          <div class="fest-foot">Warm wishes from Jeevisha</div>
+        </div>
+      </div>
+
+      <!-- 6. Ad Creative -->
+      <div class="mockup-wrap">
+        <div class="mockup-meta">
+          <span class="name">Ad Creative</span>
+          <span class="size">1080 × 1350</span>
+        </div>
+        <div class="mockup mockup-ad">
+          <div class="ad-image-block">
+            <span class="img-tag">photorealistic doctor-patient · soft natural light</span>
+          </div>
+          <h3 class="ad-head">Back pain? Meet expert spine care.</h3>
+          <div class="ad-chips">
+            <span class="chip">Non-surgical</span>
+            <span class="chip">Regenerative</span>
+            <span class="chip">Specialist-led</span>
+          </div>
+          <div class="ad-cta">BOOK YOUR CONSULTATION</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =============== 07 AI PROMPTS =============== -->
+  <section class="section" id="prompts">
+    <div class="section-head">
+      <div class="sn">07</div>
+      <h2>AI Prompting Examples</h2>
+      <div class="ref">AI Prompting Guide §8</div>
+    </div>
+    <p class="section-intro">
+      Three copy-ready prompt blocks — pulled directly from the AI Prompting Guide. Use these as templates when generating creatives in ChatGPT, Midjourney, GPT Image, or Flux.
+    </p>
+
+    <div class="prompt-grid">
+
+      <div class="prompt-card">
+        <div class="prompt-head">
+          <div class="prompt-title">Less-Text / Photorealistic Promotional</div>
+          <div class="prompt-tag">Example 03</div>
+        </div>
+        <pre>Create a <span class="k">premium image-led healthcare post</span> for Jeevisha.
+
+Post format:    Instagram portrait
+Output size:    1080 × 1350
+Design style:   Less text / photorealistic
+
+Text:           Move Freely Again.
+Sub:            Advanced spine and regenerative care.
+CTA:            Book a Consultation
+Footer:         Jeevisha Spine Pain &amp; Regenerative Clinic, Pune
+                +91 91191 11837 · jeevishapainclinic.com
+
+Visual:         <span class="k">Photorealistic Indian doctor-patient scene,
+                soft natural window light, calm composed expressions,
+                clean clinic interior, royal blue + healing green accents</span>
+
+Avoid:          Text over faces/hair/hands. Stock-photo plasticity.
+                Pain glow overlays. Cure-claim language.</pre>
+      </div>
+
+      <div class="prompt-card">
+        <div class="prompt-head">
+          <div class="prompt-title">Text-Heavy 75% — Awareness</div>
+          <div class="prompt-tag">Example 02</div>
+        </div>
+        <pre>Create a <span class="k">premium text-heavy 75% medical awareness post</span> for Jeevisha.
+
+Post format:    Instagram portrait
+Output size:    1080 × 1350
+
+Headline:       5 Signs Your Back Pain Needs Expert Attention
+
+Points:
+  1. Pain lasting longer than 2 weeks
+  2. Tingling or numbness in the legs
+  3. Pain worsening while sitting or standing
+  4. Sleep disturbed by pain
+  5. Daily movement becoming difficult
+
+CTA:            Consult Jeevisha for expert spine care
+
+Style notes:    <span class="k">Editorial serif headline. Sans body. Royal blue + healing
+                green accents. Generous whitespace. Numbered rows with thin
+                dividers. One small supporting visual, max.</span></pre>
+      </div>
+
+      <div class="prompt-card">
+        <div class="prompt-head">
+          <div class="prompt-title">Festival / Occasion — Guru Purnima</div>
+          <div class="prompt-tag">Example 01</div>
+        </div>
+        <pre>Create a <span class="k">premium Guru Purnima social media post</span> for Jeevisha.
+
+Post format:    Instagram portrait
+Output size:    1080 × 1350
+Design style:   Festival / occasion
+Mood:           Elegant · spiritual · premium · calm · grateful
+
+Main text:      GURU PURNIMA — Honouring the wisdom that heals.
+Sub:            With gratitude to every guide, mentor and healer
+                who lights the path to strength, recovery and hope.
+Footer:         Warm wishes from Jeevisha Spine Pain &amp; Regenerative Clinic
+
+Visual:         <span class="k">Soft ivory background. Royal blue + healing green palette.
+                Subtle warm gold halo / moon-disc. Mandala line art.
+                Lotus or diya elements used minimally.</span>
+
+Avoid:          Loud clipart. Generic festival templates. Overstated celebration.</pre>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =============== DOC FOOT =============== -->
+  <footer class="doc-foot">
+    <div class="left">
+      <h4>About this file</h4>
+      <p>
+        This is a visual reference for the existing Jeevisha brand system. It does not introduce new rules, philosophy, or compliance positions. When this file and the source documents diverge, the source documents are authoritative.
+      </p>
+    </div>
+    <div class="sources">
+      <strong>Canonical Sources</strong>
+      <ul>
+        <li>Jeevisha Design System (Prompt 01)</li>
+        <li>Jeevisha AI Prompting Guide (Prompt 01)</li>
+        <li>Master Brand Brain — vFinal (Prompt 02)</li>
+        <li>Strategic Research Intelligence (Prompt 00)</li>
+      </ul>
+    </div>
+  </footer>
+
+</div>
+
+</body>
+</html>

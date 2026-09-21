@@ -1,0 +1,5 @@
+# Caption References
+
+- No complete campaign-specific caption found.
+
+Canonical caption files remain under `03_CONTENT/02_Captions` or the carousel file.

@@ -1,0 +1,42 @@
+# Instagram Reel Caption — Cervical Nerve Compression
+
+**Status:** CLIENT-PROVIDED FORMAT REFERENCE  
+**Approval/published evidence:** Not found  
+**Source:** `Caption-Format.txt`
+
+---
+
+Not all spine problems look like neck pain.
+
+Sometimes, they show up as something much easier to ignore.
+
+Finger numbness.
+Weak grip.
+Difficulty typing.
+A strange loss of sensation you keep hoping will go away.
+
+And because the pain isn’t always dramatic,
+many people delay treatment for months.
+
+They adjust. Compensate. Hide it.
+
+Until daily life starts getting affected.
+
+The problem is — when a nerve is compressed,
+waiting without the right treatment doesn’t always solve the cause.
+
+That’s why symptoms like numbness, tingling, weakness, or radiating pain should never be brushed aside.
+
+Your body is trying to tell you something.
+
+The earlier nerve compression is addressed,
+the better the chances of faster recovery.
+
+Don’t normalize numbness.
+
+📍 Jeevisha Pain Clinic, Wakad, Pune
+📞 Book Appointment: +91 91191 11837
+
+#NeckPain #NervePain #SpineHealth #PainRelief #PuneDoctor
+
+cervical disc bulge, finger numbness, hand tingling, cervical radiculopathy, slipped disc neck, nerve compression treatment, cervical epidural injection, neck pain treatment Pune, spine specialist Wakad, arm pain and numbness

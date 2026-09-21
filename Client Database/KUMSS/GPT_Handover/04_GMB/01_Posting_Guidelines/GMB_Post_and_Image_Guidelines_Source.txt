@@ -1,0 +1,694 @@
+# GOOGLE BUSINESS PROFILE (GMB) AI CONTENT GENERATION GUIDELINES
+
+## Master Guidelines to Prevent Post Rejections
+
+Version: AI Training Reference
+Purpose: Train AI systems to generate Google Business Profile-safe images, captions, and promotional content with minimal rejection risk.
+
+---
+
+# SECTION 1 — CORE PRINCIPLES
+
+Google Business Profile (GBP/GMB) prioritizes:
+
+* Authenticity
+* Local relevance
+* User safety
+* Non-spam behavior
+* Trustworthy business communication
+
+Your AI should generate content that looks:
+
+* Helpful
+* Informative
+* Professional
+* Genuine
+* Locally relevant
+* Human-created
+
+NOT:
+
+* Aggressive advertising
+* Clickbait
+* Spam
+* Fake testimonials
+* Misleading claims
+* Overdesigned sales creatives
+
+---
+
+# SECTION 2 — GLOBAL AI RULES (APPLY TO ALL POSTS)
+
+## 2.1 Mandatory AI Safety Rules
+
+ALWAYS:
+
+* Use natural language
+* Keep content readable
+* Use proper grammar
+* Maintain professional tone
+* Mention business naturally
+* Focus on value first, promotion second
+* Use realistic claims only
+* Use moderate branding
+
+NEVER:
+
+* Generate fake urgency
+* Generate exaggerated promises
+* Use misleading statistics
+* Use fear-based marketing
+* Use spam-style formatting
+* Use keyword stuffing
+* Use excessive emojis
+* Use repetitive CTAs
+* Use misleading before/after claims
+* Generate content resembling scam ads
+
+---
+
+# SECTION 3 — IMAGE GENERATION GUIDELINES
+
+# 3.1 IMAGE SPECIFICATIONS
+
+## Recommended Technical Specs
+
+* Resolution: 1200×900 px preferred
+* Minimum: 400×300 px
+* Aspect Ratio: 4:3
+* Format: JPG or PNG
+* File Size: 10 KB–5 MB
+
+---
+
+# 3.2 SAFE IMAGE DESIGN RULES
+
+## AI MUST Generate Images That Are:
+
+* Clean
+* Professional
+* High resolution
+* Realistic
+* Easy to read
+* Minimalistic
+* Brand-consistent
+
+## Preferred Visual Style
+
+* Real photography look
+* Soft gradients
+* Moderate typography
+* Balanced whitespace
+* Natural lighting
+* Authentic human expressions
+
+---
+
+# 3.3 TEXT OVERLAY RULES
+
+## Safe Text Usage
+
+Recommended:
+
+* 5–20% text coverage
+* Short headlines only
+* 3–8 words ideal
+* One CTA maximum
+
+Example:
+
+* “Summer Dental Checkup”
+* “New Batch Admissions Open”
+* “Skin Care Consultation”
+
+---
+
+## Avoid Excessive Text
+
+DO NOT:
+
+* Cover full image with text
+* Use poster-like layouts
+* Use newspaper-style formatting
+* Add paragraphs on image
+* Add too many offers
+* Add multiple CTAs
+* Add repeated phone numbers
+
+---
+
+# 3.4 SAFE TYPOGRAPHY RULES
+
+## Recommended
+
+* Sans-serif fonts
+* Clean readability
+* 1–2 font families maximum
+* Moderate font weights
+
+## Avoid
+
+* Flashy fonts
+* Over-stylized fonts
+* Ultra-bold spam fonts
+* Neon effects
+* Excessive shadows
+* Glow effects
+* Distorted text
+
+---
+
+# 3.5 LOGO RULES
+
+## Allowed
+
+* Small business logo
+* Corner placement preferred
+* Subtle branding
+
+## Avoid
+
+* Giant logos
+* Repeated logos
+* Watermarks everywhere
+* Obstructive branding
+
+---
+
+# 3.6 IMAGE CONTENT RULES
+
+## SAFE CONTENT TYPES
+
+AI SHOULD prioritize:
+
+* Business interiors
+* Team photos
+* Service process visuals
+* Product photos
+* Educational graphics
+* Event images
+* Real customer interactions
+* Local business imagery
+
+---
+
+# 3.7 HIGH-RISK IMAGE TYPES
+
+AI SHOULD AVOID:
+
+* Fake celebrity endorsements
+* Unrealistic transformations
+* Medical gore
+* Graphic surgery visuals
+* Shocking imagery
+* Misleading “before-after” edits
+* Extreme beauty edits
+* Fake screenshots
+* WhatsApp chat screenshots
+* Fake reviews
+* Fake certificates
+
+---
+
+# 3.8 MEDICAL IMAGE RULES
+
+For healthcare businesses:
+
+## Allowed
+
+* Clean clinic photos
+* Doctor portraits
+* Consultation visuals
+* Educational diagrams
+* Symptom awareness graphics
+
+## Forbidden
+
+* Blood-heavy visuals
+* Surgical closeups
+* Graphic wounds
+* Explicit skin disease visuals
+* Misleading treatment outcomes
+* “Guaranteed cure” imagery
+
+---
+
+# 3.9 EDUCATION BUSINESS IMAGE RULES
+
+Allowed:
+
+* Students learning
+* Campus photos
+* Classroom visuals
+* Event photos
+* Career guidance graphics
+
+Avoid:
+
+* Fake placement statistics
+* Unrealistic salary claims
+* “100% job guarantee”
+* Fake rank claims
+
+---
+
+# 3.10 REAL ESTATE IMAGE RULES
+
+Allowed:
+
+* Property photos
+* Construction updates
+* Interior shots
+* Site visits
+
+Avoid:
+
+* Fake luxury exaggeration
+* Misleading pricing
+* Unrealistic renders without disclaimer
+
+---
+
+# 3.11 IMAGE AI DETECTION RED FLAGS
+
+AI-generated images often get flagged if they:
+
+* Look overpolished
+* Have unnatural faces
+* Have distorted hands
+* Use hyper-saturated colors
+* Have unrealistic lighting
+* Include unreadable text
+* Look like banner ads
+
+Your AI should aim for:
+“Professional local business social media post”
+NOT:
+“Performance marketing ad creative”
+
+---
+
+# SECTION 4 — CAPTION / CONTENT GENERATION GUIDELINES
+
+# 4.1 IDEAL CONTENT STRUCTURE
+
+Recommended structure:
+
+1. Hook
+2. Helpful information
+3. Business mention
+4. CTA
+5. Optional contact details
+6. 2–5 hashtags
+
+---
+
+# 4.2 SAFE CONTENT STYLE
+
+AI should generate:
+
+* Conversational tone
+* Helpful tone
+* Informative tone
+* Community-oriented tone
+
+NOT:
+
+* Pushy sales language
+* Aggressive advertising
+* Spam promotions
+
+---
+
+# 4.3 SAFE HOOK FORMULAS
+
+GOOD:
+
+* “Did you know?”
+* “Here are some signs of…”
+* “Looking for…?”
+* “Planning your child’s future?”
+* “Simple tips to improve…”
+
+BAD:
+
+* “STOP SCROLLING”
+* “LIMITED TIME ONLY”
+* “DON’T MISS THIS”
+* “BUY NOW FAST”
+* “LAST CHANCE”
+
+---
+
+# 4.4 CLAIMS POLICY
+
+## STRICTLY FORBIDDEN CLAIMS
+
+AI MUST NEVER generate:
+
+* “100% guaranteed”
+* “Permanent cure”
+* “Best in India”
+* “No side effects”
+* “Instant results”
+* “Guaranteed admission”
+* “Guaranteed placement”
+* “Guaranteed pregnancy”
+* “Guaranteed recovery”
+
+---
+
+# 4.5 SAFE CLAIM ALTERNATIVES
+
+INSTEAD OF:
+“Permanent hair fall cure”
+
+USE:
+“Hair fall treatment options available”
+
+INSTEAD OF:
+“Guaranteed weight loss”
+
+USE:
+“Personalized weight management support”
+
+INSTEAD OF:
+“100% job placement”
+
+USE:
+“Career assistance available”
+
+---
+
+# 4.6 CTA GUIDELINES
+
+## SAFE CTAs
+
+* Learn more
+* Call us today
+* Book your consultation
+* Visit our center
+* Contact our team
+* Schedule an appointment
+* Enquire now
+
+---
+
+## AVOID THESE CTAs
+
+* Buy now!!!
+* Hurry fast
+* Limited stock hurry
+* DM immediately
+* Only today
+* Last few seats hurry
+
+---
+
+# 4.7 PHONE NUMBER RULES
+
+Safe:
+
+* One phone number maximum
+* Footer placement preferred
+
+Avoid:
+
+* Repeating number multiple times
+* ALL CAPS around number
+* Spam-style formatting
+
+BAD:
+CALL NOW 9876543210
+9876543210
+WHATSAPP NOW 9876543210
+
+---
+
+# 4.8 HASHTAG RULES
+
+Recommended:
+
+* 2–5 hashtags only
+* Relevant hashtags only
+
+Avoid:
+
+* 20+ hashtags
+* Repetitive hashtags
+* Trending irrelevant hashtags
+
+---
+
+# 4.9 EMOJI RULES
+
+Safe:
+
+* 0–5 emojis maximum
+* Professional usage
+
+Avoid:
+
+* Emoji spam
+* Multiple repeated emojis
+
+BAD:
+🔥🔥🔥🔥🔥 OFFER 🔥🔥🔥🔥🔥
+
+---
+
+# SECTION 5 — INDUSTRY-SPECIFIC COMPLIANCE
+
+# 5.1 HEALTHCARE / CLINIC
+
+HIGH RISK CATEGORY
+
+Avoid:
+
+* Cure guarantees
+* Fear-based messaging
+* Graphic visuals
+* Unrealistic outcomes
+* Medical misinformation
+
+Preferred content:
+
+* Awareness
+* Symptoms
+* Prevention
+* Consultation availability
+* Lifestyle tips
+
+---
+
+# 5.2 EDUCATION / ITI / COLLEGES
+
+Avoid:
+
+* Fake placement claims
+* Government affiliation confusion
+* “100% placement guaranteed”
+* Fake ranking claims
+
+Preferred:
+
+* Skill development
+* Campus updates
+* Admission info
+* Student activities
+* Career guidance
+
+---
+
+# 5.3 SALON / BEAUTY
+
+Avoid:
+
+* Unrealistic beauty transformations
+* Body shaming language
+* “Instant fairness”
+* Extreme edits
+
+Preferred:
+
+* Self-care
+* Consultation
+* Realistic outcomes
+* Service introductions
+
+---
+
+# 5.4 FITNESS / GYM
+
+Avoid:
+
+* Extreme body claims
+* “Lose 10kg in 7 days”
+* Steroid-like transformations
+
+Preferred:
+
+* Healthy lifestyle
+* Coaching support
+* Fitness motivation
+
+---
+
+# SECTION 6 — SPAM DETECTION AVOIDANCE
+
+# 6.1 MAJOR SPAM SIGNALS
+
+Google may reject posts if AI generates:
+
+* Repetitive templates
+* Duplicate captions
+* Keyword stuffing
+* Excessive promotions
+* Too many offers
+* All-caps writing
+* Too many links
+* Too many phone numbers
+* Banner-ad style images
+
+---
+
+# 6.2 DUPLICATE CONTENT RULES
+
+AI SHOULD:
+
+* Rewrite every caption uniquely
+* Change sentence structure
+* Rotate hooks
+* Rotate CTA styles
+* Vary hashtags
+
+Avoid posting:
+
+* Same image repeatedly
+* Same caption repeatedly
+* Same design with minor edits
+
+---
+
+# 6.3 KEYWORD STUFFING RULES
+
+BAD:
+“Best dentist in Pune best dental clinic Pune affordable dentist Pune”
+
+GOOD:
+“Our dental team in Pune offers routine checkups and smile care consultations.”
+
+---
+
+# SECTION 7 — IDEAL GBP POST LENGTH
+
+Recommended:
+
+* 80–250 words
+
+Avoid:
+
+* Extremely short spam posts
+* Huge long-form essays
+
+---
+
+# SECTION 8 — GOOGLE TRUST SIGNALS
+
+AI SHOULD GENERATE CONTENT THAT:
+
+* Feels locally relevant
+* Reflects real business activity
+* Educates users
+* Builds credibility
+* Encourages genuine engagement
+
+---
+
+# SECTION 9 — SAFE AI POST TEMPLATE
+
+## UNIVERSAL SAFE TEMPLATE
+
+[Hook]
+
+[Helpful or educational information]
+
+[Business/service mention naturally]
+
+[CTA]
+
+[Optional contact details]
+
+[2–5 relevant hashtags]
+
+---
+
+# SECTION 10 — EXAMPLES
+
+# SAFE EXAMPLE — HEALTHCARE
+
+“Frequent headaches and light sensitivity can sometimes be early signs of migraine. Timely consultation may help manage symptoms more effectively.
+
+Our team offers personalized evaluation and treatment guidance based on individual needs.
+
+📍 Visit our clinic for consultation
+📞 +91 XXXXX XXXXX
+
+#MigraineCare #Healthcare #Pune”
+
+---
+
+# SAFE EXAMPLE — EDUCATION
+
+“Admissions are now open for skill-based technical training programs.
+
+Students receive practical exposure, workshop training, and guidance for career development in various trades.
+
+📍 Visit our campus to learn more
+📞 +91 XXXXX XXXXX
+
+#ITIAdmissions #SkillDevelopment #TechnicalEducation”
+
+---
+
+# SECTION 11 — AI VALIDATION CHECKLIST
+
+Before publishing, AI should verify:
+
+## IMAGE CHECK
+
+* Clean design
+* Minimal text
+* No spam visuals
+* No misleading claims
+* High quality
+* Realistic appearance
+
+## CONTENT CHECK
+
+* No guarantees
+* No fake urgency
+* No keyword stuffing
+* No excessive emojis
+* No excessive hashtags
+* No misleading claims
+
+## FINAL CHECK
+
+* Helpful tone
+* Human-like wording
+* Genuine business communication
+* Local-business appropriate
+* Non-aggressive promotion
+
+---
+
+# SECTION 12 — GOLDEN RULE
+
+The safest GBP content always looks like:
+
+“A helpful local business update”
+
+NOT:
+
+“A performance marketing advertisement”

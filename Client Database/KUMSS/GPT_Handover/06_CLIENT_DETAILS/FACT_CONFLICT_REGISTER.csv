@@ -1,0 +1,16 @@
+﻿Conflict_ID,Field,Value_A,Value_B,Severity,Resolution_Required
+CF-001,Engagement scope,ITI-only working assumption,Seven-institute trust,HIGH,Confirm scope in writing.
+CF-002,Trade list,4 trades on main site,7 trades on legacy site,CRITICAL,Verify current sanctioned/running trades and codes.
+CF-003,Trust name spelling,Krishi Udyog Mool Shikshan Sanstha,Krushi Udyog Mul Shikshan Sanstha / variants,HIGH,Lock legal English and Devanagari names.
+CF-004,Address / PIN,"Karhati/Malwadi, 412204",File Library contact screenshot uses 413110; multiple plus codes,CRITICAL,Confirm canonical bilingual NAP and map pin.
+CF-005,Phone / WhatsApp,9423684242,9423694242; 9881907908; unrelated prior numbers,CRITICAL,Choose one admissions phone and one WhatsApp.
+CF-006,Canonical website,kumss.org ITI section,iti.kumss.org legacy; prior caption mentioned kumss.com,HIGH,Choose canonical domain and redirect/retire duplicates.
+CF-007,Logo lockup,Current full lockup,Different Facebook/legacy applications,HIGH,Provide vector master and approved variants.
+CF-008,Instagram metrics/account,@kumss_baramati 197 followers / 63 posts,"File Library screenshot 1,590 followers / 387 posts",HIGH,Identify official accounts and snapshot dates.
+CF-009,India Book event date,27 Feb 2026 in current research,22–23 Feb 2023 in File Library evidence,CRITICAL,Obtain original certificate/event records.
+CF-010,Affiliations/certification,DGT/NCVT/DVET/ISO claimed,No accessible certificate/portal record,CRITICAL,Do not publish until verified.
+CF-011,Placement claim,100% Placement Assistance Guaranteed,No placement records/MoUs/denominator,CRITICAL,Remove/reword and approve safe language.
+CF-012,Leadership naming,Dr. Vikas S. Nirmal,Er. Vikas Mangal Sanjay Nirmal,MEDIUM,Confirm formal publication name and credentials.
+CF-013,Brand palette,Working #E85D04 / #1B6B3D / #1A2540,Raster sampling closer to #FB923A / #1F9365 / #494F86,MEDIUM,Lock from vector master.
+CF-014,Political/governance context,May 2026 roles in research,Current status may differ; marketing use restricted,HIGH,Reverify and do not lead marketing with it.
+CF-015,Approvals,Working files contain blank sign-off blocks,No completed approval evidence,CRITICAL,Create and enforce approval register.

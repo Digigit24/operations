@@ -1,0 +1,1 @@
+Legacy reel look = doctor + coloured highlight boxes (yellow/orange/green/purple). Saturated per the performance report; do not use for new work. See 99_ARCHIVE/01_Old_Guidelines.

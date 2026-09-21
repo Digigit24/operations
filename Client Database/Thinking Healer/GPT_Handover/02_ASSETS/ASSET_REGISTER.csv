@@ -1,0 +1,6 @@
+asset_id,date,filename,asset_type,origin,status,approval_evidence,production_use,notes
+AST-001,2026-07-15,Thinking Healer: Medicine and Philosophy.png,Poster,AI-generated,DRAFT,None,No,"Dense doctor-led introduction; generated likeness may not be authentic"
+AST-002,2026-07-15,Thinking healer: where medicine meets philosophy.png,Poster,AI-generated,DRAFT,None,No,"Reduced copy; symbolic medical-philosophy objects"
+AST-003,2026-07-15,Thinking Healer: Merging Medicine and Philosophy.png,Poster,AI-generated,DRAFT,None,No,"Quote-led symbolic direction; likely later revision"
+AST-004,2026-07-15,Contemplative workspace in modern office.png,Standalone image,AI-generated,NEEDS_REVIEW,None,No,"Client association inferred from search, not confirmed"
+

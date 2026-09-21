@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dev Mantra — Marketing Progress Report</title>
+<style>
+  :root{
+    --navy:#0b2545; --navy-2:#123163; --cyan:#0ea5b7; --cyan-2:#0891a3;
+    --ink:#1a2433; --ink-soft:#5a6678; --bg:#f4f7fa; --line:#e3e8ef;
+    --green:#0f7a4f; --green-bg:#eafaf3; --green-line:#b8ecd4;
+    --radius:12px;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; font-family:"Segoe UI","Inter",-apple-system,Arial,sans-serif;
+    color:var(--ink); background:var(--bg); line-height:1.6; font-size:15px;
+  }
+
+  /* ---- Header / hero ---- */
+  .hero{
+    background:linear-gradient(120deg,var(--navy) 0%, var(--navy-2) 55%, var(--cyan-2) 130%);
+    color:#fff; padding:44px 8vw 34px; position:relative; overflow:hidden;
+  }
+  .hero::after{content:"";position:absolute;right:-100px;top:-100px;width:340px;height:340px;
+    background:radial-gradient(circle, rgba(255,255,255,0.18), transparent 70%);}
+  .hero-eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#8fe3ec;font-weight:700;margin-bottom:10px;position:relative;}
+  .hero h1{font-size:29px;font-weight:800;margin:0 0 8px;position:relative;max-width:700px;}
+  .hero p{font-size:14.5px;color:#cfe0f2;margin:0;position:relative;max-width:640px;}
+  .hero-stats{display:flex;gap:14px;margin-top:24px;flex-wrap:wrap;position:relative;}
+  .hstat{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);
+    border-radius:10px;padding:10px 18px;min-width:120px;}
+  .hstat .n{font-size:22px;font-weight:800;color:#fff;line-height:1.1;}
+  .hstat .l{font-size:11.5px;color:#bcd2ea;margin-top:2px;}
+
+  /* ---- Tabs ---- */
+  .tabbar{
+    display:flex; gap:4px; padding:0 8vw; background:#fff; border-bottom:1px solid var(--line);
+    position:sticky; top:0; z-index:20; overflow-x:auto; box-shadow:0 2px 10px rgba(11,37,69,0.05);
+  }
+  .tab{
+    border:none;background:none;cursor:pointer;padding:16px 18px;font-size:13.8px;font-weight:700;
+    color:var(--ink-soft); white-space:nowrap; border-bottom:3px solid transparent; transition:.15s;
+  }
+  .tab:hover{color:var(--navy);}
+  .tab.active{color:var(--cyan-2); border-bottom-color:var(--cyan-2);}
+
+  .wrap{max-width:1080px;margin:0 auto;padding:36px 8vw 90px;}
+  .panel{display:none;}
+  .panel.active{display:block; animation:fade .25s ease;}
+  @keyframes fade{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:translateY(0);}}
+
+  .panel-intro{font-size:14.5px;color:var(--ink-soft);margin-bottom:22px;max-width:760px;}
+
+  .group-title{
+    font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:800;
+    color:var(--navy); margin:28px 0 12px; display:flex;align-items:center;gap:8px;
+  }
+  .group-title:first-child{margin-top:0;}
+  .group-title .dot{width:8px;height:8px;border-radius:50%;background:var(--cyan-2);}
+
+  .done-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px;}
+  .done-card{
+    background:#fff;border:1px solid var(--line);border-left:4px solid var(--green);
+    border-radius:0 var(--radius) var(--radius) 0; padding:14px 16px 14px 14px;
+    display:flex; gap:10px; align-items:flex-start;
+  }
+  .done-card .check{
+    flex-shrink:0; width:22px;height:22px;border-radius:50%;background:var(--green-bg);
+    color:var(--green); display:flex;align-items:center;justify-content:center;font-weight:900;font-size:13px;
+    border:1px solid var(--green-line);
+  }
+  .done-card .txt strong{display:block;color:var(--ink);font-size:13.8px;margin-bottom:2px;}
+  .done-card .txt span{font-size:12.8px;color:var(--ink-soft);}
+
+  .metric-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:14px 0 6px;}
+  .metric{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px 16px;text-align:center;}
+  .metric .v{font-size:21px;font-weight:800;color:var(--navy);}
+  .metric .l{font-size:11.5px;color:var(--ink-soft);margin-top:3px;}
+
+  table{border-collapse:collapse;width:100%;font-size:13.4px;background:#fff;border-radius:10px;overflow:hidden;}
+  .table-wrap{border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:10px 0 24px;}
+  thead th{background:var(--navy);color:#fff;text-align:left;font-weight:700;padding:9px 13px;font-size:12px;}
+  tbody td{padding:9px 13px;border-top:1px solid #edf1f5;}
+  tbody tr:nth-child(even){background:#fafbfd;}
+
+  .pill{display:inline-block;padding:2px 9px;border-radius:20px;font-size:11px;font-weight:700;background:var(--green-bg);color:var(--green);border:1px solid var(--green-line);}
+
+  .footnote{margin-top:50px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:#8492a6;font-style:italic;text-align:center;}
+
+  @media(max-width:720px){
+    .hero{padding:32px 5vw 26px;} .tabbar{padding:0 5vw;} .wrap{padding:28px 5vw 70px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-eyebrow">Client Update</div>
+  <h1>Dev Mantra — Marketing &amp; Growth Progress</h1>
+  <p>A snapshot of everything built and shipped across strategy, content, SEO, and outreach — organized by workstream. August 2026.</p>
+  <div class="hero-stats">
+    <div class="hstat"><div class="n">6</div><div class="l">Active workstreams</div></div>
+    <div class="hstat"><div class="n">215+</div><div class="l">SEO deliverables built</div></div>
+    <div class="hstat"><div class="n">60+</div><div class="l">Content pieces mapped &amp; ready</div></div>
+    <div class="hstat"><div class="n">2</div><div class="l">Campaigns live — Korea Desk &amp; ESOP</div></div>
+  </div>
+</div>
+
+<div class="tabbar" id="tabbar">
+  <button class="tab active" data-tab="overview">Overview</button>
+  <button class="tab" data-tab="korea">Korea Desk</button>
+  <button class="tab" data-tab="esop">ESOP Campaign</button>
+  <button class="tab" data-tab="seo">SEO</button>
+  <button class="tab" data-tab="social">Social Media</button>
+  <button class="tab" data-tab="outreach">Sales &amp; Outreach</button>
+</div>
+
+<div class="wrap">
+
+  <!-- ===================== OVERVIEW ===================== -->
+  <div class="panel active" id="overview">
+    <p class="panel-intro">A high-level look at what's been built across every workstream. Each tab above has the full detail.</p>
+
+    <div class="group-title"><span class="dot"></span>Korea Desk</div>
+    <div class="done-grid">
+      <div class="done-card"><div class="check">✓</div><div class="txt"><strong>Full market &amp; audience strategy</strong><span>Tiers, personas, sectors, platforms mapped</span></div></div>
+      <div class="done-card"><div class="check">✓</div><div class="txt"><strong>August content finalized</strong><span>4 topics live across Naver + website blog</span></div></div>
+      <div class="done-card"><div class="check">✓</div><div class="txt"><strong>Korean partner engagement designed</strong><span>Two-phase ownership model agreed</span></div></div>
+      <div class="done-card"><div class="check">✓</div><div class="txt"><strong>90-day roadmap &amp; targets set</strong><span>Clear channel-by-channel Day-90 goals</span></div></div>
+    </div>
+
+    <div class="group-title"><span class="dot"></span>ESOP Calculator Campaign</div>
+    <div class="done-grid">
+      <div class="done-card"><div class="check">✓</div><div class="txt"><strong>Content calendar finalized</strong><span>4 angles × LinkedIn + Instagram, live in August</span></div></div>
+      <div class="done-card"><div class="check">✓</div><div class="txt"><strong>Meta ads strategy built</strong><span>5 creative angles, ready to run simultaneously</span></div></div>
+      <div class="done-card"><div class="check">✓</div><div class="txt"><strong>2,000-contact outreach list ready</strong><span>Segmented, sequenced, loaded into Apollo.io</span></div></div>
+    </div>
+
+    <div class="group-title"><span class="dot"></span>SEO &amp; Website</div>
+    <div class="done-grid">
+      <div class="done-card"><div class="check">✓</div><div class="txt"><strong>215 SEO deliverables shipped</strong><span>Schema, sitemap, GEO-readiness, internal linking</span></div></div>
+      <div class="done-card"><div class="check">✓</div><div class="txt"><strong>All 9 service pages structured</strong><span>Full schema + SEO field sets live</span></div></div>
+      <div class="done-card"><div class="check">✓</div><div class="txt"><strong>AI-search readiness built</strong><span>Site now readable by ChatGPT, Perplexity &amp; other AI crawlers</span></div></div>
+    </div>
+
+    <div class="group-title"><span class="dot"></span>Social Media</div>
+    <div class="done-grid">
+      <div class="done-card"><div class="check">✓</div><div class="txt"><strong>30-title content bank built</strong><span>Across all 5 LinkedIn profiles, 8-week calendar mapped</span></div></div>
+      <div class="done-card"><div class="check">✓</div><div class="txt"><strong>30 lead magnets designed</strong><span>Matched to each post &amp; funnel stage</span></div></div>
+      <div class="done-card"><div class="check">✓</div><div class="txt"><strong>Brand voice &amp; visual system locked</strong><span>Tone, banned phrases, design rules finalized</span></div></div>
+    </div>
+
+    <div class="group-title"><span class="dot"></span>Sales Navigator, CRM &amp; Outreach</div>
+    <div class="done-grid">
+      <div class="done-card"><div class="check">✓</div><div class="txt"><strong>Full targeting playbook built</strong><span>Signal-based prospecting across all profiles</span></div></div>
+      <div class="done-card"><div class="check">✓</div><div class="txt"><strong>Unified outreach sequence designed</strong><span>Same engage-first philosophy across every channel</span></div></div>
+      <div class="done-card"><div class="check">✓</div><div class="txt"><strong>Apollo.io connected &amp; live</strong><span>Running as the system of record for contacts &amp; sequences</span></div></div>
+    </div>
+  </div>
+
+  <!-- ===================== KOREA DESK ===================== -->
+  <div class="panel" id="korea">
+    <p class="panel-intro">Cross-border M&amp;A / India-entry desk for Korean companies — built on the back of the April 2026 India–Korea trade agreements.</p>
+
+    <div class="metric-row">
+      <div class="metric"><div class="v">3</div><div class="l">Target tiers mapped</div></div>
+      <div class="metric"><div class="v">4</div><div class="l">Decision-maker personas defined</div></div>
+      <div class="metric"><div class="v">4</div><div class="l">Content pillars live this month</div></div>
+      <div class="metric"><div class="v">90</div><div class="l">Day roadmap with targets</div></div>
+    </div>
+
+    <div class="group-title"><span class="dot"></span>Strategy &amp; positioning</div>
+    <div class="done-grid">
+      <div class="done-card"><div class="check">✓</div><div class="txt"><strong>Market opportunity mapped</strong><span>16 India-Korea MoUs, $54B 2030 trade target, Chaebol supply-chain wave identified</span></div></div>
+      <div class="done-card"><div class="check">✓</div><div class="txt"><strong>Three-tier audience model built</strong><span>Chaebols, mid-cap manufacturers (Phase 1 anchor), Korean SMEs</span></div></div>
+      <div class="done-card"><div class="check">✓</div><div class="txt"><strong>Four decision-maker personas defined</strong><span>Strategy Directors, CFOs, expatriate India heads, Korean VCs</span></div></div>
+      <div class="done-card"><div class="check">✓</div><div class="txt"><strong>Competitive positioning finalized</strong><span>Benchmarked against 6 named competitors, edge defined for each</span></div></div>
+      <div class="done-card"><div class="check">✓</div><div class="txt"><strong>Institutional outreach plan built</strong><span>KBIZ, FKI, KCCI, KOCHAM identified as the right doors</span></div></div>
+    </div>
+
+    <div class="group-title"><span class="dot"></span>Content — live this month</div>
+    <div class="table-wrap">
+    <table>
+      <thead><tr><th>Pillar</th><th>Website Blog</th><th>Naver Blog</th></tr></thead>
+      <tbody>
+        <tr><td>Why Now</td><td>Why 200 Korean Business Leaders Visited India</td><td>Why Is India on Korean Business Radar?</td></tr>
+        <tr><td>Entry Economics</td><td>The Real Cost of Entering India</td><td>How Much Does It Cost to Set Up in India?</td></tr>
+        <tr><td>Sector Opportunity</td><td>India's EV &amp; Battery Opportunity</td><td>Making EV Parts or Batteries? A Closer Look</td></tr>
+        <tr><td>Incentives</td><td>India Manufacturing Incentives 2026</td><td>How Incentives Reduce Manufacturing Cost</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p style="font-size:13px;color:var(--ink-soft);">Cadence: 1 post per channel per week, scaling to evergreen production thereafter.</p>
+
+    <div class="group-title"><span class="dot"></span>Partnership &amp; lead generation</div>
+    <div class="done-grid">
+      <div class="done-card"><div class="check">✓</div><div class="txt"><strong>Korean partner model designed</strong><span>Practicing Korean lawyer, existing Naver authority — two-phase engagement agreed</span></div></div>
+      <div class="done-card"><div class="check">✓</div><div class="txt"><strong>Lead magnet ranked &amp; selected</strong><span>DTAA Cash Leakage Calculator — top pick, 3–4 week build</span></div></div>
+      <div class="done-card"><div class="check">✓</div><div class="txt"><strong>PLI Calculator specced</strong><span>4 sectors × 4 states MVP scope defined, in KRW</span></div></div>
+    </div>
+
+    <div class="group-title"><span class="dot"></span>Day-90 targets</div>
+    <div class="table-wrap">
+    <table>
+      <thead><tr><th>Channel</th><th>Target</th></tr></thead>
+      <tbody>
+        <tr><td>Naver Blog</td><td>12 posts live, top-20 rankings on Korean long-tail queries</td></tr>
+        <tr><td>YouTube</td><td>12 videos live, 2,500+ combined views</td></tr>
+        <tr><td>LinkedIn</td><td>60–80 new Korea-targeted connections, 3+ discovery calls</td></tr>
+        <tr><td>Overall</td><td><strong>2–3 signed Korean advisory engagements</strong></td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <!-- ===================== ESOP ===================== -->
+  <div class="panel" id="esop">
+    <p class="panel-intro">A calculator-led lead-generation campaign targeting founders, CFOs, and HR leaders at growth-stage companies.</p>
+
+    <div class="metric-row">
+      <div class="metric"><div class="v">4</div><div class="l">Content angles live</div></div>
+      <div class="metric"><div class="v">5</div><div class="l">Meta ad creative formats</div></div>
+      <div class="metric"><div class="v">2,000</div><div class="l">Contacts loaded &amp; segmented</div></div>
+      <div class="metric"><div class="v">4</div><div class="l">Touch email sequence built</div></div>
+    </div>
+
+    <div class="group-title"><span class="dot"></span>Content — live this month (LinkedIn + Instagram)</div>
+    <div class="table-wrap">
+    <table>
+      <thead><tr><th>Angle</th><th>LinkedIn</th><th>Instagram</th></tr></thead>
+      <tbody>
+        <tr><td>The Direct Question</td><td>Why one employee got 2% and another 0.5%?</td><td>Can you defend your ESOP allocation?</td></tr>
+        <tr><td>The Mistake List</td><td>3 ESOP mistakes found in due diligence</td><td>3 ESOP mistakes investors notice first</td></tr>
+        <tr><td>Founder on Camera</td><td>How we stopped guessing on ESOP decisions</td><td>Are you still guessing ESOP grants?</td></tr>
+        <tr><td>Myth vs Fact</td><td>Does more equity mean more motivation?</td><td>Does more equity really mean more motivation?</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="group-title"><span class="dot"></span>Paid &amp; organic strategy</div>
+    <div class="done-grid">
+      <div class="done-card"><div class="check">✓</div><div class="txt"><strong>Meta ads strategy finalized</strong><span>5 creative angles running simultaneously, flexible ₹500–700/day budget</span></div></div>
+      <div class="done-card"><div class="check">✓</div><div class="txt"><strong>Sales Navigator targeting built</strong><span>Titles, seniority, company size &amp; 5 high-intent signal searches defined</span></div></div>
+      <div class="done-card"><div class="check">✓</div><div class="txt"><strong>Engagement-first outreach sequence designed</strong><span>Comment → connect → value → ask, run from founder profiles</span></div></div>
+    </div>
+
+    <div class="group-title"><span class="dot"></span>Cold email — ready to run</div>
+    <div class="done-grid">
+      <div class="done-card"><div class="check">✓</div><div class="txt"><strong>2,000-contact list verified &amp; segmented</strong><span>Hot / Warm / Standard tiers, by signal strength</span></div></div>
+      <div class="done-card"><div class="check">✓</div><div class="txt"><strong>4-touch sequence built</strong><span>Direct question → proof → trigger-specific → break-up email</span></div></div>
+      <div class="done-card"><div class="check">✓</div><div class="txt"><strong>Apollo.io running the full sequence</strong><span>Contacts, sending, and reply tracking all live in one place</span></div></div>
+    </div>
+  </div>
+
+  <!-- ===================== SEO ===================== -->
+  <div class="panel" id="seo">
+    <p class="panel-intro">Full technical, on-page, and structural SEO foundation built and tested — based on a live codebase audit.</p>
+
+    <div class="metric-row">
+      <div class="metric"><div class="v">215+</div><div class="l">Deliverables tracked</div></div>
+      <div class="metric"><div class="v">9/9</div><div class="l">Service pages structured</div></div>
+      <div class="metric"><div class="v">109</div><div class="l">URLs in live sitemap</div></div>
+      <div class="metric"><div class="v">12</div><div class="l">AI crawlers enabled for GEO</div></div>
+    </div>
+
+    <div class="group-title"><span class="dot"></span>Technical foundation — built &amp; verified</div>
+    <div class="done-grid">
+      <div class="done-card"><div class="check">✓</div><div class="txt"><strong>All 9 service pages fully structured</strong><span>Complete SEO fields + Service, Organization &amp; BreadcrumbList schema</span></div></div>
+      <div class="done-card"><div class="check">✓</div><div class="txt"><strong>Structured data (schema) live</strong><span>10 schema builder methods, 12 verified deployments</span></div></div>
+      <div class="done-card"><div class="check">✓</div><div class="txt"><strong>Dynamic XML sitemap live</strong><span>109 URLs, verified HTTP 200</span></div></div>
+      <div class="done-card"><div class="check">✓</div><div class="txt"><strong>AI / GEO crawler readiness built</strong><span>Site opened to 12 AI bots (ChatGPT, Perplexity, Claude, etc.)</span></div></div>
+      <div class="done-card"><div class="check">✓</div><div class="txt"><strong>Site performance improvements live</strong><span>Lazy-loading, browser caching, gzip, font preconnects</span></div></div>
+    </div>
+
+    <div class="group-title"><span class="dot"></span>Latest fix batch — built &amp; tested</div>
+    <div class="done-grid">
+      <div class="done-card"><div class="check">✓</div><div class="txt"><strong>Canonical URL conflict resolved</strong><span>Non-www standardized as the canonical domain</span></div></div>
+      <div class="done-card"><div class="check">✓</div><div class="txt"><strong>Homepage title/social-share bug fixed</strong><span>Encoding issue corrected across search results and shares</span></div></div>
+      <div class="done-card"><div class="check">✓</div><div class="txt"><strong>Redirect chain streamlined</strong><span>Collapsed to a single, faster redirect hop</span></div></div>
+      <div class="done-card"><div class="check">✓</div><div class="txt"><strong>Internal linking rebuild ready</strong><span>Fixes orphan pages and broken cross-sell links, tested and ready to deploy</span></div></div>
+    </div>
+
+    <div class="group-title"><span class="dot"></span>Content roadmap</div>
+    <div class="done-grid">
+      <div class="done-card"><div class="check">✓</div><div class="txt"><strong>33-title blog backlog planned</strong><span>Virtual CFO, GCC, US CPA, and cross-service clusters, fully keyword-mapped</span></div></div>
+      <div class="done-card"><div class="check">✓</div><div class="txt"><strong>Off-page directory strategy built</strong><span>108-platform target list with priority tiers identified</span></div></div>
+    </div>
+  </div>
+
+  <!-- ===================== SOCIAL ===================== -->
+  <div class="panel" id="social">
+    <p class="panel-intro">A complete, ready-to-execute content system across all five LinkedIn profiles, Instagram, and the website blog.</p>
+
+    <div class="metric-row">
+      <div class="metric"><div class="v">30</div><div class="l">Titles fully specced</div></div>
+      <div class="metric"><div class="v">8</div><div class="l">Week publishing calendar</div></div>
+      <div class="metric"><div class="v">30</div><div class="l">Matching lead magnets</div></div>
+      <div class="metric"><div class="v">65+</div><div class="l">Titles in reserve for month 2</div></div>
+    </div>
+
+    <div class="group-title"><span class="dot"></span>Content system</div>
+    <div class="done-grid">
+      <div class="done-card"><div class="check">✓</div><div class="txt"><strong>30-title content bank built</strong><span>6 per profile, each specced with format, keyword &amp; funnel stage</span></div></div>
+      <div class="done-card"><div class="check">✓</div><div class="txt"><strong>8-week publishing calendar mapped</strong><span>Every title scheduled to a specific week and day</span></div></div>
+      <div class="done-card"><div class="check">✓</div><div class="txt"><strong>30 matching lead magnets designed</strong><span>PDF/Excel/Word/template formats, tagged by funnel stage</span></div></div>
+      <div class="done-card"><div class="check">✓</div><div class="txt"><strong>65+ title reserve bank built</strong><span>Ready for month 2 onward, organized by profile</span></div></div>
+    </div>
+
+    <div class="group-title"><span class="dot"></span>The five profiles</div>
+    <div class="table-wrap">
+    <table>
+      <thead><tr><th>Day</th><th>Profile</th><th>Vertical</th></tr></thead>
+      <tbody>
+        <tr><td>Monday</td><td>Vikas Tatia</td><td>M&amp;A Advisory</td></tr>
+        <tr><td>Tuesday</td><td>Nidhi Tatia</td><td>Compliance &amp; Internal Audit</td></tr>
+        <tr><td>Wednesday</td><td>Namrata P Marothi</td><td>GCC Services</td></tr>
+        <tr><td>Thursday</td><td>Kamal Parakh</td><td>Business Setup / IPO</td></tr>
+        <tr><td>Friday</td><td>Dev Mantra Brand Page</td><td>Virtual CFO / Reports</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="group-title"><span class="dot"></span>Brand system</div>
+    <div class="done-grid">
+      <div class="done-card"><div class="check">✓</div><div class="txt"><strong>Brand voice &amp; tone finalized</strong><span>Confident, evidence-based, banned-phrase list locked</span></div></div>
+      <div class="done-card"><div class="check">✓</div><div class="txt"><strong>Visual design system built</strong><span>Typography, navy/cyan palette, layout rules for every asset</span></div></div>
+      <div class="done-card"><div class="check">✓</div><div class="txt"><strong>AI-humanization checklist built</strong><span>Standard pass before any content ships</span></div></div>
+    </div>
+  </div>
+
+  <!-- ===================== OUTREACH ===================== -->
+  <div class="panel" id="outreach">
+    <p class="panel-intro">A unified prospecting and CRM approach running across both live campaigns.</p>
+
+    <div class="metric-row">
+      <div class="metric"><div class="v">4</div><div class="l">Profiles with a live playbook</div></div>
+      <div class="metric"><div class="v">15</div><div class="l">Saved search lists built</div></div>
+      <div class="metric"><div class="v">1</div><div class="l">Unified outreach sequence</div></div>
+      <div class="metric"><div class="v"><span class="pill">Live</span></div><div class="l">Apollo.io system of record</div></div>
+    </div>
+
+    <div class="group-title"><span class="dot"></span>Sales Navigator</div>
+    <div class="done-grid">
+      <div class="done-card"><div class="check">✓</div><div class="txt"><strong>Full 4-profile playbook built</strong><span>15 saved lists, 3 per profile, mirrored in Notion</span></div></div>
+      <div class="done-card"><div class="check">✓</div><div class="txt"><strong>Signal-based targeting defined</strong><span>Job changes, funding events, headcount growth, engagement</span></div></div>
+      <div class="done-card"><div class="check">✓</div><div class="txt"><strong>Simplified weekly rhythm built</strong><span>One operating table covering all profiles' outreach cadence</span></div></div>
+    </div>
+
+    <div class="group-title"><span class="dot"></span>CRM &amp; lead routing</div>
+    <div class="done-grid">
+      <div class="done-card"><div class="check">✓</div><div class="txt"><strong>Apollo.io connected &amp; active</strong><span>System of record for contacts, sequences, and reply tracking</span></div></div>
+      <div class="done-card"><div class="check">✓</div><div class="txt"><strong>Unified pipeline model designed</strong><span>Every channel — ads, email, LinkedIn — feeding one board</span></div></div>
+    </div>
+
+    <div class="group-title"><span class="dot"></span>Unified outreach philosophy</div>
+    <div class="done-grid">
+      <div class="done-card"><div class="check">✓</div><div class="txt"><strong>One sequence across every channel</strong><span>Engage → connect → value → ask — same shape for email, LinkedIn, and ads</span></div></div>
+      <div class="done-card"><div class="check">✓</div><div class="txt"><strong>Lead magnets mapped to every touch</strong><span>Every channel points at one clear, specific call to action</span></div></div>
+    </div>
+  </div>
+
+  <div class="footnote">Dev Mantra — Marketing &amp; Growth Progress Report · Digitech Solutions · August 2026</div>
+</div>
+
+<script>
+(function(){
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
+  var panels = Array.prototype.slice.call(document.querySelectorAll('.panel'));
+  tabs.forEach(function(tab){
+    tab.addEventListener('click', function(){
+      var id = tab.getAttribute('data-tab');
+      tabs.forEach(function(t){ t.classList.remove('active'); });
+      panels.forEach(function(p){ p.classList.remove('active'); });
+      tab.classList.add('active');
+      document.getElementById(id).classList.add('active');
+      window.scrollTo({top:0, behavior:'smooth'});
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

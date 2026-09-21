@@ -1,0 +1,11 @@
+File,Purpose,Master_Status,Working_Folder
+basic-brand-info.txt,Initial brand information and historical creative direction,MASTER,00_SOURCES/01_Core_References
+Nakshatra_01_Strategic_Research.md,Market audience competitor and positioning research,MASTER,00_SOURCES/01_Core_References
+Nakshatra_02_AI_Prompting_Guide.md,Image and creative prompting system,MASTER,01_DESIGN/02_Design_Guidelines
+Nakshatra_02_Design_Instructions.md,Current visual design system,MASTER,01_DESIGN/02_Design_Guidelines
+Nakshatra_03_Site_Extraction.md,Website content structure and issue register,MASTER,00_SOURCES/01_Core_References
+Caption-Format.txt,Reference caption structure,MASTER,03_CONTENT/02_Captions
+GMB Post and Image Guidelines.txt,Google Business Profile posting and image compliance,MASTER,04_GMB/01_Posting_Guidelines
+Brief_01_2-Cycle_IVF.docx,Two-cycle IVF campaign brief,MASTER,05_CAMPAIGNS/01_2-Cycle_IVF
+Brief_02_Endometrium_IVF.docx,Endometrium enhancement campaign brief,MASTER,05_CAMPAIGNS/02_Endometrium_IVF
+Brief_03_Low_AMH.docx,Low AMH campaign brief,MASTER,05_CAMPAIGNS/03_Low_AMH

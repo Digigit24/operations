@@ -1,0 +1,201 @@
+Gore_Multispeciality_Hospital_Handover/
+├── 00_SOURCES/
+│   ├── Campaign_Briefs/
+│   ├── Content_References/
+│   ├── Design_References/
+│   ├── GMB_References/
+│   ├── Original_Uploads/
+│   ├── Prompting_Guides/
+│   ├── Research/
+├── 01_DESIGN/
+│   ├── Approved_Design_References/
+│   ├── Legacy_Design_References/
+├── 02_ASSETS/
+│   ├── 01_Logos/
+│   ├── 02_Approved_Posts/
+│   ├── 03_Approved_Images/
+│   ├── 04_Doctor_Founder_Team_Photos/
+│   ├── 05_Clinic_Office_Product_Photos/
+│   ├── 06_Raw_Videos/
+│   ├── 07_Editable_Source_Files/
+│   ├── 08_Final_Exports/
+│   ├── 09_Stock_And_Licences/
+├── 03_CONTENT/
+│   ├── 01_Scripts/
+│   ├── 02_Captions/
+│   ├── 03_Content_Ideas/
+│   ├── 04_Hooks_And_Headlines/
+│   ├── 05_Carousel_Content/
+│   ├── 06_Static_Post_Content/
+│   ├── 07_Reel_And_Video_Concepts/
+│   ├── 08_Ad_Copy/
+│   ├── 09_Content_Calendar/
+│   ├── 10_Published_Content/
+│   ├── 11_Content_Performance/
+├── 04_GMB/
+│   ├── 01_Posting_Guidelines/
+│   ├── 02_GMB_Post_Ideas/
+│   ├── 03_GMB_Post_Copy/
+│   ├── 04_GMB_Images/
+│   ├── 05_Published_Posts/
+│   ├── 06_Review_Responses/
+│   ├── 07_QA_Content/
+│   ├── 08_GMB_Performance/
+├── 05_CAMPAIGNS/
+│   ├── 01_Founder_Led_Trust/
+│   │   ├── Ad_Copy/
+│   │   ├── Approvals/
+│   │   ├── Brief/
+│   │   ├── Captions/
+│   │   ├── Creatives/
+│   │   ├── Landing_Page/
+│   │   ├── Performance/
+│   │   ├── Research/
+│   │   └── Scripts/
+│   ├── 02_Honest_Care_Transparent_Billing/
+│   │   ├── Ad_Copy/
+│   │   ├── Approvals/
+│   │   ├── Brief/
+│   │   ├── Captions/
+│   │   ├── Creatives/
+│   │   ├── Landing_Page/
+│   │   ├── Performance/
+│   │   ├── Research/
+│   │   └── Scripts/
+│   ├── 03_Family_Health_Membership/
+│   │   ├── Ad_Copy/
+│   │   ├── Approvals/
+│   │   ├── Brief/
+│   │   ├── Captions/
+│   │   ├── Creatives/
+│   │   ├── Landing_Page/
+│   │   ├── Performance/
+│   │   ├── Research/
+│   │   └── Scripts/
+│   ├── 04_24x7_Emergency_and_Trauma/
+│   │   ├── Ad_Copy/
+│   │   ├── Approvals/
+│   │   ├── Brief/
+│   │   ├── Captions/
+│   │   ├── Creatives/
+│   │   ├── Landing_Page/
+│   │   ├── Performance/
+│   │   ├── Research/
+│   │   └── Scripts/
+│   ├── 05_Paediatric_Fever_and_Child_Health/
+│   │   ├── Ad_Copy/
+│   │   ├── Approvals/
+│   │   ├── Brief/
+│   │   ├── Captions/
+│   │   ├── Creatives/
+│   │   ├── Landing_Page/
+│   │   ├── Performance/
+│   │   ├── Research/
+│   │   └── Scripts/
+│   ├── 06_Heart_Health_and_Cardiology/
+│   │   ├── Ad_Copy/
+│   │   ├── Approvals/
+│   │   ├── Brief/
+│   │   ├── Captions/
+│   │   ├── Creatives/
+│   │   ├── Landing_Page/
+│   │   ├── Performance/
+│   │   ├── Research/
+│   │   └── Scripts/
+│   ├── 07_Orthopaedic_Joint_Pain/
+│   │   ├── Ad_Copy/
+│   │   ├── Approvals/
+│   │   ├── Brief/
+│   │   ├── Captions/
+│   │   ├── Creatives/
+│   │   ├── Landing_Page/
+│   │   ├── Performance/
+│   │   ├── Research/
+│   │   └── Scripts/
+│   ├── 08_Senior_Wellness/
+│   │   ├── Ad_Copy/
+│   │   ├── Approvals/
+│   │   ├── Brief/
+│   │   ├── Captions/
+│   │   ├── Creatives/
+│   │   ├── Landing_Page/
+│   │   ├── Performance/
+│   │   ├── Research/
+│   │   └── Scripts/
+│   ├── 09_Cashless_Insurance_Education/
+│   │   ├── Ad_Copy/
+│   │   ├── Approvals/
+│   │   ├── Brief/
+│   │   ├── Captions/
+│   │   ├── Creatives/
+│   │   ├── Landing_Page/
+│   │   ├── Performance/
+│   │   ├── Research/
+│   │   └── Scripts/
+│   ├── 10_Monsoon_Dengue_and_Seasonal_Health/
+│   │   ├── Ad_Copy/
+│   │   ├── Approvals/
+│   │   ├── Brief/
+│   │   ├── Captions/
+│   │   ├── Creatives/
+│   │   ├── Landing_Page/
+│   │   ├── Performance/
+│   │   ├── Research/
+│   │   └── Scripts/
+│   ├── 11_Marathi_Local_Health/
+│   │   ├── Ad_Copy/
+│   │   ├── Approvals/
+│   │   ├── Brief/
+│   │   ├── Captions/
+│   │   ├── Creatives/
+│   │   ├── Landing_Page/
+│   │   ├── Performance/
+│   │   ├── Research/
+│   │   └── Scripts/
+│   ├── 12_Festival_and_Occasion/
+│   │   ├── Ad_Copy/
+│   │   ├── Approvals/
+│   │   ├── Brief/
+│   │   ├── Captions/
+│   │   ├── Creatives/
+│   │   ├── Landing_Page/
+│   │   ├── Performance/
+│   │   ├── Research/
+│   │   └── Scripts/
+│   ├── 13_Marathi_Mega_Surgery_Camp_2026/
+│   │   ├── Ad_Copy/
+│   │   ├── Approvals/
+│   │   ├── Brief/
+│   │   ├── Captions/
+│   │   ├── Creatives/
+│   │   ├── Landing_Page/
+│   │   ├── Performance/
+│   │   ├── Research/
+│   │   └── Scripts/
+│   ├── Future_Campaigns/
+├── 06_CLIENT_DETAILS/
+│   ├── Approvals/
+├── 07_REPORTS/
+│   ├── 01_Social_Media/
+│   ├── 02_Meta_Ads/
+│   ├── 03_Google_Ads/
+│   ├── 04_Website/
+│   ├── 05_SEO/
+│   ├── 06_GMB/
+│   ├── 07_Leads/
+│   ├── 08_Monthly_Reports/
+├── 99_ARCHIVE/
+│   ├── 01_Old_Guidelines/
+│   ├── 02_Rejected_Assets/
+│   ├── 03_Superseded_Content/
+│   ├── 04_Duplicate_Files/
+│   ├── 05_Old_Campaigns/
+│   ├── 06_Unverified_Material/
+├── CLIENT_QUESTIONS.md
+├── FILE_NAMING_STANDARD.md
+├── FOLDER_TREE.txt
+├── HANDOVER_REPORT.md
+├── INTERN_ACTION_CHECKLIST.md
+├── MANIFEST_SHA256.csv
+├── START_HERE.md
+└── VALIDATION_REPORT.md

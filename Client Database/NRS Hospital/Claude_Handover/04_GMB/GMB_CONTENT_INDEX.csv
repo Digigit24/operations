@@ -1,0 +1,9 @@
+GMB ID,Item,Type,Status,Language,Source,Notes
+GMB-01,748-char business description,Description,Authored (retrieve),EN,Step 05 chat d0ed9dbf,Compliant; not yet live
+GMB-02,17 services list,Services,Authored (retrieve),EN,Step 05,Granular per specialty
+GMB-03,20 pre-seeded Q&As,Q&A,Authored (retrieve),EN,Step 05,Paste into GBP Q&A
+GMB-04,12 post templates,Posts,Authored (retrieve),EN,Step 05,Min 4/month cadence
+GMB-05,Review response bank,Review responses,Recovered,EN+MR,Step 05,In 06_Review_Responses
+GMB-06,Review growth targets,Targets,Recovered,EN,Step 05,In 08_GMB_Performance
+GMB-07,50-photo plan,Photo plan,Authored (retrieve),-,Step 05,Need real facility/doctor photos
+GMB-08,8-point GMB audit,Audit,Recovered (summary),EN,chat 4254e28b,Surfaced phone conflict

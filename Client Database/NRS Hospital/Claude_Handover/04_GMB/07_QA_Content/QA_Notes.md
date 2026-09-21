@@ -1,0 +1,2 @@
+# GMB Q&A CONTENT — NOTES
+20 pre-seeded Q&As were authored in Step 05 (chat d0ed9dbf) covering: 24×7 hours, emergency, ICU, cashless/insurance, OPD timings, languages spoken (Marathi/Hindi/English), parking, Dr. Survase availability, specialties, directions from landmarks, attendant policy, food, etc. Retrieve the verbatim 20 from Step 05 and paste here. ⚠️ Answers must carry the CONFIRMED phone and no superlatives/cure claims.

@@ -1,0 +1,36 @@
+Fact,Claim / Value,Source,Label,Notes
+Business name,Prime Speciality Hospital,client_state__1_.md; all documents,CONFIRMED,Consistent everywhere
+GMB listed name,"Prime Speciality Hospital - Dr. Pankaj Bhalerao",05_gmb_foundation.md §1,LIVE_ON_WEBSITE,Minor hyphen-format flag only; not a real conflict
+Doctor name,Dr. Pankaj Bhalerao,all documents,CONFIRMED,Consistent everywhere
+Doctor MBBS institution,"Maharashtra University of Health Sciences, Nashik (2008)",03_site_extraction_complete.md (bio page body text),CONFLICTING,"Contradicted by same page's achievements list — needs doctor confirmation, see OPEN_QUESTIONS_AND_CONFLICTS.md Conflict 1"
+Doctor MBBS institution (alt),B.J. Medical College Pune,03_site_extraction_complete.md (bio page achievements list),CONFLICTING,Same as above — two claims on one live page
+Doctor FMAS credential,"Fellow of Minimal Access Surgeons of India",all documents,CONFIRMED,Consistent everywhere
+Doctor years of experience,10+ years,client_state.md; 01_research.md; site extraction,CONFIRMED,Consistent everywhere
+Doctor procedure count,"1,000+ laparoscopic and laser procedures",m3_website_rewrite_plan.md §7 (draft copy),DRAFT,"Appears only in drafted (not yet published) bio copy — flag for medical-claim review before publishing, per validation rule on procedure counts"
+Practicing hospital (as stated on live bio page),Vedant Multispeciality Hospital,03_site_extraction_complete.md,CONFLICTING,"Contradicts every other source in the project (Prime Speciality Hospital) — treat as a website error to fix, not a fact to preserve"
+Address (full),"1st Floor, Phase 2, Nisarg Vatika, Dehu-Moshi Rd, near Ramdev Dhaba, Borhadewadi, Moshi, Pimpri-Chinchwad, Maharashtra 412105",05_gmb_foundation.md §4; site extraction contact page,LIVE_ON_WEBSITE,Consistent between GMB and website
+GBP primary phone,074474 41426,05_gmb_foundation.md §1,CONFIRMED (as of June 24 2026 per conversation history),"Client/PM deliberately decided June 24 2026 to keep both numbers rather than consolidate - see ADDITIONAL_CONTEXT_FROM_CONVERSATIONS.md"
+WhatsApp / website phone,+91 94226 68921,client_state.md; site extraction; all content,CONFIRMED,"Used as primary CTA everywhere; coexists intentionally with GBP phone above, not a conflict"
+Email,idrpankajnbhalerao@gmail.com,03_site_extraction_complete.md (contact page),LIVE_ON_WEBSITE,Personal Gmail address; recommendation on file to move to a hospital domain (not actioned)
+Business hours (website),Mon-Sat 5pm-9pm,03_site_extraction_complete.md (contact page),LIVE_ON_WEBSITE,"Conflicts with GBP hours and with the proposed new homepage hours — see OPEN_QUESTIONS_AND_CONFLICTS.md Conflict 4"
+Business hours (GBP),"Mon-Sat 9am-9pm, Sunday closed",05_gmb_foundation.md §1,LIVE_ON_WEBSITE,Conflicts with website hours above
+Business hours (proposed new homepage — not live),Mon-Sat 9am-7pm + 24/7 emergency,m3_website_rewrite_plan.md §5,DRAFT,Not yet published; still needs reconciling with the two live sources above
+Google review count,108,client_state.md; 01_research.md; 05_gmb_foundation.md,CONFIRMED (as of May 2026),"Baseline only — June/July actual count was never pulled into the report (m6_client_report_june2026.md leaves this as [CHECK GBP])"
+Google review count (later reference),108+,client_state__1_.md,CONFIRMED (as of June 25 2026),Same figure, described as a floor rather than exact — actual current count still unconfirmed
+Google rating,4.9 stars,all documents,CONFIRMED,Consistent everywhere; described repeatedly as "exceptional," verified as accurate per Windsor.ai live pull
+Review reply rate before June work,~10% (3 of 31 recent reviews),05_gmb_foundation.md §8,CONFIRMED (live Windsor.ai pull),Baseline metric
+Review reply rate after June work,95%+ (all 27 unanswered replied to),m6_client_report_june2026.md,PUBLISHED (per agency report),Not independently re-verified in this extraction; treat as agency-reported
+GMB category before June,Hospital,05_gmb_foundation.md §1; m1_audit.md,CONFIRMED (live, pre-change),Superseded by change below
+GMB category after June,"Surgical Centre + General Surgeon, Proctologist, Gastroenterologist",m6_client_report_june2026.md,PUBLISHED (per agency report),Change reported complete; indexing effect expected in July data
+Laser piles cost range (version A),"₹50,000-₹75,000",05_gmb_foundation.md §3; GMB post templates,DRAFT / PROPOSED,"Conflicts with version B — reconcile with Dr. Bhalerao before publishing, see Services_And_Offers.md"
+Laser piles cost range (version B),"₹25,000-₹65,000",m3_website_rewrite_plan.md §6,DRAFT / PROPOSED,Conflicts with version A above
+Hernia surgery cost range,"₹45,000-₹80,000",05_gmb_foundation.md; 04_seo_foundation.md,DRAFT / PROPOSED,Consistent across documents that mention it; still a proposed range pending client confirmation
+Gallbladder surgery cost range,"₹40,000-₹70,000",05_gmb_foundation.md; 04_seo_foundation.md,DRAFT / PROPOSED,Consistent across documents that mention it
+GA4 installation status,Not confirmed installed,01_research.md through m6_client_report_june2026.md,UNVERIFIED,"Flagged as unresolved in every document from May through June 25 — highest-priority open item"
+Insurance networks accepted,"20+ insurance networks (one mention), 'most major providers' (all other mentions)",01_research.md (Buyer Fear Map); 05_gmb_foundation.md,UNVERIFIED,Specific "20+" figure appears once and is not corroborated elsewhere — verify before quoting to patients
+Managing agency name,Digitech Solutions,m6_client_report_june2026.md (signature line),CONFIRMED,Only appears once, in the report's closing signature
+"Kidney Stone" service claim,Listed in homepage meta description and About page,Conversation history (Site Discovery Findings - not in uploaded files),CONFLICTING,"Not an actual Prime service per GMB Foundation service list - website error to fix, source: ADDITIONAL_CONTEXT_FROM_CONVERSATIONS.md"
+"Robotic surgery" service claim,Mentioned on /hernia/ and /thyroid/ pages,Conversation history (Site Discovery Findings - not in uploaded files),CONFLICTING,"Not an actual Prime service - this is competitor Dr. Kurhade's territory per 04_seo_foundation.md - website error to fix"
+Contact page email (as currently live),idrpankajnbhalerao@gmail.com,03_site_extraction_complete.md,LIVE_ON_WEBSITE but likely a typo,"Later conversation history flags an extra 'i' - likely should be drpankajnbhalerao@gmail.com - confirm with Dr. Bhalerao before changing"
+Footer email link (site-wide),mailto:info@example.com placeholder,Conversation history (Site Discovery Findings - not in uploaded files),CONFLICTING / BROKEN,Every footer email click bounces site-wide - needs a real address
+Appointment page booking functionality,Non-functional calendar widget - no working booking form,Conversation history (Site Discovery Findings - not in uploaded files),CONFLICTING / BROKEN,Patients cannot actually book online despite the page existing

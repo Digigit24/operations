@@ -1,0 +1,37 @@
+{
+  "client": "NRS Hospital",
+  "build_date": "2026-07-16",
+  "root_folder": "NRS_Hospital_Client_Handover_2026-07-16",
+  "source_families": 17,
+  "asset_records": 34,
+  "asset_status_counts": {
+    "PENDING_CLIENT": 9,
+    "RAW": 2,
+    "DRAFT": 1,
+    "SUPERSEDED": 22
+  },
+  "content_ideas": 116,
+  "content_idea_type_counts": {
+    "Blog": 30,
+    "Reel": 12,
+    "Static Post": 18,
+    "Carousel": 18,
+    "GMB": 10,
+    "Ad": 12,
+    "Campaign": 8,
+    "Video Concept": 8
+  },
+  "content_master_entries": 124,
+  "scripts": 0,
+  "gmb_index_entries": 10,
+  "campaigns": 9,
+  "conflicts": 22,
+  "reports_indexed": 9,
+  "validation_passed": 34,
+  "validation_total": 34,
+  "limitations": [
+    "Deleted/hidden chats and external systems were inaccessible",
+    "File Library-only originals are represented by pointers",
+    "No approval or performance state is inferred"
+  ]
+}

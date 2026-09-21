@@ -1,0 +1,21 @@
+﻿Asset_ID,Asset_Name,Asset_Type,Format,Location,Status,Approval_Evidence,Production_Ready,Source,Notes
+AST-001,gmb-overview.png,Public GBP screenshot,PNG,01_SOURCE_DOCUMENTS/Originals_Local and 05_GMB/Current_State,LIVE_REFERENCE,Public live profile screenshot,Reference only,Current conversation,"Contains live name, rating, category, address, hours snapshot and website."
+AST-002,GMB reviews screenshot — redacted derivative,Public GBP review-summary screenshot,PNG,05_GMB/Current_State,LIVE_REFERENCE,Public live profile screenshot,Reference only,Generated from current upload,Patient-identifiable review text redacted; rating/count retained.
+AST-003,jeevisha-design-system.html,Design-system visual reference,HTML,01_SOURCE_DOCUMENTS/Originals_Local,DRAFT,None,No,Current conversation,Internal reference only; contains fictional testimonial/demo stat and font fallbacks.
+AST-004,"Jeevisha Pain Clinic - Transforming lives, painlessly.png",Promotional graphic reference,PNG,File Library reference only,DRAFT,"Instruction to update information, not approval",No raw file in ZIP,File Library file_0000000013847209b0a94ab29f5f0531,Original bytes inaccessible in active runtime.
+AST-005,Knee cartilage solutions at Jeevisha Hospital.png,Knee campaign creative reference,PNG,File Library reference only,PENDING_CLIENT,Revision request: make white/cream,No raw file in ZIP,File Library file_00000000c70c7207b5fd83e83217d80e,"Feedback evidence, not final approval."
+AST-006,8daac6f2-d88d-4c9e-86d9-351e89edb97e.png,Knee cartilage graphic reference,PNG,File Library reference only,DRAFT,None,No raw file in ZIP,File Library file_00000000af80720bafa559ddb77c1cb9,Headline: KNEE CARTILAGE WORN OUT? KNOW THIS OPTION BEFORE KNEE REPLACEMENT.
+AST-007,Knee cartilage: worn out or fixed?.png,Knee campaign revised creative reference,PNG,File Library reference only,PENDING_CLIENT,User said design is okay but requested changes,No raw file in ZIP,File Library file_00000000d678720b98702ff6209c121b,Remove top-left hospital text; reduce bottom content; handwriting font for KNOW THIS OPTION.
+AST-008,Jeevisha.jpg,Maharashtra Day/Labour Day poster,JPG,File Library reference only,ARCHIVED,Publication status not confirmed,No raw file in ZIP,File Library file_0000000076b87208b236a814d601c193,Uses legacy name Jeevisha Pain Management Center.
+AST-009,1000066961.jpg,Contact screenshot/reference,JPG,File Library reference only,ARCHIVED_REFERENCE,None,No,File Library file_00000000f9f071f8a5fb789ac160b40f,Shows alternate phone +91 90284 31238; triggers NAP conflict.
+AST-010,Official logo master,Logo,SVG/AI/EPS/PDF,MISSING,MISSING,,No,Not found,Collect official master and ownership.
+AST-011,Logo variants,Logo variants,PNG/SVG,MISSING,MISSING,,No,Not found,"Transparent, white, dark, monochrome, favicon."
+AST-012,Dr. Sanjog approved portrait set,Founder photos,JPG/RAW,MISSING,MISSING,,No,Not found,"Needed for founder campaign, GBP and website."
+AST-013,Clinic interior/exterior photo set,Clinic photos,JPG/RAW,MISSING,MISSING,,No,Not found,"Need exterior, reception, consultation room, procedure room, equipment, parking/access."
+AST-014,Patient/model consent records,Consent,PDF/Form,MISSING,MISSING,,No,Not found,Required before patient stories/photos/video.
+AST-015,Raw video footage,Video,MP4/MOV,MISSING,MISSING,,No,Not found,Monday shoot and 15-video task remain open.
+AST-016,Edited videos / reel covers / thumbnails,Video deliverables,MP4/JPG/PNG,MISSING,MISSING,,No,Not found,No publication or approval register found.
+AST-017,Editable design source files,Design source,PSD/AI/CDR/Figma/Canva,MISSING,MISSING,,No,Not found,Collect links/packages and ownership.
+AST-018,Video project files,Edit source,Premiere/After Effects,MISSING,MISSING,,No,Not found,No source projects accessible.
+AST-019,Stock-asset licences,Licence,PDF/Receipt,MISSING,MISSING,,No,Not found,Required for any licensed stock.
+AST-020,Approved final social/GMB/ad creatives,Final production assets,JPG/PNG/PDF/MP4,MISSING,MISSING_APPROVAL_EVIDENCE,None found,No,Audit,Do not label any available design approved without written evidence.

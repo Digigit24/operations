@@ -1,0 +1,9 @@
+Report ID,Report type,Period,Source/platform,Data reliability,Status,Destination folder,Notes
+RPT-01,Social media content performance,~Feb-Apr 2026 (60-day),Instagram (analyst-quoted),"Medium (platform-reported, not re-pulled)",Present,07_REPORTS/01_Social_Media,6 reels + plateau + 40+ ideas; refers to 'Dr. Priyank'
+RPT-02,Meta Ads,-,-,-,MISSING,07_REPORTS/02_Meta_Ads,Not delivered
+RPT-03,Google Ads,-,-,-,MISSING,07_REPORTS/03_Google_Ads,Not delivered
+RPT-04,Website / GA4,-,-,-,MISSING,07_REPORTS/04_Website,Gated
+RPT-05,SEO / Search Console,-,-,-,MISSING/GATED,07_REPORTS/05_SEO,SEO Foundation undelivered
+RPT-06,GMB performance,-,-,-,MISSING/GATED,07_REPORTS/06_GMB,GMB Foundation undelivered
+RPT-07,Leads / CRM,-,-,-,MISSING,07_REPORTS/07_Leads,Not delivered
+RPT-08,Monthly report,-,-,-,MISSING,07_REPORTS/08_Monthly_Reports,Not delivered

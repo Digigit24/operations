@@ -1,0 +1,5 @@
+GMB item ID,Type,Title/Topic,Copy status,Image status,Published date,Published link,Source,Status,Notes
+GMB-01,Guidelines,GMB posting guidelines,Drafted,-,-,-,Site Extraction + brand notes,Active,Keep separate from Meta ad copy
+GMB-02,Setup task,De-stuff business name in map embed,-,-,-,-,Site Extraction §12,TODO,Against Google guidelines currently
+GMB-03,Setup task,Replace placeholder testimonials with real review pull-quotes,-,-,-,-,Site Extraction §10,TODO,No real reviews in project
+GMB-04,Ideas,Per-service explainers / numbers / doctor credential / facility posts,Ideas only,None,-,-,Site Extraction §12,UNUSED,No GMB posts produced

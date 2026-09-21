@@ -1,7 +1,7 @@
 {
   "_meta": {
-    "generated_at": "2026-06-08T17:33:21.430288Z",
-    "total_entries": 73,
+    "generated_at": "2026-08-19T08:25:20.021914Z",
+    "total_entries": 74,
     "types": {
       "action": 4,
       "context": 5,
@@ -10,7 +10,7 @@
       "skill": 13,
       "sop": 13,
       "worker": 10,
-      "client": 14
+      "client": 15
     },
     "usage": "Read this manifest first. Find the entry. Fetch the file at path. Execute in 2-3 tool calls."
   },
@@ -645,6 +645,18 @@
       "related": [
         "sop_client_onboarding",
         "skill_onboarding_01_research"
+      ]
+    },
+    {
+      "id": "client_dev_mantra",
+      "type": "client",
+      "path": "clients/Dev Mantra/client-strategy.md",
+      "when_to_use": "Dev Mantra — client strategy, brand voice, service scope, expertise notes for the Dev Mantra Account Manager assistant",
+      "related": [
+        "context_dev_mantra",
+        "sop_client_onboarding",
+        "sop_monthly_m6_report",
+        "action_fetch_notion_client_state"
       ]
     },
     {
@@ -1424,6 +1436,18 @@
         "related": [
           "sop_client_onboarding",
           "skill_onboarding_01_research"
+        ]
+      },
+      {
+        "id": "client_dev_mantra",
+        "type": "client",
+        "path": "clients/Dev Mantra/client-strategy.md",
+        "when_to_use": "Dev Mantra — client strategy, brand voice, service scope, expertise notes for the Dev Mantra Account Manager assistant",
+        "related": [
+          "context_dev_mantra",
+          "sop_client_onboarding",
+          "sop_monthly_m6_report",
+          "action_fetch_notion_client_state"
         ]
       },
       {

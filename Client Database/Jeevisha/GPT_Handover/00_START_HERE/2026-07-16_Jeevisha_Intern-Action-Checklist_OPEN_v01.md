@@ -1,0 +1,26 @@
+# Intern Action Checklist
+
+- [ ] **High — Confirm 150 monthly patients target definition and baseline** — Define whether target means unique consultations, procedures or all visits; add baseline and reporting owner.
+- [ ] **Medium — Prepare recurring Monday shoot plan** — Create shot list including GMB photos, founder videos, equipment and privacy-safe B-roll.
+- [ ] **Medium — Write 15 video scripts** — Use Marathi framework; doctor-review medical facts; log status per script.
+- [ ] **Normal — Define 360-degree marketing plan** — Translate into channel plan, funnel, budget, owners and KPIs.
+- [ ] **Medium — Plan YouTube videos** — Prioritize founder introduction, MRI review, PRP, surgery second opinion and patient-safe education.
+- [ ] **Medium — Complete Dr. Sanjog personal-profile planning** — Define LinkedIn/Instagram voice, content series, profile assets and publication cadence.
+- [ ] **Medium — Deliver LinkedIn and Instagram blueprint** — Build channel-specific pillars, frequency, format and approval process.
+- [ ] **P0 — Obtain GBP Manager access for Digitech** — Owner retains ownership; grant manager-level access; record date/account.
+- [ ] **P0 — Lock canonical NAP** — Founder signs exact name, address, phone, website and hours.
+- [ ] **P0 — Decide compliant GBP business-name approach** — Assess current name evidence/ranking and approve clean or transition path.
+- [ ] **P0 — Complete GBP screenshot/Manager audit** — Capture verification, categories, services, posts, photos, Q&A, hours and 90-day performance.
+- [ ] **P0 — Verify WhatsApp Business on canonical number** — Confirm ownership, privacy, quick replies, response hours and CTA links.
+- [ ] **P0 — Establish patient photo/story consent process** — Create consent form, register, storage location, permitted channels and withdrawal procedure.
+- [ ] **P0 — Collect logo master and variants** — Collect SVG/AI/EPS/PDF + transparent PNG + monochrome variants; record owner and approval.
+- [ ] **P0 — Collect editable creative files and links** — Collect Canva/Figma/PSD/AI/CDR/Premiere/AE links and source packages.
+- [ ] **P0 — Resolve phone-number conflict** — Confirm +91 91191 11837 vs +91 90284 31238 and update all live surfaces.
+- [ ] **P0 — Doctor-review master services and treatment list** — Approve exact names, indications, exclusions and claims for 21 GBP service drafts.
+- [ ] **P0 — Create approval and publication log** — Record asset version, approver, date, channel, status and live URL.
+- [ ] **P0 — Collect analytics/report access and exports** — GBP, GA4, GSC, Meta, Google Ads, Instagram/Facebook, CRM, calls, appointments.
+- [ ] **P0 — Replace fictional/demo patient content** — Remove Mrs. M/demo stat from public-facing work; use consented verified cases only.
+- [ ] **P1 — Finalize recent knee-cartilage creative** — White/cream version; remove top-left hospital text; reduce bottom copy; handwriting treatment; medical approval; final client sign-off.
+- [ ] **P1 — Implement GMB month-one drafts only after audit** — Approve/rewrite 8 posts, 10 Q&As, description and services after current-state audit.
+- [ ] **P1 — Implement P0 SEO pages and technical baseline** — Audit current website; verify GSC/GA4; build Wakad/PCMC/Hinjewadi, doctor, knee/back, second opinion pages.
+- [ ] **P1 — Create privacy-safe review workflow** — Assign owner, use minimal patient data, secure log, one optional request, no rating pressure.

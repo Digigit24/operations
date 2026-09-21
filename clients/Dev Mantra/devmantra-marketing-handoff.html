@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dev Mantra — Marketing, Content &amp; Outreach Handoff</title>
+<style>
+  :root{
+    --navy:#0b2545;
+    --navy-2:#123163;
+    --cyan:#0ea5b7;
+    --cyan-2:#0891a3;
+    --ink:#1a2433;
+    --ink-soft:#4a5568;
+    --paper:#ffffff;
+    --bg:#f5f7fa;
+    --line:#e2e8f0;
+    --line-soft:#edf1f5;
+    --amber-bg:#fff8e8;
+    --amber-line:#f0d998;
+    --amber-ink:#8a6100;
+    --red-bg:#fdeeee;
+    --red-line:#f0bcbc;
+    --red-ink:#9b2c2c;
+    --green-bg:#eafaf3;
+    --green-line:#b8ecd4;
+    --green-ink:#0f7a4f;
+    --blue-bg:#eef4ff;
+    --blue-line:#c3d7fb;
+    --blue-ink:#1e4fa0;
+    --radius:10px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:"Segoe UI","Inter",-apple-system,BlinkMacSystemFont,Arial,sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+    line-height:1.62;
+    font-size:15.5px;
+  }
+  a{color:var(--cyan-2);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+
+  /* ---------- Layout shell ---------- */
+  .shell{display:flex; flex-direction:column; min-height:100vh;}
+  
+  /* Tab Navigation */
+  .tab-nav{
+    display:flex;
+    flex-wrap:wrap;
+    gap:4px;
+    padding:12px 16px;
+    background:var(--paper);
+    border-bottom:1px solid var(--line);
+    position:sticky;
+    top:0;
+    z-index:100;
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+  }
+  .tab-nav::-webkit-scrollbar{height:6px;}
+  .tab-nav::-webkit-scrollbar-thumb{background:var(--line);border-radius:3px;}
+  .tab-btn{
+    flex:0 0 auto;
+    padding:8px 16px;
+    border:none;
+    background:transparent;
+    color:var(--ink-soft);
+    font-size:13px;
+    font-weight:600;
+    border-radius:var(--radius);
+    cursor:pointer;
+    white-space:nowrap;
+    transition:background .15s ease, color .15s ease, box-shadow .15s ease;
+    border:1px solid transparent;
+  }
+  .tab-btn:hover{background:var(--blue-bg); color:var(--blue-ink); text-decoration:none;}
+  .tab-btn:focus-visible{outline:2px solid var(--cyan); outline-offset:2px;}
+  .tab-btn.active{
+    background:var(--navy);
+    color:#fff;
+    box-shadow:0 2px 8px rgba(11,37,69,0.2);
+  }
+  .tab-btn .num{
+    display:inline-block;
+    width:20px;
+    text-align:center;
+    font-size:11px;
+    font-weight:700;
+    opacity:0.7;
+  }
+  .tab-btn.active .num{opacity:1; color:var(--cyan);}
+
+  .content{
+    flex:1;
+    min-width:0;
+    padding:0;
+  }
+  .content-inner{
+    max-width:920px;
+    margin:0 auto;
+    padding:32px 56px 100px;
+  }
+
+  /* Brand header (replaces sidebar brand) */
+  .doc-header{
+    padding:28px 56px 16px;
+    background:linear-gradient(180deg,var(--navy) 0%, var(--navy-2) 100%);
+    color:#dce6f5;
+    margin-bottom:0;
+  }
+  .doc-header .brand{
+    font-size:12px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--cyan);
+    font-weight:700;
+    margin-bottom:6px;
+  }
+  .doc-header .brand-title{
+    font-size:20px;
+    font-weight:700;
+    color:#fff;
+    line-height:1.3;
+    margin-bottom:4px;
+  }
+  .doc-header .brand-sub{
+    font-size:13px;
+    color:#a9bbd6;
+    line-height:1.5;
+  }
+  .doc-header .brand-meta{
+    display:flex;
+    flex-wrap:wrap;
+    gap:24px;
+    margin-top:16px;
+    padding-top:16px;
+    border-top:1px solid rgba(255,255,255,0.12);
+    font-size:12px;
+    color:#8095b8;
+    line-height:1.6;
+  }
+
+  /* Hide sections by default, show only active */
+  section.doc-section{
+    display:none;
+    padding-top:26px;
+    margin-top:8px;
+  }
+  section.doc-section.active{display:block;}
+
+  /* ---------- Cover ---------- */
+  .cover{
+    background:linear-gradient(135deg,var(--navy) 0%, var(--navy-2) 55%, var(--cyan-2) 130%);
+    color:#fff;
+    padding:56px 56px 44px;
+    position:relative;
+    overflow:hidden;
+  }
+  .cover::after{
+    content:"";
+    position:absolute;
+    right:-80px; top:-80px;
+    width:320px;height:320px;
+    background:radial-gradient(circle, rgba(14,165,183,0.35), transparent 70%);
+  }
+  .cover-eyebrow{
+    font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;
+    color:#8fe3ec;font-weight:700;margin-bottom:14px;position:relative;
+  }
+  .cover h1{
+    font-size:34px;line-height:1.18;margin:0 0 18px;font-weight:800;
+    max-width:760px;position:relative;
+  }
+  .cover-meta{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(220px,1fr));
+    gap:10px 40px;
+    font-size:13.2px;
+    color:#cbdcf1;
+    position:relative;
+    margin-top:22px;
+    border-top:1px solid rgba(255,255,255,0.18);
+    padding-top:20px;
+  }
+  .cover-meta .k{color:#7fa8dd;font-weight:700;letter-spacing:.03em;font-size:11.5px;text-transform:uppercase;display:block;margin-bottom:3px;}
+
+  /* ---------- Sections ---------- */
+  section.doc-section{
+    padding-top:26px;
+    margin-top:8px;
+    scroll-margin-top:20px;
+  }
+  .section-head{
+    display:flex;
+    align-items:baseline;
+    gap:14px;
+    border-bottom:3px solid var(--navy);
+    padding-bottom:12px;
+    margin-bottom:22px;
+  }
+  .section-num{
+    font-size:13px;font-weight:800;color:#fff;background:var(--navy);
+    padding:4px 11px;border-radius:20px;letter-spacing:.02em;flex-shrink:0;
+  }
+  .section-head h2{
+    font-size:23px;font-weight:800;margin:0;color:var(--navy);line-height:1.25;
+  }
+
+  h3{font-size:17px;font-weight:750;color:var(--navy-2);margin:30px 0 10px;}
+  h4{font-size:14.5px;font-weight:750;color:var(--ink);margin:20px 0 8px;letter-spacing:.01em;}
+  p{margin:0 0 13px;color:var(--ink);}
+  p.lede{font-size:16px;color:var(--ink-soft);}
+  strong{color:var(--ink);font-weight:700;}
+  ul,ol{margin:0 0 14px;padding-left:22px;}
+  li{margin-bottom:6px;}
+  .content-inner > section:first-of-type{margin-top:0;}
+
+  /* ---------- Tables ---------- */
+  .table-wrap{overflow-x:auto;margin:14px 0 22px;border:1px solid var(--line);border-radius:var(--radius);}
+  table{border-collapse:collapse;width:100%;font-size:13.6px;background:var(--paper);}
+  thead th{
+    background:var(--navy);
+    color:#fff;
+    text-align:left;
+    font-weight:700;
+    padding:10px 14px;
+    font-size:12.6px;
+    letter-spacing:.02em;
+    white-space:nowrap;
+  }
+  tbody td{
+    padding:10px 14px;
+    border-top:1px solid var(--line-soft);
+    vertical-align:top;
+    color:var(--ink);
+  }
+  tbody tr:nth-child(even){background:#fafbfd;}
+  tbody tr:hover{background:#f0f6f9;}
+
+  /* ---------- Callouts ---------- */
+  .callout{
+    border-radius:var(--radius);
+    padding:14px 18px;
+    margin:16px 0;
+    border:1px solid;
+    font-size:14.2px;
+    display:flex;
+    gap:12px;
+  }
+  .callout .icon{font-size:17px;line-height:1.4;flex-shrink:0;}
+  .callout .body p:last-child{margin-bottom:0;}
+  .callout.warn{background:var(--amber-bg);border-color:var(--amber-line);color:#5c4400;}
+  .callout.warn strong{color:var(--amber-ink);}
+  .callout.danger{background:var(--red-bg);border-color:var(--red-line);color:#6b1d1d;}
+  .callout.danger strong{color:var(--red-ink);}
+  .callout.good{background:var(--green-bg);border-color:var(--green-line);color:#0b5c3a;}
+  .callout.good strong{color:var(--green-ink);}
+  .callout.info{background:var(--blue-bg);border-color:var(--blue-line);color:#153d7a;}
+  .callout.info strong{color:var(--blue-ink);}
+
+  /* ---------- Status pills ---------- */
+  .pill{
+    display:inline-block;
+    padding:2px 9px;
+    border-radius:20px;
+    font-size:11.5px;
+    font-weight:700;
+    white-space:nowrap;
+  }
+  .pill.red{background:var(--red-bg);color:var(--red-ink);border:1px solid var(--red-line);}
+  .pill.amber{background:var(--amber-bg);color:var(--amber-ink);border:1px solid var(--amber-line);}
+  .pill.green{background:var(--green-bg);color:var(--green-ink);border:1px solid var(--green-line);}
+  .pill.blue{background:var(--blue-bg);color:var(--blue-ink);border:1px solid var(--blue-line);}
+  .pill.grey{background:#eef1f5;color:#556074;border:1px solid #dbe1e9;}
+
+  /* ---------- Deep-dive link ---------- */
+  .deeper{
+    margin-top:26px;
+    padding:14px 18px;
+    background:#f6f8fb;
+    border-left:4px solid var(--cyan);
+    border-radius:0 8px 8px 0;
+    font-size:13.4px;
+    color:var(--ink-soft);
+  }
+  .deeper strong{color:var(--navy);}
+
+  code{
+    background:#eef1f6;
+    border:1px solid #dfe4ec;
+    border-radius:4px;
+    padding:1px 6px;
+    font-size:12.6px;
+    font-family:"Cascadia Code",Consolas,monospace;
+    color:#7a1fa2;
+  }
+
+  /* Key-value quick card */
+  .kv-grid{
+    display:grid;
+    grid-template-columns:repeat(2, minmax(240px,1fr));
+    gap:0;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    overflow:hidden;
+    margin:16px 0 22px;
+  }
+  .kv-grid .kv{
+    padding:11px 16px;
+    border-bottom:1px solid var(--line-soft);
+    border-right:1px solid var(--line-soft);
+    font-size:13.4px;
+  }
+  .kv-grid .kv .k{display:block;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:#8492a6;font-weight:700;margin-bottom:2px;}
+
+  .banned-box{
+    background:#fbfbfd;border:1px dashed #cbd3e0;border-radius:var(--radius);
+    padding:14px 18px;margin:14px 0 20px;font-size:13.6px;
+  }
+  .banned-box .tag{
+    display:inline-block;background:var(--red-bg);color:var(--red-ink);
+    border:1px solid var(--red-line);border-radius:6px;padding:2px 8px;margin:3px 5px 0 0;font-size:12px;font-weight:600;
+  }
+
+  .persona-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:16px 0 22px;}
+  .persona-card{border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;background:#fff;}
+  .persona-card .letter{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:var(--navy);color:#fff;font-weight:800;font-size:12.5px;margin-bottom:8px;}
+  .persona-card h4{margin:6px 0 4px;font-size:13.8px;}
+  .persona-card p{font-size:13px;color:var(--ink-soft);margin-bottom:0;}
+
+  .checklist{list-style:none;padding:0;margin:12px 0 20px;}
+  .checklist li{
+    position:relative;padding:9px 12px 9px 38px;margin-bottom:6px;
+    background:#fff;border:1px solid var(--line);border-radius:8px;font-size:13.6px;
+  }
+  .checklist li::before{
+    content:"○";position:absolute;left:12px;top:8px;color:var(--cyan-2);font-weight:800;font-size:15px;
+  }
+  .checklist li strong{color:var(--navy);}
+
+  .oq-item{
+    border:1px solid var(--line);border-left:4px solid var(--cyan-2);border-radius:0 8px 8px 0;
+    padding:12px 16px;margin-bottom:10px;background:#fff;font-size:13.8px;
+  }
+  .oq-item .oq-num{font-weight:800;color:var(--cyan-2);margin-right:6px;}
+  .oq-item.new{border-left-color:var(--red-ink);}
+  .oq-item.new .oq-num{color:var(--red-ink);}
+
+  .footer-note{
+    margin-top:60px;padding-top:22px;border-top:1px solid var(--line);
+    font-size:12.4px;color:#8492a6;font-style:italic;text-align:center;
+  }
+  .footer-meta{
+    display:flex;flex-wrap:wrap;justify-content:center;gap:16px 24px;
+    margin-bottom:12px;font-size:11.5px;color:#6b7a94;font-style:normal;
+  }
+  .footer-meta strong{color:#4a5568;}
+  @media (max-width: 600px){
+    .footer-meta{gap:8px 16px;font-size:11px;}
+  }
+
+  .print-btn{
+    position:fixed; right:26px; top:22px; z-index:50;
+    background:var(--navy); color:#fff; border:none; border-radius:22px;
+    padding:9px 18px; font-size:12.8px; font-weight:700; cursor:pointer;
+    box-shadow:0 6px 18px rgba(11,37,69,0.28);
+  }
+  .print-btn:hover{background:var(--cyan-2);}
+
+  @media (max-width: 980px){
+    .tab-nav{padding:10px 12px;}
+    .tab-btn{padding:8px 12px; font-size:12px;}
+    .doc-header{padding:20px 24px 12px;}
+    .content-inner{padding:24px 22px 80px;}
+    .persona-grid{grid-template-columns:1fr;}
+    .kv-grid{grid-template-columns:1fr;}
+  }
+
+  @media print{
+    .tab-nav,.print-btn{display:none !important;}
+    .content-inner{max-width:100%;padding:0 10px;}
+    .cover{background:var(--navy) !important; -webkit-print-color-adjust:exact; print-color-adjust:exact;}
+    thead th{-webkit-print-color-adjust:exact; print-color-adjust:exact;}
+    section.doc-section{display:block !important; break-inside:avoid-page;}
+  }
+</style>
+</head>
+<body>
+
+<button class="print-btn" onclick="window.print()">⇩ Export / Print</button>
+
+<div class="shell">
+  <!-- ============ DOCUMENT HEADER ============ -->
+  <header class="doc-header">
+    <div class="brand">Digitech Solutions</div>
+    <div class="brand-title">Dev Mantra Handoff</div>
+    <div class="brand-sub">Marketing, Content & Outreach — full operational handoff, Aug 20, 2026</div>
+    <div class="brand-meta">
+      <span>Prepared by The Digitech Solutions — Dev Mantra Account Team</span>
+      <span>Source: Claude project "devmantra" (30 docs), Notion workspace, Aug 6, 2026 SEO audit</span>
+    </div>
+  </header>
+
+  <!-- ============ TAB NAVIGATION ============ -->
+  <nav class="tab-nav" id="tabNav" role="tablist" aria-label="Document sections">
+    <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="s1" id="tab-s1" data-target="s1"><span class="num">1</span>Orient in Five Minutes</button>
+    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="s2" id="tab-s2" data-target="s2"><span class="num">2</span>Korea Desk Campaign</button>
+    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="s3" id="tab-s3" data-target="s3"><span class="num">3</span>ESOP Calculator Campaign</button>
+    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="s4" id="tab-s4" data-target="s4"><span class="num">4</span>SEO — Current Scenario</button>
+    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="s5" id="tab-s5" data-target="s5"><span class="num">5</span>Social Media</button>
+    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="s6" id="tab-s6" data-target="s6"><span class="num">6</span>Sales Navigator + CRM</button>
+    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="s7" id="tab-s7" data-target="s7"><span class="num">7</span>Outreach Plan</button>
+    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="s8" id="tab-s8" data-target="s8"><span class="num">8</span>Open Decisions</button>
+    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="s9" id="tab-s9" data-target="s9"><span class="num">9</span>Directory</button>
+  </nav>
+
+<!-- ============ CONTENT ============ -->
+  <main class="content">
+    <div class="content-inner">
+
+      <!-- ================= SECTION 1 ================= -->
+      <section class="doc-section active" id="s1" role="tabpanel" aria-labelledby="tab-s1">
+        <div class="section-head"><span class="section-num">1</span><h2>Orient in Five Minutes</h2></div>
+
+        <h3>Who Dev Mantra is</h3>
+        <div class="kv-grid">
+          <div class="kv"><span class="k">Legal / brand name</span>Dev Mantra Financial Services</div>
+          <div class="kv"><span class="k">Headquarters</span>Bengaluru, Karnataka, India (street address pending confirmation)</div>
+          <div class="kv"><span class="k">Phone</span>+91 99001 92697</div>
+          <div class="kv"><span class="k">Email</span>info@devmantra.com</div>
+          <div class="kv"><span class="k">Website</span>devmantra.com</div>
+          <div class="kv"><span class="k">Founded</span>2008</div>
+          <div class="kv"><span class="k">Knowledge partner</span>N Tatia &amp; Associates — ICAI FRN 011067S, est. 1992, UCN 781010, C&amp;AG BA 0885, Peer Reviewed, ISO Certified</div>
+        </div>
+
+        <p>Use this exact NAP everywhere — name, address, phone.</p>
+        <div class="callout warn">
+          <div class="icon">⚠️</div>
+          <div class="body"><p>The last NAP consistency audit found <strong>every platform</strong> (website, Google Business Profile, LinkedIn, Facebook, Instagram, Justdial, Sulekha, IndiaMART, ICAI listing) marked "needs audit" — nobody has actually verified they match yet. Live open item, not a completed task.</p></div>
+        </div>
+
+        <h3>Positioning (use verbatim, don't paraphrase loosely)</h3>
+        <div class="callout good">
+          <div class="icon">“</div>
+          <div class="body"><p>Dev Mantra is the audit-grade, CA-led India execution partner for companies (especially foreign / cross-border) entering, acquiring, and scaling in India — operating in the gap between Big 4 fees and discount consultants, with M&amp;A depth, GIFT City + DTAA expertise, and tech-enabled GCC capability.</p></div>
+        </div>
+
+        <p><strong>Differentiators to keep using:</strong> 20+ years cross-border execution · ₹5,000 Cr in transactions completed · 150+ years combined leadership experience · ICAI-firm partnership · ISO Certified / Peer Reviewed · 30–50% under Big 4 fees with senior-partner attention · Bengaluru HQ (proximity to the GCC ecosystem) · a Korean partner in Seoul.</p>
+        <p><strong>What we deliberately don't compete on:</strong> global brand recognition (not Big 4), being the cheapest India-entry shop, mass-market virtual CFO.</p>
+
+        <p><strong>Services (7):</strong> M&amp;A Advisory · India Entry / FDI Structuring (WOS/LLP/Branch/JV, DTAA, GIFT City) · Virtual CFO · GCC Setup &amp; Operations · Audit &amp; Compliance (via N Tatia &amp; Associates) · Cross-Border Tax &amp; Treaty Structuring · Business Setup &amp; Corporate Advisory.</p>
+
+        <h3>Brand voice — non-negotiable</h3>
+        <p><strong>Tone:</strong> confident, professional, evidence-based, calm authority. Never salesy, never desperate.</p>
+        <p><strong>Always use:</strong> specific numbers (₹5,000 Cr, 20+ years, 150+ years), named credentials (ICAI FRN 011067S, Peer Reviewed), direct declarative sentences, honest qualifiers on estimates ("directional estimate," "typical range").</p>
+
+        <div class="banned-box">
+          <strong style="color:var(--red-ink);display:block;margin-bottom:6px;">Banned phrases — do not use, on any channel</strong>
+          <span class="tag">trusted partner</span><span class="tag">trusted by [X]</span><span class="tag">end-to-end</span><span class="tag">360-degree</span><span class="tag">holistic</span><span class="tag">empower</span><span class="tag">unlock</span><span class="tag">unleash</span><span class="tag">in today's fast-paced world</span><span class="tag">at [Brand], we believe</span><span class="tag">committed to excellence</span><span class="tag">game-changing</span><span class="tag">revolutionary</span><span class="tag">disrupt</span><span class="tag">best in India</span><span class="tag">guaranteed results</span><span class="tag">100% success rate</span>
+        </div>
+
+        <p><strong>Formatting rules for AI-generated content:</strong> tables for comparisons, numbered lists for sequenced processes, bold for key terms. No emoji in client-facing financial content (decks, proposals, reports) — emoji are fine in social media and internal docs. Always include the knowledge-partner mention and the ₹5,000 Cr transaction figure where audit credibility or track record is relevant.</p>
+
+        <p style="font-size:13.4px;color:var(--ink-soft);">Full detail: <code>DevMantra_Personal_Brand_Design_System.md</code>, <code>DEVMANTRA_DESIGN_RULES.md</code>, and the Notion <strong>🧠 Brand &amp; Strategy</strong> hub. A dedicated content-writing skill for this account (<strong>dev-mantra-content-writer</strong>) now encodes all of this — prefer invoking it over freelancing brand voice from scratch.</p>
+
+        <h3>The five LinkedIn profiles / verticals</h3>
+        <div class="table-wrap">
+        <table>
+          <thead><tr><th>Day</th><th>Person</th><th>Vertical</th><th>Focus</th></tr></thead>
+          <tbody>
+            <tr><td>Monday</td><td>Vikas Tatia</td><td>M&amp;A Advisory</td><td>Deal structuring, valuations, PE/VC mid-market India</td></tr>
+            <tr><td>Tuesday</td><td>Nidhi Tatia</td><td>Compliance &amp; Internal Audit</td><td>Internal controls, risk, governance frameworks</td></tr>
+            <tr><td>Wednesday</td><td>Namrata P Marothi</td><td>GCC Services</td><td>US CPA firms, India capability centers, offshore accounting</td></tr>
+            <tr><td>Thursday</td><td>Kamal Parakh</td><td>Business Setup / IPO</td><td>India entry, JV, SEBI, SME IPO, growth-stage founders</td></tr>
+            <tr><td>Friday</td><td>Dev Mantra Brand Page</td><td>Virtual CFO / Reports</td><td>Finance outsourcing, GCC data, brand updates</td></tr>
+          </tbody>
+        </table>
+        </div>
+
+        <h3>Active strategic initiatives</h3>
+        <div class="table-wrap">
+        <table>
+          <thead><tr><th>Initiative</th><th>Status</th><th>Owner</th><th>Priority</th></tr></thead>
+          <tbody>
+            <tr><td>🇰🇷 Korea Desk — Phase 1 Foundation</td><td><span class="pill blue">In execution</span></td><td>Vikash sir + Nidhi ma'am + PM (Ritik Roushan)</td><td><span class="pill red">🔴 Top priority</span></td></tr>
+            <tr><td>ESOP Allocation Calculator campaign</td><td><span class="pill blue">Active sprint</span></td><td>Vikas + Nidhi (content), PM (execution)</td><td><span class="pill red">🔴 High</span></td></tr>
+            <tr><td>SEO — deploy the Aug 6 fix batch</td><td><span class="pill amber">Built, deployment unconfirmed</span></td><td>Web/dev team</td><td><span class="pill red">🔴 High (was 🟡)</span></td></tr>
+            <tr><td>SEO — content engine / blog production</td><td><span class="pill red">Not yet started</span></td><td>SEO team</td><td><span class="pill amber">🟡 High</span></td></tr>
+            <tr><td>Website continuous improvement</td><td><span class="pill green">Ongoing</span></td><td>Web team</td><td><span class="pill green">🟢 Steady-state</span></td></tr>
+            <tr><td>GMB optimisation</td><td><span class="pill grey">Backlog</span> — 3 audits flag it</td><td>PM</td><td><span class="pill blue">🔵 Low → reprioritize</span></td></tr>
+            <tr><td>Bahrain partner reactivation</td><td><span class="pill grey">Deferred to Day-90 Korea review</span></td><td>Founders</td><td><span class="pill blue">🔵 Low</span></td></tr>
+          </tbody>
+        </table>
+        </div>
+
+        <div class="deeper"><strong>Where to go deeper:</strong> full brand voice + design docs, Notion 🧠 Brand &amp; Strategy hub.</div>
+      </section>
+
+      <!-- ================= SECTION 2 ================= -->
+      <section class="doc-section" id="s2">
+        <div class="section-head"><span class="section-num">2</span><h2>Campaign — Korea Desk<br><span style="font-size:14px;font-weight:600;color:var(--ink-soft);">Cross-Border M&amp;A / India Entry</span></h2></div>
+
+        <h3>Why this exists, and why now</h3>
+        <p>On April 20, 2026, India and Korea signed 16 MoUs and fast-tracked a CEPA upgrade with a $54B trade target for 2030. FKI led a 200-CEO delegation (Samsung, SK, Hyundai, LG) that same month, and there's a proposed "Korea Enclave" industrial township for Korean manufacturers. Dev Mantra already has inbound in battery recycling, auto components, EV supply chain, and electronics, driven by China+1 diversification. <strong>The read:</strong> the Chaebol-led wave has started, and the supply chain follows within 12–24 months — Korean mid-market companies preparing to follow now are exactly Dev Mantra's Tier-2 sweet spot.</p>
+
+        <div class="kv-grid">
+          <div class="kv"><span class="k">Initiative owners</span>Vikash sir (Founder &amp; MD) + Nidhi ma'am (Founder &amp; Director)</div>
+          <div class="kv"><span class="k">Korea Desk PM</span>Ritik Roushan (Digitech)</div>
+          <div class="kv"><span class="k">Operational lead</span>Kamal Parakh (Associate Director)</div>
+          <div class="kv"><span class="k">Also involved</span>Sankaranarayanan PR (banker/MF), BC Datta (EV/policy/regulatory)</div>
+        </div>
+
+        <div class="callout info">
+          <div class="icon">💡</div>
+          <div class="body"><p><strong>One structural fact worth internalizing:</strong> KOTRA is the wrong door — its mandate is to <em>protect</em> Korean SMEs entering markets, not refer them to foreign advisors. The right doors are <strong>KBIZ</strong> (highest-leverage institutional play — propose Dev Mantra as knowledge partner/co-host for an India-entry webinar series), <strong>FKI</strong> (knowledge partner for the next delegation), <strong>KCCI</strong>, and <strong>KOCHAM India</strong> (apply for membership, speak at events — where decision-maker Persona C lives).</p></div>
+        </div>
+
+        <h3>Target audience — three tiers</h3>
+        <div class="table-wrap">
+        <table>
+          <thead><tr><th>Tier</th><th>Who</th><th>Deal size</th><th>Focus</th></tr></thead>
+          <tbody>
+            <tr><td>1 — Chaebols</td><td>Samsung, SK, LG, Hyundai/Kia, Lotte, Posco, Hanwha</td><td>Large mandate, Big 4 incumbents</td><td>Long-game referral via FKI events</td></tr>
+            <tr><td>2 — Mid-cap manufacturers</td><td>Tier-1/2 suppliers to Hyundai/Kia; battery materials; EMS/PCB; specialty chemicals</td><td><strong>$5–50M India investments</strong></td><td><strong>Phase 1 anchor</strong></td></tr>
+            <tr><td>3 — Korean SMEs &amp; startups</td><td>K-beauty, K-fashion, gaming, fintech</td><td>Small mandate, high frequency</td><td>Phase 2 volume play</td></tr>
+          </tbody>
+        </table>
+        </div>
+
+        <h3>Four decision-maker personas</h3>
+        <div class="persona-grid">
+          <div class="persona-card"><span class="letter">A</span><h4>India Strategy Director</h4><p>(해외사업본부장) in Seoul. Reads Naver Blog before Google.</p></div>
+          <div class="persona-card"><span class="letter">B</span><h4>Korea-based CFO of a mid-cap</h4><p>Cares about DTAA/GIFT City/transfer pricing. Reached via a Korean whitepaper + partner referral.</p></div>
+          <div class="persona-card"><span class="letter">C</span><h4>Group Head India</h4><p>Korean expatriate in Gurgaon/Pune/Chennai/Bengaluru. Active on LinkedIn — <strong>reachable today</strong> via the existing Sales Navigator playbook (Section 6).</p></div>
+          <div class="persona-card"><span class="letter">D</span><h4>Korean VC / Mirae Asset-type principal</h4><p>Heavy LinkedIn user, English-fluent.</p></div>
+        </div>
+
+        <p><strong>Sectoral priority for Phase 1</strong> (in order of existing signal): 1) battery recycling, EV components, auto components; 2) electronics/EMS/semiconductor supply chain — heaviest CEPA focus; 3) specialty chemicals &amp; advanced manufacturing; 4) K-beauty and consumer goods; 5) Korean VC portfolio support.</p>
+
+        <h3>Platform strategy</h3>
+        <div class="table-wrap">
+        <table>
+          <thead><tr><th>Platform</th><th>Role</th><th>Priority</th></tr></thead>
+          <tbody>
+            <tr><td>Naver Blog</td><td>~57% of Korean search traffic — default research engine for Korean B2B</td><td><span class="pill red">Critical, Phase 1</span></td></tr>
+            <tr><td>LinkedIn</td><td>Small but dense for Chaebol India units, VCs, Korea-based execs</td><td><span class="pill red">Critical, Phase 1</span></td></tr>
+            <tr><td>YouTube</td><td>High consumption for product/company research; AI explainers, Korean subtitles</td><td><span class="pill red">Critical, Phase 1</span></td></tr>
+            <tr><td>KakaoTalk Business Channel</td><td>93–94% of Koreans use daily, but needs a Korean business license</td><td><span class="pill grey">Phase 2 — skip for now</span></td></tr>
+            <tr><td>Naver Cafe</td><td>Industry-specific forums, niche but high-trust</td><td><span class="pill amber">Phase 2</span></td></tr>
+            <tr><td>Korean business press</td><td>Maeil Business, Chosun Biz, Seoul Economic Daily — trusted by executives</td><td><span class="pill grey">Phase 3 — needs PR retainer</span></td></tr>
+          </tbody>
+        </table>
+        </div>
+
+        <p><strong>Five content pillars:</strong> (1) India Entry Mechanics for Korean Companies; (2) M&amp;A Acceleration for Korean Buyers; (3) China+1 Operating Logic; (4) Post-Deal &amp; GCC Operating Model; (5) Indian Terms/Vocabulary for Korean executives — highest-leverage educational layer per the master plan.</p>
+
+        <h3>What's confirmed and running right now (August 2026)</h3>
+        <p>The August content topics doc (Notion, status: FINAL) confirms 4 pillars for this month, each written twice — Website Blog (SEO/executive register) and Naver (conversational, human-written):</p>
+        <div class="table-wrap">
+        <table>
+          <thead><tr><th>#</th><th>Pillar</th><th>Website Blog title</th><th>Naver title</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>Why Now</td><td>Why 200 Korean Business Leaders Visited India and What It Signals for Korean Companies</td><td>Why Is India Suddenly on the Radar of Korean Business Leaders?</td></tr>
+            <tr><td>2</td><td>Entry Economics</td><td>The Real Cost of Entering India: A Board-Ready Breakdown for Korean Companies</td><td>How Much Does It Really Cost to Set Up a Business in India? (Korean Won)</td></tr>
+            <tr><td>3</td><td>Sector Opportunity</td><td>India's EV and Battery Opportunity: What Korean Manufacturers and Suppliers Need to Know</td><td>Making EV Parts or Batteries? Here Is Why India Deserves a Closer Look</td></tr>
+            <tr><td>4</td><td>Incentives</td><td>India Manufacturing Incentives in 2026: How Korean Companies Can Combine Central and State Benefits</td><td>How Central and State Incentives Can Reduce the Cost of Manufacturing in India</td></tr>
+          </tbody>
+        </table>
+        </div>
+        <p>Cadence: <strong>1 post per week per channel through August, evergreen thereafter.</strong> The full title bank and top-10 shortlist live in <code>DevMantra_Korea_ESOP_Title_Bank_Aug2026.md</code> and <code>DevMantra_Aug2026_Topic_Finalization.md</code>; Naver writing standards in <code>DevMantra_Naver_Blog_Writing_Guidelines_Aug2026.md</code>.</p>
+
+        <div class="callout warn">
+          <div class="icon">⚠️</div>
+          <div class="body"><p><strong>Status check needed.</strong> Per <code>DevMantra_Aug2026_Topic_Finalization.md</code> (dated Aug 9), the copywriter was scheduled to start drafting these 4 topics that day. As of this handoff (Aug 20 — 11 days later), nothing in either the Claude project or Notion confirms how many have actually been drafted or published. Top content-side open item for Korea — see Section 8.</p></div>
+        </div>
+
+        <div class="callout danger">
+          <div class="icon">🚫</div>
+          <div class="body"><p><strong>Naver rule that must never be broken:</strong> no links or contact information in the post body, ever. Naver's C-Rank algorithm penalizes it and it reads as spam to Korean readers. Native Korean writing only — never machine-translated; back-translation is for fact-checking only, never for editing the partner's Korean.</p></div>
+        </div>
+
+        <p>The master marketing plan envisions scaling Naver to ~7 posts/month across all 5 pillars as the partner relationship matures — treat the current 4/month as where things actually stand today, 7/month as the target to grow into.</p>
+        <p><strong>Other channels, target cadence:</strong> YouTube — 3 AI-generated videos/month with Korean subtitles (12 over 90 days). LinkedIn — existing 5-profile cadence plus 1 Korea-themed post per founder profile per month, plus 1 brand-page carousel per quarter. Website — <code>/korea</code> landing page (English live, Korean overlay planned) plus 4 sectoral sub-pages.</p>
+
+        <h3>The Korean partner</h3>
+        <p>A practicing Korean lawyer and active Naver Blog writer with existing C-Rank authority — the single most important operational asset of the Korea Desk.</p>
+        <div class="callout good">
+          <div class="icon">🤝</div>
+          <div class="body"><p><strong>Ownership model: "she owns the blog, Dev Mantra owns the content."</strong> She creates/owns the Naver account (her name, phone, email); Dev Mantra owns all source material and IP; if the relationship ends, content rights revert to Dev Mantra for republication elsewhere; she doesn't write competing India-advisory content for other firms during the engagement.</p></div>
+        </div>
+        <p><strong>Scope:</strong> Phase 1 (months 1–3) — co-byline guest posts on her existing blog, 2/week (Tue + Fri Korean mornings), Dev Mantra supplies English source notes, she writes natively in Korean. Phase 2 (month 4+) — dedicated Dev Mantra Korea blog goes live, she becomes named editor, cross-linked with her original blog.</p>
+
+        <div class="callout amber" style="background:var(--amber-bg);border-color:var(--amber-line);">
+          <div class="icon">💰</div>
+          <div class="body"><p><strong>Compensation — 4 options still open, no decision made:</strong> per-post fee, monthly retainer, referral share, or a hybrid. Recommendation on file: don't lead with a number — Korean business etiquette expects the service provider to name their rate first. Indian baseline for this content is ₹8,000–15,000/post; Korean market rate is likely 2–3x that.</p></div>
+        </div>
+
+        <p><strong>Status as of the last written update:</strong> an onboarding email is drafted (proposes the two-phase model, asks 4 confirming questions — topic fit, whether she holds a 사업자등록증/Korean business registration, cadence, compensation preference) but was awaiting Vikash sir/Nidhi ma'am sign-off before sending. Given content is now live on Naver as of August, this has likely progressed — <strong>confirm current status with Ritik Roushan before assuming it's still pending.</strong> The 사업자등록증 answer matters beyond this relationship: it determines whether Naver Ads, a verified-blog badge, or a KakaoTalk Business Channel are reachable without Dev Mantra incorporating its own Korean entity.</p>
+
+        <p style="font-size:13.4px;color:var(--ink-soft);">Full email draft and pre-send checklist: Notion <strong>👥 Korean Partner — Onboarding Spec &amp; Email Drafts</strong>.</p>
+
+        <h3>Lead magnet</h3>
+        <p>Korean M&amp;A executives won't give up an email to be "scored" themselves — that reads as losing face. But they will hand one over for something that scores <em>someone else</em>, quantifies a hidden risk in real money, or gives them something to bring into a board meeting. Five ideas were ranked against that filter:</p>
+        <div class="table-wrap">
+        <table>
+          <thead><tr><th>Rank</th><th>Idea</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>DTAA Cash Leakage Calculator</td><td><span class="pill green">Top pick — builds in 3–4 weeks</span></td></tr>
+            <tr><td>2</td><td>India Acquisition Target Health Check (15-Q diagnostic)</td><td><span class="pill grey">Phase 2</span></td></tr>
+            <tr><td>3</td><td>Korean Companies in India Benchmark Report (primary research, 25pg)</td><td><span class="pill blue">Q4 2026 — start mapping participants now</span></td></tr>
+            <tr><td>4</td><td>PLI + State Incentive Eligibility Checker</td><td><span class="pill amber">Concept approved, spec written, build not started</span></td></tr>
+            <tr><td>5</td><td>Invitation-Only Korea Desk Weekly Briefing</td><td><span class="pill green">Lowest cost, highest trust — run in parallel</span></td></tr>
+          </tbody>
+        </table>
+        </div>
+
+        <p><strong>PLI Calculator detail</strong> (front-runner alongside the DTAA calculator — pick one for Phase 1A): user enters sector (battery/auto/electronics/specialty chemicals/semiconductors), investment size, planned employment, preferred state, and commissioning timeline; tool returns PLI eligibility, estimated 5-year PLI payout, state incentive estimate, and payback period, all in KRW, with a detailed PDF gated behind an email/company/role form. MVP scope: <strong>4 sectors × 4 states</strong> (batteries, auto components, electronics, specialty chemicals × Gujarat, Maharashtra, Tamil Nadu, Karnataka), expanding to 6×6 by month 4.</p>
+
+        <div class="callout warn">
+          <div class="icon">⚠️</div>
+          <div class="body"><p><strong>Before anyone builds anything new: check with Abhinav.</strong> Per the June 4, 2026 call, he'd already built 5–6 calculators and was asked to consolidate them — review what already exists before commissioning a new build. May include reusable infrastructure the ESOP Allocation Calculator (Section 3) can share.</p></div>
+        </div>
+
+        <p><strong>Three non-negotiables for Korean-language execution:</strong> never machine-translate; currency in KRW using Korean formatting (억/조), dates in Korean format; form fields must be tested to accept 한글 (Korean characters) — a common failure mode in India-built forms.</p>
+
+        <h3>30-60-90 and Day-90 targets</h3>
+        <ul>
+          <li><strong>Days 1–30 (Foundation):</strong> partner alignment, virtual number provisioning, first 4 Naver posts, English landing page live, first 4 YouTube scripts approved, Korea LinkedIn lists built, KOCHAM membership application.</li>
+          <li><strong>Days 31–60 (Activation):</strong> 8 Naver posts cumulative, 6 YouTube videos live, Korean translation overlay on the landing page, KBIZ + FKI outreach letters sent, 30 lead-magnet distribution sends, first Korean PR introductions.</li>
+          <li><strong>Days 61–90 (First conversion cycle):</strong> 12 Naver posts cumulative, 12 YouTube videos cumulative, 60–80 Korea LinkedIn connections, 25–40 lead-magnet completions, KBIZ webinar in pipeline, KOCHAM speaking slot, 2–3 advisory engagements signed.</li>
+        </ul>
+
+        <div class="table-wrap">
+        <table>
+          <thead><tr><th>Channel</th><th>Day 90 target</th></tr></thead>
+          <tbody>
+            <tr><td>Naver Blog</td><td>12 posts live; ≥3 ranking top-20 for Korean long-tail entry queries; ≥150 unique visitors to the Korea landing page from Naver</td></tr>
+            <tr><td>YouTube</td><td>12 videos live; ≥2,500 combined views; ≥3% CTR to landing page</td></tr>
+            <tr><td>LinkedIn</td><td>60–80 new Korea-targeted connections; ≥5 substantive DMs; ≥3 booked discovery calls</td></tr>
+            <tr><td>Lead magnet</td><td>25–40 completions; 5–8 discovery calls; 1–2 advisory engagements signed</td></tr>
+            <tr><td>Institutional</td><td>At least one confirmed partnership (KOCHAM membership + KBIZ webinar in pipeline)</td></tr>
+            <tr style="background:#eafaf3;"><td><strong>Total</strong></td><td><strong>2–3 signed Korean advisory engagements; a Setup-engagement pipeline converting in month 4</strong></td></tr>
+          </tbody>
+        </table>
+        </div>
+
+        <h3>Competitive positioning cheat sheet</h3>
+        <div class="table-wrap">
+        <table>
+          <thead><tr><th>Competitor</th><th>Their angle</th><th>Their gap</th><th>Our edge</th></tr></thead>
+          <tbody>
+            <tr><td>YKG Global</td><td>Dedicated Korean Desk, bilingual entry support</td><td>Generic entry shop, light on M&amp;A/DTAA/GIFT City</td><td>150+ yrs leadership, ₹5,000 Cr transactions, M&amp;A-led not entry-led</td></tr>
+            <tr><td>Maxout Global</td><td>Lists South Korea as primary geography</td><td>Strategy-heavy, execution-light</td><td>Audit-grade financials via N Tatia &amp; Associates</td></tr>
+            <tr><td>Tecnova Global</td><td>40+ years India entry</td><td>Not Korea-specialised, not M&amp;A-led, not GCC-positioned</td><td>GCC + M&amp;A + GIFT City triple stack</td></tr>
+            <tr><td>ASC Group</td><td>India entry consulting</td><td>Generic positioning</td><td>Concentrated Korea positioning + Korean partner</td></tr>
+            <tr><td>CEPA India</td><td>Korea-India bilateral trade facilitation</td><td>Trade facilitation, not financial advisory</td><td>We're the financial advisor behind what they refer</td></tr>
+            <tr><td>Big 4 Korea Desks</td><td>Global brand, captive Tier-1 deal flow</td><td>Premium pricing, slow on Tier 2/3, not partner-led</td><td>30–50% under Big 4 fees, senior-partner attention</td></tr>
+          </tbody>
+        </table>
+        </div>
+
+        <div class="kv-grid">
+          <div class="kv" style="grid-column:1/-1;"><span class="k">Korea-specific positioning line (verbatim)</span>Dev Mantra is the audit-grade, CA-led India execution partner for Korean companies entering, acquiring, or scaling in India — operating in the gap between Big 4 fees and discount consultants, with M&amp;A depth, GIFT City + DTAA expertise, and a tech-enabled GCC capability.</div>
+          <div class="kv" style="grid-column:1/-1;"><span class="k">Korean framings</span>한국 기업의 인도 진출 실행 파트너 (Execution Partner for Korean Companies Entering India) · 회계감사 기반 인도 M&amp;A 자문 (CA-Audit-Grounded India M&amp;A Advisory)</div>
+        </div>
+
+        <div class="deeper"><strong>Where to go deeper:</strong> Notion 🇰🇷 Korea Desk — Cross-Border M&amp;A Initiative hub and sub-pages (Marketing Plan, Operational Setup Research, Partner Onboarding, Landing Page Content, Lead Magnet Brainstorm, PLI Calculator, Communication Log); Claude docs <code>DevMantra_Naver_ESOP_Blog_Plans_Aug2026.md</code>, <code>DevMantra_Naver_Account_Setup_Plan.md</code>, <code>DevMantra_Naver_Blog_Writing_Guidelines_Aug2026.md</code>, <code>DevMantra_Korea_ESOP_Title_Bank_Aug2026.md</code>, <code>DevMantra_Korea_Landing_Page_Content.md</code>.</div>
+      </section>
+
+      <!-- ================= SECTION 3 ================= -->
+      <section class="doc-section" id="s3">
+        <div class="section-head"><span class="section-num">3</span><h2>Campaign — ESOP Allocation Calculator</h2></div>
+
+        <p class="lede">This is a <strong>separate campaign from Korea</strong> — different audience, different channels, different funnel. Where Korea targets Korean executives evaluating India entry, ESOP targets <strong>Indian/global founders, CFOs, CHROs and HR/comp leads</strong> at growth-stage companies, promoting a free <strong>ESOP Allocation Calculator</strong> that scores a team's equity allocation against defensible, documented criteria instead of gut feel.</p>
+
+        <h3>What's confirmed and running right now (August 2026)</h3>
+        <p>Per the same FINAL August content doc, Campaign 2 runs on <strong>LinkedIn + Instagram only</strong> (not the website blog, not Naver) — 4 angles, each written twice per channel:</p>
+        <div class="table-wrap">
+        <table>
+          <thead><tr><th>#</th><th>Angle</th><th>LinkedIn</th><th>Instagram</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>The Direct Question</td><td>Why Did One Employee Receive 2% Equity While Another Received 0.5%?</td><td>Can You Defend Your ESOP Allocation in One Sentence?</td></tr>
+            <tr><td>2</td><td>The Mistake List</td><td>Three ESOP Mistakes That Often Surface During Due Diligence</td><td>3 ESOP Mistakes Investors Notice First</td></tr>
+            <tr><td>3</td><td>Founder on Camera</td><td>How We Stopped Guessing and Started Making Fairer ESOP Decisions</td><td>Are You Still Guessing ESOP Grants?</td></tr>
+            <tr><td>4</td><td>Myth vs Fact</td><td>Does Giving Employees More Equity Really Make Them More Motivated?</td><td>Does More Equity Really Mean More Motivation?</td></tr>
+          </tbody>
+        </table>
+        </div>
+        <p>Cadence: 1 post/week/channel through August (campaign sprint, not evergreen). Unlike Naver, <strong>links and CTAs are standard here</strong> — every post should point at the calculator.</p>
+
+        <div class="callout warn">
+          <div class="icon">⚠️</div>
+          <div class="body"><p><strong>Status check needed — same flag as Korea (Section 2).</strong> These 4 topics were also scheduled to start drafting Aug 9. Confirm with whoever owns copywriting how many of the 8 ESOP pieces (4 topics × LinkedIn + Instagram) are actually live before assuming the campaign sprint is on schedule.</p></div>
+        </div>
+
+        <h3>Meta ads (v2 — supersedes any fixed-budget version)</h3>
+        <p>Budget is <strong>₹500–700/day</strong>, flexible upward — the plan isn't built around a fixed number. Meta's algorithm (Andromeda) reads early engagement more than audience filters, so the lever is creative variety, not narrow targeting.</p>
+        <p><strong>Run all 5 angles simultaneously from day one</strong> (the algorithm needs variety in week 1 more than it needs it in week 3):</p>
+        <div class="table-wrap">
+        <table>
+          <thead><tr><th>#</th><th>Angle</th><th>Format</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>The direct question</td><td>Looks like an organic post, not an ad — plain background, one bold line</td></tr>
+            <tr><td>2</td><td>The mistake list</td><td>Carousel, one mistake per card, branding held to the last card</td></tr>
+            <tr><td>3</td><td>Founder on camera</td><td>15–30s vertical, rough-cut is fine (performs better than polished); Vikas or Nidhi to camera</td></tr>
+            <tr><td>4</td><td>Before/after</td><td>Screen recording — messy spreadsheet cut to the calculator's clean ranked output</td></tr>
+            <tr><td>5</td><td>Myth vs fact</td><td>Quote-card; use as a retargeting ad for people who saw #1 or #3 but didn't convert</td></tr>
+          </tbody>
+        </table>
+        </div>
+
+        <p><strong>Format basics:</strong> vertical 9:16, automatic placements (don't manually restrict), burned-in captions on every video, under 30 seconds, hook in the first 2 seconds.</p>
+        <p><strong>Audience — a seed, not a fence:</strong> India, leading with Bengaluru/Mumbai/Pune/Delhi NCR/Hyderabad but not locked to one city; age 26–50; titles Founder/Co-Founder/CEO/CFO/Head of Finance/CHRO/Head of HR/VP HR/Comp &amp; Benefits; roughly 20–500 employees (mental model only); light interest layer (entrepreneurship, VC, startups, HR, comp &amp; benefits, cap tables, accelerators). Turn on Advantage+ audience once ~15–20 conversions are logged. <strong>Don't</strong> split into many tiny ad sets, and don't touch creative/audience daily — give a test 5–7 days before judging it.</p>
+        <p><strong>Lead form:</strong> Instant Form, objective = Leads, "More volume" to start (switch to "Higher intent" once there's a baseline). Fields: name, work email, mobile, company, one qualifying question.</p>
+        <p><strong>Reading results:</strong> days 1–5 are noise, ignore them; days 5–14 cost-per-lead should start settling — check which angle is actually carrying the campaign; refresh creative every 2–3 weeks even while it's working, since fatigue hits faster under this algorithm than under old interest-targeting.</p>
+
+        <h3>Sales Navigator, ESOP-specific</h3>
+        <p><strong>Targeting:</strong> Titles — Founder, Co-Founder, CEO, Managing Director, CFO, Head of Finance, VP Finance, CHRO, Chief People Officer, Head of HR/People, VP HR, Comp &amp; Benefits Manager, Total Rewards Lead. Seniority — Owner, Partner, CXO, VP, Director. Company size — run as <strong>3 separate saved searches</strong> (11–50, 51–200, 201–500). Industry — Software Development, IT Services, Financial Services, Biotech, VC/PE, Tech/Internet, E-Learning, Retail (D2C). Geography — India, city-cut by Bengaluru/Mumbai/Pune/Delhi NCR/Hyderabad/Chennai.</p>
+
+        <p><strong>5 highest-intent signal searches:</strong></p>
+        <ol>
+          <li>Just changed jobs 0–3 months into a target title — the single highest-intent group</li>
+          <li>Company headcount growing fast</li>
+          <li>Posted on LinkedIn about ESOP/equity/cap table/comp philosophy/fundraising/Series A-B</li>
+          <li>Already engaging with Dev Mantra's own posts</li>
+          <li>Just raised funding — cross-check Entrackr/Inc42/YourStory weekly</li>
+        </ol>
+
+        <p><strong>Outreach sequence — engage first, pitch last, run from Vikas's and Nidhi's personal profiles (not the company page):</strong></p>
+        <div class="table-wrap">
+        <table>
+          <thead><tr><th>Day</th><th>Action</th></tr></thead>
+          <tbody>
+            <tr><td>0</td><td>Tag Hot/Warm/Cold based on which signal search surfaced them</td></tr>
+            <tr><td>0–2</td><td>Like + one genuine, specific comment on their recent post — no pitch, no link</td></tr>
+            <tr><td>2–3</td><td>Connection request, under 300 characters, referencing the real trigger by name — no calculator mention yet</td></tr>
+            <tr><td>4–7</td><td>After acceptance: one more genuine message, still no ask</td></tr>
+            <tr><td>8–12</td><td>Now bring up the calculator, tied to something they said or their company's stage</td></tr>
+            <tr><td>12+</td><td>One follow-up if no reply, then stop — move to Cold, revisit in 60 days</td></tr>
+          </tbody>
+        </table>
+        </div>
+        <p>Keep three running lists (Hot / Warm / Cold), track outside Sales Navigator too (sheet: name, title, company, why listed, date added, outreach stage, last touch, response, outcome), keep volume to what can genuinely be personalized — about 10–15 new requests/week per profile.</p>
+
+        <h3>Cold email — the 2,000-contact Sales Navigator list</h3>
+        <p style="font-size:13.4px;color:var(--ink-soft);">Full playbook lives in <code>DevMantra_ESOP_Cold_Email_Outreach_Strategy.md</code>; the essentials below.</p>
+
+        <div class="checklist">
+          <li><strong>Verify the list</strong> — NeverBounce/ZeroBounce/Apollo verification; &gt;3–5% bounce risk starts hurting deliverability</li>
+          <li><strong>Don't send from the main company inbox</strong> — use 2–3 separate sending domains (cheap devmantra.com variants)</li>
+          <li><strong>Warm every new mailbox</strong> 2–3 weeks before cold sending (5–10/day ramping up)</li>
+          <li><strong>Set SPF/DKIM/DMARC</strong> on every sending domain</li>
+          <li><strong>Cap volume</strong> at 30–50/mailbox/day once warmed — 3 mailboxes = 90–150/day; full 2,000 list takes 3–4 weeks, by design</li>
+        </div>
+
+        <p><strong>Segment before writing anything:</strong> Hot (recent CFO/CHRO job change 0–3mo, or company just raised) → first batch, most personalized. Warm (posted about ESOP/equity/comp/fundraising, or fast headcount growth) → second batch. Standard (fits the profile, no specific signal) → bulk of the list, lighter-touch template.</p>
+
+        <div class="table-wrap">
+        <table>
+          <thead><tr><th>Email</th><th>Day</th><th>Angle</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>0</td><td>The direct question — "if your board asked you to explain a 2% vs 0.5% ESOP split, could you?"</td></tr>
+            <tr><td>2</td><td>4 (non-openers)</td><td>The proof angle — spreadsheet vs. scored report</td></tr>
+            <tr><td>3</td><td>8</td><td>Trigger-specific — real version for Hot (references job change/funding/growth by name), general for Standard</td></tr>
+            <tr><td>4</td><td>12</td><td>The break-up email — "should I stop reaching out?" — consistently the highest-reply email</td></tr>
+          </tbody>
+        </table>
+        </div>
+        <p>Rotate openers across the 8-line starter bank; subject lines under 6 words, lowercase-casual, avoid "free"/exclamation marks/ALL CAPS/"guarantee". Reply handling: respond to interest within hours; tag "not right now" as Cold and revisit in 60–90 days with a fresh angle; remove unsubscribes immediately.</p>
+
+        <p><strong>Weekly health check:</strong> bounce rate under 3–5% (stop and re-verify if it climbs); open rate 30–40%+ healthy, below 15–20% signals a deliverability problem not a copy problem; reply rate 3–8% is reasonable, track Hot vs. Standard separately; positive-reply rate is the number that actually decides whether to scale or rework.</p>
+
+        <div class="callout good">
+          <div class="icon">✅</div>
+          <div class="body"><p><strong>Apollo.io is already connected and can run this sequence end-to-end</strong> (contacts, sequences, sending, scheduling) rather than just being a plan on paper — see Section 6.</p></div>
+        </div>
+
+        <h3>How the pieces reinforce each other</h3>
+        <p>Meta ads and organic LinkedIn content warm up strangers at scale; Sales Navigator and cold email go after specific named people right now. Someone who's seen a founder's post or an ad is more likely to accept a connection request days later, and someone reached first through Sales Navigator is more likely to notice the ad when it shows up. Run Meta, organic content, Sales Navigator, and cold email <strong>at the same time</strong>, not sequentially — and route every positive reply from any channel into the same pipeline (Section 6).</p>
+      </section>
+
+      <!-- ================= SECTION 4 ================= -->
+      <section class="doc-section" id="s4">
+        <div class="section-head"><span class="section-num">4</span><h2>SEO — Current Scenario, Next Tasks &amp; Blog Backlog</h2></div>
+
+        <p class="lede">This section was rebuilt August 20, 2026 on top of a live codebase audit dated <strong>August 6, 2026</strong> (<code>Devmantranew/SEO/</code> in the Laravel repo) — a live crawl of devmantra.com plus a Semrush API pull plus direct code review, the freshest ground truth available. It also draws on <code>DevMantra_SEO_Audit_Priority_Plan_2026-07.md</code> and <code>DevMantra_30Day_Aggressive_SEO_GEO_Plan.md</code> (both July 22) for ranking/traffic trend data. <strong>This is now the authoritative SEO section of this handoff.</strong></p>
+
+        <div class="callout warn">
+          <div class="icon">⚠️</div>
+          <div class="body"><p><strong>A caveat worth carrying forward, not re-litigating:</strong> the numbers below are anchored on the Aug 6 audit, not a same-day live pull. Three tool blockers prevented a fresher check: Ahrefs returned <code>Insufficient plan</code> on every Site Explorer/GSC endpoint tried; Semrush was out of API units for the billing period; a direct WebFetch of devmantra.com hit a fetch-approval timeout. The DevMantra PM Agent (companion file) is designed to re-check these each run — ask it for a fresh pull before trusting these numbers at face value.</p></div>
+        </div>
+
+        <div class="callout danger">
+          <div class="icon">🎯</div>
+          <div class="body"><p><strong>The one-line summary.</strong> The on-page/technical floor is now genuinely strong — 215 tracked deliverables, schema, sitemap, GEO-readiness, and internal linking all built. A full batch of fixes closing out the last known issues (including the canonical conflict that was the #1 priority in the July audit) was written and tested on August 6 — but as of that date it was <strong>sitting locally, not yet confirmed deployed to production</strong>. Off-page authority remains the real ceiling on rankings (Authority Score 7/100), and blog production hasn't started. <strong>The single highest-leverage thing to check today is whether the Aug 6 batch actually shipped.</strong></p></div>
+        </div>
+
+        <h3>A) Technical &amp; on-page SEO</h3>
+        <div class="table-wrap">
+        <table>
+          <thead><tr><th>Item</th><th>Status</th><th>Detail</th></tr></thead>
+          <tbody>
+            <tr><td>Canonical host conflict (July's #1 priority)</td><td><span class="pill amber">Fix built, deployment unconfirmed</span></td><td>Non-www chosen as canonical. Live-tested Aug 6: site already redirects everything to non-www, but <code>robots.txt</code>/<code>llms.txt</code> (32 links) still pointed at www — corrected locally, not yet confirmed live</td></tr>
+            <tr><td>Homepage title/og:title double-encoding bug</td><td><span class="pill amber">New defect found, fix built</span></td><td>Live source showed <code>&amp;amp;amp;</code> instead of <code>&amp;</code> in Google's result title and every social share. Resolves once deploy above lands — needs post-deploy view-source check</td></tr>
+            <tr><td>.htaccess redirect chain</td><td><span class="pill amber">Fix built, deployment unconfirmed</span></td><td>www took two redirect hops; reordered locally to collapse to one</td></tr>
+            <tr><td>9 service (money) pages — schema &amp; fields</td><td><span class="pill green">✅ Done</span></td><td>Full SEO fields + Service+Organization+BreadcrumbList schema, live-verified on Virtual CFO Services</td></tr>
+            <tr><td>9 service pages — meta copywriting audit</td><td><span class="pill amber">In progress — 1/9</span></td><td>Virtual CFO spot-checked (meta description needs a CTA); ready-to-run SQL script rewrites all 9, pending review</td></tr>
+            <tr><td>Structured data (schema)</td><td><span class="pill green">✅ Done</span></td><td>10 builder methods in <code>SchemaService.php</code>; 12 live-verified deployments</td></tr>
+            <tr><td>Internal linking — strategy &amp; build</td><td><span class="pill amber">Built, not yet run vs. production DB</span></td><td>4 SQL scripts tested against sandbox — fixes orphan pages, service cross-links, www→non-www, newsletter #66. Live P0: 7 of 8 links in Due Diligence cross-sell grid are dead</td></tr>
+            <tr><td>Dynamic XML sitemap</td><td><span class="pill green">✅ Done</span></td><td>Live-verified, 109 URLs, HTTP 200 (a stale static <code>sitemap.xml</code> needs confirming it was deleted from production)</td></tr>
+            <tr><td>GEO / AI-crawler readiness</td><td><span class="pill green">✅ Done</span></td><td><code>llms.txt</code> rewritten; <code>robots.txt</code> allows 12 AI bots, blocks 12 scraper/parasite-SEO bots</td></tr>
+            <tr><td>Performance</td><td><span class="pill amber">Partial</span></td><td>Lazy-loading, caching, gzip, preconnects live. No PageSpeed baseline (blocked by API quota — 5-min manual task)</td></tr>
+            <tr><td>DMARC / SPF / DKIM</td><td><span class="pill red">❌ Not started</span></td><td>DNS-level, needs client cPanel/DNS access</td></tr>
+          </tbody>
+        </table>
+        </div>
+
+        <h3>B) Off-page authority — the actual bottleneck</h3>
+        <p style="font-size:13px;color:var(--ink-soft);">Live Semrush pull, August 6:</p>
+        <div class="table-wrap">
+        <table>
+          <thead><tr><th>Metric</th><th>Value</th><th>Read</th></tr></thead>
+          <tbody>
+            <tr><td>Backlink Authority Score</td><td><strong>7 / 100</strong></td><td>The real ceiling on rankings right now — not content, not on-page</td></tr>
+            <tr><td>Trust Score</td><td>7 / 100</td><td></td></tr>
+            <tr><td>Domain Rank (India DB)</td><td>1,179,602</td><td>Very low relative to established competitors</td></tr>
+            <tr><td>Organic keywords ranking (India)</td><td><strong>43</strong></td><td>Nearly all branded. Real commercial terms barely register: <em>ipo consultant</em> (pos. 54), <em>ipo advisory</em> (pos. 53/60), <em>temporary cfo services</em> (pos. 75) — near-zero visibility for Virtual CFO, GCC setup, or M&amp;A</td></tr>
+            <tr><td>Est. monthly organic traffic</td><td><strong>~72 visits/mo</strong></td><td>Cross-checks GA4's 77 new users, same 4-week window — two tools agreeing is a good sign this is real</td></tr>
+            <tr><td>Backlinks / ref. domains / ref. IPs</td><td>659 / 156 / 113</td><td>Follow ratio healthy (561 follow / 98 nofollow), but...</td></tr>
+            <tr><td>Top referring domain</td><td>wikipedia.org</td><td>Likely incidental. Below that: mostly low-authority directories, not editorial mentions</td></tr>
+          </tbody>
+        </table>
+        </div>
+
+        <p><strong>Off-page profile build-out</strong> (per July 24 Off-Page 100 List, not re-verified this session): <strong>26 of 108</strong> target platforms claimed. Highest-value tier (Tier 1 — Clutch, G2, YourStory, Inc42, NASSCOM GCC Council, etc.) is only <strong>7 of 25</strong> done.</p>
+        <div class="callout danger">
+          <div class="icon">📍</div>
+          <div class="body"><p><strong>Google Business Profile is still completely untouched</strong> — this is now the third separate audit (June strategy → July 22 → Aug 6) to flag it as the single highest-leverage local-SEO move available, and it still hasn't been picked up (needs direct GBP console access).</p></div>
+        </div>
+
+        <h3>C) Content — money pages nearly ready, blog production hasn't started</h3>
+        <ul>
+          <li>All 9 service pages have infrastructure in place; only the copywriting pass remains.</li>
+          <li><strong>Blog writing (10 priority SEO posts) is explicitly PENDING</strong> as of Aug 6, deliberately sequenced after the service-page copy audit, per the team's own "money pages before blog posts" rule.</li>
+          <li><strong>No net-new blog post appears to have published since July 22.</strong> The post the Aug 6 audit counts as "added since June" (<em>Virtual vs Fractional vs Outsourced CFO</em>) was already live May 15 per the July 22 inventory — a recount, not new output. What actually got built in this window was infrastructure, not new posts.</li>
+          <li>Newsletter archive: 62 of ~64 editions published; footer cross-link callout missing on edition #66 fixed in the Aug 6 batch.</li>
+        </ul>
+        <div class="callout warn">
+          <div class="icon">🔍</div>
+          <div class="body"><p><strong>Still unconfirmed, carried over from July 22, not mentioned in any Aug 6 doc:</strong> 2 duplicate blog posts with broken 4-character meta titles (<em>India–China Relations</em>, <em>Sustainable Growth: Budget 2025</em>), and 3 finished-but-unpublished drafts (<em>The Rise of Virtual CFO Services in India</em>, <em>SEBI New Disclosure Norms</em>, <em>Year-End Tax Planning Strategies</em>). Treat as open until someone checks the CMS directly.</p></div>
+        </div>
+
+        <h3>D) Rankings &amp; traffic trend — the July data point is going stale</h3>
+        <div class="table-wrap">
+        <table>
+          <thead><tr><th>Month</th><th>Clicks</th><th>Impressions</th><th>CTR</th><th>Avg. Position</th></tr></thead>
+          <tbody>
+            <tr><td>Apr 2026</td><td>33</td><td>744</td><td>4.44%</td><td>31.8</td></tr>
+            <tr><td>May 2026</td><td>103</td><td>1,323</td><td>7.79%</td><td><strong>10.1</strong></td></tr>
+            <tr><td>Jun 2026</td><td>90</td><td>2,211</td><td>4.07%</td><td>14.7</td></tr>
+            <tr><td>Jul 2026 (partial, to Jul 20)</td><td>52</td><td>2,028</td><td>2.56%</td><td><strong>32.3</strong></td></tr>
+          </tbody>
+        </table>
+        </div>
+        <p>This is still the most recent GSC pull anyone has done — a full month has now passed with no update. <strong>Pulling the GSC Query + Page dimension export to find exactly which URLs/keywords drove the May→July collapse has been the top recommended diagnostic since July 22, and it still hasn't been done.</strong> It's the single most useful thing to run before deciding whether the canonical fix (once deployed) actually resolves it.</p>
+
+        <h3>Traffic and link targets (original plan, for reference)</h3>
+        <div class="table-wrap">
+        <table>
+          <thead><tr><th>Metric</th><th>Before</th><th>After Phase 1</th><th>After Phase 2</th><th>After Phase 3</th></tr></thead>
+          <tbody>
+            <tr><td>Internal links (GSC)</td><td>47</td><td>240</td><td>305</td><td>530</td></tr>
+            <tr><td>Indexed pages</td><td>20</td><td>35</td><td>40</td><td>80+</td></tr>
+            <tr><td>Service pages with 10+ internal links</td><td>0</td><td>9</td><td>9</td><td>9</td></tr>
+          </tbody>
+        </table>
+        </div>
+        <p><strong>Traffic projections:</strong> Month 3 — 2,000–2,500 visits. Month 6 — 7,000–9,000 visits. Month 12 — 15,000+ visits. <strong>Backlink target:</strong> 130 → 250 referring domains. These were the original Tasks 26–37 internal-linking campaign targets — the Aug 6 audit's 4 new SQL scripts are a related but distinct, more recent batch. <strong>Confirm actual completion of both against the Tasks DB</strong> rather than assuming either is done.</p>
+
+        <h3>Next tasks — P0, this week</h3>
+        <p style="font-size:13px;color:var(--ink-soft);">Cheap, no dependencies, highest leverage.</p>
+        <div class="checklist">
+          <li><strong>1. Confirm and complete the Aug 6 deployment</strong> — the work is already done, it just may not be live. Order: back up the DB → run <code>03_seo_field_schema_gap_audit_2026-08-06.sql</code> (read-only) → run <code>02_service_meta_rewrite_2026-08-06.sql</code> (review, then commit) → upload 5 changed files (<code>robots.txt</code>, <code>llms.txt</code>, <code>.htaccess</code>, <code>home.blade.php</code>, <code>service-detail.blade.php</code>) → <code>php artisan view:cache</code> (+config/route:cache) → verify live (view-source title, Rich Results Test, single redirect hop) → confirm/add non-www GSC property if needed.</li>
+          <li><strong>2. Run the 4 tested internal-linking SQL scripts</strong> (after DB backup) — closes 9 orphan pages, fixes the Due Diligence cross-sell grid (7 of 8 links dead), finishes www→non-www cleanup, fixes newsletter #66.</li>
+          <li><strong>3. Pull a fresh GSC Query + Page dimension export</strong> for July–August and identify exactly which URLs/keywords moved. Open since July 22, now a month stale.</li>
+          <li><strong>4. Claim the Google Business Profile listing</strong> and audit its primary category against the top 3 local competitors — flagged as the single highest-leverage untouched item across three audits.</li>
+          <li><strong>5. Check the CMS directly</strong> for the 2 duplicate blog posts and 3 unpublished drafts flagged in July — no evidence either way in the Aug 6 docs.</li>
+        </div>
+
+        <h3>Next tasks — P1, next 2–3 weeks</h3>
+        <ol start="6">
+          <li>Finish the service-page copy audit (8 remaining pages) — same bar as Virtual CFO: add a CTA to each meta description.</li>
+          <li>Run a PageSpeed Insights baseline (mobile + desktop) manually at pagespeed.web.dev — 5-minute task, blocked only by API quota.</li>
+          <li><strong>Start blog writing</strong> now that service pages are close to done — see backlog below for exactly which titles to pick up first.</li>
+          <li>Activate content on the 11 well-matched, already-claimed off-page profiles (Quora, Medium, Substack, Pinterest, Flipboard, Tumblr, Justpaste.it, Vimeo, etc.) — zero new setup cost.</li>
+          <li>Push Tier 1 off-page listings forward (18 of 25 remaining: Clutch, G2, YourStory, Inc42, NASSCOM GCC Council, Startup India/DPIIT, CAclubindia, TaxGuru, etc.), and start the digital-PR cadence (2–3 pitches/week to AccountingToday, The Finance Story, YourStory, Inc42).</li>
+          <li>Fix the one broken off-page listing (Scribd — points to an unrelated personal 4shared account) and claim two existing-but-unclaimed listings (JustDial, IndiaMART — already live with content, just unclaimed).</li>
+        </ol>
+
+        <h3>Next tasks — P2, month 2 / ongoing</h3>
+        <ol start="12">
+          <li>Bulk meta-tag DB pass for remaining blog/report/newsletter records.</li>
+          <li>Decide a monthly SEO review cadence/format and write the SOP.</li>
+          <li>DMARC/SPF/DKIM records — needs client DNS/cPanel access.</li>
+          <li>Competitor backlink gap analysis (CFO Bridge, Treelife, Jordensky, Corpbiz, CFOSME for Virtual CFO; ANSR, Zinnov, Pierag Consulting, Inductus for GCC) — needs Ahrefs or Semrush quota restored first.</li>
+          <li>Weekly AI-citation spot checks — ask ChatGPT/Perplexity (incognito) "best virtual CFO providers in Bangalore" / "how to set up a GCC in India" and track whether Dev Mantra starts appearing. Cheapest leading indicator, 5 minutes/week.</li>
+        </ol>
+
+        <div class="callout info">
+          <div class="icon">🔧</div>
+          <div class="body"><p><strong>Tool access note:</strong> Ahrefs currently returns <code>Insufficient plan</code> on Site Explorer/GSC endpoints — worth a plan review given how much this workflow leans on it. Semrush is out of API units for the current billing period. The Notion connector was installed but disabled in at least one prior session — enabling it consistently would let future audits automatically merge in whatever outreach/guest-post/directory tracker lives there.</p></div>
+        </div>
+
+        <h3>This month's blog backlog</h3>
+        <p>Two separate content streams are active this month — keep them distinct.</p>
+
+        <h4>A) devmantra.com SEO blog backlog — status: not yet started</h4>
+        <p>Writing &amp; publishing the 10 priority SEO posts is explicitly pending, deliberately queued behind the service-page copy audit. Nothing has shipped since the list was assembled July 22.</p>
+        <div class="callout warn">
+          <div class="icon">⚠️</div>
+          <div class="body"><p><strong>One inconsistency worth flagging:</strong> item #1 below ("Virtual CFO vs Fractional CFO vs Outsourced CFO: The Definitive India Guide") looks like it may already be covered by <em>"Virtual vs Fractional vs Outsourced CFO: India 2026 Guide,"</em> published May 15. Check before anyone starts writing it.</p></div>
+        </div>
+
+        <p style="font-size:13px;color:var(--ink-soft);font-weight:700;">Virtual CFO cluster — highest priority, content-backed, money page nearly ready</p>
+        <div class="table-wrap">
+        <table>
+          <thead><tr><th>#</th><th>Title</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>Virtual CFO vs Fractional CFO vs Outsourced CFO: The Definitive India Guide</td><td><span class="pill amber">⚠️ Possibly already covered — check May 15 post</span></td></tr>
+            <tr><td>2</td><td>Virtual CFO for D2C Brands India: Unit Economics, CAC, and Q-Commerce Margins</td><td><span class="pill green">Recommended starting point</span></td></tr>
+            <tr><td>3</td><td>Series A Fundraising Readiness Checklist 2026: 60 Items Your Virtual CFO Should Own</td><td><span class="pill green">Recommended starting point</span></td></tr>
+            <tr><td>4</td><td>Virtual CFO for SaaS Startups India: ARR, NRR, Burn Multiple, Ind AS 115 vs ASC 606</td><td><span class="pill grey">Backlog</span></td></tr>
+            <tr><td>5</td><td>Virtual CFO ROI Calculator: In-House vs Outsourced Finance Team Cost Comparison <em>(interactive tool)</em></td><td><span class="pill grey">Backlog</span></td></tr>
+            <tr><td>6</td><td>10 Virtual CFO Red Flags Every Indian Founder Should Run From</td><td><span class="pill green">Recommended starting point</span></td></tr>
+            <tr><td>7</td><td>Why a CA-Led Virtual CFO Beats an Ex-MNC CFO for Indian Companies Under ₹50 Cr</td><td><span class="pill green">Recommended starting point</span></td></tr>
+            <tr><td>8</td><td>First 90 Days with a Virtual CFO: The Deliverables Checklist Every Founder Should Demand</td><td><span class="pill grey">Backlog (Month 2)</span></td></tr>
+            <tr><td>9</td><td>Virtual CFO Services in Bangalore: Koramangala, HSR, Whitefield, Indiranagar</td><td><span class="pill grey">Backlog (Month 2)</span></td></tr>
+            <tr><td>10</td><td>Cash Flow Forecast Template for Indian SMEs: 13-Week Model + Walkthrough <em>(lead magnet)</em></td><td><span class="pill grey">Backlog (Month 2)</span></td></tr>
+            <tr><td>11</td><td>The MIS Report That Actually Gets Read in Board Meetings (Free Template)</td><td><span class="pill grey">Backlog (Month 2)</span></td></tr>
+            <tr><td>12</td><td>Audit Readiness for Indian SMEs: 7 Issues That Cost You at Series A</td><td><span class="pill grey">Backlog (Month 2)</span></td></tr>
+            <tr><td>13</td><td>How a Bangalore D2C Brand Cut Burn 40% in 6 Months — Without Layoffs <em>(Case Study)</em></td><td><span class="pill grey">Backlog (Month 2)</span></td></tr>
+          </tbody>
+        </table>
+        </div>
+
+        <p style="font-size:13px;color:var(--ink-soft);font-weight:700;">GCC cluster — second priority, content-backed</p>
+        <div class="table-wrap">
+        <table>
+          <thead><tr><th>#</th><th>Title</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>14</td><td>Setting Up a 50–200 Person GCC in Bangalore: Real Finance &amp; Compliance Costs</td><td><span class="pill grey">Backlog</span></td></tr>
+            <tr><td>15</td><td>Should Your India GCC Be a Private Limited Company or LLP? A Tax-First Decision Framework</td><td><span class="pill grey">Backlog</span></td></tr>
+            <tr><td>16</td><td>In-house Finance Team vs Virtual CFO for a 100-Person Bangalore GCC: ₹/Year Comparison</td><td><span class="pill grey">Backlog</span></td></tr>
+            <tr><td>17</td><td>GCC India Setup Cost Calculator <em>(interactive tool)</em></td><td><span class="pill grey">Backlog</span></td></tr>
+            <tr><td>18</td><td>Transfer Pricing for Mid-Market GCCs: Why the Default Cost-Plus 10% Will Get You Audited</td><td><span class="pill grey">Backlog (Month 2)</span></td></tr>
+            <tr><td>19</td><td>Permanent Establishment Risk for Foreign Parents of India GCCs: A 5-Test Diagnostic</td><td><span class="pill grey">Backlog (Month 2)</span></td></tr>
+            <tr><td>20</td><td>The Mid-Market GCC's Compliance Calendar: 47 Filings Across Companies Act, GST, IT, FEMA, DPDPA</td><td><span class="pill grey">Backlog (Month 2)</span></td></tr>
+            <tr><td>21</td><td>Why Bangalore GCCs Should Stop Outsourcing Finance to Their US Parent's Big 4 Firm</td><td><span class="pill grey">Backlog (Month 2)</span></td></tr>
+            <tr><td>22</td><td>GCC Maturity Curve: When India Becomes a Profit Center — and Why Your TP Markup Must Catch Up</td><td><span class="pill grey">Backlog (Month 2)</span></td></tr>
+          </tbody>
+        </table>
+        </div>
+
+        <p style="font-size:13px;color:var(--ink-soft);font-weight:700;">US CPA firm cluster — Month 2, cross-border credibility play</p>
+        <div class="table-wrap">
+        <table>
+          <thead><tr><th>#</th><th>Title</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>23</td><td>The 2026 Tax Season Capacity Crunch: A Bangalore CA Firm's Offshore Playbook for Mid-Sized US CPAs</td><td><span class="pill grey">Backlog (Month 2)</span></td></tr>
+            <tr><td>24</td><td>SOC 2 Type II for India-Based Accounting Partners: What US CPA Firm Owners Should Demand</td><td><span class="pill grey">Backlog (Month 2)</span></td></tr>
+            <tr><td>25</td><td>Why CA-Led Indian Firms Reduce US CPA Firm Quality-Drift Better than BPO Vendors</td><td><span class="pill grey">Backlog (Month 2)</span></td></tr>
+            <tr><td>26</td><td>Follow-the-Sun Workflow Design for US Tax Season: 10 PM EST Hand-off → 11 AM IST Delivery</td><td><span class="pill grey">Backlog (Month 2)</span></td></tr>
+            <tr><td>27</td><td>Data Privacy + DPDPA + GLBA: The Compliance Stack for US CPA Firms Engaging Indian Partners</td><td><span class="pill grey">Backlog (Month 2)</span></td></tr>
+          </tbody>
+        </table>
+        </div>
+
+        <p style="font-size:13px;color:var(--ink-soft);font-weight:700;">Other verticals — round out full service footprint (Month 2, not yet keyword-validated to the same depth)</p>
+        <div class="table-wrap">
+        <table>
+          <thead><tr><th>#</th><th>Title</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>28</td><td>M&amp;A Due Diligence Checklist for Indian Mid-Market Deals: 40 Items Buyers Actually Check</td><td><span class="pill grey">Backlog (Month 2)</span></td></tr>
+            <tr><td>29</td><td>SME-IPO vs Mainboard IPO in India: Which Track Fits Your Company in 2026</td><td><span class="pill grey">Backlog (Month 2)</span></td></tr>
+            <tr><td>30</td><td>ESOP Pool Sizing for Indian Startups: How Much Equity to Set Aside at Each Funding Stage <em>(pairs with the ESOP calculator, §3)</em></td><td><span class="pill grey">Backlog (Month 2)</span></td></tr>
+            <tr><td>31</td><td>Corporate Governance Framework for Pre-IPO Indian Companies: What Investors Actually Check</td><td><span class="pill grey">Backlog (Month 2)</span></td></tr>
+            <tr><td>32</td><td>Risk Advisory vs Internal Audit: What's the Difference and Does Your Company Need Both?</td><td><span class="pill grey">Backlog (Month 2)</span></td></tr>
+            <tr><td>33</td><td>Finance &amp; Accounts Outsourcing vs In-House Team: A Cost Breakdown for ₹10–50 Cr Companies</td><td><span class="pill grey">Backlog (Month 2)</span></td></tr>
+          </tbody>
+        </table>
+        </div>
+
+        <div class="callout good">
+          <div class="icon">▶️</div>
+          <div class="body"><p><strong>Recommended starting point, given today's actual state:</strong> service pages are close to done, so blog writing can realistically restart now. Pick up <strong>#2, #3, #6, #7</strong> first — sharpest, most-differentiated angles, and none require the interactive tools (#5, #17) to be built first.</p></div>
+        </div>
+
+        <h4>B) August campaign content (Korea/Naver + ESOP)</h4>
+        <p>A different stream, covered in full in Sections 2–3. Same status-check flag applies here as there: content was scheduled to start drafting Aug 9, and as of this handoff nothing confirms how much of the 16 total pieces (8 Korea + 8 ESOP) is actually live.</p>
+
+        <h3>Bottom line</h3>
+        <p>The team has built a genuinely solid technical/on-page foundation — 215 tracked deliverables is real work. But two things are true at once: a finished batch of fixes (including the fix for July's #1 priority issue) may still be sitting undeployed, and the content engine meant to close the authority gap hasn't started turning yet. Ship what's already built (P0 #1) and open the CMS to check the drafts/duplicates (P0 #5) before planning anything new — both are same-day checks, not new work.</p>
+
+        <div class="deeper"><strong>Where to go deeper:</strong> <code>SEO/</code> folder in the website repo (<code>seo-task-tracker.md</code>, <code>seo-implementation-plan-v2-2026-06-13.md</code>, <code>sql/</code>); Notion Tasks DB filtered to Project = DevMantra SEO; <code>DevMantra_SEO_Audit_Priority_Plan_2026-07.md</code>, <code>DevMantra_30Day_Aggressive_SEO_GEO_Plan.md</code>, <code>DevMantra_Backlink_Strategy.md</code>, <code>DevMantra_OffPage_100_List.md</code>, <code>DevMantra_OffPage_Content_Prompts.md</code>; Notion 🔗 Off-Page SEO Submissions — Master Status, 🔗 DevMantra Backlink Tracker, 📋 DevMantra Blog Master Tracker.</div>
+      </section>
+
+      <!-- ================= SECTION 5 ================= -->
+      <section class="doc-section" id="s5">
+        <div class="section-head"><span class="section-num">5</span><h2>Social Media — LinkedIn, Instagram &amp; Website Blogs</h2></div>
+
+        <p class="lede">The goal here is to keep three things aligned rather than run them as separate tracks: the five-profile LinkedIn calendar, the two active campaigns (Korea, ESOP), and the SEO blog roadmap (Section 4).</p>
+
+        <h3>The content bank is already built</h3>
+        <p><code>Dev_Mantra_30_Titles_All_Verticals.xlsx</code> is a fully execution-ready package — hand it directly to a copywriter:</p>
+        <ul>
+          <li><strong>30 titles across all 5 profiles</strong> (6 each), each specified down to format, matching lead magnet, exact data points, SEO keyword, and funnel stage (Awareness/Evaluation/Decision).</li>
+          <li><strong>An 8-week publishing calendar</strong> mapping each title to a specific week and day, with weeks 7–8 built as "repeat with a new angle, or swap in a fresh organic topic."</li>
+          <li><strong>30 matching lead magnets</strong> (PDF/Excel/Word/Templates), each tagged to which post it pairs with and its funnel stage (Top/Middle/Bottom).</li>
+          <li><strong>A 65+ title idea bank</strong> held in reserve for month 2 onward, organized the same way by profile.</li>
+        </ul>
+        <p>This is the single best asset to onboard a new copywriter with — it removes almost all of the "what do I write about" decision-making.</p>
+
+        <h3>Keeping blogs aligned to both the SEO roadmap and the campaigns</h3>
+        <p>Three distinct content types are running on the website blog and should stay distinct rather than blur together:</p>
+        <ol>
+          <li><strong>SEO/GEO-roadmap blogs</strong> — the 33-title backlog in Section 4 (Virtual CFO, GCC, US CPA, and other clusters). Write to the keyword, not to a campaign. <strong>Currently not started</strong>; #2, #3, #6, #7 from Virtual CFO cluster are recommended first picks once the service-page copy pass finishes.</li>
+          <li><strong>Korea campaign blogs</strong> — the 4 "Website Blog" titles/month from Section 2. Executive-register, SEO-structured, written for the Korea-entry reader, internally linking to the <code>/korea</code> landing page and sectoral sub-pages.</li>
+          <li><strong>ESOP campaign content</strong> — deliberately <strong>not</strong> a blog format. Lives on LinkedIn and Instagram only. Don't create a website blog version unless a future planning cycle explicitly decides to extend the campaign there.</li>
+        </ol>
+        <p>When planning future months, use the same "8 topics × 2 channels" model for campaign-tied content, then fill remaining calendar slots with the Section 4 SEO backlog so the blog never goes quiet between campaigns — and never sits idle the way it has since July 22 (Section 4C).</p>
+
+        <h3>Brand voice, writing rules, and the humanization pass</h3>
+        <p>Every piece — LinkedIn, Instagram, or blog — runs through the same voice rules in Section 1 (banned phrases, tone, formatting) before publishing. Two additional checks live in this project and should be standard workflow, not optional: the AI-humanization checklist in <code>humaniseing and writing the LinkedIn or Instagram captions, content, scripts</code>, and the audience-targeting notes in <code>Initial audience targetting.</code> Additional LinkedIn-specific notes: <code>DevMantra_LinkedIn_Strategy_v3.md</code>, <code>LinkedIn growth</code>, <code>LinkedIn writer devmantra</code> — worth a direct read by whoever owns LinkedIn day-to-day, since they weren't re-verified in this handoff pass. The <strong>dev-mantra-content-writer</strong> skill encodes all of this and should be the default way any actual post/caption/blog copy gets drafted going forward.</p>
+
+        <h3>Visual design system</h3>
+        <p>Onest/Inter typefaces, navy/cyan palette, the "70% white space" rule — full spec in <code>DEVMANTRA_DESIGN_RULES.md</code> and <code>DevMantra_Personal_Brand_Design_System.md</code>. The JSON prompt structure for generating infographics and thumbnails consistently is in <code>CREATING JSON IMAGE PROMPTS FOR INFOGRAPHICS OR THUMNAILS</code> — use it (or the <strong>devmantra-thumbnail-og-creator</strong> skill) rather than freehand prompting so visuals stay on-brand across a new designer's output.</p>
+      </section>
+
+      <!-- ================= SECTION 6 ================= -->
+      <section class="doc-section" id="s6">
+        <div class="section-head"><span class="section-num">6</span><h2>Sales Navigator + CRM — Simplified Workflow</h2></div>
+
+        <h3>What exists today (and why it needs simplifying)</h3>
+        <p>Right now, the full picture is: a very detailed 4-profile Sales Navigator playbook (15 saved lists — 3 per profile) documented in <code>DevMantra_LinkedIn_Lead_Strategy.md</code> and mirrored in Notion; a separate ESOP-specific Sales Navigator targeting spec (Section 3); a 7-method "lead gen without Sales Navigator" toolkit (Google X-ray, free Boolean search, comment farming, LinkedIn groups, Apollo/Hunter/Lusha/Clay, India-specific public databases like MCA21 and SEBI DRHP filings, and organic mining); and <strong>no dedicated CRM for Dev Mantra's own outbound leads</strong> — the competitive analysis explicitly flagged "basic or no marketing automation" as a gap, and that hasn't changed. The only CRM-shaped thing that exists is Digitech's own internal agency Deal Pipeline (Notion), which tracks Digitech's clients — Dev Mantra is one row in it — not Dev Mantra's prospects.</p>
+        <p>That's too many moving pieces for a clean handoff, so here's the simplified version to actually run with.</p>
+
+        <h3>The simplified weekly rhythm (all profiles, one table)</h3>
+        <div class="table-wrap">
+        <table>
+          <thead><tr><th>When</th><th>Action</th></tr></thead>
+          <tbody>
+            <tr><td>Monday morning</td><td>Pull 5–15 new names per profile from saved Sales Navigator lists or signal searches (job change, funding, growth, engagement)</td></tr>
+            <tr><td>Every weekday</td><td>3–5 comments on relevant posts from saved lists — comment before connecting, always</td></tr>
+            <tr><td>Every weekday</td><td>Reply to every comment on your own posts the same day</td></tr>
+            <tr><td>Spread through the week</td><td>5–15 connection requests per profile (never batch them in one day)</td></tr>
+            <tr><td>After acceptance</td><td>No DM for 1–2 weeks — let content reach their feed first</td></tr>
+            <tr><td>After engagement</td><td>Warm DM referencing the specific comment/post</td></tr>
+            <tr><td>Month-end</td><td>Review acceptance rate per list: below 25% → tighten keywords; above 50% → broaden headcount filter; update saved lists, dated (e.g. "US CPA Partners Aug26"), 60-day refresh cycle</td></tr>
+          </tbody>
+        </table>
+        </div>
+        <p>This single table replaces the need to track five separate playbooks day-to-day — the per-profile targeting filters stay as reference material in Sections 2/3 and the source docs, but the <em>operating rhythm</em> is the same for everyone.</p>
+
+        <h3>The simplified lead system: consolidate around Apollo.io + one Notion board</h3>
+        <p>Rather than standing up a new CRM, use what's already in place:</p>
+        <ol>
+          <li><strong>Apollo.io is already connected</strong> and already holds the 2,000-contact ESOP list. Use it as system of record for contacts, sequences, and email sending — it already does verification, sequencing, and reply tracking.</li>
+          <li><strong>For visibility across leadership</strong>, clone Digitech's own <strong>Deal Pipeline</strong> Notion pattern into a new, Dev-Mantra-scoped board rather than inventing a new schema: stages <strong>Lead → Qualified → Proposal → Negotiation → Closed Won / Closed Lost</strong>, with a <code>lead type</code> field of <strong>hot / warm / cold</strong> — same structure already proven and in daily use on the agency side.</li>
+          <li><strong>Every channel feeds the same board:</strong> a Sales Navigator connection gone warm, a cold-email positive reply, and a Meta ad lead-form submission should all land as a row on this one board, tagged by source and campaign (Korea / ESOP), not tracked in separate spreadsheets per channel.</li>
+          <li><strong>Route positive replies fast, regardless of channel</strong> — cold email, Sales Navigator DMs, and ad-form fills all go stale quickly; whoever owns inbound should check Apollo + the board daily, not weekly.</li>
+        </ol>
+
+        <div class="callout info">
+          <div class="icon">📌</div>
+          <div class="body"><p>This is a recommendation, not something already built — flag it to leadership as the proposed simplification rather than assuming it's live.</p></div>
+        </div>
+
+        <div class="deeper"><strong>Where to go deeper:</strong> <code>DevMantra_LinkedIn_Lead_Strategy.md</code> (full per-profile Sales Navigator boolean strings and the 7-method free toolkit), Section 3 (ESOP-specific targeting), Notion CRM hub and Deal Pipeline database (for schema to clone).</div>
+      </section>
+
+      <!-- ================= SECTION 7 ================= -->
+      <section class="doc-section" id="s7">
+        <div class="section-head"><span class="section-num">7</span><h2>Outreach Plan — Cold Email + LinkedIn, Unified</h2></div>
+
+        <p class="lede">Both campaigns use the same underlying philosophy — <strong>engage before you pitch, and treat every channel as reinforcing the others</strong> — so here's the one plan to run rather than two parallel ones.</p>
+
+        <h3>The universal sequence</h3>
+        <p>Whether the entry point is a cold email, a Sales Navigator connection, or an ad-form fill, the shape is the same: make contact without an ask → let them see real content or a genuine comment → connect/reply with light personalization and zero pitch → after they've engaged, bring up the actual tool (calculator) tied to something specific about them or their company → one follow-up if silent, then stop and revisit in 60–90 days. The day-by-day tables in Section 3 (cold email: 4 touches over 12 days; Sales Navigator: engage Day 0–2, connect Day 2–3, value message Day 4–7, ask Day 8–12) are the same shape applied to two channels — run them in parallel for anyone reachable both ways.</p>
+
+        <h3>Lead magnet plugging — what points where</h3>
+        <div class="table-wrap">
+        <table>
+          <thead><tr><th>Campaign</th><th>Lead magnet</th><th>Channels it's promoted on</th></tr></thead>
+          <tbody>
+            <tr><td>ESOP</td><td>ESOP Allocation Calculator</td><td>Meta ads (all 5 angles), LinkedIn organic + Sales Navigator DMs, Instagram, cold email (all 4 touches link here)</td></tr>
+            <tr><td>Korea</td><td>PLI Calculator <em>or</em> DTAA Cash Leakage Calculator (pick one for Phase 1A — not yet built)</td><td>Korea landing page, Naver post launch with worked example, LinkedIn carousels (English + Korean subtitles), YouTube walkthrough, partner's Kakao network</td></tr>
+            <tr><td>Korea (parallel, low-cost)</td><td>Invitation-Only Korea Desk Weekly Briefing</td><td>Application-form gated — promote alongside whichever calculator ships first</td></tr>
+            <tr><td>Korea (backlog)</td><td>India Acquisition Target Health Check, Korean Companies in India Benchmark Report</td><td>Q4 2026 — Benchmark Report needs a participant list started now if it's going to plan</td></tr>
+          </tbody>
+        </table>
+        </div>
+
+        <div class="callout info">
+          <div class="icon">💡</div>
+          <div class="body"><p><strong>One underused move worth reviving:</strong> the existing 80-lead startup scorecard list, filtered for any Korean angle — those WhatsApp numbers already exist and haven't been re-promoted to the Korea lead magnets yet.</p></div>
+        </div>
+
+        <div class="callout good">
+          <div class="icon">🎯</div>
+          <div class="body"><p><strong>Every touch, on every channel, in both campaigns, should point at exactly one of these — never a generic "get in touch."</strong> That's what makes the calculator-led model work: the ask is always "try this free tool," never "book a call."</p></div>
+        </div>
+      </section>
+
+      <!-- ================= SECTION 8 ================= -->
+      <section class="doc-section" id="s8">
+        <div class="section-head"><span class="section-num">8</span><h2>Master List of Open Decisions</h2></div>
+
+        <p class="lede">Pulled together from Sections 2–6 so nothing needing a leadership call gets buried in the detail. Items 1–14 were open as of the last written Notion update (May–June 2026); given content is now live as of August, some may already be resolved — confirm rather than assume. Items 15–21 are new, surfaced by the Aug 6 SEO audit.</p>
+
+        <h4 style="color:var(--navy-2);">Korea Desk &amp; general (1–14)</h4>
+        <div class="oq-item"><span class="oq-num">1.</span><strong>Korean partner compensation model</strong> — per-post, monthly retainer, referral share, or hybrid. Recommendation on file: let her name a number first.</div>
+        <div class="oq-item"><span class="oq-num">2.</span><strong>Korean entity question</strong> — incorporate a Dev Mantra Korea entity within 12 months? Gates KakaoTalk Business Channel, Naver Ads, and a verified-blog badge.</div>
+        <div class="oq-item"><span class="oq-num">3.</span><strong>사업자등록증 (Korean business registration)</strong> — does the partner hold one Dev Mantra can use for the above? The single most consequential open question in the partner relationship.</div>
+        <div class="oq-item"><span class="oq-num">4.</span><strong>Translation ownership</strong> — partner only, or also a freelance Korean copywriter for YouTube subtitles and lead-magnet text?</div>
+        <div class="oq-item"><span class="oq-num">5.</span><strong>Sectoral focus discipline</strong> — comfortable saying no to Tier 1 (Chaebols) and Tier 3 (SMEs) inbound for the first 90 days, staying anchored on Tier 2 mid-caps?</div>
+        <div class="oq-item"><span class="oq-num">6.</span><strong>Budget envelope</strong> — Korea Desk incremental Phase 1 spend, ~₹150,000 over 90 days. Confirm.</div>
+        <div class="oq-item"><span class="oq-num">7.</span><strong>Korea lead magnet — first build</strong> — PLI Calculator or DTAA Cash Leakage Calculator? Check with Abhinav on existing calculator infrastructure before either.</div>
+        <div class="oq-item"><span class="oq-num">8.</span><strong>Invitation-Only Briefing</strong> — stand it up in parallel with the first calculator? (Recommended.)</div>
+        <div class="oq-item"><span class="oq-num">9.</span><strong>Benchmark Report</strong> — confirm for the Q4 2026 roadmap and start mapping Korean participant contacts now if so.</div>
+        <div class="oq-item"><span class="oq-num">10.</span><strong>Existing client storytelling consent</strong> — the battery-recycling client referenced in the Korea YouTube video plan needs anonymization or explicit quote consent.</div>
+        <div class="oq-item"><span class="oq-num">11.</span><strong>Internal Korean-speaking staffing</strong> — designate a primary and backup internally, separate from the partner.</div>
+        <div class="oq-item"><span class="oq-num">12.</span><strong>NAP audit</strong> — every platform still flagged "needs audit" — assign an owner.</div>
+        <div class="oq-item"><span class="oq-num">13.</span><strong>CRM consolidation</strong> (Section 6) — sign off on Apollo.io + a cloned Deal Pipeline board, or specify an alternative.</div>
+        <div class="oq-item"><span class="oq-num">14.</span><strong>August campaign content status (Korea + ESOP)</strong> — copywriter was scheduled to start Aug 9 on 16 pieces total; nothing confirms how many actually shipped. Verify before assuming the sprint is on track.</div>
+
+        <h4 style="color:var(--red-ink);margin-top:24px;">New — surfaced by the Aug 6 SEO audit (15–21)</h4>
+        <div class="oq-item new"><span class="oq-num">15.</span><strong>Confirm the Aug 6 SEO deployment shipped</strong> — canonical/robots/llms.txt/htaccess/homepage-title fixes were built and tested but not confirmed live. Top SEO priority (Section 4, P0 #1).</div>
+        <div class="oq-item new"><span class="oq-num">16.</span><strong>Run the 4 internal-linking SQL scripts against production</strong> — closes 9 orphan pages and fixes a live broken cross-sell grid on the Due Diligence page (Section 4, P0 #2).</div>
+        <div class="oq-item new"><span class="oq-num">17.</span><strong>Claim the Google Business Profile listing</strong> — flagged as the single highest-leverage untouched item across three separate audits (Section 4, P0 #4).</div>
+        <div class="oq-item new"><span class="oq-num">18.</span><strong>Check the CMS for 2 duplicate posts + 3 unpublished drafts</strong> flagged since July 22 (Section 4, P0 #5).</div>
+        <div class="oq-item new"><span class="oq-num">19.</span><strong>Restore Ahrefs plan access and Semrush API units</strong>, and enable the Notion connector consistently — all three are currently blocking same-day-fresh SEO/growth checks.</div>
+        <div class="oq-item new"><span class="oq-num">20.</span><strong>Decide whether item #1 in the SEO blog backlog is redundant</strong> with the May 15 "Virtual vs Fractional vs Outsourced CFO" post before anyone writes it (Section 4).</div>
+        <div class="oq-item new"><span class="oq-num">21.</span><strong>Pick and confirm the Korea Phase 1A lead magnet build owner and timeline</strong> (Abhinav vs external dev) — tied to items 7 and 16 in this list.</div>
+      </section>
+
+      <!-- ================= SECTION 9 ================= -->
+      <section class="doc-section" id="s9">
+        <div class="section-head"><span class="section-num">9</span><h2>Directory — Where Everything Lives</h2></div>
+
+        <h3>Notion <span style="font-weight:400;color:var(--ink-soft);font-size:14px;">(primary operational system — status, tasks, live tracking)</span></h3>
+        <ul>
+          <li>Client hub: <strong>Dev Mantra</strong> page → PM Navigation Index, ICP &amp; Lead Targeting Plan, All Research, All Projects/Tasks databases</li>
+          <li><strong>🇰🇷 Korea Desk — Cross-Border M&amp;A Initiative</strong> hub and its 7 sub-pages</li>
+          <li><strong>🧠 Brand &amp; Strategy</strong> hub — NAP, positioning, brand voice, AI prompting rules, SEO technical-state summary</li>
+          <li><strong>CRM</strong> hub — Clients Database, Deal Pipeline, Activities</li>
+          <li><strong>Dev Mantra Social Media Management</strong> project — lighter-weight; most real substance for social is in the Claude project instead</li>
+          <li>SEO tracking: Off-Page Submissions Master Status, Backlink Tracker, Blog Master Tracker, Tasks DB filtered to Project = DevMantra SEO</li>
+          <li><strong>📍 PM Log — Open Items &amp; Weekly Status</strong> (new) — the running log the DevMantra PM Agent maintains; start here for the current snapshot of everything in Section 8</li>
+        </ul>
+
+        <h3>Website repository <span style="font-weight:400;color:var(--ink-soft);font-size:14px;">(<code>Devmantranew/SEO/</code> in the Laravel codebase)</span></h3>
+        <ul>
+          <li><code>seo-task-tracker.md</code>, <code>seo-implementation-plan-v2-2026-06-13.md</code>, <code>sql/</code> folder including <code>02_service_meta_rewrite_2026-08-06.sql</code>, <code>03_seo_field_schema_gap_audit_2026-08-06.sql</code>, and the 4 internal-linking scripts (<code>04</code>–<code>07</code>)</li>
+          <li><code>SchemaService.php</code> (10 schema builder methods), <code>home.blade.php</code>, <code>service-detail.blade.php</code>, <code>robots.txt</code>, <code>llms.txt</code>, <code>.htaccess</code> — the specific files touched in the Aug 6 batch</li>
+        </ul>
+
+        <h3>Claude project "devmantra" <span style="font-weight:400;color:var(--ink-soft);font-size:14px;">(strategy docs, this handoff, the PM Agent file, execution-ready content banks)</span></h3>
+        <ul>
+          <li><strong>Korea/ESOP:</strong> <code>DevMantra_Naver_Blog_Writing_Guidelines_Aug2026.md</code>, <code>DevMantra_Naver_ESOP_Blog_Plans_Aug2026.md</code>, <code>DevMantra_Naver_Account_Setup_Plan.md</code>, <code>DevMantra_Korea_ESOP_Title_Bank_Aug2026.md</code>, <code>DevMantra_Korea_Landing_Page_Content.md</code>, <code>DevMantra_ESOP_Cold_Email_Outreach_Strategy.md</code>, <code>DevMantra_ESOP_Calculator_Meta_LinkedIn_Strategy.md</code>, <code>DevMantra_ESOP_Ad_Creative_Image_Prompts.md</code>, <code>DevMantra_ESOP_Calculator_Landing_Copy.md</code>, <code>DevMantra_Aug2026_Topic_Finalization.md</code></li>
+          <li><strong>SEO:</strong> <code>DevMantra_SEO_Audit_Priority_Plan_2026-07.md</code>, <code>DevMantra_30Day_Aggressive_SEO_GEO_Plan.md</code>, <code>DevMantra_Backlink_Strategy.md</code>, <code>DevMantra_OffPage_100_List.md</code>, <code>DevMantra_OffPage_Content_Prompts.md</code></li>
+          <li><strong>Social/brand:</strong> <code>DevMantra_LinkedIn_Lead_Strategy.md</code>, <code>DevMantra_LinkedIn_Strategy_v3.md</code>, <code>LinkedIn growth</code>, <code>LinkedIn writer devmantra</code>, <code>humaniseing and writing the LinkedIn or Instagram captions, content, scripts</code>, <code>Initial audience targetting.</code>, <code>DevMantra_Personal_Brand_Design_System.md</code>, <code>DEVMANTRA_DESIGN_RULES.md</code>, <code>CREATING JSON IMAGE PROMPTS FOR INFOGRAPHICS OR THUMNAILS</code>, <code>Dev_Mantra_30_Titles_All_Verticals.xlsx</code></li>
+          <li><strong>Other:</strong> <code>DevMantra_Newsletter_Issue65_Aug2026_SEO_Metadata.md</code>, <code>DevMantra_Homepage_Landing_Copy.md</code>, <code>DEVMANTRA_PM_NAVIGATION_INDEX.md</code>, <code>Dev_Mantra_marketing_Agreement 1.pdf</code> (contract terms — not covered in this handoff), competitive analysis (PDF + xlsx), <code>DevMantra_PM_Agent.md</code> (companion operating charter to this handoff)</li>
+        </ul>
+
+        <h3>Installed skills for this account</h3>
+        <p><code>dev-mantra-content-writer</code> (brand voice + platform-specific copywriting), <code>devmantra-thumbnail-og-creator</code> (blog/OG image prompts) — and, pending the user saving it, <code>devmantra-pm-agent</code> (this session's companion file).</p>
+
+        <h3>Key people</h3>
+        <div class="table-wrap">
+        <table>
+          <thead><tr><th>Name</th><th>Role</th></tr></thead>
+          <tbody>
+            <tr><td>Vikash sir</td><td>Founder/MD, Korea Desk principal owner</td></tr>
+            <tr><td>Nidhi ma'am</td><td>Founder/Director, M&amp;A + structuring, runs the 4-stage funnel conversation</td></tr>
+            <tr><td>Namrata P Marothi</td><td>Client-side point person; GCC vertical</td></tr>
+            <tr><td>Kamal Parakh</td><td>Associate Director, Korea desk operational lead; Business Setup/IPO vertical</td></tr>
+            <tr><td>Ritik Roushan</td><td>Digitech — Dev Mantra account owner and Korea Desk PM</td></tr>
+            <tr><td>Abhinav</td><td>Developer — owns existing calculator infrastructure, check before building new tools</td></tr>
+          </tbody>
+        </table>
+        </div>
+
+        <div class="footer-note">
+          <div class="footer-meta">
+            <span><strong>Prepared by:</strong> The Digitech Solutions — Dev Mantra Account Team</span>
+            <span><strong>For:</strong> The incoming team picking up execution</span>
+            <span><strong>Date:</strong> August 20, 2026 — Section 4 refreshed against Aug 6, 2026 codebase SEO audit</span>
+            <span><strong>Sources:</strong> Claude project "devmantra" (30 docs + 4 files), Notion workspace, live Laravel-repo SEO audit</span>
+          </div>
+          <p>This handoff was assembled from the Claude "devmantra" project (30 docs, 4 files), the connected Notion workspace, and a live codebase SEO audit, current as of August 20, 2026. Where a source document's last update predates this date, that's noted inline — verify anything time-sensitive against the live Notion pages before treating it as current.</p>
+        </div>
+      </section>
+
+    </div>
+  </main>
+</div>
+
+<script>
+  (function(){
+    var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab-btn'));
+    var panels = Array.prototype.slice.call(document.querySelectorAll('section.doc-section'));
+
+    function showTab(targetId){
+      panels.forEach(function(panel){
+        if(panel.id === targetId){
+          panel.classList.add('active');
+          panel.setAttribute('aria-hidden', 'false');
+        } else {
+          panel.classList.remove('active');
+          panel.setAttribute('aria-hidden', 'true');
+        }
+      });
+      tabs.forEach(function(tab){
+        var isActive = tab.getAttribute('data-target') === targetId;
+        tab.classList.toggle('active', isActive);
+        tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      });
+      // Scroll to top of content area
+      var contentInner = document.querySelector('.content-inner');
+      if(contentInner) contentInner.scrollTop = 0;
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+
+    tabs.forEach(function(tab){
+      tab.addEventListener('click', function(){
+        var target = tab.getAttribute('data-target');
+        showTab(target);
+      });
+      tab.addEventListener('keydown', function(e){
+        var index = tabs.indexOf(tab);
+        var nextIndex;
+        if(e.key === 'ArrowRight'){ nextIndex = (index + 1) % tabs.length; }
+        else if(e.key === 'ArrowLeft'){ nextIndex = (index - 1 + tabs.length) % tabs.length; }
+        else if(e.key === 'Home'){ nextIndex = 0; }
+        else if(e.key === 'End'){ nextIndex = tabs.length - 1; }
+        else return;
+        e.preventDefault();
+        tabs[nextIndex].focus();
+        showTab(tabs[nextIndex].getAttribute('data-target'));
+      });
+    });
+
+    // Deep link support: if URL has hash matching a section, activate it
+    if(location.hash){
+      var hashId = location.hash.slice(1);
+      var matchingTab = tabs.find(function(t){ return t.getAttribute('data-target') === hashId; });
+      if(matchingTab){
+        showTab(hashId);
+      }
+    }
+  })();
+</script>
+
+</body>
+</html>

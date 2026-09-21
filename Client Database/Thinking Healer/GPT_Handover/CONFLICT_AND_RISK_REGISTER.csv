@@ -1,0 +1,12 @@
+risk_id,area,issue,source_a,source_b,risk,required_action,owner,status
+RSK-001,Design,Doctor photograph appears in initial draft but later request says remove it,Initial generated poster,Revision snippet,"Identity, consent and direction risk",Confirm whether any authentic doctor photo may be used,Client/PM,OPEN
+RSK-002,Design,Dense biography conflicts with later minimal-text direction,Initial generated poster,Revision snippet,"Inconsistent brand execution",Approve one content-density standard,Client/Designer,OPEN
+RSK-003,Brand,Generated TH monogram may be mistaken for official logo,Generated posters,No official logo file,"Trademark and consistency risk",Collect official vector logo,Client/PM,OPEN
+RSK-004,Medical claim,DNB called India’s highest postgraduate medical qualification,Original brief,No authoritative verification,"Potentially inaccurate professional claim",Obtain doctor-approved wording,Doctor/PM,OPEN
+RSK-005,Experience,13+ years stated without supporting source,Original brief,No CV or official bio,"Credibility/compliance risk",Verify exact start year and approved wording,Doctor/PM,OPEN
+RSK-006,IP,Generated quotations have no established author or ownership,Generated posters,No attribution record,"Copyright/authorship ambiguity",Approve as original brand copy or replace,Client/Writer,OPEN
+RSK-007,Approval,No explicit approval exists for any creative,All found assets,No approval record,"Accidental publication of draft",Obtain written approval and record date,PM,OPEN
+RSK-008,Publishing,Published status unknown,Found images,No social links or post URLs,"Cannot classify LIVE",Collect profile URLs and post history,Social team,OPEN
+RSK-009,Operations,Samata mam meeting is open with no outcome,Task dashboard,No meeting notes,"Missing decision context",Identify participant and document decisions,PM,OPEN
+RSK-010,GMB,Knowledge platform may not qualify for GBP,Platform description,No physical/customer-facing details,"Policy risk",Confirm business eligibility before GBP work,SEO/Client,OPEN
+

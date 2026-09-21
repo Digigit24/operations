@@ -1,0 +1,82 @@
+Keyword Intent
+Funnel
+Stage
+Page Type Priority
+Conversion
+Potential
+ICSI treatment
+Pune
+Commercial MOFU Service page Medium Medium
+Egg freezing Pune Commercial/
+Informational MOFU
+Service page/
+Blog Medium Medium
+Male infertility
+treatment Pune
+Informational/
+Commercial MOFU Service page Medium Medium
+Low AMH
+treatment Pune
+Problem-aware MOFU
+Blog/Service
+page
+Medium Medium
+PCOS treatment
+Baner
+Commercial MOFU Service page Medium Medium
+IVF on EMI Pune Commercial BOFU
+Landing page/
+Service
+Medium High (for pricesensitive)
+Affordable IVF
+Pune
+Commercial BOFU
+Landing page/
+Service
+Medium High (for
+lower-income)
+IVF Pune reviews
+Commercial
+(research) BOFU
+Review page/
+Testimonials High High
+Best fertility
+doctor Pune Commercial BOFU
+About/Team
+page
+Medium High
+Infertility specialist
+Pune
+Commercial MOFU/
+BOFU
+Service/Contact
+page
+Medium High
+IVF process Pune Informational TOFU Blog/Guide Medium Low/Medium
+“Why IVF fails” Informational TOFU Blog Low Low
+“Embryo transfer
+success”
+Informational TOFU Blog Low Low
+IVF vs IUI Pune Comparison MOFU
+Blog/
+Comparison
+page
+Low Medium
+“When to do IVF” Informational TOFU Blog Low Low
+IVF testimonials
+Pune
+Commercial
+(social proof) BOFU
+Testimonial
+page
+High High
+“pregnancy after
+IVF success”
+Informational TOFU Blog Low Low
+“IVF near me
+reviews”
+Informational/
+Local BOFU
+Review snippet/
+Local page High Medium
+12
