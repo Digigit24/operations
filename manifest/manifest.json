@@ -1,13 +1,13 @@
 {
   "_meta": {
-    "generated_at": "2026-09-21T11:55:28.964542Z",
-    "total_entries": 75,
+    "generated_at": "2026-09-22T13:07:00.905389Z",
+    "total_entries": 76,
     "types": {
       "action": 4,
       "context": 5,
       "decision": 5,
       "situation": 9,
-      "skill": 13,
+      "skill": 14,
       "sop": 13,
       "worker": 10,
       "client": 16
@@ -298,6 +298,16 @@
       "when_to_use": "Onboarding Step 1 — run brand, competitor, SEO and ICP research for a new client. Use on Grok/Gemini/ChatGPT/Kimi.",
       "related": [
         "sop_client_onboarding",
+        "skill_onboarding_02_design"
+      ]
+    },
+    {
+      "id": "skill_onboarding_01b_design_brainstorm",
+      "type": "skill",
+      "path": "brain/skills/skill_onboarding_01b_design_brainstorm.md",
+      "when_to_use": "Onboarding Step 1b — client has a logo but no reference designs; run a ChatGPT 9-grid brainstorm to produce 5 reference images before Step 02",
+      "related": [
+        "skill_onboarding_01_research",
         "skill_onboarding_02_design"
       ]
     },
@@ -1093,6 +1103,16 @@
         "when_to_use": "Onboarding Step 1 — run brand, competitor, SEO and ICP research for a new client. Use on Grok/Gemini/ChatGPT/Kimi.",
         "related": [
           "sop_client_onboarding",
+          "skill_onboarding_02_design"
+        ]
+      },
+      {
+        "id": "skill_onboarding_01b_design_brainstorm",
+        "type": "skill",
+        "path": "brain/skills/skill_onboarding_01b_design_brainstorm.md",
+        "when_to_use": "Onboarding Step 1b — client has a logo but no reference designs; run a ChatGPT 9-grid brainstorm to produce 5 reference images before Step 02",
+        "related": [
+          "skill_onboarding_01_research",
           "skill_onboarding_02_design"
         ]
       },

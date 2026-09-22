@@ -25,6 +25,7 @@ This chain builds a complete brand intelligence, visual system, strategy layer, 
 | Step | File | What It Builds | Tool | Input Required | Output Stored In |
 |---|---|---|---|---|---|
 | 01 | `onboarding/01-research.md` | `research.md` — market, ICP, competitor intelligence | Grok / Gemini / ChatGPT / Kimi | Website URL, 3–4 competitors, location | Notion → Brand & Strategy |
+| 01b | `onboarding/01b-design-brainstorm.md` | 5 reference images via ChatGPT 9-grid loop (optional — only if client has no reference designs) | ChatGPT (image gen) | Logo + client one-liner; research.md optional | `clients/[Client]/assets/references/` |
 | 02 | `onboarding/02-design-instructions.md` | `design_instructions.md` + `prompting_style_guideline.md` | ChatGPT / Claude | Website URL, 5 reference designs | Notion → Brand & Strategy → AI Prompting Guide |
 | 03 | `onboarding/03-site-extraction.md` | Site content archived in Notion — one page per crawled URL | Claude (Firecrawl / Tavily MCP required) | Website URL only | Notion → 🌐 Website → Current Site Content |
 | 04 | `onboarding/04-seo-foundation.md` | `seo-foundation.md` — SEO strategy + keyword map | ChatGPT / Gemini | Website URL + research from 01 | Notion → SEO → SEO Foundation |
@@ -55,6 +56,8 @@ This chain builds a complete brand intelligence, visual system, strategy layer, 
 
 ```
 [01-research.md]
+      ↓
+[01b-design-brainstorm.md]  (optional — only if no reference designs exist)
       ↓
 [02-design-instructions.md] ──────────────────────────────┐
       │                                                     │

@@ -11,7 +11,7 @@
 
 ```
 Website URL: [paste client website]
-Reference designs: [Upload 5 best existing designs OR Pinterest references]
+Reference designs: [Upload 5 best existing designs OR Pinterest references OR the 5 finals from 01b-design-brainstorm.md]
 ```
 
 ---
