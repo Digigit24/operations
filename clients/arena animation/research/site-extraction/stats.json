@@ -1,0 +1,20 @@
+{
+ "total": 216,
+ "ok": 216,
+ "words": 117532,
+ "no_title": 0,
+ "no_meta": 3,
+ "no_h1": 7,
+ "multi_h1": 3,
+ "alt_missing": 47,
+ "faq": 4,
+ "schema": 216,
+ "sel_words": 19252,
+ "s_no_title": 0,
+ "s_no_meta": 1,
+ "s_no_h1": 1,
+ "s_multi_h1": 1,
+ "s_alt": 17,
+ "s_faq": 2,
+ "s_schema": 50
+}
