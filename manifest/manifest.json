@@ -1,7 +1,7 @@
 {
   "_meta": {
-    "generated_at": "2026-10-04T08:53:31.200893Z",
-    "total_entries": 77,
+    "generated_at": "2026-10-04T09:25:27.367584Z",
+    "total_entries": 78,
     "types": {
       "situation": 9,
       "skill": 14,
@@ -10,7 +10,7 @@
       "context": 5,
       "decision": 5,
       "worker": 10,
-      "client": 17
+      "client": 18
     },
     "usage": "Read this manifest first. Find the entry. Fetch the file at path. Execute in 2-3 tool calls."
   },
@@ -667,6 +667,16 @@
         "sop_client_onboarding",
         "sop_monthly_m6_report",
         "action_fetch_notion_client_state"
+      ]
+    },
+    {
+      "id": "client_dsync",
+      "type": "client",
+      "path": "clients/Dsync/client-strategy.md",
+      "when_to_use": "Dsync — client strategy, brand, research",
+      "related": [
+        "sop_client_onboarding",
+        "skill_onboarding_01_research"
       ]
     },
     {
@@ -1488,6 +1498,16 @@
           "sop_client_onboarding",
           "sop_monthly_m6_report",
           "action_fetch_notion_client_state"
+        ]
+      },
+      {
+        "id": "client_dsync",
+        "type": "client",
+        "path": "clients/Dsync/client-strategy.md",
+        "when_to_use": "Dsync — client strategy, brand, research",
+        "related": [
+          "sop_client_onboarding",
+          "skill_onboarding_01_research"
         ]
       },
       {
